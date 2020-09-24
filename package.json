@@ -6,8 +6,8 @@
   "scripts": {
     "start": "webpack --watch",
     "build": "rm -rf dist && npm run build:lib && npm run build:development && npm run build:production",
-    "build:production": "NODE_ENV=production webpack --mode=production",
     "build:development": "NODE_ENV=development webpack --mode=development",
+    "build:production": "NODE_ENV=production webpack --mode=production",
     "build:lib": "rm -rf lib && babel src --out-dir lib --ignore 'src/**/*.test.js'",
     "test": "jest",
     "lint": "eslint src"
@@ -25,14 +25,12 @@
     "components"
   ],
   "files": [
-    "dist",
+    "dist/react-bulma-companion.js",
+    "dist/react-bulma-companion.min.js",
     "lib"
   ],
   "dependencies": {
-    "classnames": "2.2.6",
-    "prop-types": "15.7.2",
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "classnames": "2.2.6"
   },
   "devDependencies": {
     "@babel/cli": "7.11.6",
@@ -53,12 +51,17 @@
     "jest": "26.4.2",
     "jest-environment-enzyme": "7.1.2",
     "pre-commit": "1.2.2",
+    "prop-types": "15.7.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
     "webpack": "4.44.2",
     "webpack-bundle-analyzer": "3.9.0",
     "webpack-cli": "3.3.12"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "prop-types": ">= 15.7.2",
     "bulma": "0.9.0"
   }
 }

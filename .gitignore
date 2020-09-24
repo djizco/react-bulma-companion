@@ -4,6 +4,7 @@ node_modules
 # App Packaged
 dist/
 lib/
+*.tgz
 
 # NPM
 .npm
