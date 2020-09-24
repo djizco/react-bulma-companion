@@ -1,5 +1,4 @@
 {
   "presets": ["@babel/env", "@babel/react"],
-  "plugins": [],
-  "ignore": ["**/*.test.js"]
+  "plugins": []
 }
