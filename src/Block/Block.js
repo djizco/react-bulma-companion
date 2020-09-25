@@ -2,26 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export default function Box({
+export default function Block({
   children,
   className,
   ...props
 }) {
-  const BoxClasses = classNames('box', className);
+  const BlockClasses = classNames('block', className);
 
   return (
-    <div className={BoxClasses} {...props}>
+    <div className={BlockClasses} {...props}>
       {children}
     </div>
   );
 }
 
-Box.propTypes = {
+Block.propTypes = {
   children: PropTypes.element,
   className: PropTypes.string,
 };
 
-Box.defaultProps = {
+Block.defaultProps = {
   children: null,
   className: '',
 };

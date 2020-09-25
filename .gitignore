@@ -6,16 +6,13 @@ dist/
 lib/
 *.tgz
 
+# Test
+coverage
+
 # NPM
 .npm
 package-lock.json
 yarn.lock
-
-# Environment
-.env*
-
-# Test
-coverage
 
 # Logs
 logs

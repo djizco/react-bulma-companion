@@ -1,87 +1,126 @@
+/* eslint react/button-has-type: 0 */
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export default function Button(props) {
-  const {
-    handleClick, label, style, type, size, outlined, inverted,
-    rounded, hovered, focused, active, loading, disabled,
-  } = props;
-
-  const typeMap = {
-    info: 'is-info',
+export default function Button({
+  active,
+  children,
+  className,
+  color,
+  disabled,
+  focused,
+  fullWidth,
+  hovered,
+  inverted,
+  light,
+  loading,
+  onClick,
+  outlined,
+  rounded,
+  selected,
+  size,
+  ...props
+}) {
+  // Colors
+  const colorMap = {
+    white: 'is-white',
+    light: 'is-light',
+    dark: 'is-dark',
+    black: 'is-black',
+    text: 'is-text',
     primary: 'is-primary',
+    link: 'is-link',
+    info: 'is-info',
     success: 'is-success',
     warning: 'is-warning',
     danger: 'is-danger',
   };
+  const isColor = colorMap[color] || 'is-primary';
 
+  // Sizes
   const sizeMap = {
     small: 'is-small',
-    normal: '',
+    normal: 'is-normal',
     medium: 'is-medium',
     large: 'is-large',
   };
+  const isSize = sizeMap[size] || 'is-normal';
 
-  const isType = typeMap[type] || 'is-info';
-  const isSize = sizeMap[size] || '';
-
-  const buttonClasses = classNames({
-    button: true,
-    [isType]: true,
-    [isSize]: true,
+  const buttonClasses = classNames('button', className, isColor, isSize, {
+    'is-light': light,
+    'is-fullwidth': fullWidth,
     'is-outlined': outlined,
     'is-inverted': inverted,
     'is-rounded': rounded,
     'is-hovered': hovered,
     'is-focused': focused,
     'is-active': active,
+    'is-selected': selected,
     'is-loading': loading,
     'is-static': props.static,
   });
 
   return (
     <button
-      style={style}
-      type="button"
       className={buttonClasses}
-      onClick={handleClick}
+      type="button"
+      onClick={onClick}
       disabled={disabled}
+      {...props}
     >
-      {label}
+      {children}
     </button>
   );
 }
 
 Button.propTypes = {
-  style: PropTypes.object,
-  handleClick: PropTypes.func,
-  label: PropTypes.string,
-  type: PropTypes.string,
-  size: PropTypes.string,
+  className: PropTypes.string,
+  children: PropTypes.element,
+  onClick: PropTypes.func,
+  color: PropTypes.oneOf([
+    'white',
+    'light',
+    'dark',
+    'black',
+    'text',
+    'primary',
+    'link',
+    'info',
+    'success',
+    'warning',
+    'danger',
+  ]),
+  light: PropTypes.bool,
+  size: PropTypes.oneOf(['', 'small', 'normal', 'medium', 'large']),
+  fullWidth: PropTypes.bool,
   outlined: PropTypes.bool,
   inverted: PropTypes.bool,
   rounded: PropTypes.bool,
   hovered: PropTypes.bool,
   focused: PropTypes.bool,
   active: PropTypes.bool,
+  selected: PropTypes.bool,
   loading: PropTypes.bool,
   static: PropTypes.bool,
   disabled: PropTypes.bool,
 };
 
 Button.defaultProps = {
-  style: {},
-  label: '',
-  type: 'info',
+  children: null,
+  className: '',
+  onClick: () => {},
+  color: 'primary',
+  light: false,
   size: 'normal',
-  handleClick: () => {},
+  fullWidth: false,
   outlined: false,
   inverted: false,
   rounded: false,
   hovered: false,
   focused: false,
   active: false,
+  selected: false,
   loading: false,
   static: false,
   disabled: false,
