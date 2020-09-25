@@ -4,10 +4,11 @@
   "description": "React Components for Bulma",
   "main": "dist/react-bulma-companion.min.js",
   "scripts": {
-    "start": "NODE_ENV=development webpack --mode=development --watch",
-    "build": "rm -rf dist && npm run build:lib && npm run build:development && npm run build:production",
-    "build:development": "NODE_ENV=development webpack --mode=development",
-    "build:production": "NODE_ENV=production webpack --mode=production",
+    "start": "NODE_ENV=dev webpack --mode=development --watch",
+    "build": "rm -rf dist && npm run build:lib && npm run build:dev && npm run build:prd && npm run build:legacy",
+    "build:dev": "NODE_ENV=development webpack --mode=development",
+    "build:prd": "NODE_ENV=production webpack --mode=production",
+    "build:legacy": "./build-legacy.sh",
     "build:lib": "rm -rf lib && babel src --out-dir lib --ignore 'src/**/*.test.js'",
     "test": "jest",
     "lint": "eslint src"
@@ -30,6 +31,7 @@
   "files": [
     "dist/react-bulma-companion.js",
     "dist/react-bulma-companion.min.js",
+    "dist/legacy",
     "lib"
   ],
   "dependencies": {

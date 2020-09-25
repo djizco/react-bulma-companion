@@ -4,6 +4,8 @@
 
 ## How to Use
 
+## Legacy Support
+
 ## Documentation
 
 ## Contribution
