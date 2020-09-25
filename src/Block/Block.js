@@ -17,7 +17,7 @@ export default function Block({
 }
 
 Block.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.node,
   className: PropTypes.string,
 };
 

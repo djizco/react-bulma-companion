@@ -61,6 +61,9 @@ export default function Button({
     'is-static': props.static,
   });
 
+  // eslint-disable-next-line
+  delete props.static;
+
   return (
     <button
       className={buttonClasses}
@@ -76,7 +79,7 @@ export default function Button({
 
 Button.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.element,
+  children: PropTypes.node,
   onClick: PropTypes.func,
   color: PropTypes.oneOf([
     'white',
