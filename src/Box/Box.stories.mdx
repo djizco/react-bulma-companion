@@ -1,0 +1,20 @@
+import { Meta, Story, Canvas, Description, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Box from './Box';
+
+<Meta title="Elements/Box" component={Box} />
+
+# Box
+
+[Bulma Documentation](https://bulma.io/documentation/elements/box/)
+
+The `box` element is simply a container with a shadow, a border, a radius, and some padding.
+For example, you can include a media object:
+
+<Canvas>
+  <Story name="Default">
+    <Box>Temporary Content</Box>
+  </Story>
+</Canvas>
+
+<ArgsTable of={Box} />

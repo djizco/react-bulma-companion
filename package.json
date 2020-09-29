@@ -4,12 +4,16 @@
   "description": "React Components for Bulma",
   "main": "dist/react-bulma-companion.min.js",
   "scripts": {
-    "start": "NODE_ENV=dev webpack --mode=development --watch",
-    "build": "rm -rf dist && npm run build:lib && npm run build:dev && npm run build:prd && npm run build:legacy",
+    "start": "NODE_ENV=development webpack --mode=development --watch",
+    "prebuild": "rm -rf dist && rm -rf lib",
+    "build": "npm run build:lib && npm run build:dev && npm run build:prd && npm run build:legacy",
     "build:dev": "NODE_ENV=development webpack --mode=development",
     "build:prd": "NODE_ENV=production webpack --mode=production",
     "build:legacy": "./build-legacy.sh",
-    "build:lib": "rm -rf lib && babel src --out-dir lib --ignore 'src/**/*.test.js'",
+    "build:lib": "babel src --out-dir lib --ignore 'src/**/*.test.js'",
+    "build:docs": "rm -rf docs && build-storybook --docs -o docs",
+    "storybook": "start-storybook -p 8008",
+    "storybook:docs": "start-storybook -p 8008 --docs",
     "test": "jest",
     "lint": "eslint src"
   },
@@ -17,6 +21,10 @@
     "test",
     "lint"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djizco/react-bulma-companion.git"
+  },
   "author": {
     "name": "Federico Rojas",
     "email": "djizco@yahoo.com",
@@ -42,17 +50,20 @@
     "@babel/core": "7.11.6",
     "@babel/preset-env": "7.11.5",
     "@babel/preset-react": "7.10.4",
+    "@storybook/addon-docs": "^6.0.22",
+    "@storybook/addon-essentials": "^6.0.22",
+    "@storybook/react": "^6.0.22",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.1.0",
-    "bulma": "0.9.0",
+    "bulma": "0.9.1",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.5",
-    "eslint": "7.9.0",
+    "eslint": "7.10.0",
     "eslint-config-airbnb": "18.2.0",
-    "eslint-import-resolver-webpack": "0.12.2",
-    "eslint-plugin-import": "2.22.0",
+    "eslint-import-resolver-webpack": "0.13.0",
+    "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsx-a11y": "6.3.1",
-    "eslint-plugin-react": "7.21.1",
+    "eslint-plugin-react": "7.21.2",
     "eslint-plugin-react-hooks": "4.1.2",
     "jest": "26.4.2",
     "jest-environment-enzyme": "7.1.2",
@@ -60,6 +71,8 @@
     "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-is": "^16.13.1",
+    "typescript": "^4.0.3",
     "webpack": "4.44.2",
     "webpack-bundle-analyzer": "3.9.0",
     "webpack-cli": "3.3.12"
@@ -68,6 +81,6 @@
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
     "prop-types": ">= 15.7.2",
-    "bulma": "0.9.0"
+    "bulma": "0.9.x"
   }
 }

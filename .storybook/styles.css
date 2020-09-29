@@ -1,0 +1,22 @@
+pre {
+  color: inherit;
+}
+
+pre code {
+  tab-size: 2 !important;
+}
+
+.token.tag:not(body) {
+  align-items: center;
+  background-color: inherit;
+  border-radius: 0;
+  color: inherit;
+  display: inline-flex;
+  font-size: inherit;
+  height: inherit;
+  justify-content: center;
+  line-height: inherit;
+  padding-left: 0;
+  padding-right: 0;
+  white-space: nowrap;
+}
