@@ -1,12 +1,107 @@
 import { Meta, Story, Canvas, Description, ArgsTable } from '@storybook/addon-docs/blocks';
 
-import Buttons from '../Buttons';
+import Buttons from './Buttons';
+import Button from '../Button';
 
 <Meta title="Elements/Buttons" component={Buttons} />
 
 # Buttons
 
+[Bulma Documentation](https://bulma.io/documentation/elements/button/#list-of-buttons)
+
 Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The Buttons component is a container that creates a list for your buttons.
+
+<Canvas>
+  <Story name="Button List">
+    <Buttons>
+      <Button color="success">Save Changes</Button>
+      <Button color="info">Save and continue</Button>
+      <Button color="danger">Cancel</Button>
+    </Buttons>
+  </Story>
+</Canvas>
+
+## Size
+
+You can change the size of **multiple buttons** at once by applying a `size` prop:
+
+<Canvas>
+  <Story name="Sizes">
+    <Buttons size="medium">
+      <Button>All</Button>
+      <Button>Medium</Button>
+      <Button>Size</Button>
+    </Buttons>
+  </Story>
+</Canvas>
+
+## Long List
+
+If the list is very long, it will automatically wrap on multiple lines, while keeping all buttons evenly spaced.
+
+<Canvas>
+  <Story name="Long List">
+    <Buttons>
+      <Button>One</Button>
+      <Button>Two</Button>
+      <Button>Three</Button>
+      <Button>Four</Button>
+      <Button>Five</Button>
+      <Button>Six</Button>
+      <Button>Seven</Button>
+      <Button>Eight</Button>
+      <Button>Nine</Button>
+      <Button>Ten</Button>
+      <Button>Eleven</Button>
+      <Button>Twelve</Button>
+      <Button>Thirteen</Button>
+      <Button>Fourteen</Button>
+      <Button>Fifteen</Button>
+      <Button>Sixteen</Button>
+      <Button>Seventeen</Button>
+      <Button>Eighteen</Button>
+      <Button>Nineteen</Button>
+      <Button>Twenty</Button>
+    </Buttons>
+  </Story>
+</Canvas>
+
+## Addons
+
+You can attach buttons together with the `addons` prop.
+
+<Canvas>
+  <Story name="Addons">
+    <Buttons addons>
+      <Button>Yes</Button>
+      <Button>Maybe</Button>
+      <Button>No</Button>
+    </Buttons>
+  </Story>
+</Canvas>
+
+## Align
+
+Use the `align` prop to alter the alignment.
+
+<Canvas>
+  <Story name="Align">
+    <Buttons align="center" addons>
+      <Button>Yes</Button>
+      <Button>Maybe</Button>
+      <Button>No</Button>
+    </Buttons>
+    <Buttons align="right" addons>
+      <Button>Yes</Button>
+      <Button>Maybe</Button>
+      <Button>No</Button>
+    </Buttons>
+  </Story>
+</Canvas>
 
 ## Component Props
 
