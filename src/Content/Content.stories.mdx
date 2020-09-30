@@ -1,0 +1,69 @@
+import { Meta, Story, Canvas, Description, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Content from './Content';
+
+<Meta title="Elements/Content" component={Content} />
+
+# Content
+
+[Bulma Documentation](https://bulma.io/documentation/elements/content/)
+
+When you can't use the CSS classes you want, or when you just want to directly use HTML tags, use `content` as container. It can handle almost any HTML tag:
+
+- `<p>` paragraphs
+- `<ul>` `<ol>` `<dl>` lists
+- `<h1>` to `<h6>` headings
+- `<blockquote>` quotes
+- `<em>` and `<strong>`
+- `<table>` `<tr>` `<th>` `<td>` tables
+
+This `content` class can be used in any context where you just want to (or can only) write some **text**.
+
+<Canvas>
+  <Story name="Default">
+    <Content>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
+    </Content>
+  </Story>
+</Canvas>
+
+## Sizes
+
+You can use the `size` property to change the font size.
+
+#### Small Content
+
+<Canvas>
+  <Story name="Small">
+    <Content size="small">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
+    </Content>
+  </Story>
+</Canvas>
+
+#### Medium Content
+
+<Canvas>
+  <Story name="Medium">
+    <Content size="medium">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
+    </Content>
+  </Story>
+</Canvas>
+
+#### Large Content
+
+<Canvas>
+  <Story name="Large">
+    <Content size="large">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
+    </Content>
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={Content} />
+
+
+

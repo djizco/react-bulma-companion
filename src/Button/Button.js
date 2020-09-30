@@ -45,7 +45,7 @@ export default function Button({
     medium: 'is-medium',
     large: 'is-large',
   };
-  const isSize = sizeMap[size] || 'is-normal';
+  const isSize = size && sizeMap[size];
 
   const buttonClasses = classNames('button', className, isColor, isSize, {
     'is-light': light,
@@ -95,7 +95,7 @@ Button.propTypes = {
     'danger',
   ]),
   light: PropTypes.bool,
-  size: PropTypes.oneOf(['', 'small', 'normal', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
   fullWidth: PropTypes.bool,
   outlined: PropTypes.bool,
   inverted: PropTypes.bool,
@@ -111,11 +111,11 @@ Button.propTypes = {
 
 Button.defaultProps = {
   children: null,
-  className: '',
+  className: undefined,
   onClick: () => {},
   color: 'primary',
   light: false,
-  size: 'normal',
+  size: undefined,
   fullWidth: false,
   outlined: false,
   inverted: false,

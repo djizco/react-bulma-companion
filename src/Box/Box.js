@@ -23,5 +23,5 @@ Box.propTypes = {
 
 Box.defaultProps = {
   children: null,
-  className: '',
+  className: undefined,
 };

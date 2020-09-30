@@ -23,5 +23,5 @@ Block.propTypes = {
 
 Block.defaultProps = {
   children: null,
-  className: '',
+  className: undefined,
 };
