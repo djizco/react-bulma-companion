@@ -2,35 +2,35 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export default function Content({
+export default function Buttons({
   children,
   className,
   size,
   ...props
 }) {
   const sizeMap = {
-    small: 'is-small',
-    medium: 'is-medium',
-    large: 'is-large',
+    small: 'are-small',
+    medium: 'are-medium',
+    large: 'are-large',
   };
   const isSize = size && sizeMap[size];
 
-  const ContentClasses = classNames('content', className, isSize);
+  const ButtonsClasses = classNames('buttons', className, isSize);
 
   return (
-    <div className={ContentClasses} {...props}>
+    <div className={ButtonsClasses} {...props}>
       {children}
     </div>
   );
 }
 
-Content.propTypes = {
+Buttons.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
-Content.defaultProps = {
+Buttons.defaultProps = {
   className: undefined,
   children: null,
   size: undefined,

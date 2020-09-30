@@ -36,7 +36,7 @@ export default function Button({
     warning: 'is-warning',
     danger: 'is-danger',
   };
-  const isColor = colorMap[color] || 'is-primary';
+  const isColor = color && colorMap[color];
 
   // Sizes
   const sizeMap = {
@@ -110,10 +110,10 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  children: null,
   className: undefined,
+  children: null,
   onClick: () => {},
-  color: 'primary',
+  color: undefined,
   light: false,
   size: undefined,
   fullWidth: false,

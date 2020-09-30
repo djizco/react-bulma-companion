@@ -12,6 +12,7 @@
     "build:legacy": "./build-legacy.sh",
     "build:lib": "babel src --out-dir lib --ignore 'src/**/*.test.js'",
     "build:docs": "rm -rf docs && build-storybook --docs -o docs",
+    "deploy:docs": "surge docs react-bulma-companion.surge.sh",
     "storybook": "start-storybook -p 8008",
     "storybook:docs": "start-storybook -p 8008 --docs",
     "test": "jest",

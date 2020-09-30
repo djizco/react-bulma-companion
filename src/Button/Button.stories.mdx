@@ -1,0 +1,100 @@
+import { Meta, Story, Canvas, Description, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Buttons from '../Buttons';
+import Button from './Button';
+
+<Meta title="Elements/Button" component={Button} />
+
+# Button
+
+[Bulma Documentation](https://bulma.io/documentation/elements/button/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The **button** is an essential element of any design. It's meant to look and behave as an **interactive** element of your page.
+
+<Canvas>
+  <Story name="Default">
+    <Button>Button</Button>
+  </Story>
+</Canvas>
+
+## Colors
+
+<Canvas>
+  <Story name="Colors">
+    <Buttons>
+      <Button color="white">White</Button>
+      <Button color="light">Light</Button>
+      <Button color="dark">Dark</Button>
+      <Button color="black">Black</Button>
+      <Button color="text">Text</Button>
+    </Buttons>
+    <Buttons>
+      <Button color="primary">Primary</Button>
+      <Button color="link">Link</Button>
+    </Buttons>
+    <Buttons>
+      <Button color="info">Info</Button>
+      <Button color="success">Success</Button>
+      <Button color="warning">Warning</Button>
+      <Button color="danger">Danger</Button>
+    </Buttons>
+  </Story>
+</Canvas>
+
+Each color now comes in its **light version**. Simply add the `light` prop to the component to apply the light version of the button.
+
+<Canvas>
+  <Story name="Light Colors">
+    <Buttons>
+      <Button color="primary" light>Primary</Button>
+      <Button color="link" light>Link</Button>
+    </Buttons>
+    <Buttons>
+      <Button color="info" light>Info</Button>
+      <Button color="success" light>Success</Button>
+      <Button color="warning" light>Warning</Button>
+      <Button color="danger" light>Danger</Button>
+    </Buttons>
+  </Story>
+</Canvas>
+
+## Sizes
+
+The button comes in 4 different sizes: small, normal, medium, large.
+
+While the default size is the normal one, the `size="normal"` prop exists in case you need to reset the button to its normal size.
+
+<Canvas>
+  <Story name="Sizes">
+    <Buttons>
+      <Button size="small">Small</Button>
+      <Button>Default</Button>
+      <Button size="normal">Normal</Button>
+      <Button size="medium">Medium</Button>
+      <Button size="large">Large</Button>
+    </Buttons>
+  </Story>
+</Canvas>
+
+You can change the size of **multiple buttons** at once by wrapping them in a `Buttons` component, and applying a size prop:
+
+<Canvas>
+  <Story name="Group Sizes">
+    <Buttons size="medium">
+      <Button>All</Button>
+      <Button>Medium</Button>
+      <Button>Size</Button>
+    </Buttons>
+  </Story>
+</Canvas>
+
+You can change the size of only a **subset of buttons** by simply applying a modifier class to them.
+For example, if you want all buttons to be `small` but still have one in its `normal` size, simply do the following:
+
+## Component Props
+
+<ArgsTable of={Button} />

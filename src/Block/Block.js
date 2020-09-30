@@ -17,11 +17,11 @@ export default function Block({
 }
 
 Block.propTypes = {
-  children: PropTypes.node,
   className: PropTypes.string,
+  children: PropTypes.node,
 };
 
 Block.defaultProps = {
-  children: null,
   className: undefined,
+  children: null,
 };

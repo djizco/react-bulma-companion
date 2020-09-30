@@ -17,11 +17,11 @@ export default function Box({
 }
 
 Box.propTypes = {
-  children: PropTypes.node,
   className: PropTypes.string,
+  children: PropTypes.node,
 };
 
 Box.defaultProps = {
-  children: null,
   className: undefined,
+  children: null,
 };
