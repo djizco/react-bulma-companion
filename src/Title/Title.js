@@ -43,7 +43,7 @@ export default function Title({
     );
   }
 
-  if (useHeader && size === '3') {
+  if ((useHeader && size === '3') || (useHeader && !subtitle && !size)) {
     return (
       <h3 className={titleClasses} {...props}>
         {children}
@@ -59,7 +59,7 @@ export default function Title({
     );
   }
 
-  if (useHeader && size === '5') {
+  if ((useHeader && size === '5') || (useHeader && subtitle && !size)) {
     return (
       <h5 className={titleClasses} {...props}>
         {children}
