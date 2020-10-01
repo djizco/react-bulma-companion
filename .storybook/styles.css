@@ -1,8 +1,8 @@
-pre {
+.sbdocs pre {
   color: inherit;
 }
 
-.token.tag:not(body) {
+.sbdocs .token.tag:not(body) {
   align-items: center;
   background-color: inherit;
   border-radius: 0;
@@ -15,4 +15,8 @@ pre {
   padding-left: 0;
   padding-right: 0;
   white-space: nowrap;
+}
+
+.sbdocs .delete {
+  margin-right: 8px;
 }

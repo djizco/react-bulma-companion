@@ -7,6 +7,7 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExcla
 import { faBan } from '@fortawesome/free-solid-svg-icons/faBan';
 
 import Icon from './Icon';
+import Block from '../Block';
 
 <Meta title="Elements/Icon" component={Icon} />
 
@@ -34,11 +35,11 @@ By default, the `icon` container will take up exactly `1.5rem x 1.5rem`. The ico
 
 ## Colors
 
-Since icon fonts are simply **text**, you can use the text us any o the text colors to modify the color. Reference the `color` Component Prop to see all the options.
+Since icon fonts are simply **text**, you can use the text us any o the text colors to modify the color. Reference the `color` Component Prop to see all the values.
 
 <Canvas>
   <Story name="Colors">
-    <div>
+    <Block>
       <Icon color="info">
         <FontAwesomeIcon icon={faInfoCircle} />
       </Icon>
@@ -51,8 +52,8 @@ Since icon fonts are simply **text**, you can use the text us any o the text col
       <Icon color="danger">
         <FontAwesomeIcon icon={faBan} />
       </Icon>
-    </div>
-    <div>
+    </Block>
+    <Block>
       <Icon color="info-light">
         <FontAwesomeIcon icon={faInfoCircle} />
       </Icon>
@@ -65,8 +66,8 @@ Since icon fonts are simply **text**, you can use the text us any o the text col
       <Icon color="danger-light">
         <FontAwesomeIcon icon={faBan} />
       </Icon>
-    </div>
-    <div>
+    </Block>
+    <Block>
       <Icon color="info-dark">
         <FontAwesomeIcon icon={faInfoCircle} />
       </Icon>
@@ -79,7 +80,7 @@ Since icon fonts are simply **text**, you can use the text us any o the text col
       <Icon color="danger-dark">
         <FontAwesomeIcon icon={faBan} />
       </Icon>
-    </div>
+    </Block>
   </Story>
 </Canvas>
 
@@ -91,26 +92,26 @@ The background is only here for demonstration purposes, to highlight the icon co
 
 <Canvas>
   <Story name="Sizes">
-    <div>
+    <Block>
       <Icon className="has-background-warning" size="small">
         <FontAwesomeIcon icon={faHome} />
       </Icon>
-    </div>
-    <div>
+    </Block>
+    <Block>
       <Icon className="has-background-warning" >
         <FontAwesomeIcon icon={faHome} />
       </Icon>
-    </div>
-    <div>
+    </Block>
+    <Block>
       <Icon className="has-background-warning" size="medium">
         <FontAwesomeIcon icon={faHome} />
       </Icon>
-    </div>
-    <div>
+    </Block>
+    <Block>
       <Icon className="has-background-warning" size="large">
         <FontAwesomeIcon icon={faHome} />
       </Icon>
-    </div>
+    </Block>
   </Story>
 </Canvas>
 

@@ -1,0 +1,114 @@
+import { Meta, Story, Canvas, Description, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Image from './Image';
+import Block from '../Block';
+
+<Meta title="Elements/Image" component={Image} />
+
+# Image
+
+[Bulma Documentation](https://bulma.io/documentation/elements/image/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+Because images can take a few seconds to load (or not at all), use the `image` container to specify a **precisely sized** container so that your layout isn't broken because of image loading or image errors.
+
+<Canvas>
+  <Story name="Default">
+    <Image size="128x128">
+      <img src="https://bulma.io/images/placeholders/128x128.png" />
+    </Image>
+  </Story>
+</Canvas>
+
+## Sizes
+
+There are **7** dimensions to choose from, useful for **avatars**:
+
+<Canvas>
+  <Story name="Sizes">
+    <Block>
+      <Image size="16x16">
+        <img src="https://bulma.io/images/placeholders/16x16.png" />
+      </Image>
+    </Block>
+    <Block>
+      <Image size="24x24">
+        <img src="https://bulma.io/images/placeholders/24x24.png" />
+      </Image>
+    </Block>
+    <Block>
+      <Image size="32x32">
+        <img src="https://bulma.io/images/placeholders/32x32.png" />
+      </Image>
+    </Block>
+    <Block>
+      <Image size="48x48">
+        <img src="https://bulma.io/images/placeholders/48x48.png" />
+      </Image>
+    </Block>
+    <Block>
+      <Image size="64x64">
+        <img src="https://bulma.io/images/placeholders/64x64.png" />
+      </Image>
+    </Block>
+    <Block>
+      <Image size="96x96">
+        <img src="https://bulma.io/images/placeholders/96x96.png" />
+      </Image>
+    </Block>
+    <Block>
+      <Image size="128x128">
+        <img src="https://bulma.io/images/placeholders/128x128.png" />
+      </Image>
+    </Block>
+  </Story>
+</Canvas>
+
+## Rounded Images
+
+You can also make rounded images, using the `is-rounded` class on the `img` itself.
+
+<Canvas>
+  <Story name="Rounded">
+    <Image size="128x128">
+      <img className="is-rounded" src="https://bulma.io/images/placeholders/128x128.png" />
+    </Image>
+  </Story>
+</Canvas>
+
+## Image Ratios
+
+If you don't know the exact dimensions but know the **ratio** instead, you can use one of the **16 ratio modifiers**. Reference the `ratio` Component Prop to see all the values.
+
+<Canvas>
+  <Story name="Ratios">
+    <Block style={{ maxWidth: '240px' }}>
+      <h1>Square</h1>
+      <Image ratio="square">
+        <img src="https://bulma.io/images/placeholders/480x480.png" />
+      </Image>
+    </Block>
+    <Block style={{ maxWidth: '240px' }}>
+      <h1>4 by 3</h1>
+      <Image ratio="4by3">
+        <img src="https://bulma.io/images/placeholders/640x480.png" />
+      </Image>
+    </Block>
+    <Block style={{ maxWidth: '240px' }}>
+      <h1>16 by 9</h1>
+      <Image ratio="16by9">
+        <img src="https://bulma.io/images/placeholders/640x360.png" />
+      </Image>
+    </Block>
+  </Story>
+</Canvas>
+
+The image container will usually take up the whole width while maintaining the perfect ratio.
+If it doesn't, you can force it by adding the `fullWidth` prop.
+
+## Component Props
+
+<ArgsTable of={Image} />
