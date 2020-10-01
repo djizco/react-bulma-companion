@@ -6,3 +6,4 @@ export { default as Content } from './Content';
 export { default as Delete } from './Delete';
 export { default as Icon } from './Icon';
 export { default as Image } from './Image';
+export { default as Notification } from './Notification';
