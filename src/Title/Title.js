@@ -5,9 +5,10 @@ import classNames from 'classnames';
 export default function Title({
   children,
   className,
-  subtitle,
   size,
   spaced,
+  subtitle,
+  useHeader,
   ...props
 }) {
   const isTitle = !subtitle ? 'title' : 'subtitle';
@@ -26,6 +27,54 @@ export default function Title({
     'is-spaced': spaced,
   });
 
+  if (useHeader && size === '1') {
+    return (
+      <h1 className={titleClasses} {...props}>
+        {children}
+      </h1>
+    );
+  }
+
+  if (useHeader && size === '2') {
+    return (
+      <h2 className={titleClasses} {...props}>
+        {children}
+      </h2>
+    );
+  }
+
+  if (useHeader && size === '3') {
+    return (
+      <h3 className={titleClasses} {...props}>
+        {children}
+      </h3>
+    );
+  }
+
+  if (useHeader && size === '4') {
+    return (
+      <h4 className={titleClasses} {...props}>
+        {children}
+      </h4>
+    );
+  }
+
+  if (useHeader && size === '5') {
+    return (
+      <h5 className={titleClasses} {...props}>
+        {children}
+      </h5>
+    );
+  }
+
+  if (useHeader && size === '6') {
+    return (
+      <h6 className={titleClasses} {...props}>
+        {children}
+      </h6>
+    );
+  }
+
   return (
     <p className={titleClasses} {...props}>
       {children}
@@ -39,6 +88,7 @@ Title.propTypes = {
   subtitle: PropTypes.bool,
   size: PropTypes.oneOf(['1', '2', '3', '4', '5', '6']),
   spaced: PropTypes.bool,
+  useHeader: PropTypes.bool,
 };
 
 Title.defaultProps = {
@@ -47,4 +97,5 @@ Title.defaultProps = {
   subtitle: false,
   size: undefined,
   spaced: false,
+  useHeader: false,
 };

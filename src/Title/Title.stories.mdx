@@ -5,7 +5,7 @@ import Block from '../Block';
 
 <Meta title="Elements/Title" component={Title} />
 
-# Title
+# Title and Subtitle
 
 [Bulma Documentation](https://bulma.io/documentation/elements/title/)
 
@@ -68,7 +68,30 @@ You can maintain the normal spacing between titles and subtitles by using the `s
   </Story>
 </Canvas>
 
+## Header Tags
 
+By default, the `title` element will render as a `p` tag.  If you want to use the native header tags, such as `h1`, add the `useHeader` prop.
+
+<Canvas>
+  <Story name="Header Tags">
+    <Block>
+      <Title size="1" useHeader>Title 1</Title>
+      <Title size="2" useHeader>Title 2</Title>
+      <Title size="3" useHeader>Title 3</Title>
+      <Title size="4" useHeader>Title 4</Title>
+      <Title size="5" useHeader>Title 5</Title>
+      <Title size="6" useHeader>Title 6</Title>
+    </Block>
+    <Block>
+      <Title size="1" useHeader subtitle>Subtitle 1</Title>
+      <Title size="2" useHeader subtitle>Subtitle 2</Title>
+      <Title size="3" useHeader subtitle>Subtitle 3</Title>
+      <Title size="4" useHeader subtitle>Subtitle 4</Title>
+      <Title size="5" useHeader subtitle>Subtitle 5</Title>
+      <Title size="6" useHeader subtitle>Subtitle 6</Title>
+    </Block>
+  </Story>
+</Canvas>
 
 ## Component Props
 
