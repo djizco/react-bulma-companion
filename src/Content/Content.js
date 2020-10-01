@@ -15,10 +15,10 @@ export default function Content({
   };
   const isSize = size && sizeMap[size];
 
-  const ContentClasses = classNames('content', className, isSize);
+  const contentClasses = classNames('content', className, isSize);
 
   return (
-    <div className={ContentClasses} {...props}>
+    <div className={contentClasses} {...props}>
       {children}
     </div>
   );

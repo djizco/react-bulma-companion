@@ -7,10 +7,10 @@ export default function Box({
   className,
   ...props
 }) {
-  const BoxClasses = classNames('box', className);
+  const boxClasses = classNames('box', className);
 
   return (
-    <div className={BoxClasses} {...props}>
+    <div className={boxClasses} {...props}>
       {children}
     </div>
   );

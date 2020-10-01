@@ -15,10 +15,10 @@ export default function Delete({
   };
   const isSize = size && sizeMap[size];
 
-  const DeleteClasses = classNames('delete', className, isSize);
+  const deleteClasses = classNames('delete', className, isSize);
 
   return (
-    <a className={DeleteClasses} {...props}>
+    <a className={deleteClasses} {...props}>
       {children}
     </a>
   );

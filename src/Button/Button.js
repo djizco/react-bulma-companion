@@ -24,17 +24,17 @@ export default function Button({
 }) {
   // Colors
   const colorMap = {
-    white: 'is-white',
-    light: 'is-light',
-    dark: 'is-dark',
-    black: 'is-black',
-    text: 'is-text',
     primary: 'is-primary',
     link: 'is-link',
     info: 'is-info',
     success: 'is-success',
     warning: 'is-warning',
     danger: 'is-danger',
+    white: 'is-white',
+    black: 'is-black',
+    light: 'is-light',
+    dark: 'is-dark',
+    text: 'is-text',
   };
   const isColor = color && colorMap[color];
 
@@ -82,17 +82,17 @@ Button.propTypes = {
   children: PropTypes.node,
   onClick: PropTypes.func,
   color: PropTypes.oneOf([
-    'white',
-    'light',
-    'dark',
-    'black',
-    'text',
     'primary',
     'link',
     'info',
     'success',
     'warning',
     'danger',
+    'white',
+    'black',
+    'light',
+    'dark',
+    'text',
   ]),
   light: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'normal', 'medium', 'large']),

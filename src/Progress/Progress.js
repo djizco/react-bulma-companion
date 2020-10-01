@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export default function Notification({
+export default function Progress({
   children,
   className,
   color,
-  light,
+  size,
   ...props
 }) {
   // Colors
@@ -24,18 +24,24 @@ export default function Notification({
   };
   const isColor = color && colorMap[color];
 
-  const notificationClasses = classNames('notification', className, isColor, {
-    'is-light': light,
-  });
+  // Sizes
+  const sizeMap = {
+    small: 'is-small',
+    medium: 'is-medium',
+    large: 'is-large',
+  };
+  const isSize = size && sizeMap[size];
+
+  const progressClasses = classNames('progress', className, isColor, isSize);
 
   return (
-    <div className={notificationClasses} {...props}>
+    <progress className={progressClasses} {...props}>
       {children}
-    </div>
+    </progress>
   );
 }
 
-Notification.propTypes = {
+Progress.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   color: PropTypes.oneOf([
@@ -50,12 +56,16 @@ Notification.propTypes = {
     'light',
     'dark',
   ]),
-  light: PropTypes.bool,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  max: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
-Notification.defaultProps = {
+Progress.defaultProps = {
   className: undefined,
   children: null,
   color: undefined,
-  light: false,
+  size: undefined,
+  value: undefined,
+  max: undefined,
 };

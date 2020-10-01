@@ -52,10 +52,10 @@ export default function Icon({
   };
   const isSize = size && sizeMap[size];
 
-  const IconClasses = classNames('icon', className, isColor, isSize);
+  const iconClasses = classNames('icon', className, isColor, isSize);
 
   return (
-    <span className={IconClasses} {...props}>
+    <span className={iconClasses} {...props}>
       {children}
     </span>
   );

@@ -1,21 +1,39 @@
+/* Fix conflicting Bulma Classes */
 .sbdocs pre {
   color: inherit;
 }
 
-.sbdocs .token.tag:not(body) {
-  align-items: center;
+.sbdocs .tag:not(body) {
+  align-items: inherit;
   background-color: inherit;
   border-radius: 0;
   color: inherit;
   display: inline-block;
   font-size: inherit;
   height: inherit;
-  justify-content: center;
+  justify-content: inherit;
   line-height: inherit;
   padding-left: 0;
   padding-right: 0;
   white-space: nowrap;
 }
+
+.sbdocs .number {
+  align-items: inherit;
+  background-color: inherit;
+  border-radius: 0;
+  display: inline-block;
+  font-size: inherit;
+  height: inherit;
+  justify-content: center;
+  margin-right: 0;
+  min-width: inherit;
+  padding: 0;
+  text-align: inherit;
+  vertical-align: inherit;
+}
+
+/* Add styles for docs */
 
 .sbdocs .delete {
   margin-right: 8px;

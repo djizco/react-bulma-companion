@@ -1,0 +1,67 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Progress from './Progress';
+
+<Meta title="Elements/Progress" component={Progress} />
+
+# Progress
+
+[Bulma Documentation](https://bulma.io/documentation/elements/progress/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The Bulma `progress bar` is a simple CSS class that styles the native `<progress>` [HTML element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress).
+
+<Canvas>
+  <Story name="Default">
+    <Progress value={15} max={100}>15%</Progress>
+  </Story>
+</Canvas>
+
+## Colors
+
+The `progress bar` element is available in **different colors** by use of the `color` prop.
+
+<Canvas>
+  <Story name="Colors">
+    <Progress color="primary" value={15} max={100}>15%</Progress>
+    <Progress color="link" value={30} max={100}>30%</Progress>
+    <Progress color="info" value={45} max={100}>45%</Progress>
+    <Progress color="success" value={60} max={100}>60%</Progress>
+    <Progress color="warning" value={75} max={100}>75%</Progress>
+    <Progress color="danger" value={90} max={100}>90%</Progress>
+    <Progress color="white" value={20} max={100}>20%</Progress>
+    <Progress color="black" value={40} max={100}>40%</Progress>
+    <Progress color="light" value={60} max={100}>60%</Progress>
+    <Progress color="dark" value={80} max={100}>80%</Progress>
+  </Story>
+</Canvas>
+
+## Sizes
+
+The `progress bar` element is available in 4 sizes by use of the `size` prop.
+
+<Canvas>
+  <Story name="Sizes">
+    <Progress size="small" value={20} max={100}>20%</Progress>
+    <Progress value={40} max={100}>40%</Progress>
+    <Progress size="medium" value={60} max={100}>60%</Progress>
+    <Progress size="large" value={80} max={100}>80%</Progress>
+  </Story>
+</Canvas>
+
+## Indeterminate
+
+If you don't set the `value` prop, you can display an **indeterminate** `progress bar`. It's used to show that some progress is going on, but the actual duration is not yet determined.
+
+<Canvas>
+  <Story name="Indeterminate">
+    <Progress max={100}>15%</Progress>
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={Progress} />

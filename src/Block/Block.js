@@ -7,10 +7,10 @@ export default function Block({
   className,
   ...props
 }) {
-  const BlockClasses = classNames('block', className);
+  const blockClasses = classNames('block', className);
 
   return (
-    <div className={BlockClasses} {...props}>
+    <div className={blockClasses} {...props}>
       {children}
     </div>
   );
