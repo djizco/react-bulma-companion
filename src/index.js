@@ -8,3 +8,4 @@ export { default as Icon } from './Icon';
 export { default as Image } from './Image';
 export { default as Notification } from './Notification';
 export { default as Progress } from './Progress';
+export { default as Title } from './Title';

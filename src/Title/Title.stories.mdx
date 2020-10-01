@@ -1,0 +1,75 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Title from './Title';
+import Block from '../Block';
+
+<Meta title="Elements/Title" component={Title} />
+
+# Title
+
+[Bulma Documentation](https://bulma.io/documentation/elements/title/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+There are **2 types** of heading. Use the `subtitle` prop to get a subtitle.
+
+<Canvas>
+  <Story name="Default">
+    <Title>Title</Title>
+    <Title subtitle>Subtitle</Title>
+  </Story>
+</Canvas>
+
+## Sizes
+
+There are 6 sizes available:
+
+<Canvas>
+  <Story name="Sizes">
+    <Block>
+      <Title size="1">Title 1</Title>
+      <Title size="2">Title 2</Title>
+      <Title size="3">Title 3 (default)</Title>
+      <Title size="4">Title 4</Title>
+      <Title size="5">Title 5</Title>
+      <Title size="6">Title 6</Title>
+    </Block>
+    <Block>
+      <Title size="1" subtitle>Subtitle 1</Title>
+      <Title size="2" subtitle>Subtitle 2</Title>
+      <Title size="3" subtitle>Subtitle 3</Title>
+      <Title size="4" subtitle>Subtitle 4</Title>
+      <Title size="5" subtitle>Subtitle 5 (default)</Title>
+      <Title size="6" subtitle>Subtitle 6</Title>
+    </Block>
+  </Story>
+</Canvas>
+
+## Spacing
+
+When you **combine** a title and a subtitle, they move closer together.
+
+As a rule of thumb, it is recommended to use a size difference of two. So if you use a `title 1`, combine it with a `subtitle 3`.
+
+You can maintain the normal spacing between titles and subtitles by using the `spaced` prop on the first element.
+
+<Canvas>
+  <Story name="Spacing">
+    <Block>
+      <Title size="1">Title 1</Title>
+      <Title size="3" subtitle>Subtitle 3</Title>
+    </Block>
+    <Block>
+      <Title size="1" spaced>Title 1</Title>
+      <Title size="3" subtitle>Subtitle 3</Title>
+    </Block>
+  </Story>
+</Canvas>
+
+
+
+## Component Props
+
+<ArgsTable of={Title} />
