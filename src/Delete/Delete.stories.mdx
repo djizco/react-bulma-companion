@@ -1,0 +1,40 @@
+import { Meta, Story, Canvas, Description, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Delete from './Delete';
+
+<Meta title="Elements/Delete" component={Delete} />
+
+# Delete
+
+[Bulma Documentation](https://bulma.io/documentation/elements/delete/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The `delete` element is a stand-alone element that can be used in different contexts.
+
+On its own, it's a simple circle with a cross:
+
+<Canvas>
+  <Story name="Default">
+    <Delete />
+  </Story>
+</Canvas>
+
+## Sizes
+
+It comes in 4 sizes:
+
+<Canvas>
+  <Story name="Sizes">
+    <Delete size="small" />
+    <Delete />
+    <Delete size="medium" />
+    <Delete size="large" />
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={Delete} />
