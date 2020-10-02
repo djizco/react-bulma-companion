@@ -14,9 +14,9 @@ Supported Versions: `0.9.1`, `0.9.0`
 
 ## Default
 
-The Bulma **tag** is a small but versatile element. It's very useful as a way to attach information to a block or other component. Its size makes it also easy to display in numbers, making it appropriate for long lists of items.
+The `Tag` component is a small but versatile element. It's very useful as a way to attach information to a block or other component. Its size makes it also easy to display in numbers, making it appropriate for long lists of items.
 
-By default, a **tag** is a 1.5rem high label.
+By default, a `Tag` is a `1.5rem` high label.
 
 <Canvas>
   <Story name="Default">
@@ -62,7 +62,7 @@ You can get the light version of colors by adding the `light` prop.
 
 ## Sizes
 
-The tag comes in 3 different sizes by use of the `size` prop.
+The `Tag` comes in 3 different sizes by use of the `size` prop.
 
 While the default size is the **normal** one, the `size="normal"` prop exists in case you need to reset the tag to its normal size.
 
@@ -76,7 +76,7 @@ While the default size is the **normal** one, the `size="normal"` prop exists in
   </Story>
 </Canvas>
 
-You can change the size of all tags at once with the `tags` component.
+You can change the size of all tags at once with the `Tags` component.
 
 <Canvas>
   <Story name="Group Sizes">
@@ -93,7 +93,7 @@ You can change the size of all tags at once with the `tags` component.
   </Story>
 </Canvas>
 
-You can however keep the original size of a subset of tags, simply by applying one of its modifier class:
+You can however keep the original size of a subset of tags, simply by applying one of its modifier props:
 
 <Canvas>
   <Story name="Group Sizes with Subset">
@@ -127,7 +127,7 @@ You can add the `delete` prop to turn the tag into a **delete button**.
 
 ## Combinations
 
-You can append a **delete button**.
+You can append a `Delete` component.
 
 <Canvas>
   <Story name="Combinations">
@@ -148,6 +148,6 @@ You can append a **delete button**.
   </Story>
 </Canvas>
 
-## Component Props
+## Tag Props
 
 <ArgsTable of={Tag} />

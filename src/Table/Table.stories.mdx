@@ -1,0 +1,504 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Table from './Table';
+
+<Meta title="Elements/Table" component={Table} />
+
+# Table
+
+[Bulma Documentation](https://bulma.io/documentation/elements/table/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+You can create a **Bulma table** with the `Table` component and the following Subcomponents:
+
+`Table.Head`, `Table.Foot`, `Table.Body`, `Table.Row`, `Table.HeadCell`, `Table.DataCell`, `Table.Container`
+
+<Canvas>
+  <Story name="Default">
+    <Table>
+      <Table.Head>
+        <Table.Row>
+          <Table.HeadCell>Symbol</Table.HeadCell>
+          <Table.HeadCell>Value</Table.HeadCell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Foot>
+        <Table.Row>
+          <Table.HeadCell>Symbol</Table.HeadCell>
+          <Table.HeadCell>Value</Table.HeadCell>
+        </Table.Row>
+      </Table.Foot>
+      <Table.Body>
+        <Table.Row>
+          <Table.DataCell>I</Table.DataCell>
+          <Table.DataCell>1</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>V</Table.DataCell>
+          <Table.DataCell>5</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>X</Table.DataCell>
+          <Table.DataCell>10</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>L</Table.DataCell>
+          <Table.DataCell>50</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>C</Table.DataCell>
+          <Table.DataCell>100</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>D</Table.DataCell>
+          <Table.DataCell>500</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>M</Table.DataCell>
+          <Table.DataCell>1000</Table.DataCell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  </Story>
+</Canvas>
+
+## Selected Row
+
+You can set a table row as **selected** by appending the `selected` prop on a `Table.Row`.
+
+<Canvas>
+  <Story name="Selected Row">
+    <Table>
+      <Table.Head>
+        <Table.Row>
+          <Table.HeadCell>Symbol</Table.HeadCell>
+          <Table.HeadCell>Value</Table.HeadCell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Foot>
+        <Table.Row>
+          <Table.HeadCell>Symbol</Table.HeadCell>
+          <Table.HeadCell>Value</Table.HeadCell>
+        </Table.Row>
+      </Table.Foot>
+      <Table.Body>
+        <Table.Row>
+          <Table.DataCell>I</Table.DataCell>
+          <Table.DataCell>1</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>V</Table.DataCell>
+          <Table.DataCell>5</Table.DataCell>
+        </Table.Row>
+        <Table.Row selected>
+          <Table.DataCell>X</Table.DataCell>
+          <Table.DataCell>10</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>L</Table.DataCell>
+          <Table.DataCell>50</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>C</Table.DataCell>
+          <Table.DataCell>100</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>D</Table.DataCell>
+          <Table.DataCell>500</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>M</Table.DataCell>
+          <Table.DataCell>1000</Table.DataCell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  </Story>
+</Canvas>
+
+## Modifiers
+
+The can modify your table in the following ways:
+
+To add **borders** to all the cells, add the `bordered` prop.
+
+<Canvas>
+  <Story name="Bordered">
+    <Table bordered>
+      <Table.Head>
+        <Table.Row>
+          <Table.HeadCell>Symbol</Table.HeadCell>
+          <Table.HeadCell>Value</Table.HeadCell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        <Table.Row>
+          <Table.DataCell>I</Table.DataCell>
+          <Table.DataCell>1</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>V</Table.DataCell>
+          <Table.DataCell>5</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>X</Table.DataCell>
+          <Table.DataCell>10</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>L</Table.DataCell>
+          <Table.DataCell>50</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>C</Table.DataCell>
+          <Table.DataCell>100</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>D</Table.DataCell>
+          <Table.DataCell>500</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>M</Table.DataCell>
+          <Table.DataCell>1000</Table.DataCell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  </Story>
+</Canvas>
+
+To add **stripes** to the table, add the `striped`' prop.
+
+<Canvas>
+  <Story name="Striped">
+    <Table striped>
+      <Table.Head>
+        <Table.Row>
+          <Table.HeadCell>Symbol</Table.HeadCell>
+          <Table.HeadCell>Value</Table.HeadCell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        <Table.Row>
+          <Table.DataCell>I</Table.DataCell>
+          <Table.DataCell>1</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>V</Table.DataCell>
+          <Table.DataCell>5</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>X</Table.DataCell>
+          <Table.DataCell>10</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>L</Table.DataCell>
+          <Table.DataCell>50</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>C</Table.DataCell>
+          <Table.DataCell>100</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>D</Table.DataCell>
+          <Table.DataCell>500</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>M</Table.DataCell>
+          <Table.DataCell>1000</Table.DataCell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  </Story>
+</Canvas>
+
+To make the cells **narrower**, add the `narrow` prop.
+
+<Canvas>
+  <Story name="Narrow">
+    <Table narrow>
+      <Table.Head>
+        <Table.Row>
+          <Table.HeadCell>Symbol</Table.HeadCell>
+          <Table.HeadCell>Value</Table.HeadCell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        <Table.Row>
+          <Table.DataCell>I</Table.DataCell>
+          <Table.DataCell>1</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>V</Table.DataCell>
+          <Table.DataCell>5</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>X</Table.DataCell>
+          <Table.DataCell>10</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>L</Table.DataCell>
+          <Table.DataCell>50</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>C</Table.DataCell>
+          <Table.DataCell>100</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>D</Table.DataCell>
+          <Table.DataCell>500</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>M</Table.DataCell>
+          <Table.DataCell>1000</Table.DataCell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  </Story>
+</Canvas>
+
+You can add a **hover effect** on each row by adding the `hoverable` prop.
+
+<Canvas>
+  <Story name="Hoverable">
+    <Table hoverable>
+      <Table.Head>
+        <Table.Row>
+          <Table.HeadCell>Symbol</Table.HeadCell>
+          <Table.HeadCell>Value</Table.HeadCell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        <Table.Row>
+          <Table.DataCell>I</Table.DataCell>
+          <Table.DataCell>1</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>V</Table.DataCell>
+          <Table.DataCell>5</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>X</Table.DataCell>
+          <Table.DataCell>10</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>L</Table.DataCell>
+          <Table.DataCell>50</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>C</Table.DataCell>
+          <Table.DataCell>100</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>D</Table.DataCell>
+          <Table.DataCell>500</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>M</Table.DataCell>
+          <Table.DataCell>1000</Table.DataCell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  </Story>
+</Canvas>
+
+You can have a **fullwidth** table by adding the `fullWidth` prop.
+
+<Canvas>
+  <Story name="Full Width">
+    <Table fullWidth>
+      <Table.Head>
+        <Table.Row>
+          <Table.HeadCell>Symbol</Table.HeadCell>
+          <Table.HeadCell>Value</Table.HeadCell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        <Table.Row>
+          <Table.DataCell>I</Table.DataCell>
+          <Table.DataCell>1</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>V</Table.DataCell>
+          <Table.DataCell>5</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>X</Table.DataCell>
+          <Table.DataCell>10</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>L</Table.DataCell>
+          <Table.DataCell>50</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>C</Table.DataCell>
+          <Table.DataCell>100</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>D</Table.DataCell>
+          <Table.DataCell>500</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>M</Table.DataCell>
+          <Table.DataCell>1000</Table.DataCell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  </Story>
+</Canvas>
+
+You can **combine** all five modifiers in any combination.
+
+<Canvas>
+  <Story name="Combination">
+    <Table bordered striped narrow hoverable fullWidth>
+      <Table.Head>
+        <Table.Row>
+          <Table.HeadCell>Symbol</Table.HeadCell>
+          <Table.HeadCell>Value</Table.HeadCell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        <Table.Row>
+          <Table.DataCell>I</Table.DataCell>
+          <Table.DataCell>1</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>V</Table.DataCell>
+          <Table.DataCell>5</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>X</Table.DataCell>
+          <Table.DataCell>10</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>L</Table.DataCell>
+          <Table.DataCell>50</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>C</Table.DataCell>
+          <Table.DataCell>100</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>D</Table.DataCell>
+          <Table.DataCell>500</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>M</Table.DataCell>
+          <Table.DataCell>1000</Table.DataCell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  </Story>
+</Canvas>
+
+## Table Container
+
+You can create a **scrollable table** by wrapping a `Table` in a `Table.Container` element:
+
+<Canvas>
+  <Story name="Table Container">
+    <Table.Container>
+      <Table bordered striped>
+        <Table.Body>
+          <Table.Row>
+            <Table.DataCell>1</Table.DataCell>
+            <Table.DataCell>2</Table.DataCell>
+            <Table.DataCell>3</Table.DataCell>
+            <Table.DataCell>4</Table.DataCell>
+            <Table.DataCell>5</Table.DataCell>
+            <Table.DataCell>6</Table.DataCell>
+            <Table.DataCell>7</Table.DataCell>
+            <Table.DataCell>8</Table.DataCell>
+            <Table.DataCell>9</Table.DataCell>
+            <Table.DataCell>10</Table.DataCell>
+            <Table.DataCell>11</Table.DataCell>
+            <Table.DataCell>12</Table.DataCell>
+            <Table.DataCell>13</Table.DataCell>
+            <Table.DataCell>14</Table.DataCell>
+            <Table.DataCell>15</Table.DataCell>
+            <Table.DataCell>16</Table.DataCell>
+            <Table.DataCell>17</Table.DataCell>
+            <Table.DataCell>18</Table.DataCell>
+            <Table.DataCell>19</Table.DataCell>
+            <Table.DataCell>20</Table.DataCell>
+            <Table.DataCell>21</Table.DataCell>
+            <Table.DataCell>22</Table.DataCell>
+            <Table.DataCell>23</Table.DataCell>
+            <Table.DataCell>24</Table.DataCell>
+            <Table.DataCell>25</Table.DataCell>
+            <Table.DataCell>26</Table.DataCell>
+            <Table.DataCell>27</Table.DataCell>
+            <Table.DataCell>28</Table.DataCell>
+            <Table.DataCell>29</Table.DataCell>
+            <Table.DataCell>30</Table.DataCell>
+          </Table.Row>
+          <Table.Row>
+            <Table.DataCell>2</Table.DataCell>
+            <Table.DataCell>4</Table.DataCell>
+            <Table.DataCell>6</Table.DataCell>
+            <Table.DataCell>8</Table.DataCell>
+            <Table.DataCell>10</Table.DataCell>
+            <Table.DataCell>12</Table.DataCell>
+            <Table.DataCell>14</Table.DataCell>
+            <Table.DataCell>16</Table.DataCell>
+            <Table.DataCell>18</Table.DataCell>
+            <Table.DataCell>20</Table.DataCell>
+            <Table.DataCell>22</Table.DataCell>
+            <Table.DataCell>24</Table.DataCell>
+            <Table.DataCell>26</Table.DataCell>
+            <Table.DataCell>28</Table.DataCell>
+            <Table.DataCell>30</Table.DataCell>
+            <Table.DataCell>32</Table.DataCell>
+            <Table.DataCell>34</Table.DataCell>
+            <Table.DataCell>36</Table.DataCell>
+            <Table.DataCell>38</Table.DataCell>
+            <Table.DataCell>40</Table.DataCell>
+            <Table.DataCell>42</Table.DataCell>
+            <Table.DataCell>44</Table.DataCell>
+            <Table.DataCell>46</Table.DataCell>
+            <Table.DataCell>48</Table.DataCell>
+            <Table.DataCell>50</Table.DataCell>
+            <Table.DataCell>52</Table.DataCell>
+            <Table.DataCell>54</Table.DataCell>
+            <Table.DataCell>56</Table.DataCell>
+            <Table.DataCell>58</Table.DataCell>
+            <Table.DataCell>60</Table.DataCell>
+          </Table.Row>
+        </Table.Body>
+      </Table>
+    </Table.Container>
+  </Story>
+</Canvas>
+
+## Table Props
+
+<ArgsTable of={Table} />
+
+## Table.Head Props
+
+<ArgsTable of={Table.Head} />
+
+## Table.Foot Props
+
+<ArgsTable of={Table.Foot} />
+
+## Table.Body Props
+
+<ArgsTable of={Table.Body} />
+
+## Table.Row Props
+
+<ArgsTable of={Table.Row} />
+
+## Table.HeadCell Props
+
+<ArgsTable of={Table.HeadCell} />
+
+## Table.DataCell Props
+
+<ArgsTable of={Table.DataCell} />
+
+## Table.Container Props
+
+<ArgsTable of={Table.Container} />

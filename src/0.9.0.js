@@ -8,6 +8,7 @@ export { default as Icon } from './Icon';
 export { default as Image } from './Image';
 export { default as Notification } from './Notification';
 export { default as Progress } from './Progress';
+export { default as Table } from './Table';
 export { default as Tag } from './Tag';
-export { default as Tags } from './Title';
+export { default as Tags } from './Tags';
 export { default as Title } from './Title';

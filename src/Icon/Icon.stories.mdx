@@ -19,9 +19,9 @@ Supported Versions: `0.9.1`, `0.9.0`
 
 ## Default
 
-The `icon` element is a **container** for any type of **icon font**. Because the icons can take a few seconds to load, and because you want control over the **space** the icons will take, you can use the `icon` class as a reliable square container that will prevent the page to "jump" on page load.
+The `Icon` component is a **container** for any type of **icon font**. Because the icons can take a few seconds to load, and because you want control over the **space** the icons will take, you can use the `Icon` component as a reliable square container that will prevent the page to "jump" on page load.
 
-These examles use [React Fontawesome](https://github.com/FortAwesome/react-fontawesome) for the Fontawesome icons.
+These examles use [React Fontawesome](https://github.com/FortAwesome/react-fontawesome) with Fontawesome icons.
 
 <Canvas>
   <Story name="Default">
@@ -31,11 +31,11 @@ These examles use [React Fontawesome](https://github.com/FortAwesome/react-fonta
   </Story>
 </Canvas>
 
-By default, the `icon` container will take up exactly `1.5rem x 1.5rem`. The icon itself is sized accordingly to the icon library you're using. For example, Font Awesome 5 icons will **inherit** the font size.
+By default, the `Icon` container will take up exactly `1.5rem x 1.5rem`. The icon itself is sized accordingly to the icon library you're using. For example, Font Awesome 5 icons will **inherit** the font size.
 
 ## Colors
 
-Since icon fonts are simply **text**, you can use the text us any o the text colors to modify the color. Reference the `color` Component Prop to see all the values.
+Since icon fonts are simply **text**, you can use any of the text colors to modify the color. Reference the `color` prop to see all the values.
 
 <Canvas>
   <Story name="Colors">
@@ -86,7 +86,7 @@ Since icon fonts are simply **text**, you can use the text us any o the text col
 
 ## Sizes
 
-The `icon` container comes in 4 sizes by use of the `size` prop. Reference the [Bulma Documentation](https://bulma.io/documentation/elements/icon/#sizes) to see how they work with different icon sizes. The background
+The `Icon` container comes in 4 sizes by use of the `size` prop. Reference the [Bulma Documentation](https://bulma.io/documentation/elements/icon/#sizes) to see how they work with different icon sizes. The background
 
 The background is only here for demonstration purposes, to highlight the icon container's area.
 
@@ -115,6 +115,6 @@ The background is only here for demonstration purposes, to highlight the icon co
   </Story>
 </Canvas>
 
-## Component Props
+## Icon Props
 
 <ArgsTable of={Icon} />
