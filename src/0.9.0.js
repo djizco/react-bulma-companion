@@ -1,3 +1,4 @@
+// Elements
 export { default as Block } from './Block';
 export { default as Box } from './Box';
 export { default as Button } from './Button';
@@ -12,3 +13,6 @@ export { default as Table } from './Table';
 export { default as Tag } from './Tag';
 export { default as Tags } from './Tags';
 export { default as Title } from './Title';
+
+// Components
+export { default as Breadcrumb } from './Breadcrumb';
