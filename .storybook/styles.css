@@ -3,7 +3,7 @@
   color: inherit;
 }
 
-.sbdocs .tag:not(body) {
+.sbdocs .token.tag:not(body) {
   align-items: inherit;
   background-color: inherit;
   border-radius: 0;

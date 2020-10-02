@@ -1,0 +1,153 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Tag from './Tag';
+import Tags from '../Tags';
+import Delete from '../Delete';
+
+<Meta title="Elements/Tag" component={Tag} />
+
+# Tag
+
+[Bulma Documentation](https://bulma.io/documentation/elements/tag/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The Bulma **tag** is a small but versatile element. It's very useful as a way to attach information to a block or other component. Its size makes it also easy to display in numbers, making it appropriate for long lists of items.
+
+By default, a **tag** is a 1.5rem high label.
+
+<Canvas>
+  <Story name="Default">
+    <Tag>Tag Label</Tag>
+  </Story>
+</Canvas>
+
+## Colors
+
+Like with buttons, there are 10 different colors available by use of the `color` prop.
+
+<Canvas>
+  <Story name="Colors">
+    <Tags>
+      <Tag color="black">Black</Tag>
+      <Tag color="dark">Dark</Tag>
+      <Tag color="light">Light</Tag>
+      <Tag color="white">White</Tag>
+      <Tag color="primary">Primary</Tag>
+      <Tag color="link">Link</Tag>
+      <Tag color="info">Info</Tag>
+      <Tag color="success">Success</Tag>
+      <Tag color="warning">Warning</Tag>
+      <Tag color="danger">Danger</Tag>
+    </Tags>
+  </Story>
+</Canvas>
+
+You can get the light version of colors by adding the `light` prop.
+
+<Canvas>
+  <Story name="Light Colors">
+    <Tags>
+      <Tag color="primary" light>Primary</Tag>
+      <Tag color="link" light>Link</Tag>
+      <Tag color="info" light>Info</Tag>
+      <Tag color="success" light>Success</Tag>
+      <Tag color="warning" light>Warning</Tag>
+      <Tag color="danger" light>Danger</Tag>
+    </Tags>
+  </Story>
+</Canvas>
+
+## Sizes
+
+The tag comes in 3 different sizes by use of the `size` prop.
+
+While the default size is the **normal** one, the `size="normal"` prop exists in case you need to reset the tag to its normal size.
+
+<Canvas>
+  <Story name="Sizes">
+    <Tags>
+      <Tag size="normal">Normal</Tag>
+      <Tag size="medium">Medium</Tag>
+      <Tag size="large">Large</Tag>
+    </Tags>
+  </Story>
+</Canvas>
+
+You can change the size of all tags at once with the `tags` component.
+
+<Canvas>
+  <Story name="Group Sizes">
+    <Tags size="medium">
+      <Tag>All</Tag>
+      <Tag>Medium</Tag>
+      <Tag>Size</Tag>
+    </Tags>
+    <Tags size="large">
+      <Tag>All</Tag>
+      <Tag>Large</Tag>
+      <Tag>Size</Tag>
+    </Tags>
+  </Story>
+</Canvas>
+
+You can however keep the original size of a subset of tags, simply by applying one of its modifier class:
+
+<Canvas>
+  <Story name="Group Sizes with Subset">
+    <Tags size="medium">
+      <Tag>Medium</Tag>
+      <Tag size="normal">Normal</Tag>
+      <Tag>Medium</Tag>
+      <Tag size="large">Large</Tag>
+      <Tag>Medium</Tag>
+    </Tags>
+  </Story>
+</Canvas>
+
+## Modifiers
+
+You can add the `rounded` prop to make a **rounded** tag.
+
+<Canvas>
+  <Story name="Rounded">
+    <Tag rounded>Rounded</Tag>
+  </Story>
+</Canvas>
+
+You can add the `delete` prop to turn the tag into a **delete button**.
+
+<Canvas>
+  <Story name="Delete">
+    <Tag delete/>
+  </Story>
+</Canvas>
+
+## Combinations
+
+You can append a **delete button**.
+
+<Canvas>
+  <Story name="Combinations">
+    <Tags>
+      <Tag color="success">
+        Bar
+        <Delete size="small" />
+      </Tag>
+      <Tag color="warning" size="medium">
+        Hello
+        <Delete size="small" />
+      </Tag>
+      <Tag color="danger" size="large">
+        World
+        <Delete />
+      </Tag>
+    </Tags>
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={Tag} />

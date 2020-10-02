@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export default function Buttons({
+export default function Tags({
   addons,
   align,
   children,
@@ -10,9 +10,8 @@ export default function Buttons({
   size,
   ...props
 }) {
-  // Size
+  // Sizes
   const sizeMap = {
-    small: 'are-small',
     medium: 'are-medium',
     large: 'are-large',
   };
@@ -25,26 +24,26 @@ export default function Buttons({
   };
   const isAlign = align && alignMap[align];
 
-  const buttonsClasses = classNames('buttons', className, isSize, isAlign, {
+  const tagsClasses = classNames('tags', className, isSize, isAlign, {
     'has-addons': addons,
   });
 
   return (
-    <div className={buttonsClasses} {...props}>
+    <div className={tagsClasses} {...props}>
       {children}
     </div>
   );
 }
 
-Buttons.propTypes = {
+Tags.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['medium', 'large']),
   addons: PropTypes.bool,
   align: PropTypes.oneOf(['center', 'right']),
 };
 
-Buttons.defaultProps = {
+Tags.defaultProps = {
   className: undefined,
   children: null,
   size: undefined,

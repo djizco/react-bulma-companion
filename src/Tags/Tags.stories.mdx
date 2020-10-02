@@ -1,0 +1,142 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Tags from './Tags';
+import Tag from '../Tag';
+
+<Meta title="Elements/Tags" component={Tags} />
+
+# Tags
+
+[Bulma Documentation](https://bulma.io/documentation/elements/tag/#list-of-tags)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+You can create a **list of tags** with the `tags` container.
+
+<Canvas>
+  <Story name="Default">
+    <Tags>
+      <Tag>One</Tag>
+      <Tag>Two</Tag>
+      <Tag>Three</Tag>
+    </Tags>
+  </Story>
+</Canvas>
+
+## Long List
+
+If the list is **very long**, it will automatically wrap on **multiple lines**, while keeping all tags **evenly spaced**.
+
+<Canvas>
+  <Story name="Long List">
+    <Tags>
+      <Tag>One</Tag>
+      <Tag>Two</Tag>
+      <Tag>Three</Tag>
+      <Tag>Four</Tag>
+      <Tag>Five</Tag>
+      <Tag>Six</Tag>
+      <Tag>Seven</Tag>
+      <Tag>Eight</Tag>
+      <Tag>Nine</Tag>
+      <Tag>Ten</Tag>
+      <Tag>Eleven</Tag>
+      <Tag>Twelve</Tag>
+      <Tag>Thirteen</Tag>
+      <Tag>Fourteen</Tag>
+      <Tag>Fifteen</Tag>
+      <Tag>Sixteen</Tag>
+      <Tag>Seventeen</Tag>
+      <Tag>Eighteen</Tag>
+      <Tag>Nineteen</Tag>
+      <Tag>Twenty</Tag>
+    </Tags>
+  </Story>
+</Canvas>
+
+## Sizes
+
+You can change the size of all tags at once with the `tags` component.
+
+<Canvas>
+  <Story name="Sizes">
+    <Tags size="medium">
+      <Tag>All</Tag>
+      <Tag>Medium</Tag>
+      <Tag>Size</Tag>
+    </Tags>
+    <Tags size="large">
+      <Tag>All</Tag>
+      <Tag>Large</Tag>
+      <Tag>Size</Tag>
+    </Tags>
+  </Story>
+</Canvas>
+
+You can however keep the original size of a subset of tags, simply by applying one of its modifier class:
+
+<Canvas>
+  <Story name="Sizes with Subset">
+    <Tags size="medium">
+      <Tag>Medium</Tag>
+      <Tag size="normal">Normal</Tag>
+      <Tag>Medium</Tag>
+      <Tag size="large">Large</Tag>
+      <Tag>Medium</Tag>
+    </Tags>
+  </Story>
+</Canvas>
+
+## Addons
+
+You can attach tags together with the `addons` prop.
+
+<Canvas>
+  <Story name="Addons">
+    <Tags addons>
+      <Tag>Package</Tag>
+      <Tag color="primary">React Bulma Companion</Tag>
+    </Tags>
+  </Story>
+</Canvas>
+
+You can attach a **text** tag with a **delete tag** together.
+
+<Canvas>
+  <Story name="Addons with Delete">
+    <Tags addons>
+      <Tag color="danger">John Smith</Tag>
+      <Tag delete />
+    </Tags>
+  </Story>
+</Canvas>
+
+## Alignment
+
+Use the `align` prop to alter the alignment.
+
+<Canvas>
+  <Story name="Alignment">
+    <Tags>
+      <Tag>One</Tag>
+      <Tag>Two</Tag>
+      <Tag>Three</Tag>
+    </Tags>
+    <Tags align="center">
+      <Tag>One</Tag>
+      <Tag>Two</Tag>
+      <Tag>Three</Tag>
+    </Tags>
+    <Tags align="right">
+      <Tag>One</Tag>
+      <Tag>Two</Tag>
+      <Tag>Three</Tag>
+    </Tags>
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={Tags} />
