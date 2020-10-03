@@ -1,7 +1,16 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBold } from '@fortawesome/free-solid-svg-icons/faBold';
+import { faItalic } from '@fortawesome/free-solid-svg-icons/faItalic';
+import { faUnderline } from '@fortawesome/free-solid-svg-icons/faUnderline';
+import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
+import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
+import { faHeading } from '@fortawesome/free-solid-svg-icons/faHeading';
+
 import Button from './Button';
 import Buttons from '../Buttons';
+import Icon from '../Icon';
 
 <Meta title="Elements/Button" component={Button} />
 
@@ -255,6 +264,101 @@ You can create a **non-interactive button** by using the `static` prop. This is 
     <Button static>Static</Button>
   </Story>
 </Canvas>
+
+## Icons
+
+`Buttons` can easily be enhanced by adding a **Font Awesome icon**. For the best results, wrap the inner text in a separate `span` element.
+
+These examles use [React Fontawesome](https://github.com/FortAwesome/react-fontawesome) with Font Awesome icons.
+
+<Canvas>
+  <Story name="Icons">
+    <Buttons>
+      <Button>
+        <Icon size="small">
+          <FontAwesomeIcon icon={faBold} />
+        </Icon>
+      </Button>
+      <Button>
+        <Icon size="small">
+          <FontAwesomeIcon icon={faItalic} />
+        </Icon>
+      </Button>
+      <Button>
+        <Icon size="small">
+          <FontAwesomeIcon icon={faUnderline} />
+        </Icon>
+      </Button>
+    </Buttons>
+  </Story>
+</Canvas>
+
+
+If the button only contains an icon, Bulma will make sure the button remains **square**, no matter the size of the button or of the icon.
+
+<Canvas>
+  <Story name="Square Icons">
+    <Buttons size="small">
+      <Button>
+        <Icon size="small">
+          <FontAwesomeIcon icon={faHeading} />
+        </Icon>
+      </Button>
+    </Buttons>
+    <Buttons>
+      <Button>
+        <Icon size="small">
+          <FontAwesomeIcon icon={faHeading} />
+        </Icon>
+      </Button>
+      <Button>
+        <Icon>
+          <FontAwesomeIcon icon={faHeading} size="lg" />
+        </Icon>
+      </Button>
+    </Buttons>
+    <Buttons size="medium">
+      <Button>
+        <Icon size="small">
+          <FontAwesomeIcon icon={faHeading} />
+        </Icon>
+      </Button>
+      <Button>
+        <Icon>
+          <FontAwesomeIcon icon={faHeading} size="lg" />
+        </Icon>
+      </Button>
+      <Button>
+        <Icon size="medium">
+          <FontAwesomeIcon icon={faHeading} size="2x" />
+        </Icon>
+      </Button>
+    </Buttons>
+    <Buttons size="large">
+      <Button>
+        <Icon size="small">
+          <FontAwesomeIcon icon={faHeading} />
+        </Icon>
+      </Button>
+      <Button>
+        <Icon>
+          <FontAwesomeIcon icon={faHeading} size="lg" />
+        </Icon>
+      </Button>
+      <Button>
+        <Icon size="medium">
+          <FontAwesomeIcon icon={faHeading} size="2x" />
+        </Icon>
+      </Button>
+    </Buttons>
+  </Story>
+</Canvas>
+
+## Button Group
+
+## Button Addons
+
+## Button Group with Addons
 
 ## Button Props
 
