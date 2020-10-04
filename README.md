@@ -9,7 +9,7 @@ React Bulma Companion works as a **companion** to Bulma's CSS classes and doesn'
 
 ## Configure Bulma
 
-Because React Bulma Companion doesn't include any CSS, you must import and configure Bulma yourself. Please follow instructions on the [Bulma Github page](https://github.com/jgthms/bulma). The allows you the flexibility to cusomize and import Bulma any way you choose.
+Because React Bulma Companion doesn't include any CSS, you must import and configure Bulma yourself. Please follow instructions on the [Bulma Github page](https://github.com/jgthms/bulma). This gives you flexibility and control of your bulma customization.
 
 ## Installation
 
@@ -47,9 +47,9 @@ Legacy-compatible versions of React Bulma Companion can be found at `dist/legacy
 Legacy index files are also created in the `lib` folder allowing you to easily important legacy components.
 
 ```javascript
-import { Button, Table } from 'react-bulma-companion/dist/legacy/react-bulma-companion-[version].js';
+import { Button, Table } from 'react-bulma-companion/dist/legacy/react-bulma-companion-[version]';
 
-import { Button, Table } from 'react-bulma-companion/lib/[version].js';
+import { Button, Table } from 'react-bulma-companion/lib/[version]';
 ```
 
 If you are planning to stick with the above setup and are using webpack, I recommend setting up a [webpack alias](https://webpack.js.org/configuration/resolve/#resolvealias) to clean up your imports.
@@ -58,7 +58,7 @@ If you are planning to stick with the above setup and are using webpack, I recom
 module.exports = {
   resolve: {
     alias: {
-      'react-bulma-companion': 'react-bulma-companion/lib/[version].js',
+      'react-bulma-companion': 'react-bulma-companion/lib/[version]',
     },
   },
 };
