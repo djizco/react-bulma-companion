@@ -93,7 +93,12 @@ Button.propTypes = {
     'text',
   ]),
   light: PropTypes.bool,
-  size: PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
+  size: PropTypes.oneOf([
+    'small',
+    'normal',
+    'medium',
+    'large',
+  ]),
   fullWidth: PropTypes.bool,
   outlined: PropTypes.bool,
   inverted: PropTypes.bool,

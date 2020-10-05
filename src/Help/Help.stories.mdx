@@ -1,0 +1,58 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Help from './Help';
+import Field from '../Field';
+import Control from '../Control';
+import Input from '../Input';
+import Label from '../Label';
+
+<Meta title="Form/Help" component={Help} />
+
+# Help
+
+[Bulma Documentation](https://bulma.io/documentation/form/general/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The `<Help>` component adds optional help text to a `<Field>` component, below a `Control`.
+
+<Canvas>
+  <Story name="Default">
+    <Field>
+      <Label>Label</Label>
+      <Control>
+        <Input placeholder="Text input" />
+      </Control>
+      <Help>Help Text</Help>
+    </Field>
+  </Story>
+</Canvas>
+
+## Colors
+
+The `<Help>` component is available in different colors by use of the `color` prop.
+
+<Canvas>
+  <Story name="Colors">
+    <Field>
+      <Label>Username</Label>
+      <Control>
+        <Input color="success" placeholder="Username" />
+      </Control>
+      <Help color="success">Username available</Help>
+    </Field>
+    <Field>
+      <Label>Email</Label>
+      <Control>
+        <Input color="danger" placeholder="Email" />
+      </Control>
+      <Help color="danger">This email is invalid</Help>
+    </Field>
+  </Story>
+</Canvas>
+
+## Help Props
+
+<ArgsTable of={Help} />

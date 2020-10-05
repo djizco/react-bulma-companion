@@ -4,6 +4,7 @@ import Label from './Label';
 import Field from '../Field';
 import Control from '../Control';
 import Input from '../Input';
+import Help from '../Help';
 
 <Meta title="Form/Label" component={Label} />
 
@@ -22,7 +23,40 @@ Supported Versions: `0.9.1`, `0.9.0`
       <Control>
         <Input placeholder="Text input" />
       </Control>
-      <p className="help">This is a help text</p>
+      <Help>this is a help text</Help>
+    </Field>
+  </Story>
+</Canvas>
+
+## Sizes
+
+The `<Label>` is available in 4 sizes.
+
+<Canvas>
+  <Story name="Sizes">
+    <Field>
+      <Label size="small">Label</Label>
+      <Control>
+        <Input placeholder="Text input" size="small" />
+      </Control>
+    </Field>
+    <Field>
+      <Label>Label</Label>
+      <Control>
+        <Input placeholder="Text input" />
+      </Control>
+    </Field>
+    <Field>
+      <Label size="medium">Label</Label>
+      <Control>
+        <Input size="medium" placeholder="Text input"/>
+      </Control>
+    </Field>
+    <Field>
+      <Label size="large">Label</Label>
+      <Control>
+        <Input size="large" placeholder="Text input" />
+      </Control>
     </Field>
   </Story>
 </Canvas>
