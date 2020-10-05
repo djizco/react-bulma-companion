@@ -8,7 +8,6 @@ export default function Button({
   children,
   className,
   color,
-  disabled,
   focused,
   fullWidth,
   hovered,
@@ -69,7 +68,6 @@ export default function Button({
       className={buttonClasses}
       type="button"
       onClick={onClick}
-      disabled={disabled}
       {...props}
     >
       {children}

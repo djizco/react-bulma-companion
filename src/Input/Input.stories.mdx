@@ -19,7 +19,7 @@ Supported Versions: `0.9.1`, `0.9.0`
 
 ## Default
 
-The `Input` component is a wrapper for the `<input>` [HTML element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input). The following type attributes are supported:
+The `<Input>` component is a wrapper for the `<input>` [HTML element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input). The following type attributes are supported:
 
 - `type="text"`
 - `type="password"`
@@ -46,6 +46,8 @@ By default, it will be a text input.
 </Canvas>
 
 ## Colors
+
+Change colors with the `color` prop.
 
 <Canvas>
   <Story name="Colors">
@@ -84,6 +86,8 @@ By default, it will be a text input.
 
 ## Sizes
 
+It comes in 4 sizes by use of the `size` prop.
+
 <Canvas>
   <Story name="Sizes">
     <Field>
@@ -111,6 +115,8 @@ By default, it will be a text input.
 
 ## Styles
 
+Make a rounded input by adding the `rounded` prop.
+
 <Canvas>
   <Story name="Styles">
     <Field>
@@ -122,6 +128,8 @@ By default, it will be a text input.
 </Canvas>
 
 ## States
+
+You can alter states in the following ways:
 
 <Canvas>
   <Story name="States">
@@ -148,7 +156,7 @@ By default, it will be a text input.
   </Story>
 </Canvas>
 
-For a loading input, add the `loading` prop on the `Control` container. Change the loading spinner size with the `size` prop on the `Control` container.
+For a loading input, add the `loading` prop on the `<Control>` container. Change the loading spinner size with the `size` prop on the `<Control>` container.
 
 <Canvas>
   <Story name="Loading">
@@ -177,6 +185,8 @@ For a loading input, add the `loading` prop on the `Control` container. Change t
 
 ## Disabled
 
+Add the `disabled` prop for a disabled input.
+
 <Canvas>
   <Story name="Disabled">
     <Input placeholder="Disabled input" disabled />
@@ -185,7 +195,7 @@ For a loading input, add the `loading` prop on the `Control` container. Change t
 
 ## Readonly and Static
 
-If you use the `readOnly` prop, the input will look similar to a normal one, but is not editable and has no shadow.
+If you add the `readOnly` prop, the input will look similar to a normal one, but is not editable and has no shadow.
 
 <Canvas>
   <Story name="Readonly">
@@ -228,7 +238,7 @@ If you *also* append the `static` prop, it removes the background, border, shado
 
 These examles use [React Fontawesome](https://github.com/FortAwesome/react-fontawesome) with Font Awesome icons.
 
-You can append one of 2 modifier **props** on a `Control`:
+You can append one of 2 modifier **props** on a `<Control>`:
 
 - `iconsRight`
 - `iconsLeft`
@@ -238,7 +248,7 @@ You also need to add a modifier prop on the `Icon`:
 - `<Icon align="left" />` if `<Control iconsLeft />`
 - `<Icon align="right" />` if `<Control iconsRight />`
 
-The size of the `Input` will define the size of the `Icon` container.
+The size of the `<Input>` will define the size of the `<Icon>` container.
 
 <Canvas>
   <Story name="Icons">
@@ -256,7 +266,7 @@ The size of the `Input` will define the size of the `Icon` container.
   </Story>
 </Canvas>
 
-If the `Control` contains an `Icon`, Bulma will make sure the `Icon` remains **centered**, no matter the size of the `Input` or of the `Icon`.
+If the `<Control>` contains an `<Icon>`, Bulma will make sure the `<Icon>` remains **centered**, no matter the size of the `<Input>` or of the `<Icon>`.
 
 <Canvas>
   <Story name="Icon Sizes">
