@@ -16,7 +16,7 @@ export default function Buttons({
     medium: 'are-medium',
     large: 'are-large',
   };
-  const isSize = size && sizeMap[size];
+  const areSize = size && sizeMap[size];
 
   // Align
   const alignMap = {
@@ -25,7 +25,7 @@ export default function Buttons({
   };
   const isAlign = align && alignMap[align];
 
-  const buttonsClasses = classNames('buttons', className, isSize, isAlign, {
+  const buttonsClasses = classNames('buttons', className, areSize, isAlign, {
     'has-addons': addons,
   });
 

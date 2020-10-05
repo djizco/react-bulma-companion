@@ -15,7 +15,7 @@ export default function Tags({
     medium: 'are-medium',
     large: 'are-large',
   };
-  const isSize = size && sizeMap[size];
+  const areSize = size && sizeMap[size];
 
   // Align
   const alignMap = {
@@ -24,7 +24,7 @@ export default function Tags({
   };
   const isAlign = align && alignMap[align];
 
-  const tagsClasses = classNames('tags', className, isSize, isAlign, {
+  const tagsClasses = classNames('tags', className, areSize, isAlign, {
     'has-addons': addons,
   });
 

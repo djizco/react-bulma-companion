@@ -1,0 +1,312 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
+import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
+
+import Input from './Input';
+import Field from '../Field';
+import Control from '../Control';
+import Icon from '../Icon';
+
+<Meta title="Form/Input" component={Input} />
+
+# Input
+
+[Bulma Documentation](https://bulma.io/documentation/form/input/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The `Input` component is a wrapper for the `<input>` [HTML element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input). The following type attributes are supported:
+
+- `type="text"`
+- `type="password"`
+- `type="email"`
+- `type="tel"`
+
+By default, it will be a text input.
+
+<Canvas>
+  <Story name="Default">
+    <Field>
+      <Input placeholder="Text input" />
+    </Field>
+    <Field>
+      <Input type="password" placeholder="Password input" />
+    </Field>
+    <Field>
+      <Input type="email" placeholder="Email input" />
+    </Field>
+    <Field>
+      <Input type="tel" placeholder="Telephone input" />
+    </Field>
+  </Story>
+</Canvas>
+
+## Colors
+
+<Canvas>
+  <Story name="Colors">
+    <Field>
+      <Control>
+        <Input color="primary" placeholder="Primary input" />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Input color="link" placeholder="Link input" />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Input color="info" placeholder="Info input" />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Input color="success" placeholder="Success input" />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Input color="warning" placeholder="Warning input" />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Input color="danger" placeholder="Danger input" />
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+## Sizes
+
+<Canvas>
+  <Story name="Sizes">
+    <Field>
+      <Control>
+        <Input size="small" placeholder="Small input" />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Input placeholder="Normal input" />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Input size="medium" placeholder="Medium input" />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Input size="large" placeholder="Large input" />
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+## Styles
+
+<Canvas>
+  <Story name="Styles">
+    <Field>
+      <Control>
+        <Input placeholder="Rounded input" rounded/>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+## States
+
+<Canvas>
+  <Story name="States">
+    <Field>
+      <Control>
+        <Input placeholder="Normal input"/>
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Input placeholder="Hovered input" hovered />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Input placeholder="Focused input" focused />
+      </Control>
+    </Field>
+    <Field>
+      <Control loading>
+        <Input placeholder="Loading input" />
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+For a loading input, add the `loading` prop on the `Control` container. Change the loading spinner size with the `size` prop on the `Control` container.
+
+<Canvas>
+  <Story name="Loading">
+    <Field>
+      <Control size="small" loading>
+        <Input size="small" placeholder="Small loading input" />
+      </Control>
+    </Field>
+    <Field>
+      <Control loading>
+        <Input placeholder="Normal loading input" />
+      </Control>
+    </Field>
+    <Field>
+      <Control size="medium" loading>
+        <Input size="medium" placeholder="Medium loading input" />
+      </Control>
+    </Field>
+    <Field>
+      <Control size="large" loading>
+        <Input size="medium" placeholder="Large loading input" />
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+## Disabled
+
+<Canvas>
+  <Story name="Disabled">
+    <Input placeholder="Disabled input" disabled />
+  </Story>
+</Canvas>
+
+## Readonly and Static
+
+If you use the `readOnly` prop, the input will look similar to a normal one, but is not editable and has no shadow.
+
+<Canvas>
+  <Story name="Readonly">
+    <Input value="This text is readonly" readOnly />
+  </Story>
+</Canvas>
+
+If you *also* append the `static` prop, it removes the background, border, shadow, and horizontal padding, while maintaining the **vertical spacing** so you can easily align the input in any context, like a horizontal form.
+
+<Canvas>
+  <Story name="Static">
+    <Field horizontal>
+      <Field.Label size="normal">
+        <label class="label">From</label>
+      </Field.Label>
+      <Field.Body>
+        <Field>
+          <Control>
+            <Input type="email" value="me@example.com" static readonly />
+          </Control>
+        </Field>
+      </Field.Body>
+    </Field>
+    <Field horizontal>
+      <Field.Label size="normal">
+        <label class="label">To</label>
+      </Field.Label>
+      <Field.Body>
+        <Field>
+          <Control>
+            <Input type="email" placeholder="Recipient email" />
+          </Control>
+        </Field>
+      </Field.Body>
+    </Field>
+  </Story>
+</Canvas>
+
+## Icons
+
+These examles use [React Fontawesome](https://github.com/FortAwesome/react-fontawesome) with Font Awesome icons.
+
+You can append one of 2 modifier **props** on a `Control`:
+
+- `iconsRight`
+- `iconsLeft`
+
+You also need to add a modifier prop on the `Icon`:
+
+- `<Icon align="left" />` if `<Control iconsLeft />`
+- `<Icon align="right" />` if `<Control iconsRight />`
+
+The size of the `Input` will define the size of the `Icon` container.
+
+<Canvas>
+  <Story name="Icons">
+    <Field>
+      <Control iconsLeft iconsRight>
+        <Input type="email" placeholder="Email" />
+        <Icon size="small" align="left">
+          <FontAwesomeIcon icon={faEnvelope} />
+        </Icon>
+        <Icon size="small" align="right">
+          <FontAwesomeIcon icon={faCheck} />
+        </Icon>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+If the `Control` contains an `Icon`, Bulma will make sure the `Icon` remains **centered**, no matter the size of the `Input` or of the `Icon`.
+
+<Canvas>
+  <Story name="Icon Sizes">
+    <Field>
+      <Control iconsLeft iconsRight>
+        <Input size="small" type="email" placeholder="Email" />
+        <Icon size="small" align="left">
+            <FontAwesomeIcon icon={faEnvelope} />
+          </Icon>
+          <Icon size="small" align="right">
+            <FontAwesomeIcon icon={faCheck} />
+          </Icon>
+      </Control>
+    </Field>
+    <Field>
+      <Control iconsLeft iconsRight>
+        <Input type="email" placeholder="Email" />
+        <Icon size="small" align="left">
+          <FontAwesomeIcon icon={faEnvelope} />
+        </Icon>
+        <Icon size="small" align="right">
+          <FontAwesomeIcon icon={faCheck} />
+        </Icon>
+      </Control>
+    </Field>
+    <Field>
+      <Control iconsLeft iconsRight>
+        <Input size="medium" type="email" placeholder="Email" />
+        <Icon align="left">
+          <FontAwesomeIcon icon={faEnvelope} />
+        </Icon>
+        <Icon align="right">
+          <FontAwesomeIcon icon={faCheck} />
+        </Icon>
+      </Control>
+    </Field>
+    <Field>
+      <Control iconsLeft iconsRight>
+        <Input size="large" type="email" placeholder="Email" />
+        <Icon size="medium" align="left">
+          <FontAwesomeIcon icon={faEnvelope} />
+        </Icon>
+        <Icon size="medium" align="right">
+          <FontAwesomeIcon icon={faCheck} />
+        </Icon>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+## Input Props
+
+<ArgsTable of={Input} />

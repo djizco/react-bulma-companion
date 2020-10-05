@@ -8,12 +8,23 @@ export default function Control({
   expanded,
   iconsLeft,
   iconsRight,
+  loading,
+  size,
   ...props
 }) {
-  const controlClasses = classNames('control', className, {
+  // Sizes
+  const sizeMap = {
+    small: 'is-small',
+    medium: 'is-medium',
+    large: 'is-large',
+  };
+  const isSize = size && sizeMap[size];
+
+  const controlClasses = classNames('control', className, isSize, {
     'has-icons-left': iconsLeft,
     'has-icons-right': iconsRight,
     'is-expanded': expanded,
+    'is-loading': loading,
   });
 
   return (
@@ -29,6 +40,8 @@ Control.propTypes = {
   iconsLeft: PropTypes.bool,
   iconsRight: PropTypes.bool,
   expanded: PropTypes.bool,
+  loading: PropTypes.bool,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
 Control.defaultProps = {
@@ -37,4 +50,6 @@ Control.defaultProps = {
   iconsLeft: false,
   iconsRight: false,
   expanded: false,
+  loading: false,
+  size: undefined,
 };

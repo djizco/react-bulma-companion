@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export default function Icon({
+  align,
   children,
   className,
   color,
@@ -52,7 +53,14 @@ export default function Icon({
   };
   const isSize = size && sizeMap[size];
 
-  const iconClasses = classNames('icon', className, isColor, isSize);
+  // Align
+  const alignMap = {
+    left: 'is-left',
+    right: 'is-right',
+  };
+  const isAlign = align && alignMap[align];
+
+  const iconClasses = classNames('icon', className, isColor, isSize, isAlign);
 
   return (
     <span className={iconClasses} {...props}>
@@ -97,6 +105,7 @@ Icon.propTypes = {
     'danger-dark',
   ]),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+  align: PropTypes.oneOf(['left', 'right']),
 };
 
 Icon.defaultProps = {
@@ -104,4 +113,5 @@ Icon.defaultProps = {
   children: null,
   color: undefined,
   size: undefined,
+  align: undefined,
 };
