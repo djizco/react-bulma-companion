@@ -1,0 +1,79 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Radio from './Radio';
+import Control from '../Control';
+
+<Meta title="Form/Radio" component={Radio} />
+
+# Radio
+
+[Bulma Documentation](https://bulma.io/documentation/form/radio/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The `<Radio>` is a simple wrapper around the `<input type="radio">` [HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio). It is intentionally not styled, to preserve cross-browser compatibility and the user experience.
+
+Make sure the linked radio buttons have the same value for their `name` HTML attribute.
+
+<Canvas>
+  <Story name="Default">
+    <Control>
+      <Radio>
+        <input type="radio" name="answer" />
+        <span>{' Yes'}</span>
+      </Radio>
+      <Radio>
+        <input type="radio" name="answer" />
+        <span>{' No'}</span>
+      </Radio>
+    </Control>
+  </Story>
+</Canvas>
+
+## Checked
+
+You can check a radio button by default by adding the `checked` HTML attribute to the `<input>` element.
+
+<Canvas>
+  <Story name="Checked">
+    <Control>
+      <Radio>
+        <input type="radio" name="answer" />
+        <span>{' Yes'}</span>
+      </Radio>
+      <Radio>
+        <input type="radio" name="answer" checked />
+        <span>{' No'}</span>
+      </Radio>
+    </Control>
+  </Story>
+</Canvas>
+
+## Disabled
+
+You can disable a radio button by adding the `disabled` HTML attribute to both the `<Radio>` and the `<input type="radio">`.
+
+  <Canvas>
+  <Story name="Disabled">
+    <Control>
+      <Radio>
+        <input type="radio" name="rsvp" />
+        <span>{' Going'}</span>
+      </Radio>
+      <Radio>
+        <input type="radio" name="rsvp" />
+        <span>{' Not going'}</span>
+      </Radio>
+      <Radio disabled>
+        <input type="radio" name="rsvp" disabled />
+        <span>{' Maybe'}</span>
+      </Radio>
+    </Control>
+  </Story>
+</Canvas>
+
+## Radio Props
+
+<ArgsTable of={Radio} />

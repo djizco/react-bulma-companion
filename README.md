@@ -5,7 +5,7 @@ A set of React Components for the [Bulma](http://bulma.io/) CSS framework.
 
 The current Bulma version this library supports is `0.9.1`. To use an older version of Bulma with this library, please reference the **Legacy Support** section.
 
-React Bulma Companion works as a **companion** to Bulma's CSS classes and doesn't include any styles itself. This allows you to import Bulma and customize it in any way you choose.
+React Bulma Companion works as a **companion** to Bulma's CSS classes. It doesn't include any styles itself. This allows you to import Bulma and customize it in any way you choose.
 
 ## Configure Bulma
 

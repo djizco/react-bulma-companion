@@ -26,7 +26,6 @@ export default function Field({
     'is-grouped-right': grouped && align === 'right',
     'is-grouped-multilined': grouped && multiline,
     'is-horizontal': horizontal,
-    'is-expanded': expanded,
     'is-narrow': narrow,
   });
 

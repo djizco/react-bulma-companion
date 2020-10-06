@@ -1,0 +1,39 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Checkbox from './Checkbox';
+
+<Meta title="Form/Checkbox" component={Checkbox} />
+
+# Checkbox
+
+[Bulma Documentation](https://bulma.io/documentation/form/checkbox/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The `<Checkbox>` is a simple wrapper around the `<input type="checkbox">` HTML element. It is intentionally not styled, to preserve cross-browser compatibility and the user experience.
+
+<Canvas>
+  <Story name="Default">
+    <Checkbox>
+      <input type="checkbox" />
+      <span>{' I agree to the '}<a>{'terms and conditions'}</a></span>
+    </Checkbox>
+  </Story>
+</Canvas>
+
+You can disable it by adding the `disabled` prop on both the `Checkbox` and the `<input type="checkbox" />`.
+
+<Canvas>
+  <Story name="Disabled">
+    <Checkbox disabled>
+      <input type="checkbox" disabled />
+      <span>{' Save my preferences'}</span>
+    </Checkbox>
+  </Story>
+</Canvas>
+
+## Checkbox Props
+
+<ArgsTable of={Checkbox} />
