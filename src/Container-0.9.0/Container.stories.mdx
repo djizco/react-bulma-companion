@@ -1,0 +1,71 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Container from './Container';
+import Notification from '../Notification';
+
+<Meta title="Legacy/Container 0.9.0" component={Container} />
+
+# Container (0.9.0)
+
+[Bulma Documentation](https://bulma.io/documentation/layout/container/)
+
+Supported Versions: `0.9.0`
+
+## Default
+
+The `<Container>` is a simple utility element that allows you to center content on larger viewports. It can be used in any context, but mostly as a direct child of either:
+
+- `<Navbar>`
+- `<Hero>`
+- `<Section>`
+- `<Footer>`
+
+<Canvas>
+  <Story name="Default">
+    <Container>
+      <Notification color="primary">
+        This container is <strong>centered</strong> on desktop and larger viewports.
+      </Notification>
+    </Container>
+  </Story>
+</Canvas>
+
+## Widescreen of FullHD Only
+
+With the two props `breakpoint="widescreen"` and `breakpoint="fullhd"`, you can have a fullwidth container until those specific breakpoints.
+
+<Canvas>
+  <Story name="Widescreen">
+    <Container breakpoint="widescreen">
+      <Notification color="primary">
+        This container is <strong>fullwidth</strong> <em>until</em> the <code>$widescreen</code> breakpoint.
+      </Notification>
+    </Container>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="FullHD">
+    <Container breakpoint="fullhd">
+      <Notification color="primary">
+        This container is <strong>fullwidth</strong> <em>until</em> the <code>$fullhd</code> breakpoint.
+      </Notification>
+    </Container>
+  </Story>
+</Canvas>
+
+## Fluid Container
+
+<Canvas>
+  <Story name="Fluid">
+    <Container fluid>
+      <Notification color="primary">
+        This container is <strong>fluid</strong>: it will have a 32px gap on either side, on any viewport size.
+      </Notification>
+    </Container>
+  </Story>
+</Canvas>
+
+## Container Props
+
+<ArgsTable of={Container} />

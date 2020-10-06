@@ -2,6 +2,8 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import Tags from './Tags';
 import Tag from '../Tag';
+import Field from '../Field';
+import Control from '../Control';
 
 <Meta title="Elements/Tags" component={Tags} />
 
@@ -89,6 +91,30 @@ You can however keep the original size of a subset of tags, simply by applying o
   </Story>
 </Canvas>
 
+## Alignment
+
+Use the `align` prop to alter the alignment.
+
+<Canvas>
+  <Story name="Alignment">
+    <Tags>
+      <Tag>One</Tag>
+      <Tag>Two</Tag>
+      <Tag>Three</Tag>
+    </Tags>
+    <Tags align="center">
+      <Tag>One</Tag>
+      <Tag>Two</Tag>
+      <Tag>Three</Tag>
+    </Tags>
+    <Tags align="right">
+      <Tag>One</Tag>
+      <Tag>Two</Tag>
+      <Tag>Three</Tag>
+    </Tags>
+  </Story>
+</Canvas>
+
 ## Addons
 
 You can attach tags together with the `addons` prop.
@@ -113,27 +139,95 @@ You can attach a **text** `<Tag>` with a **delete** `<Tag>` together.
   </Story>
 </Canvas>
 
-## Alignment
+## Grouped
 
-Use the `align` prop to alter the alignment.
+If you want to attach `<Tags>` containers together, simply use the `<Field>` with the `grouped` and `multiline` props.
 
 <Canvas>
-  <Story name="Alignment">
-    <Tags>
-      <Tag>One</Tag>
-      <Tag>Two</Tag>
-      <Tag>Three</Tag>
-    </Tags>
-    <Tags align="center">
-      <Tag>One</Tag>
-      <Tag>Two</Tag>
-      <Tag>Three</Tag>
-    </Tags>
-    <Tags align="right">
-      <Tag>One</Tag>
-      <Tag>Two</Tag>
-      <Tag>Three</Tag>
-    </Tags>
+  <Story name="Grouped">
+    <Field grouped multiline>
+      <Control>
+        <Tags addons>
+          <Tag color="dark">npm</Tag>
+          <Tag color="info" />
+        </Tags>
+      </Control>
+      <Control>
+        <Tags addons>
+          <Tag color="dark">build</Tag>
+          <Tag color="success">passing</Tag>
+        </Tags>
+      </Control>
+      <Control>
+        <Tags addons>
+          <Tag color="dark">chat</Tag>
+          <Tag color="primary">on gitter</Tag>
+        </Tags>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+This can be useful for a long list of blog tags.
+
+<Canvas>
+  <Story name="Long Group">
+    <Field grouped multiline>
+      <Control>
+        <Tags addons>
+          <Tag color="link">Technology</Tag>
+          <Tag delete />
+        </Tags>
+      </Control>
+      <Control>
+        <Tags addons>
+          <Tag color="link">CSs</Tag>
+          <Tag delete />
+        </Tags>
+      </Control>
+      <Control>
+        <Tags addons>
+          <Tag color="link">Flexbox</Tag>
+          <Tag delete />
+        </Tags>
+      </Control>
+      <Control>
+        <Tags addons>
+          <Tag color="link">Web Design</Tag>
+          <Tag delete />
+        </Tags>
+      </Control>
+      <Control>
+        <Tags addons>
+          <Tag color="link">Open Source</Tag>
+          <Tag delete />
+        </Tags>
+      </Control>
+      <Control>
+        <Tags addons>
+          <Tag color="link">Community</Tag>
+          <Tag delete />
+        </Tags>
+      </Control>
+      <Control>
+        <Tags addons>
+          <Tag color="link">Documentation</Tag>
+          <Tag delete />
+        </Tags>
+      </Control>
+      <Control>
+        <Tags addons>
+          <Tag color="link">React</Tag>
+          <Tag delete />
+        </Tags>
+      </Control>
+      <Control>
+        <Tags addons>
+          <Tag color="link">JavaScript</Tag>
+          <Tag delete />
+        </Tags>
+      </Control>
+    </Field>
   </Story>
 </Canvas>
 

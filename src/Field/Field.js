@@ -24,7 +24,7 @@ export default function Field({
     'has-addons-right': addons && align === 'right',
     'is-grouped-centered': grouped && align === 'center',
     'is-grouped-right': grouped && align === 'right',
-    'is-grouped-multilined': grouped && multiline,
+    'is-grouped-multiline': grouped && multiline,
     'is-horizontal': horizontal,
     'is-narrow': narrow,
   });
