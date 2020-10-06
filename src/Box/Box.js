@@ -5,23 +5,27 @@ import classNames from 'classnames';
 export default function Box({
   children,
   className,
+  link,
   ...props
 }) {
+  const Element = link ? 'a' : 'div';
   const boxClasses = classNames('box', className);
 
   return (
-    <div className={boxClasses} {...props}>
+    <Element className={boxClasses} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 Box.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  link: PropTypes.bool,
 };
 
 Box.defaultProps = {
   className: undefined,
   children: null,
+  link: false,
 };

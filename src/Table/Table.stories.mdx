@@ -65,7 +65,7 @@ You can create a **Bulma table** with the `<Table>` component and the following 
   </Story>
 </Canvas>
 
-## Selected Row
+## Selection
 
 You can set a table row as **selected** by appending the `selected` prop on a `<Table.Row>`.
 
@@ -112,6 +112,104 @@ You can set a table row as **selected** by appending the `selected` prop on a `<
         <Table.Row>
           <Table.DataCell>M</Table.DataCell>
           <Table.DataCell>1000</Table.DataCell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  </Story>
+</Canvas>
+
+You can also select individual cells.
+
+<Canvas>
+  <Story name="Selected Cell">
+    <Table>
+      <Table.Head>
+        <Table.Row>
+          <Table.HeadCell>Symbol</Table.HeadCell>
+          <Table.HeadCell>Value</Table.HeadCell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Foot>
+        <Table.Row>
+          <Table.HeadCell>Symbol</Table.HeadCell>
+          <Table.HeadCell>Value</Table.HeadCell>
+        </Table.Row>
+      </Table.Foot>
+      <Table.Body>
+        <Table.Row>
+          <Table.DataCell>I</Table.DataCell>
+          <Table.DataCell>1</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>V</Table.DataCell>
+          <Table.DataCell>5</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>X</Table.DataCell>
+          <Table.DataCell>10</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>L</Table.DataCell>
+          <Table.DataCell selected>50</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>C</Table.DataCell>
+          <Table.DataCell>100</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>D</Table.DataCell>
+          <Table.DataCell>500</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>M</Table.DataCell>
+          <Table.DataCell>1000</Table.DataCell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  </Story>
+</Canvas>
+
+## Colors
+
+You can change the background color of individual cells by adding the `color` prop.
+
+<Canvas>
+  <Story name="Colors">
+    <Table>
+      <Table.Head>
+        <Table.Row>
+          <Table.HeadCell>Symbol</Table.HeadCell>
+          <Table.HeadCell color="info">Value</Table.HeadCell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        <Table.Row>
+          <Table.DataCell>I</Table.DataCell>
+          <Table.DataCell>1</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>V</Table.DataCell>
+          <Table.DataCell color="success">5</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>X</Table.DataCell>
+          <Table.DataCell>10</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>L</Table.DataCell>
+          <Table.DataCell>50</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>C</Table.DataCell>
+          <Table.DataCell color="warning">100</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>D</Table.DataCell>
+          <Table.DataCell>500</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>M</Table.DataCell>
+          <Table.DataCell color="danger">1000</Table.DataCell>
         </Table.Row>
       </Table.Body>
     </Table>
@@ -221,6 +319,51 @@ To make the cells **narrower**, add the `narrow` prop.
         <Table.Row>
           <Table.HeadCell>Symbol</Table.HeadCell>
           <Table.HeadCell>Value</Table.HeadCell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        <Table.Row>
+          <Table.DataCell>I</Table.DataCell>
+          <Table.DataCell>1</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>V</Table.DataCell>
+          <Table.DataCell>5</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>X</Table.DataCell>
+          <Table.DataCell>10</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>L</Table.DataCell>
+          <Table.DataCell>50</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>C</Table.DataCell>
+          <Table.DataCell>100</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>D</Table.DataCell>
+          <Table.DataCell>500</Table.DataCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.DataCell>M</Table.DataCell>
+          <Table.DataCell>1000</Table.DataCell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  </Story>
+</Canvas>
+
+To make a single column narrow, add the `narrow` prop to a cell in that column.
+
+<Canvas>
+  <Story name="Narrow Column">
+    <Table>
+      <Table.Head>
+        <Table.Row>
+          <Table.HeadCell>Symbol</Table.HeadCell>
+          <Table.HeadCell narrow>Value</Table.HeadCell>
         </Table.Row>
       </Table.Head>
       <Table.Body>

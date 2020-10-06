@@ -31,7 +31,7 @@ There are **6 sizes** available:
     <Block>
       <Title size="1">Title 1</Title>
       <Title size="2">Title 2</Title>
-      <Title size="3">Title 3 (default)</Title>
+      <Title>Title 3 (default)</Title>
       <Title size="4">Title 4</Title>
       <Title size="5">Title 5</Title>
       <Title size="6">Title 6</Title>
@@ -41,7 +41,7 @@ There are **6 sizes** available:
       <Title size="2" subtitle>Subtitle 2</Title>
       <Title size="3" subtitle>Subtitle 3</Title>
       <Title size="4" subtitle>Subtitle 4</Title>
-      <Title size="5" subtitle>Subtitle 5 (default)</Title>
+      <Title subtitle>Subtitle 5 (default)</Title>
       <Title size="6" subtitle>Subtitle 6</Title>
     </Block>
   </Story>
@@ -68,6 +68,21 @@ You can maintain the normal spacing between titles and subtitles by using the `s
   </Story>
 </Canvas>
 
+## Highlight?
+
+<Canvas>
+  <Story name="Highlight">
+    <Block>
+      <Title className="highlight" size="1">Title 1</Title>
+      <Title className="highlight"size="3" subtitle>Subtitle 3</Title>
+    </Block>
+    <Block>
+      <Title size="1" spaced>Title 1</Title>
+      <Title size="3" subtitle>Subtitle 3</Title>
+    </Block>
+  </Story>
+</Canvas>
+
 ## Header Tags
 
 By default, the `<Title>` component will render as a `p` tag.  If you want to use the native header tags, such as `h1`, add the `useHeader` prop.
@@ -83,12 +98,12 @@ By default, the `<Title>` component will render as a `p` tag.  If you want to us
       <Title size="6" useHeader>Title 6</Title>
     </Block>
     <Block>
-      <Title size="1" useHeader subtitle>Subtitle 1</Title>
-      <Title size="2" useHeader subtitle>Subtitle 2</Title>
-      <Title size="3" useHeader subtitle>Subtitle 3</Title>
-      <Title size="4" useHeader subtitle>Subtitle 4</Title>
-      <Title useHeader subtitle>Subtitle 5</Title>
-      <Title size="6" useHeader subtitle>Subtitle 6</Title>
+      <Title size="1" subtitle useHeader>Subtitle 1</Title>
+      <Title size="2" subtitle useHeader>Subtitle 2</Title>
+      <Title size="3" subtitle useHeader>Subtitle 3</Title>
+      <Title size="4" subtitle useHeader>Subtitle 4</Title>
+      <Title subtitle useHeader>Subtitle 5</Title>
+      <Title size="6" subtitle useHeader>Subtitle 6</Title>
     </Block>
   </Story>
 </Canvas>

@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import ImageContent from './ImageContent';
+
 export default function Image({
   children,
   className,
@@ -53,6 +55,8 @@ export default function Image({
     </figure>
   );
 }
+
+Image.Content = ImageContent;
 
 Image.propTypes = {
   className: PropTypes.string,

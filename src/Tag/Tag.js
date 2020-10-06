@@ -7,10 +7,13 @@ export default function Tag({
   className,
   color,
   light,
+  link,
   rounded,
   size,
   ...props
 }) {
+  const Element = link ? 'a' : 'span';
+
   // Colors
   const colorMap = {
     primary: 'is-primary',
@@ -44,15 +47,16 @@ export default function Tag({
   delete props.delete;
 
   return (
-    <span className={tagClasses} {...props}>
+    <Element className={tagClasses} {...props}>
       {children}
-    </span>
+    </Element>
   );
 }
 
 Tag.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  link: PropTypes.bool,
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -74,6 +78,7 @@ Tag.propTypes = {
 Tag.defaultProps = {
   className: undefined,
   children: null,
+  link: false,
   color: undefined,
   light: false,
   size: undefined,

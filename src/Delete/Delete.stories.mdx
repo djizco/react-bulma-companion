@@ -1,6 +1,9 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import Delete from './Delete';
+import Block from '../Block';
+import Tag from '../Tag';
+import Notification from '../Notification';
 
 <Meta title="Elements/Delete" component={Delete} />
 
@@ -36,6 +39,23 @@ It comes in 4 sizes by use of the `size` prop:
 </Canvas>
 
 ## Combinations
+
+Bulma uses it for the tags, the notifications, and the messages:
+
+<Canvas>
+  <Story name="Combinations">
+    <Block>
+      <Tag color="success">
+        Hello World
+        <Delete size="small" />
+      </Tag>
+    </Block>
+    <Notification color="danger">
+      <Delete />
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit
+    </Notification>
+  </Story>
+</Canvas>
 
 ## Delete Props
 

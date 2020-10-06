@@ -7,10 +7,15 @@ import { faUnderline } from '@fortawesome/free-solid-svg-icons/faUnderline';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faHeading } from '@fortawesome/free-solid-svg-icons/faHeading';
+import { faAlignLeft } from '@fortawesome/free-solid-svg-icons/faAlignLeft';
+import { faAlignCenter } from '@fortawesome/free-solid-svg-icons/faAlignCenter';
+import { faAlignRight } from '@fortawesome/free-solid-svg-icons/faAlignRight';
 
 import Button from './Button';
 import Buttons from '../Buttons';
 import Icon from '../Icon';
+import Field from '../Field';
+import Control from '../Control';
 
 <Meta title="Elements/Button" component={Button} />
 
@@ -27,6 +32,21 @@ The `<Button>` component is an essential element of any design. It's meant to lo
 <Canvas>
   <Story name="Default">
     <Button>Button</Button>
+  </Story>
+</Canvas>
+
+## Types
+
+The `<Button>` can be rendered as an `<a>` anchor with the `link` prop. You can make a submit button or reset button with the `type` prop.
+
+<Canvas>
+  <Story name="Types">
+    <Buttons>
+      <Button link>Anchor Button</Button>
+      <Button>Regular Button</Button>
+      <Button type="submit">Submit Button</Button>
+      <Button type="reset">Reset Button</Button>
+    </Buttons>
   </Story>
 </Canvas>
 
@@ -356,9 +376,119 @@ If the button only contains an icon, Bulma will make sure the button remains **s
 
 ## Button Group
 
+If you want to **group** buttons together on a **single line**, use the `grouped` prop on the `<Field>` container:
+
+<Canvas>
+  <Story name="Grouped">
+    <Field grouped>
+      <Control>
+        <Button color="link">Save Changes</Button>
+      </Control>
+      <Control>
+        <Button>Cancel</Button>
+      </Control>
+      <Control>
+        <Button color="danger">Delete Post</Button>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
 ## Button Addons
 
+If you want to use buttons as addons, use the `addons` prop on the `<Field>` container:
+
+<Canvas>
+  <Story name="Addons">
+    <Field addons>
+      <Control>
+        <Button>
+          <Icon size="small">
+            <FontAwesomeIcon icon={faAlignLeft}  />
+          </Icon>
+          <span>Left</span>
+        </Button>
+      </Control>
+      <Control>
+        <Button>
+          <Icon size="small">
+            <FontAwesomeIcon icon={faAlignCenter}  />
+          </Icon>
+          <span>Center</span>
+        </Button>
+      </Control>
+      <Control>
+        <Button>
+          <Icon size="small">
+            <FontAwesomeIcon icon={faAlignRight}  />
+          </Icon>
+          <span>Right</span>
+        </Button>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
 ## Button Group with Addons
+
+You can group together addons as well:
+
+<Canvas>
+  <Story name="Group with Addons">
+    <Field addons>
+      <Control>
+        <Button>
+          <Icon size="small">
+            <FontAwesomeIcon icon={faBold} />
+          </Icon>
+          <span>Bold</span>
+        </Button>
+      </Control>
+      <Control>
+        <Button>
+          <Icon size="small">
+            <FontAwesomeIcon icon={faItalic} />
+          </Icon>
+          <span>Italic</span>
+        </Button>
+      </Control>
+      <Control>
+        <Button>
+          <Icon size="small">
+            <FontAwesomeIcon icon={faUnderline} />
+          </Icon>
+          <span>Underline</span>
+        </Button>
+      </Control>
+    </Field>
+    <Field addons>
+      <Control>
+        <Button>
+          <Icon size="small">
+            <FontAwesomeIcon icon={faAlignLeft}  />
+          </Icon>
+          <span>Left</span>
+        </Button>
+      </Control>
+      <Control>
+        <Button>
+          <Icon size="small">
+            <FontAwesomeIcon icon={faAlignCenter}  />
+          </Icon>
+          <span>Center</span>
+        </Button>
+      </Control>
+      <Control>
+        <Button>
+          <Icon size="small">
+            <FontAwesomeIcon icon={faAlignRight}  />
+          </Icon>
+          <span>Right</span>
+        </Button>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
 
 ## Button Props
 

@@ -12,6 +12,21 @@ export default function Title({
   ...props
 }) {
   const isTitle = !subtitle ? 'title' : 'subtitle';
+  let Element = 'p';
+
+  if (useHeader && size === '1') {
+    Element = 'h1';
+  } else if (useHeader && size === '2') {
+    Element = 'h2';
+  } else if ((useHeader && size === '3') || (useHeader && !subtitle && !size)) {
+    Element = 'h3';
+  } else if (useHeader && size === '4') {
+    Element = 'h4';
+  } else if ((useHeader && size === '5') || (useHeader && subtitle && !size)) {
+    Element = 'h5';
+  } else if (useHeader && size === '6') {
+    Element = 'h6';
+  }
 
   const sizeMap = {
     1: 'is-1',
@@ -27,58 +42,10 @@ export default function Title({
     'is-spaced': spaced,
   });
 
-  if (useHeader && size === '1') {
-    return (
-      <h1 className={titleClasses} {...props}>
-        {children}
-      </h1>
-    );
-  }
-
-  if (useHeader && size === '2') {
-    return (
-      <h2 className={titleClasses} {...props}>
-        {children}
-      </h2>
-    );
-  }
-
-  if ((useHeader && size === '3') || (useHeader && !subtitle && !size)) {
-    return (
-      <h3 className={titleClasses} {...props}>
-        {children}
-      </h3>
-    );
-  }
-
-  if (useHeader && size === '4') {
-    return (
-      <h4 className={titleClasses} {...props}>
-        {children}
-      </h4>
-    );
-  }
-
-  if ((useHeader && size === '5') || (useHeader && subtitle && !size)) {
-    return (
-      <h5 className={titleClasses} {...props}>
-        {children}
-      </h5>
-    );
-  }
-
-  if (useHeader && size === '6') {
-    return (
-      <h6 className={titleClasses} {...props}>
-        {children}
-      </h6>
-    );
-  }
-
   return (
-    <p className={titleClasses} {...props}>
+    <Element className={titleClasses} {...props}>
       {children}
-    </p>
+    </Element>
   );
 }
 

@@ -13,14 +13,16 @@ export default function Button({
   hovered,
   inverted,
   light,
+  link,
   loading,
-  onClick,
   outlined,
   rounded,
   selected,
   size,
   ...props
 }) {
+  const Element = link ? 'a' : 'button';
+
   // Colors
   const colorMap = {
     primary: 'is-primary',
@@ -64,20 +66,17 @@ export default function Button({
   delete props.static;
 
   return (
-    <button
-      className={buttonClasses}
-      type="button"
-      onClick={onClick}
-      {...props}
-    >
+    <Element className={buttonClasses} {...props}>
       {children}
-    </button>
+    </Element>
   );
 }
 
 Button.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  type: PropTypes.oneOf(['button', 'submit', 'reset']),
+  link: PropTypes.bool,
   onClick: PropTypes.func,
   color: PropTypes.oneOf([
     'primary',
@@ -115,6 +114,8 @@ Button.propTypes = {
 Button.defaultProps = {
   className: undefined,
   children: null,
+  type: 'button',
+  link: false,
   onClick: () => {},
   color: undefined,
   light: false,
