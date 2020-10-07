@@ -1,0 +1,371 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons/faGlobe';
+
+import Select from './Select';
+import Field from '../Field';
+import Control from '../Control';
+import Icon from '../Icon';
+
+<Meta title="Form/Select" component={Select} />
+
+# Select
+
+[Bulma Documentation](https://bulma.io/documentation/form/select/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The `<Select>` is a container for the `<select>` [HTML element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select), which gives the styling more flexibility and support for icons.
+
+The `<Select.Content>` and `<Select.Option>` subcomponents are provided as wrapper for the native `<select>` and `<option>` HTML elements.
+
+<Canvas>
+  <Story name="Default">
+    <Select>
+      <Select.Content>
+        <Select.Option>Select dropdown</Select.Option>
+        <Select.Option>With options</Select.Option>
+      </Select.Content>
+    </Select>
+  </Story>
+</Canvas>
+
+## Multiple select
+
+To create a multiple select, add the `multiple` prop on the `<Select>` container and the `<select>`.
+
+<Canvas>
+  <Story name="Multiple">
+    <Select multiple>
+      <Select.Content multiple size="8">
+        <Select.Option value="Argentina">Argentina</Select.Option>
+        <Select.Option value="Bolivia">Bolivia</Select.Option>
+        <Select.Option value="Brazil">Brazil</Select.Option>
+        <Select.Option value="Chile">Chile</Select.Option>
+        <Select.Option value="Colombia">Colombia</Select.Option>
+        <Select.Option value="Ecuador">Ecuador</Select.Option>
+        <Select.Option value="Guyana">Guyana</Select.Option>
+        <Select.Option value="Paraguay">Paraguay</Select.Option>
+        <Select.Option value="Peru">Peru</Select.Option>
+        <Select.Option value="Suriname">Suriname</Select.Option>
+        <Select.Option value="Uruguay">Uruguay</Select.Option>
+        <Select.Option value="Venezuela">Venezuela</Select.Option>
+      </Select.Content>
+    </Select>
+  </Story>
+</Canvas>
+
+## Full Width Select
+
+To make a `<Select>` fullwidth, add the `fullWidth` prop.
+
+<Canvas>
+  <Story name="Full Width">
+    <Select fullWidth>
+      <Select.Content>
+        <Select.Option>Select dropdown</Select.Option>
+        <Select.Option>With options</Select.Option>
+      </Select.Content>
+    </Select>
+  </Story>
+</Canvas>
+
+## Colors
+
+It is available in different colors by use of the `color` prop.
+
+<Canvas>
+  <Story name="Colors">
+    <Field>
+      <Control>
+        <Select color="primary">
+          <Select.Content>
+            <Select.Option>Select dropdown</Select.Option>
+            <Select.Option>With options</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Select color="link">
+          <Select.Content>
+            <Select.Option>Select dropdown</Select.Option>
+            <Select.Option>With options</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Select color="info">
+          <Select.Content>
+            <Select.Option>Select dropdown</Select.Option>
+            <Select.Option>With options</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Select color="success">
+          <Select.Content>
+            <Select.Option>Select dropdown</Select.Option>
+            <Select.Option>With options</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Select color="warning">
+          <Select.Content>
+            <Select.Option>Select dropdown</Select.Option>
+            <Select.Option>With options</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Select color="danger">
+          <Select.Content>
+            <Select.Option>Select dropdown</Select.Option>
+            <Select.Option>With options</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+## Styles
+
+You can create a **rounded dropdown** with the `rounded` prop.
+
+<Canvas>
+  <Story name="Rounded">
+    <Select rounded>
+      <Select.Content>
+        <Select.Option>Rounded dropdown</Select.Option>
+        <Select.Option>With options</Select.Option>
+      </Select.Content>
+    </Select>
+  </Story>
+</Canvas>
+
+## Sizes
+
+The `<Select>` comes in 4 sizes.
+
+<Canvas>
+  <Story name="Sizes">
+    <Field>
+      <Control>
+        <Select size="small">
+          <Select.Content>
+            <Select.Option>Small dropdown</Select.Option>
+            <Select.Option>With options</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Select>
+          <Select.Content>
+            <Select.Option>Normal dropdown</Select.Option>
+            <Select.Option>With options</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Select size="medium">
+          <Select.Content>
+            <Select.Option>Medium dropdown</Select.Option>
+            <Select.Option>With options</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Select size="large">
+          <Select.Content>
+            <Select.Option>Large dropdown</Select.Option>
+            <Select.Option>With options</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+## States
+
+You can alter states in the following ways:
+
+<Canvas>
+  <Story name="States">
+    <Field>
+      <Control>
+        <Select>
+          <Select.Content>
+            <Select.Option>Normal dropdown</Select.Option>
+            <Select.Option>With options</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Select>
+          <Select.Content hovered>
+            <Select.Option>Hovered dropdown</Select.Option>
+            <Select.Option>With options</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Select>
+          <Select.Content focused>
+            <Select.Option>Focused dropdown</Select.Option>
+            <Select.Option>With options</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Select>
+          <Select.Content active>
+            <Select.Option>Active dropdown</Select.Option>
+            <Select.Option>With options</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Select loading>
+          <select>
+            <Select.Option>Loading dropdown</Select.Option>
+            <Select.Option>With options</Select.Option>
+          </select>
+        </Select>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+## Icons
+
+You can append the `iconsLeft` prop on a control with the `align="left"` prop on the icon.
+
+The size of the **select** will define the size of the `<Icon>` container.
+
+<Canvas>
+  <Story name="Icons">
+    <Field>
+      <Control iconsLeft>
+        <Select>
+          <Select.Content>
+            <Select.Option selected>Country</Select.Option>
+            <Select.Option>United States</Select.Option>
+            <Select.Option>Canada</Select.Option>
+            <Select.Option>Mexico</Select.Option>
+          </Select.Content>
+        </Select>
+        <Icon size="small" align="left">
+          <FontAwesomeIcon icon={faGlobe}/>
+        </Icon>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+If the control contains an icon, Bulma will make sure the icon remains **centered**, no matter the size of the input *or* of the icon.
+
+<Canvas>
+  <Story name="Icons Sizes">
+    <Field>
+      <Control iconsLeft>
+        <Select size="small">
+          <Select.Content>
+            <Select.Option selected>Country</Select.Option>
+            <Select.Option>United States</Select.Option>
+            <Select.Option>Canada</Select.Option>
+            <Select.Option>Mexico</Select.Option>
+          </Select.Content>
+        </Select>
+        <Icon size="small" align="left">
+          <FontAwesomeIcon icon={faGlobe}/>
+        </Icon>
+      </Control>
+    </Field>
+    <Field>
+      <Control iconsLeft>
+        <Select>
+          <Select.Content>
+            <Select.Option selected>Country</Select.Option>
+            <Select.Option>United States</Select.Option>
+            <Select.Option>Canada</Select.Option>
+            <Select.Option>Mexico</Select.Option>
+          </Select.Content>
+        </Select>
+        <Icon align="left">
+          <FontAwesomeIcon icon={faGlobe}/>
+        </Icon>
+      </Control>
+    </Field>
+    <Field>
+      <Control iconsLeft>
+        <Select size="medium">
+          <Select.Content>
+            <Select.Option selected>Country</Select.Option>
+            <Select.Option>United States</Select.Option>
+            <Select.Option>Canada</Select.Option>
+            <Select.Option>Mexico</Select.Option>
+          </Select.Content>
+        </Select>
+        <Icon size="medium" align="left">
+          <FontAwesomeIcon icon={faGlobe}/>
+        </Icon>
+      </Control>
+    </Field>
+    <Field>
+      <Control iconsLeft>
+        <Select size="large">
+          <Select.Content>
+            <Select.Option selected>Country</Select.Option>
+            <Select.Option>United States</Select.Option>
+            <Select.Option>Canada</Select.Option>
+            <Select.Option>Mexico</Select.Option>
+          </Select.Content>
+        </Select>
+        <Icon size="large" align="left">
+          <FontAwesomeIcon icon={faGlobe}/>
+        </Icon>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+## Select Props
+
+<ArgsTable of={Select} />
+
+## Select.Content Props
+
+<ArgsTable of={Select.Content} />
+
+## Select.Option Props
+
+<ArgsTable of={Select.Option} />

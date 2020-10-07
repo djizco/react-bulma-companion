@@ -2,16 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export default function Textarea({
-  active,
+import SelectContent from './SelectContent';
+import SelectOption from './SelectOption';
+
+export default function Select({
+  children,
   className,
   color,
-  fixed,
-  focused,
   fullWidth,
-  hovered,
-  inline,
+  loading,
+  rounded,
   size,
+  multiple,
   ...props
 }) {
   // Colors
@@ -37,28 +39,26 @@ export default function Textarea({
   };
   const isSize = size && sizeMap[size];
 
-  const textareaClasses = classNames('textarea', className, isColor, isSize, {
-    'has-fixed-size': fixed,
-    'is-inline': inline,
+  const selectClasses = classNames('select', className, isColor, isSize, {
     'is-fullwidth': fullWidth,
-    'is-active': active,
-    'is-hovered': hovered,
-    'is-focused': focused,
+    'is-multiple': multiple,
+    'is-rounded': rounded,
+    'is-loading': loading,
   });
 
   return (
-    <textarea className={textareaClasses} {...props} />
+    <div className={selectClasses} {...props}>
+      {children}
+    </div>
   );
 }
 
-Textarea.propTypes = {
+Select.Content = SelectContent;
+Select.Option = SelectOption;
+
+Select.propTypes = {
   className: PropTypes.string,
-  id: PropTypes.string,
-  name: PropTypes.string,
-  placeholder: PropTypes.string,
-  value: PropTypes.string,
-  onChange: PropTypes.func,
-  rows: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  children: PropTypes.node,
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -72,32 +72,19 @@ Textarea.propTypes = {
     'dark',
   ]),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  fixed: PropTypes.bool,
-  inline: PropTypes.bool,
   fullWidth: PropTypes.bool,
-  active: PropTypes.bool,
-  hovered: PropTypes.bool,
-  focused: PropTypes.bool,
-  disabled: PropTypes.bool,
-  readOnly: PropTypes.bool,
+  multiple: PropTypes.bool,
+  rounded: PropTypes.bool,
+  loading: PropTypes.bool,
 };
 
-Textarea.defaultProps = {
+Select.defaultProps = {
   className: undefined,
-  id: undefined,
-  name: undefined,
-  placeholder: undefined,
-  value: undefined,
-  onChange: undefined,
-  rows: undefined,
+  children: null,
   color: undefined,
   size: undefined,
-  fixed: false,
-  inline: false,
   fullWidth: false,
-  active: false,
-  hovered: false,
-  focused: false,
-  disabled: false,
-  readOnly: false,
+  multiple: false,
+  rounded: false,
+  loading: false,
 };
