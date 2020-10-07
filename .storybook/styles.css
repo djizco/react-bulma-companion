@@ -8,7 +8,7 @@
   background-color: inherit;
   border-radius: 0;
   color: inherit;
-  display: inline-block;
+  display: initial;
   font-size: inherit;
   height: inherit;
   justify-content: inherit;
@@ -22,7 +22,7 @@
   align-items: inherit;
   background-color: inherit;
   border-radius: 0;
-  display: inline-block;
+  display: initial;
   font-size: inherit;
   height: inherit;
   justify-content: center;

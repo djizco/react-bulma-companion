@@ -8,6 +8,7 @@ import Input from './Input';
 import Field from '../Field';
 import Control from '../Control';
 import Icon from '../Icon';
+import Label from '../Label';
 
 <Meta title="Form/Input" component={Input} />
 
@@ -118,10 +119,27 @@ It comes in 4 sizes by use of the `size` prop.
 Make a rounded input by adding the `rounded` prop.
 
 <Canvas>
-  <Story name="Styles">
+  <Story name="Rounded">
     <Field>
       <Control>
-        <Input placeholder="Rounded input" rounded/>
+        <Input placeholder="Rounded input" rounded />
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+You can alter the width by adding either `fullWidth` or `inline`.
+
+<Canvas>
+  <Story name="Width">
+    <Field>
+      <Control>
+        <Input placeholder="Full Width input" fullWidth />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Input placeholder="Inline input" inline />
       </Control>
     </Field>
   </Story>
@@ -136,6 +154,11 @@ You can alter states in the following ways:
     <Field>
       <Control>
         <Input placeholder="Normal input"/>
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Input placeholder="Active input" active />
       </Control>
     </Field>
     <Field>
@@ -209,19 +232,19 @@ If you *also* append the `static` prop, it removes the background, border, shado
   <Story name="Static">
     <Field horizontal>
       <Field.Label size="normal">
-        <label class="label">From</label>
+        <Label>From</Label>
       </Field.Label>
       <Field.Body>
         <Field>
           <Control>
-            <Input type="email" value="me@example.com" static readonly />
+            <Input type="email" value="me@example.com" static readOnly />
           </Control>
         </Field>
       </Field.Body>
     </Field>
     <Field horizontal>
       <Field.Label size="normal">
-        <label class="label">To</label>
+        <Label>To</Label>
       </Field.Label>
       <Field.Body>
         <Field>

@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export default function Input({
+  active,
   className,
   color,
   focused,
+  fullWidth,
   hovered,
+  inline,
   rounded,
   size,
   ...props
@@ -35,6 +38,9 @@ export default function Input({
   const isSize = size && sizeMap[size];
 
   const inputClasses = classNames('input', className, isColor, isSize, {
+    'is-inline': inline,
+    'is-fullwidth': fullWidth,
+    'is-active': active,
     'is-rounded': rounded,
     'is-hovered': hovered,
     'is-focused': focused,
@@ -68,6 +74,9 @@ Input.propTypes = {
     'dark',
   ]),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+  inline: PropTypes.bool,
+  fullWidth: PropTypes.bool,
+  active: PropTypes.bool,
   rounded: PropTypes.bool,
   hovered: PropTypes.bool,
   focused: PropTypes.bool,
@@ -84,6 +93,9 @@ Input.defaultProps = {
   placeholder: undefined,
   color: undefined,
   size: undefined,
+  inline: false,
+  fullWidth: false,
+  active: false,
   rounded: false,
   hovered: false,
   focused: false,
