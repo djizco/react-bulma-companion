@@ -1,0 +1,191 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Textarea from './Textarea';
+import Field from '../Field';
+import Control from '../Control';
+
+<Meta title="Form/Textarea" component={Textarea} />
+
+# Textarea
+
+[Bulma Documentation](https://bulma.io/documentation/form/textarea/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The `<Textarea>` is the multiline version of the `<Input>`. It is a wrapper for the [HTML textarea](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea).
+
+<Canvas>
+  <Story name="Default">
+    <Textarea placeholder="e.g. Hello World" />
+  </Story>
+</Canvas>
+
+You can set the height of the textarea using the `rows` prop.
+
+<Canvas>
+  <Story name="Height">
+    <Textarea placeholder="3 lines of textarea" rows="3" />
+  </Story>
+</Canvas>
+
+## Colors
+
+The `<Textarea>` component is available in **different colors** by use of the `color` prop.
+
+<Canvas>
+  <Story name="Colors">
+    <Field>
+      <Control>
+        <Textarea placeholder="Primary textarea" color="primary" />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Textarea placeholder="Link textarea" color="link" />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Textarea placeholder="Info textarea" color="info" />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Textarea placeholder="Success textarea" color="success" />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Textarea placeholder="Warning textarea" color="warning" />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Textarea placeholder="Danger textarea" color="danger" />
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+## Sizes
+
+The `<Textarea>` comes in 4 different sizes by use of the `size` prop.
+
+<Canvas>
+  <Story name="Sizes">
+    <Field>
+      <Control>
+        <Textarea placeholder="Small textarea" size="small" />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Textarea placeholder="Normal textarea" />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Textarea placeholder="Medium textarea" size="medium" />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Textarea placeholder="Large textarea" size="large" />
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+## States
+
+You can alter states in the following ways:
+
+<Canvas>
+  <Story name="States">
+    <Field>
+      <Control>
+        <Textarea placeholder="Normal textarea" />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Textarea placeholder="Hover textarea" hovered />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Textarea placeholder="Active textarea" active />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Textarea placeholder="Focus textarea" focused />
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+## Loading
+
+You can control the loading state with the `loading` prop on the `<Control>` container. You can also add the `size` prop to the `<Control>` to change the loading icon size.
+
+<Canvas>
+  <Story name="Loading">
+    <Field>
+      <Control size="small" loading>
+        <Textarea size="small" placeholder="Small loading textarea" />
+      </Control>
+    </Field>
+    <Field>
+      <Control loading>
+        <Textarea placeholder="Normal loading textarea" />
+      </Control>
+    </Field>
+    <Field>
+      <Control size="medium" loading>
+        <Textarea size="medium" placeholder="Medium loading textarea" />
+      </Control>
+    </Field>
+    <Field>
+      <Control size="large" loading>
+        <Textarea size="large" placeholder="Large loading textarea" />
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+## Disabled
+
+Add the `disabled` prop to create a disabled textarea.
+
+<Canvas>
+  <Story name="Disabled">
+    <Textarea placeholder="Disabled textarea" disabled />
+  </Story>
+</Canvas>
+
+## Readonly
+
+If you add the `readOnly` prop, the textarea will look similar to a normal one, but is not editable and has no shadow.
+
+<Canvas>
+  <Story name="Readonly">
+    <Textarea readOnly value="This content is readonly" />
+  </Story>
+</Canvas>
+
+## Fixed size
+
+You can disable a textarea resizing by appending the `fixed` prop:
+
+<Canvas>
+  <Story name="Fixed size">
+    <Textarea placeholder="Fixed size textarea" fixed />
+  </Story>
+</Canvas>
+
+## Textarea Props
+
+<ArgsTable of={Textarea} />

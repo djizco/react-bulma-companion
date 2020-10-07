@@ -2,15 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export default function Input({
+export default function Textarea({
   active,
+  children,
   className,
   color,
+  fixed,
   focused,
   fullWidth,
   hovered,
   inline,
-  rounded,
   size,
   ...props
 }) {
@@ -37,32 +38,31 @@ export default function Input({
   };
   const isSize = size && sizeMap[size];
 
-  const inputClasses = classNames('input', className, isColor, isSize, {
+  const textareaClasses = classNames('textarea', className, isColor, isSize, {
+    'has-fixed-size': fixed,
     'is-inline': inline,
     'is-fullwidth': fullWidth,
     'is-active': active,
-    'is-rounded': rounded,
     'is-hovered': hovered,
     'is-focused': focused,
-    'is-static': props.static,
   });
 
-  // eslint-disable-next-line
-  delete props.static;
-
   return (
-    <input className={inputClasses} {...props} />
+    <textarea className={textareaClasses} {...props}>
+      {children}
+    </textarea>
   );
 }
 
-Input.propTypes = {
+Textarea.propTypes = {
   className: PropTypes.string,
+  children: PropTypes.node,
   id: PropTypes.string,
   name: PropTypes.string,
-  type: PropTypes.oneOf(['text', 'password', 'email', 'tel']),
   placeholder: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func,
+  rows: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -76,34 +76,33 @@ Input.propTypes = {
     'dark',
   ]),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+  fixed: PropTypes.bool,
   inline: PropTypes.bool,
   fullWidth: PropTypes.bool,
   active: PropTypes.bool,
-  rounded: PropTypes.bool,
   hovered: PropTypes.bool,
   focused: PropTypes.bool,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
-  static: PropTypes.bool,
 };
 
-Input.defaultProps = {
+Textarea.defaultProps = {
   className: undefined,
+  children: null,
   id: undefined,
   name: undefined,
-  type: undefined,
   placeholder: undefined,
   value: undefined,
   onChange: undefined,
+  rows: undefined,
   color: undefined,
   size: undefined,
+  fixed: false,
   inline: false,
   fullWidth: false,
   active: false,
-  rounded: false,
   hovered: false,
   focused: false,
   disabled: false,
   readOnly: false,
-  static: false,
 };
