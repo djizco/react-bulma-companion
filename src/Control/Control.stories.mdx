@@ -1,0 +1,512 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
+import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
+import { faLock } from '@fortawesome/free-solid-svg-icons/faLock';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons/faGlobe';
+
+import Control from './Control';
+import Field from '../Field';
+import Icon from '../Icon';
+import Input from '../Input';
+import Textarea from '../Textarea';
+import Select from '../Select';
+import Button from '../Button';
+import Label from '../Label';
+import Radio from '../Radio';
+import Help from '../Help';
+
+<Meta title="Form/Control" component={Control} />
+
+# Control
+
+[Bulma Documentation](https://bulma.io/documentation/form/general/#form-control)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The `<Control>` is a versatile **block** container meant to **enhance single form controls**. Because it has the same height as the element that it wraps, it can **only contain** the following components:
+
+- `<Input>`
+- `<Select>`
+- `<Button>`
+- `<Icon>`
+
+<Canvas>
+  <Story name="Default">
+    <Field>
+      <Control>
+        <Input placeholder="Text input" />
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Select>
+          <Select.Content>
+            <Select.Option>Select Dropdown</Select.Option>
+            <Select.Option>With options</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Button color="primary">Submit</Button>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+## Icons
+
+<Canvas>
+  <Story name="Icons">
+    <Field>
+      <Control iconsLeft iconsRight>
+        <Input type="email" placeholder="Email" />
+        <Icon size="small" align="left">
+          <FontAwesomeIcon icon={faEnvelope} />
+        </Icon>
+        <Icon size="small" align="right">
+          <FontAwesomeIcon icon={faCheck} />
+        </Icon>
+      </Control>
+    </Field>
+    <Field>
+      <Control iconsLeft>
+        <Input type="password" placeholder="Password" />
+        <Icon size="small" align="left">
+          <FontAwesomeIcon icon={faLock} />
+        </Icon>
+      </Control>
+    </Field>
+    <Field>
+      <Control>
+        <Button color="success">Login</Button>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+You can append icons to **select dropdowns** as well.
+
+<Canvas>
+  <Story name="Select Icons">
+    <Field>
+      <Control iconsLeft>
+        <Select fullWidth>
+          <Select.Content>
+            <Select.Option selected>Country</Select.Option>
+            <Select.Option>Argentina</Select.Option>
+            <Select.Option>Bolivia</Select.Option>
+            <Select.Option>Brazil</Select.Option>
+            <Select.Option>Chile</Select.Option>
+            <Select.Option>Colombia</Select.Option>
+            <Select.Option>Ecuador</Select.Option>
+            <Select.Option>Guyana</Select.Option>
+            <Select.Option>Paraguay</Select.Option>
+            <Select.Option>Peru</Select.Option>
+            <Select.Option>Suriname</Select.Option>
+            <Select.Option>Uruguay</Select.Option>
+            <Select.Option>Venezuela</Select.Option>
+          </Select.Content>
+        </Select>
+        <Icon size="small" align="left">
+          <FontAwesomeIcon icon={faGlobe} />
+        </Icon>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+## Form Addons
+
+If you want to **attach** `<Controls>` together, use the `addons` prop on the `<Field>` container:
+
+<Canvas>
+  <Story name="Form addons">
+    <Field addons>
+      <Control>
+        <Input placeholder="Text input"/>
+      </Control>
+      <Control>
+        <Button color="info" link>Search</Button>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+You can attach inputs, buttons, and dropdowns **only**.
+
+It can be useful to append a **static button**.
+
+<Canvas>
+  <Story name="Form addons with static">
+    <Field addons>
+      <Control>
+        <Input type="email" placeholder="Your email"/>
+      </Control>
+      <Control>
+        <Button static>@gmail.com</Button>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+Use the `expanded` prop on the `<Control>` you want to fill up the remaining space.
+
+<Canvas>
+  <Story name="Expanded">
+    <Field addons>
+      <Control>
+        <Select>
+          <Select.Content>
+            <Select.Option>$</Select.Option>
+            <Select.Option>£</Select.Option>
+            <Select.Option>€</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+      <Control>
+        <Input placeholder="Amount of money" />
+      </Control>
+      <Control>
+        <Button link>Transfer</Button>
+      </Control>
+    </Field>
+    <Field addons>
+      <Control>
+        <Select>
+          <Select.Content>
+            <Select.Option>$</Select.Option>
+            <Select.Option>£</Select.Option>
+            <Select.Option>€</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+      <Control expanded>
+        <Input placeholder="Amount of money" />
+      </Control>
+      <Control>
+        <Button link>Transfer</Button>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+If you want a full width select dropdown, pair Control `expanded` with Select `fullWidth`.
+
+<Canvas>
+  <Story name="Expanded Select">
+    <Field addons>
+      <Control expanded>
+        <Select fullWidth>
+          <Select.Content name="country">
+            <Select.Option value="Argentina">Argentina</Select.Option>
+            <Select.Option value="Bolivia">Bolivia</Select.Option>
+            <Select.Option value="Brazil">Brazil</Select.Option>
+            <Select.Option value="Chile">Chile</Select.Option>
+            <Select.Option value="Colombia">Colombia</Select.Option>
+            <Select.Option value="Ecuador">Ecuador</Select.Option>
+            <Select.Option value="Guyana">Guyana</Select.Option>
+            <Select.Option value="Paraguay">Paraguay</Select.Option>
+            <Select.Option value="Peru">Peru</Select.Option>
+            <Select.Option value="Suriname">Suriname</Select.Option>
+            <Select.Option value="Uruguay">Uruguay</Select.Option>
+            <Select.Option value="Venezuela">Venezuela</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+      <Control>
+        <Button type="submit" color="primary">Choose</Button>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+Use the `addons` prop with the `align` prop on the `<Field>` to alter the **alignment**.
+
+<Canvas>
+  <Story name="Alignment">
+    <Field align="center" addons>
+      <Control>
+        <Select>
+          <Select.Content>
+            <Select.Option>$</Select.Option>
+            <Select.Option>£</Select.Option>
+            <Select.Option>€</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+      <Control>
+        <Input placeholder="Amount of money" />
+      </Control>
+      <Control>
+        <Button color="primary" link>Transfer</Button>
+      </Control>
+    </Field>
+    <Field align="right" addons>
+      <Control>
+        <Select>
+          <Select.Content>
+            <Select.Option>$</Select.Option>
+            <Select.Option>£</Select.Option>
+            <Select.Option>€</Select.Option>
+          </Select.Content>
+        </Select>
+      </Control>
+      <Control>
+        <Input placeholder="Amount of money" />
+      </Control>
+      <Control>
+        <Button color="primary" link>Transfer</Button>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+## Form Group
+
+If you want to **group** controls together, use the `grouped` prop on the `<Field>` container.
+
+<Canvas>
+  <Story name="Field Group">
+    <Field grouped>
+      <Control>
+        <Button color="primary" link>Submit</Button>
+      </Control>
+      <Control>
+        <Button color="light" link>Cancel</Button>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+Use the `grouped` prop with the `align` prop to alter the alignment.
+
+<Canvas>
+  <Story name="Field Group Alignment">
+    <Field align="center" grouped>
+      <Control>
+        <Button color="primary" link>Submit</Button>
+      </Control>
+      <Control>
+        <Button color="light" link>Cancel</Button>
+      </Control>
+    </Field>
+    <Field align="right" grouped>
+      <Control>
+        <Button color="primary" link>Submit</Button>
+      </Control>
+      <Control>
+        <Button color="light" link>Cancel</Button>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+Add the `expanded` prop on the `<Control>` you want to **fill up the remaining space** with.
+
+<Canvas>
+  <Story name="Expanded Control">
+    <Field grouped>
+      <Control expanded>
+        <Input placeholder="Find a repository" />
+      </Control>
+      <Control>
+        <Button color="info" link>Search</Button>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+Add the `grouped` and `multiline` prop to allow controls to fill up multiple lines. This is ideal for a long list of controls.
+
+<Canvas>
+  <Story name="Multiline Group">
+    <Field grouped multiline>
+      <Control>
+        <Button link>One</Button>
+      </Control>
+      <Control>
+        <Button link>Two</Button>
+      </Control>
+      <Control>
+        <Button link>Three</Button>
+      </Control>
+      <Control>
+        <Button link>Four</Button>
+      </Control>
+      <Control>
+        <Button link>Five</Button>
+      </Control>
+      <Control>
+        <Button link>Six</Button>
+      </Control>
+      <Control>
+        <Button link>Seven</Button>
+      </Control>
+      <Control>
+        <Button link>Eight</Button>
+      </Control>
+      <Control>
+        <Button link>Nine</Button>
+      </Control>
+      <Control>
+        <Button link>Ten</Button>
+      </Control>
+      <Control>
+        <Button link>Eleven</Button>
+      </Control>
+      <Control>
+        <Button link>Twelve</Button>
+      </Control>
+      <Control>
+        <Button link>Thirteen</Button>
+      </Control>
+      <Control>
+        <Button link>Fourteen</Button>
+      </Control>
+      <Control>
+        <Button link>Fifteen</Button>
+      </Control>
+    </Field>
+  </Story>
+</Canvas>
+
+## Horizontal Form Control
+
+If you want a horizontal form control, use the `horizontal` prop on the `<Field>` container, in which you include:
+
+- `<Field.Label>` for the side label
+- `<Field.Body>` for the input/select/textarea container
+
+You can use `grouped` or `addons` for the child elements.
+
+<Canvas>
+  <Story name="Horizontal Form">
+    <Field horizontal>
+      <Field.Label size="normal">
+        <Label>From</Label>
+      </Field.Label>
+      <Field.Body>
+        <Field>
+          <Control expanded iconsLeft>
+            <Input placeholder="Name" />
+            <Icon size="small" align="left">
+              <FontAwesomeIcon icon={faUser} />
+            </Icon>
+          </Control>
+        </Field>
+        <Field>
+          <Control expanded iconsLeft iconsRight>
+            <Input type="email" color="success" placeholder="Email" />
+            <Icon size="small" align="left">
+              <FontAwesomeIcon icon={faEnvelope} />
+            </Icon>
+            <Icon size="small" align="right">
+              <FontAwesomeIcon icon={faCheck} />
+            </Icon>
+          </Control>
+        </Field>
+      </Field.Body>
+    </Field>
+    <Field horizontal>
+      <Field.Label />
+      <Field.Body>
+        <Field expanded>
+          <Field addons>
+            <Control>
+              <Button static link>+44</Button>
+            </Control>
+            <Control expanded>
+              <Input type="tel" placeholder="Your phone number" />
+            </Control>
+          </Field>
+          <Help>Do not enter the first zero</Help>
+        </Field>
+      </Field.Body>
+    </Field>
+    <Field horizontal>
+      <Field.Label size="normal">
+        <Label>Department</Label>
+      </Field.Label>
+      <Field.Body>
+        <Field narrow>
+          <Control>
+            <Select fullWidth>
+              <Select.Content>
+                <Select.Option>Business development</Select.Option>
+                <Select.Option>Marketing</Select.Option>
+                <Select.Option>Sales</Select.Option>
+              </Select.Content>
+            </Select>
+          </Control>
+        </Field>
+      </Field.Body>
+    </Field>
+    <Field horizontal>
+      <Field.Label>
+        <Label>Already a member?</Label>
+      </Field.Label>
+      <Field.Body>
+        <Field narrow>
+          <Control>
+            <Radio>
+              <input type="radio" name="member" />
+              <span>{' Yes'}</span>
+            </Radio>
+            <Radio>
+              <input type="radio" name="member" />
+              <span>{' No'}</span>
+            </Radio>
+          </Control>
+        </Field>
+      </Field.Body>
+    </Field>
+    <Field horizontal>
+      <Field.Label size="normal">
+        <Label>Subject</Label>
+      </Field.Label>
+      <Field.Body>
+        <Field>
+          <Control>
+            <Input color="danger" placeholder="e.g. Partnership opportunity" />
+          </Control>
+          <Help color="danger">
+            This field is required
+          </Help>
+        </Field>
+      </Field.Body>
+    </Field>
+    <Field horizontal>
+      <Field.Label size="normal">
+        <Label>Question</Label>
+      </Field.Label>
+      <Field.Body>
+        <Field>
+          <Control>
+            <Textarea placeholder="Explain how we can help you" />
+          </Control>
+        </Field>
+      </Field.Body>
+    </Field>
+    <Field horizontal>
+      <Field.Label />
+      <Field.Body>
+        <Field>
+          <Control>
+            <Button color="primary">Send message</Button>
+          </Control>
+        </Field>
+      </Field.Body>
+    </Field>
+  </Story>
+</Canvas>
+
+## Control Props
+
+<ArgsTable of={Control} />
