@@ -5,23 +5,27 @@ import classNames from 'classnames';
 export default function LevelItem({
   children,
   className,
+  link,
   ...props
 }) {
+  const Element = link ? 'a' : 'div';
   const levelItemClasses = classNames('level-item', className);
 
   return (
-    <div className={levelItemClasses} {...props}>
+    <Element className={levelItemClasses} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 LevelItem.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  link: PropTypes.bool,
 };
 
 LevelItem.defaultProps = {
   className: undefined,
   children: null,
+  link: false,
 };
