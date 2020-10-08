@@ -1,0 +1,117 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Message from './Message';
+import Delete from '../Delete';
+
+<Meta title="Components/Message" component={Message} />
+
+# Message
+
+[Bulma Documentation](https://bulma.io/documentation/components/message/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+<Canvas>
+  <Story name="Default">
+    <Message>
+      <Message.Header>
+        <p>Hello World</p>
+        <Delete />
+      </Message.Header>
+      <Message.Body>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+      </Message.Body>
+    </Message>
+  </Story>
+</Canvas>
+
+## Colors
+
+The `<Message>` is available in all the different colors by use of the `color` prop.
+
+<Canvas>
+  <Story name="Colors">
+    <Message color="primary">
+      <Message.Header>
+        <p>Primary</p>
+        <Delete />
+      </Message.Header>
+      <Message.Body>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+      </Message.Body>
+    </Message>
+  </Story>
+</Canvas>
+
+## Message body only
+
+You can remove the `<Message.Header>` if you don't need it, which will add a left border to the `<Message.Body>`:
+
+<Canvas>
+  <Story name="Body only">
+    <Message>
+      <Message.Body>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+      </Message.Body>
+    </Message>
+  </Story>
+</Canvas>
+
+## Sizes
+
+The `<Message>` component is available in 4 sizes by use of the `size` prop.
+
+<Canvas>
+  <Story name="Sizes">
+    <Message size="small">
+      <Message.Header>
+        <p>Small Message</p>
+        <Delete size="small" />
+      </Message.Header>
+      <Message.Body>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+      </Message.Body>
+    </Message>
+    <Message>
+      <Message.Header>
+        <p>Normal Message</p>
+        <Delete />
+      </Message.Header>
+      <Message.Body>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+      </Message.Body>
+    </Message>
+    <Message size="medium">
+      <Message.Header>
+        <p>Medium Message</p>
+        <Delete size="medium" />
+      </Message.Header>
+      <Message.Body>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+      </Message.Body>
+    </Message>
+    <Message size="large">
+      <Message.Header>
+        <p>Large Message</p>
+        <Delete size="large" />
+      </Message.Header>
+      <Message.Body>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+      </Message.Body>
+    </Message>
+  </Story>
+</Canvas>
+
+## Message Props
+
+<ArgsTable of={Message} />
+
+## Message.Header Props
+
+<ArgsTable of={Message.Header} />
+
+## Message.Body Props
+
+<ArgsTable of={Message.Body} />
