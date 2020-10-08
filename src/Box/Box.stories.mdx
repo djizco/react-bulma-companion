@@ -1,6 +1,16 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faReply } from '@fortawesome/free-solid-svg-icons/faReply';
+import { faRetweet } from '@fortawesome/free-solid-svg-icons/faRetweet';
+import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
+
 import Box from './Box';
+import Level from '../Level'
+import Media from '../Media'
+import Image from '../Image'
+import Content from '../Content'
+import Icon from '../Icon'
 
 <Meta title="Elements/Box" component={Box} />
 
@@ -17,7 +27,43 @@ For example, you can include a media object:
 
 <Canvas>
   <Story name="Default">
-    <Box>Temporary Content</Box>
+    <Box>
+      <Media>
+        <Media.Left>
+          <Image size="64x64">
+            <Image.Content src="https://bulma.io/images/placeholders/128x128.png" />
+          </Image>
+        </Media.Left>
+        <Media.Content>
+          <Content>
+            <p>
+            <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+            <br />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+            </p>
+          </Content>
+          <Level mobile>
+            <Level.Left>
+              <Level.Item link>
+                <Icon size="small">
+                  <FontAwesomeIcon icon={faReply} />
+                </Icon>
+              </Level.Item>
+              <Level.Item link>
+                <Icon size="small">
+                  <FontAwesomeIcon icon={faRetweet} />
+                </Icon>
+              </Level.Item>
+              <Level.Item link>
+                <Icon size="small">
+                  <FontAwesomeIcon icon={faHeart} />
+                </Icon>
+              </Level.Item>
+            </Level.Left>
+          </Level>
+        </Media.Content>
+      </Media>
+    </Box>
   </Story>
 </Canvas>
 
@@ -27,7 +73,24 @@ It can be rendered as an `<a>` link by adding the `link` prop.
 
 <Canvas>
   <Story name="Link">
-    <Box link>Temporary Content</Box>
+    <Box link>
+      <Media>
+        <Media.Left>
+          <Image size="64x64">
+            <Image.Content src="https://bulma.io/images/placeholders/128x128.png" />
+          </Image>
+        </Media.Left>
+        <Media.Content>
+          <Content>
+            <p>
+            <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+            <br />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+            </p>
+          </Content>
+        </Media.Content>
+      </Media>
+    </Box>
   </Story>
 </Canvas>
 
