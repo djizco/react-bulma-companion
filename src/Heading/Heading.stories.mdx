@@ -1,0 +1,28 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Heading from './Heading';
+import Block from '../Block';
+import Title from '../Title';
+
+<Meta title="Elements/Heading" component={Heading} />
+
+# Heading
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The `<Heading>` creates a simple heading with some styles.
+
+<Canvas>
+  <Story name="default">
+    <Block className="has-text-centered">
+      <Heading>Heading</Heading>
+      <Title subtitle>123</Title>
+    </Block>
+  </Story>
+</Canvas>
+
+## Heading Props
+
+<ArgsTable of={Heading} />

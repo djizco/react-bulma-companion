@@ -1,0 +1,147 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Level from './Level';
+import Title from '../Title';
+import Field from '../Field';
+import Control from '../Control';
+import Button from '../Button';
+import Input from '../Input';
+import Heading from '../Heading';
+
+<Meta title="Layout/Level" component={Level} />
+
+# Level
+
+### A multi-purpose **horizontal level**, which can contain almost any other element
+
+[Bulma Documentation](https://bulma.io/documentation/layout/level/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The **structure** of a level is the following:
+
+- `<Level>`: main container
+  - `<Level.Left>` for the left side
+  - `<Level.Right>` for the right side
+    - `<Level.Item>` for each individual element
+
+In a `<Level.Item>`, you can then insert almost anything you want: a title, a button, a text input, or just simple text. No matter what elements you put inside a Bulma level, they will always be vertically centered.
+
+<Canvas>
+  <Story name="Default">
+    <Level>
+      <Level.Left>
+        <Level.Item>
+          <Title size="5" subtitle>
+            <strong>123</strong> posts
+          </Title>
+        </Level.Item>
+        <Level.Item>
+          <Field addons>
+            <Control>
+              <Input placeholder="Find a post" />
+            </Control>
+            <Control>
+              <Button>Search</Button>
+            </Control>
+          </Field>
+        </Level.Item>
+      </Level.Left>
+      <Level.Right>
+        <Level.Item><strong>All</strong></Level.Item>
+        <Level.Item><a>Published</a></Level.Item>
+        <Level.Item><a>Drafts</a></Level.Item>
+        <Level.Item><a>Deleted</a></Level.Item>
+        <Level.Item><Button color="success" link>New</Button></Level.Item>
+      </Level.Right>
+    </Level>
+  </Story>
+</Canvas>
+
+## Centered Level
+
+If you want a **centered level**, you can use as many `<Level.Item>`s as you want, as long as they are direct children of the level container.
+
+<Canvas>
+  <Story name="Centered">
+    <Level>
+      <Level.Item className="has-text-centered">
+        <div>
+          <Heading>Tweets</Heading>
+          <Title>3,456</Title>
+        </div>
+      </Level.Item>
+      <Level.Item className="has-text-centered">
+        <div>
+          <Heading>Following</Heading>
+          <Title>123</Title>
+        </div>
+      </Level.Item>
+      <Level.Item className="has-text-centered">
+        <div>
+          <Heading>Followers</Heading>
+          <Title>456K</Title>
+        </div>
+      </Level.Item>
+      <Level.Item className="has-text-centered">
+        <div>
+          <Heading>Likes</Heading>
+          <Title>789</Title>
+        </div>
+      </Level.Item>
+    </Level>
+  </Story>
+</Canvas>
+
+## Mobile Level
+
+By default, for space concerns, the level is vertical on mobile. If you want the level to be horizontal on mobile as well, add the is-mobile modifier on the level container.
+
+<Canvas>
+  <Story name="Mobile">
+    <Level mobile>
+      <Level.Item className="has-text-centered">
+        <div>
+          <Heading>Tweets</Heading>
+          <Title>3,456</Title>
+        </div>
+      </Level.Item>
+      <Level.Item className="has-text-centered">
+        <div>
+          <Heading>Following</Heading>
+          <Title>123</Title>
+        </div>
+      </Level.Item>
+      <Level.Item className="has-text-centered">
+        <div>
+          <Heading>Followers</Heading>
+          <Title>456K</Title>
+        </div>
+      </Level.Item>
+      <Level.Item className="has-text-centered">
+        <div>
+          <Heading>Likes</Heading>
+          <Title>789</Title>
+        </div>
+      </Level.Item>
+    </Level>
+  </Story>
+</Canvas>
+
+## Level Props
+
+<ArgsTable of={Level} />
+
+## Level.Left Props
+
+<ArgsTable of={Level.Left} />
+
+## Level.Right Props
+
+<ArgsTable of={Level.Right} />
+
+## Level.Item Props
+
+<ArgsTable of={Level.Item} />
