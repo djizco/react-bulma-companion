@@ -7,7 +7,7 @@ import ImageContent from './ImageContent';
 export default function Image({
   children,
   className,
-  fullWidth,
+  fullwidth,
   ratio,
   size,
   ...props
@@ -46,7 +46,7 @@ export default function Image({
   const isRatio = ratio && ratioMap[ratio];
 
   const imageClasses = classNames('image', className, isSize, isRatio, {
-    'is-fullwidth': fullWidth,
+    'is-fullwidth': fullwidth,
   });
 
   return (
@@ -88,7 +88,7 @@ Image.propTypes = {
     '1by2',
     '1by3',
   ]),
-  fullWidth: PropTypes.bool,
+  fullwidth: PropTypes.bool,
 };
 
 Image.defaultProps = {
@@ -96,5 +96,5 @@ Image.defaultProps = {
   children: null,
   size: undefined,
   ratio: undefined,
-  fullWidth: false,
+  fullwidth: false,
 };

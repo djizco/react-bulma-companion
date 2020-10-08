@@ -6,6 +6,8 @@ import Table from './Table';
 
 # Table
 
+### The inevitable HTML **table**, with special case cells
+
 [Bulma Documentation](https://bulma.io/documentation/elements/table/)
 
 Supported Versions: `0.9.1`, `0.9.0`
@@ -445,11 +447,11 @@ You can add a **hover effect** on each row by adding the `hoverable` prop.
   </Story>
 </Canvas>
 
-You can have a **fullwidth** table by adding the `fullWidth` prop.
+You can have a **fullwidth** table by adding the `fullwidth` prop.
 
 <Canvas>
-  <Story name="Full Width">
-    <Table fullWidth>
+  <Story name="Fullwidth">
+    <Table fullwidth>
       <Table.Head>
         <Table.Row>
           <Table.HeadCell>Symbol</Table.HeadCell>
@@ -494,7 +496,7 @@ You can **combine** all five modifiers in any combination.
 
 <Canvas>
   <Story name="Combination">
-    <Table bordered striped narrow hoverable fullWidth>
+    <Table bordered striped narrow hoverable fullwidth>
       <Table.Head>
         <Table.Row>
           <Table.HeadCell>Symbol</Table.HeadCell>

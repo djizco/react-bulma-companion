@@ -15,7 +15,7 @@ export default function File({
   children,
   className,
   color,
-  fullWidth,
+  fullwidth,
   hasName,
   size,
   ...props
@@ -52,7 +52,7 @@ export default function File({
 
   const fileClasses = classNames('file', className, isColor, isSize, isAlign, {
     'has-name': hasName,
-    'is-fullwidth': fullWidth,
+    'is-fullwidth': fullwidth,
     'is-boxed': boxed,
   });
 
@@ -89,7 +89,7 @@ File.propTypes = {
   align: PropTypes.oneOf(['center', 'right']),
   hasName: PropTypes.bool,
   boxed: PropTypes.bool,
-  fullWidth: PropTypes.bool,
+  fullwidth: PropTypes.bool,
 };
 
 File.defaultProps = {
@@ -100,5 +100,5 @@ File.defaultProps = {
   align: undefined,
   hasName: false,
   boxed: false,
-  fullWidth: false,
+  fullwidth: false,
 };

@@ -1,0 +1,50 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Hero from './Hero';
+import Container from '../Container';
+import Title from '../Title';
+
+<Meta title="Layout/Hero" component={Hero} />
+
+# Hero
+
+### An imposing **hero banner** to showcase something
+
+[Bulma Documentation](https://bulma.io/documentation/layout/hero/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+<Canvas>
+  <Story name="Default">
+    <Hero>
+      <Hero.Body>
+        <Container>
+          <Title>Hero title</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+  </Story>
+</Canvas>
+
+## Colors
+
+## Sizes
+
+## Hero Props
+
+<ArgsTable of={Hero} />
+
+## Hero.Head Props
+
+<ArgsTable of={Hero.Head} />
+
+## Hero.Body Props
+
+<ArgsTable of={Hero.Body} />
+
+## Hero.Foot Props
+
+<ArgsTable of={Hero.Foot} />

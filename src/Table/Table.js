@@ -14,7 +14,7 @@ export default function Table({
   bordered,
   children,
   className,
-  fullWidth,
+  fullwidth,
   hoverable,
   narrow,
   striped,
@@ -25,7 +25,7 @@ export default function Table({
     'is-striped': striped,
     'is-narrow': narrow,
     'is-hoverable': hoverable,
-    'is-fullwidth': fullWidth,
+    'is-fullwidth': fullwidth,
   });
 
   return (
@@ -50,7 +50,7 @@ Table.propTypes = {
   striped: PropTypes.bool,
   narrow: PropTypes.bool,
   hoverable: PropTypes.bool,
-  fullWidth: PropTypes.bool,
+  fullwidth: PropTypes.bool,
 };
 
 Table.defaultProps = {
@@ -60,5 +60,5 @@ Table.defaultProps = {
   striped: false,
   narrow: false,
   hoverable: false,
-  fullWidth: false,
+  fullwidth: false,
 };

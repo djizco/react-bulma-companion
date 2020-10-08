@@ -22,6 +22,8 @@ import Help from '../Help';
 
 # Control
 
+### All generic **form controls**, designed for consistency
+
 [Bulma Documentation](https://bulma.io/documentation/form/general/#form-control)
 
 Supported Versions: `0.9.1`, `0.9.0`
@@ -97,7 +99,7 @@ You can append icons to **select dropdowns** as well.
   <Story name="Select Icons">
     <Field>
       <Control iconsLeft>
-        <Select fullWidth>
+        <Select fullwidth>
           <Select.Content>
             <Select.Option selected>Country</Select.Option>
             <Select.Option>Argentina</Select.Option>
@@ -197,26 +199,26 @@ Use the `expanded` prop on the `<Control>` you want to fill up the remaining spa
   </Story>
 </Canvas>
 
-If you want a full width select dropdown, pair Control `expanded` with Select `fullWidth`.
+If you want a fullwidth select dropdown, pair Control `expanded` with Select `fullwidth`.
 
 <Canvas>
   <Story name="Expanded Select">
     <Field addons>
       <Control expanded>
-        <Select fullWidth>
+        <Select fullwidth>
           <Select.Content name="country">
-            <Select.Option value="Argentina">Argentina</Select.Option>
-            <Select.Option value="Bolivia">Bolivia</Select.Option>
-            <Select.Option value="Brazil">Brazil</Select.Option>
-            <Select.Option value="Chile">Chile</Select.Option>
-            <Select.Option value="Colombia">Colombia</Select.Option>
-            <Select.Option value="Ecuador">Ecuador</Select.Option>
-            <Select.Option value="Guyana">Guyana</Select.Option>
-            <Select.Option value="Paraguay">Paraguay</Select.Option>
-            <Select.Option value="Peru">Peru</Select.Option>
-            <Select.Option value="Suriname">Suriname</Select.Option>
-            <Select.Option value="Uruguay">Uruguay</Select.Option>
-            <Select.Option value="Venezuela">Venezuela</Select.Option>
+            <Select.Option>Argentina</Select.Option>
+            <Select.Option>Bolivia</Select.Option>
+            <Select.Option>Brazil</Select.Option>
+            <Select.Option>Chile</Select.Option>
+            <Select.Option>Colombia</Select.Option>
+            <Select.Option>Ecuador</Select.Option>
+            <Select.Option>Guyana</Select.Option>
+            <Select.Option>Paraguay</Select.Option>
+            <Select.Option>Peru</Select.Option>
+            <Select.Option>Suriname</Select.Option>
+            <Select.Option>Uruguay</Select.Option>
+            <Select.Option>Venezuela</Select.Option>
           </Select.Content>
         </Select>
       </Control>
@@ -437,7 +439,7 @@ You can use `grouped` or `addons` for the child elements.
       <Field.Body>
         <Field narrow>
           <Control>
-            <Select fullWidth>
+            <Select fullwidth>
               <Select.Content>
                 <Select.Option>Business development</Select.Option>
                 <Select.Option>Marketing</Select.Option>

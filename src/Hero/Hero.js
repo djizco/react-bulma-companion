@@ -2,18 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import SelectContent from './SelectContent';
-import SelectOption from './SelectOption';
+import HeroHead from './HeroHead';
+import HeroBody from './HeroBody';
+import HeroFoot from './HeroFoot';
 
-export default function Select({
+export default function Hero({
+  bold,
   children,
   className,
   color,
-  fullwidth,
-  loading,
-  rounded,
   size,
-  multiple,
   ...props
 }) {
   // Colors
@@ -36,27 +34,28 @@ export default function Select({
     small: 'is-small',
     medium: 'is-medium',
     large: 'is-large',
+    halfheight: 'is-halfheight',
+    fullheight: 'is-fullheight',
+    'fullheight-navbar': 'is-fullheight-with-navbar',
   };
   const isSize = size && sizeMap[size];
 
-  const selectClasses = classNames('select', className, isColor, isSize, {
-    'is-fullwidth': fullwidth,
-    'is-multiple': multiple,
-    'is-rounded': rounded,
-    'is-loading': loading,
+  const heroClasses = classNames('hero', className, isColor, isSize, {
+    'is-bold': bold,
   });
 
   return (
-    <div className={selectClasses} {...props}>
+    <section className={heroClasses} {...props}>
       {children}
-    </div>
+    </section>
   );
 }
 
-Select.Content = SelectContent;
-Select.Option = SelectOption;
+Hero.Head = HeroHead;
+Hero.Body = HeroBody;
+Hero.Foot = HeroFoot;
 
-Select.propTypes = {
+Hero.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   color: PropTypes.oneOf([
@@ -71,20 +70,21 @@ Select.propTypes = {
     'light',
     'dark',
   ]),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  fullwidth: PropTypes.bool,
-  multiple: PropTypes.bool,
-  rounded: PropTypes.bool,
-  loading: PropTypes.bool,
+  size: PropTypes.oneOf([
+    'small',
+    'medium',
+    'large',
+    'halfheight',
+    'fullheight',
+    'fullheight-navbar',
+  ]),
+  bold: PropTypes.bool,
 };
 
-Select.defaultProps = {
+Hero.defaultProps = {
   className: undefined,
   children: null,
   color: undefined,
   size: undefined,
-  fullwidth: false,
-  multiple: false,
-  rounded: false,
-  loading: false,
+  bold: false,
 };
