@@ -1,6 +1,13 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons/faAngleDown';
+
 import Card from './Card';
+import Image from '../Image';
+import Media from '../Media';
+import Title from '../Title';
+import Icon from '../Icon';
 
 <Meta title="Components/Card" component={Card} />
 
@@ -14,12 +21,113 @@ Supported Versions: `0.9.1`, `0.9.0`
 
 ## Default
 
+The `<Card>` comprises several components that you can mix and match:
+
+- `<Card>`: the main container
+  - `<Card.Header>`: a horizontal bar with a shadow
+    - `<Card.HeaderTitle>`: a left-aligned bold text
+    - `<Card.HeaderIcon>`: a placeholder for an icon
+  - `<Card.Image>`: a fullwidth container for a responsive image
+  - `<Card.Content>`: a multi-purpose container for any other element
+  - `<Card.Footer>`: a horizontal list of controls
+    - `<Card.FooterItem>`: a repeatable list item
+
 <Canvas>
   <Story name="Default">
-    <Card />
+    <div style={{ maxWidth: '300px', margin: '0 auto' }}>
+      <Card>
+        <Card.Header>
+          <Card.HeaderTitle>
+            Card Header
+          </Card.HeaderTitle>
+          <Card.HeaderIcon link>
+            <Icon>
+              <FontAwesomeIcon icon={faAngleDown} />
+            </Icon>
+          </Card.HeaderIcon>
+        </Card.Header>
+        <Card.Image>
+          <Image ratio="4by3">
+            <Image.Content src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
+          </Image>
+        </Card.Image>
+        <Card.Content>
+          <Media>
+            <Media.Left>
+              <Image size="48x48">
+                <Image.Content src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
+              </Image>
+            </Media.Left>
+            <Media.Content>
+              <Title size="4">John Smith</Title>
+              <Title size="6" subtitle>@johnsmith</Title>
+            </Media.Content>
+          </Media>
+          <Content>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>. <a>#css</a> <a>#responsive</a>
+            <br />
+            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+          </Content>
+        </Card.Content>
+        <Card.Footer>
+          <Card.FooterItem>Save</Card.FooterItem>
+          <Card.FooterItem>Edit</Card.FooterItem>
+          <Card.FooterItem>Delete</Card.FooterItem>
+        </Card.Footer>
+      </Card>
+    </div>
+  </Story>
+</Canvas>
+
+You can center the `<Card.HeaderTitle>` by appending the `centered` prop.
+
+<Canvas>
+  <Story name="Header title center">
+    <div style={{ maxWidth: '300px', margin: '0 auto' }}>
+      <Card>
+        <Card.Header>
+          <Card.HeaderTitle centered>
+            Centered Title
+          </Card.HeaderTitle>
+        </Card.Header>
+        <Card.Content>
+          <Content>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+          </Content>
+        </Card.Content>
+      </Card>
+    </div>
   </Story>
 </Canvas>
 
 ## Card Props
 
 <ArgsTable of={Card} />
+
+## Card.Header Props
+
+<ArgsTable of={Card.Header} />
+
+## Card.HeaderTitle Props
+
+<ArgsTable of={Card.HeaderTitle} />
+
+## Card.HeaderIcon Props
+
+<ArgsTable of={Card.HeaderIcon} />
+
+## Card.Image Props
+
+<ArgsTable of={Card.Image} />
+
+## Card.Content Props
+
+<ArgsTable of={Card.Content} />
+
+## Card.Footer Props
+
+<ArgsTable of={Card.Footer} />
+
+## Card.FooterItem Props
+
+<ArgsTable of={Card.FooterItem} />
