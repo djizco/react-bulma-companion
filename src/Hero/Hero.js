@@ -40,12 +40,12 @@ export default function Hero({
   };
   const isSize = size && sizeMap[size];
 
-  const heroClasses = classNames('hero', className, isColor, isSize, {
+  const classes = classNames('hero', className, isColor, isSize, {
     'is-bold': bold,
   });
 
   return (
-    <section className={heroClasses} {...props}>
+    <section className={classes} {...props}>
       {children}
     </section>
   );

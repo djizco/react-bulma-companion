@@ -7,10 +7,10 @@ export default function FileText({
   className,
   ...props
 }) {
-  const fileTextClasses = classNames('file-label', className);
+  const classes = classNames('file-label', className);
 
   return (
-    <span className={fileTextClasses} {...props}>
+    <span className={classes} {...props}>
       {children}
     </span>
   );

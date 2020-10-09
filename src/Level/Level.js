@@ -12,12 +12,12 @@ export default function Level({
   mobile,
   ...props
 }) {
-  const levelClasses = classNames('level', className, {
+  const classes = classNames('level', className, {
     'is-mobile': mobile,
   });
 
   return (
-    <nav className={levelClasses} {...props}>
+    <nav className={classes} {...props}>
       {children}
     </nav>
   );

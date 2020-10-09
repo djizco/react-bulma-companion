@@ -23,10 +23,10 @@ export default function Block({
   };
   const isColor = color && colorMap[color];
 
-  const helpClasses = classNames('help', className, isColor);
+  const classes = classNames('help', className, isColor);
 
   return (
-    <p className={helpClasses} {...props}>
+    <p className={classes} {...props}>
       {children}
     </p>
   );

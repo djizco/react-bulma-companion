@@ -7,10 +7,10 @@ export default function MediaRight({
   className,
   ...props
 }) {
-  const mediaRightClasses = classNames('media-right', className);
+  const classes = classNames('media-right', className);
 
   return (
-    <div className={mediaRightClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

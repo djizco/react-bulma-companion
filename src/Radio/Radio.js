@@ -7,10 +7,10 @@ export default function Radio({
   className,
   ...props
 }) {
-  const radioClasses = classNames('radio', className);
+  const classes = classNames('radio', className);
 
   return (
-    <label className={radioClasses} {...props}>
+    <label className={classes} {...props}>
       {children}
     </label>
   );

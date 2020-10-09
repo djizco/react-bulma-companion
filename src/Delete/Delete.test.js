@@ -6,7 +6,7 @@ import Delete from './Delete';
 const wrapper = shallow(<Delete />);
 
 describe('<Delete />', () => {
-  test('Renders as an <a> element', () => {
-    expect(wrapper.type()).toEqual('a');
+  test('Renders as an <button> element', () => {
+    expect(wrapper.type()).toEqual('button');
   });
 });

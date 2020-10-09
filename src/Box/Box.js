@@ -9,10 +9,10 @@ export default function Box({
   ...props
 }) {
   const Element = link ? 'a' : 'div';
-  const boxClasses = classNames('box', className);
+  const classes = classNames('box', className);
 
   return (
-    <Element className={boxClasses} {...props}>
+    <Element className={classes} {...props}>
       {children}
     </Element>
   );

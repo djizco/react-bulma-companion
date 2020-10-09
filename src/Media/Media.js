@@ -11,10 +11,10 @@ export default function Media({
   className,
   ...props
 }) {
-  const mediaClasses = classNames('media', className);
+  const classes = classNames('media', className);
 
   return (
-    <article className={mediaClasses} {...props}>
+    <article className={classes} {...props}>
       {children}
     </article>
   );

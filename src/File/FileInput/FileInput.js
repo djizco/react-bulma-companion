@@ -6,10 +6,10 @@ export default function FileInput({
   className,
   ...props
 }) {
-  const fileInputClasses = classNames('file-input', className);
+  const classes = classNames('file-input', className);
 
   return (
-    <input className={fileInputClasses} {...props} />
+    <input className={classes} {...props} />
   );
 }
 

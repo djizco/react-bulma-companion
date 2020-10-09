@@ -7,10 +7,10 @@ export default function MediaContent({
   className,
   ...props
 }) {
-  const mediaContentClasses = classNames('media-content', className);
+  const classes = classNames('media-content', className);
 
   return (
-    <div className={mediaContentClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

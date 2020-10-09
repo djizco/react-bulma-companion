@@ -7,10 +7,10 @@ export default function MenuList({
   className,
   ...props
 }) {
-  const menuListClasses = classNames('menu-list', className);
+  const classes = classNames('menu-list', className);
 
   return (
-    <ul className={menuListClasses} {...props}>
+    <ul className={classes} {...props}>
       {children}
     </ul>
   );

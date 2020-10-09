@@ -38,12 +38,12 @@ export default function Title({
   };
   const isSize = size && sizeMap[size];
 
-  const titleClasses = classNames(isTitle, className, isSize, {
+  const classes = classNames(isTitle, className, isSize, {
     'is-spaced': spaced,
   });
 
   return (
-    <Element className={titleClasses} {...props}>
+    <Element className={classes} {...props}>
       {children}
     </Element>
   );

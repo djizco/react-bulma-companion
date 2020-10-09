@@ -7,10 +7,10 @@ export default function FileLabel({
   className,
   ...props
 }) {
-  const fileLabelClasses = classNames('file-label', className);
+  const classes = classNames('file-label', className);
 
   return (
-    <label className={fileLabelClasses} {...props}>
+    <label className={classes} {...props}>
       {children}
     </label>
   );

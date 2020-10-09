@@ -7,10 +7,10 @@ export default function MessageBody({
   className,
   ...props
 }) {
-  const messageBodyClasses = classNames('message-body', className);
+  const classes = classNames('message-body', className);
 
   return (
-    <div className={messageBodyClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

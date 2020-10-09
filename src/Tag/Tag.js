@@ -37,7 +37,7 @@ export default function Tag({
   };
   const isSize = size && sizeMap[size];
 
-  const tagClasses = classNames('tag', className, isColor, isSize, {
+  const classes = classNames('tag', className, isColor, isSize, {
     'is-light': light,
     'is-rounded': rounded,
     'is-delete': props.delete,
@@ -47,7 +47,7 @@ export default function Tag({
   delete props.delete;
 
   return (
-    <Element className={tagClasses} {...props}>
+    <Element className={classes} {...props}>
       {children}
     </Element>
   );

@@ -35,10 +35,10 @@ export default function Message({
   };
   const isSize = size && sizeMap[size];
 
-  const messageClasses = classNames('message', className, isColor, isSize);
+  const classes = classNames('message', className, isColor, isSize);
 
   return (
-    <article className={messageClasses} {...props}>
+    <article className={classes} {...props}>
       {children}
     </article>
   );

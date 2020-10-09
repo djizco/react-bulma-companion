@@ -7,10 +7,10 @@ export default function CardFooter({
   className,
   ...props
 }) {
-  const cardFooterClasses = classNames('card-footer', className);
+  const classes = classNames('card-footer', className);
 
   return (
-    <footer className={cardFooterClasses} {...props}>
+    <footer className={classes} {...props}>
       {children}
     </footer>
   );

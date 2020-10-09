@@ -7,10 +7,10 @@ export default function FileName({
   className,
   ...props
 }) {
-  const fileNameClasses = classNames('file-name', className);
+  const classes = classNames('file-name', className);
 
   return (
-    <span className={fileNameClasses} {...props}>
+    <span className={classes} {...props}>
       {children}
     </span>
   );

@@ -21,10 +21,10 @@ export default function Menu({
   };
   const isSize = size && sizeMap[size];
 
-  const menuClasses = classNames('menu', className, isSize);
+  const classes = classNames('menu', className, isSize);
 
   return (
-    <aside className={menuClasses} {...props}>
+    <aside className={classes} {...props}>
       {children}
     </aside>
   );

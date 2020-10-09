@@ -7,10 +7,10 @@ export default function LevelLeft({
   className,
   ...props
 }) {
-  const levelLeftClasses = classNames('level-left', className);
+  const classes = classNames('level-left', className);
 
   return (
-    <div className={levelLeftClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

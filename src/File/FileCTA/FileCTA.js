@@ -7,10 +7,10 @@ export default function FileCTA({
   className,
   ...props
 }) {
-  const fileCTAClasses = classNames('file-cta', className);
+  const classes = classNames('file-cta', className);
 
   return (
-    <span className={fileCTAClasses} {...props}>
+    <span className={classes} {...props}>
       {children}
     </span>
   );

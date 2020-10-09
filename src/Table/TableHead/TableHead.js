@@ -1,16 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 export default function TableHead({
   children,
   className,
   ...props
 }) {
-  const tableHeadClasses = classNames(className);
-
   return (
-    <thead className={tableHeadClasses} {...props}>
+    <thead className={className} {...props}>
       {children}
     </thead>
   );

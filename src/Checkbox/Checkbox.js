@@ -7,10 +7,10 @@ export default function Block({
   className,
   ...props
 }) {
-  const checkboxClasses = classNames('checkbox', className);
+  const classes = classNames('checkbox', className);
 
   return (
-    <label className={checkboxClasses} {...props}>
+    <label className={classes} {...props}>
       {children}
     </label>
   );

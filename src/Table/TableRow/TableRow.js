@@ -8,12 +8,12 @@ export default function TableRow({
   selected,
   ...props
 }) {
-  const tableRowClasses = classNames(className, {
+  const classes = classNames(className, {
     'is-selected': selected,
   });
 
   return (
-    <tr className={tableRowClasses} {...props}>
+    <tr className={classes} {...props}>
       {children}
     </tr>
   );

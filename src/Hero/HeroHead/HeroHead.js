@@ -7,10 +7,10 @@ export default function HeroHead({
   className,
   ...props
 }) {
-  const heroHeadClasses = classNames('hero-head', className);
+  const classes = classNames('hero-head', className);
 
   return (
-    <div className={heroHeadClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

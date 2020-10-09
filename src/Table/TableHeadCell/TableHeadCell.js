@@ -26,14 +26,14 @@ export default function TableHeadCell({
   };
   const isColor = color && colorMap[color];
 
-  const tableHeadCellClasses = classNames(className, isColor, {
+  const classes = classNames(className, isColor, {
     'is-selected': selected,
     'is-narrow': narrow,
     'is-vcentered': vcentered,
   });
 
   return (
-    <th className={tableHeadCellClasses} {...props}>
+    <th className={classes} {...props}>
       {children}
     </th>
   );

@@ -10,10 +10,10 @@ export default function CardHeaderIcon({
 }) {
   const Element = link ? 'a' : 'div';
 
-  const cardHeaderIconClasses = classNames('card-header-icon', className);
+  const classes = classNames('card-header-icon', className);
 
   return (
-    <Element className={cardHeaderIconClasses} {...props}>
+    <Element className={classes} {...props}>
       {children}
     </Element>
   );

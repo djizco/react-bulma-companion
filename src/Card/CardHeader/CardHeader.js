@@ -7,10 +7,10 @@ export default function CardHeader({
   className,
   ...props
 }) {
-  const cardHeaderClasses = classNames('card-header', className);
+  const classes = classNames('card-header', className);
 
   return (
-    <header className={cardHeaderClasses} {...props}>
+    <header className={classes} {...props}>
       {children}
     </header>
   );

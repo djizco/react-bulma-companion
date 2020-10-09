@@ -9,10 +9,10 @@ export default function LevelItem({
   ...props
 }) {
   const Element = link ? 'a' : 'div';
-  const levelItemClasses = classNames('level-item', className);
+  const classes = classNames('level-item', className);
 
   return (
-    <Element className={levelItemClasses} {...props}>
+    <Element className={classes} {...props}>
       {children}
     </Element>
   );

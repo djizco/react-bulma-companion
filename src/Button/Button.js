@@ -48,7 +48,7 @@ export default function Button({
   };
   const isSize = size && sizeMap[size];
 
-  const buttonClasses = classNames('button', className, isColor, isSize, {
+  const classes = classNames('button', className, isColor, isSize, {
     'is-light': light,
     'is-fullwidth': fullwidth,
     'is-outlined': outlined,
@@ -66,7 +66,7 @@ export default function Button({
   delete props.static;
 
   return (
-    <Element className={buttonClasses} {...props}>
+    <Element className={classes} {...props}>
       {children}
     </Element>
   );

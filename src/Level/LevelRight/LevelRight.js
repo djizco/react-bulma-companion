@@ -7,10 +7,10 @@ export default function LevelRight({
   className,
   ...props
 }) {
-  const levelRightClasses = classNames('level-right', className);
+  const classes = classNames('level-right', className);
 
   return (
-    <div className={levelRightClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

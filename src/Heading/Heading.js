@@ -7,10 +7,10 @@ export default function Heading({
   className,
   ...props
 }) {
-  const headingClasses = classNames('heading', className);
+  const classes = classNames('heading', className);
 
   return (
-    <p className={headingClasses} {...props}>
+    <p className={classes} {...props}>
       {children}
     </p>
   );

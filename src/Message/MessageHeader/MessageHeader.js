@@ -7,10 +7,10 @@ export default function MessageHeader({
   className,
   ...props
 }) {
-  const messageHeaderClasses = classNames('message-header', className);
+  const classes = classNames('message-header', className);
 
   return (
-    <div className={messageHeaderClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

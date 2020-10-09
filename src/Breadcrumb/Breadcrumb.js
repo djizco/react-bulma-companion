@@ -37,10 +37,10 @@ export default function Breadcrumb({
   };
   const isSize = size && sizeMap[size];
 
-  const breadcrumbClasses = classNames('breadcrumb', className, isAlign, isSeparator, isSize);
+  const classes = classNames('breadcrumb', className, isAlign, isSeparator, isSize);
 
   return (
-    <nav className={breadcrumbClasses} {...props}>
+    <nav className={classes} {...props}>
       {children}
     </nav>
   );

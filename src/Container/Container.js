@@ -18,12 +18,12 @@ export default function Container({
 
   const isBreakpoint = breakpoint && breakpointMap[breakpoint];
 
-  const containerClasses = classNames('container', className, isBreakpoint, {
+  const classes = classNames('container', className, isBreakpoint, {
     'is-fluid': fluid,
   });
 
   return (
-    <div className={containerClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

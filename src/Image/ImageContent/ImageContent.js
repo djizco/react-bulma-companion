@@ -8,12 +8,12 @@ export default function Image({
   rounded,
   ...props
 }) {
-  const imageContentClasses = classNames('image', className, {
+  const classes = classNames('image', className, {
     'is-rounded': rounded,
   });
 
   return (
-    <img className={imageContentClasses} alt={alt} {...props} />
+    <img className={classes} alt={alt} {...props} />
   );
 }
 

@@ -7,10 +7,10 @@ export default function SelectContent({
   className,
   ...props
 }) {
-  const selectContentClasses = classNames(className);
+  const classes = classNames(className);
 
   return (
-    <option className={selectContentClasses} {...props}>
+    <option className={classes} {...props}>
       {children}
     </option>
   );

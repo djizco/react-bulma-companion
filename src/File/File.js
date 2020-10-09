@@ -50,14 +50,14 @@ export default function File({
   };
   const isAlign = align && alignMap[align];
 
-  const fileClasses = classNames('file', className, isColor, isSize, isAlign, {
+  const classes = classNames('file', className, isColor, isSize, isAlign, {
     'has-name': hasName,
     'is-fullwidth': fullwidth,
     'is-boxed': boxed,
   });
 
   return (
-    <div type="file" className={fileClasses} {...props}>
+    <div type="file" className={classes} {...props}>
       {children}
     </div>
   );

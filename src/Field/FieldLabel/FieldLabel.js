@@ -17,10 +17,10 @@ export default function FieldLabel({
   };
   const isSize = size && sizeMap[size];
 
-  const fieldLabelClasses = classNames('field-label', className, isSize);
+  const classes = classNames('field-label', className, isSize);
 
   return (
-    <div className={fieldLabelClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

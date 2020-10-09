@@ -8,12 +8,12 @@ export default function MenuLink({
   className,
   ...props
 }) {
-  const menuLinkClasses = classNames(className, {
+  const classes = classNames(className, {
     'is-active': active,
   });
 
   return (
-    <a className={menuLinkClasses} {...props}>
+    <a className={classes} {...props}>
       {children}
     </a>
   );

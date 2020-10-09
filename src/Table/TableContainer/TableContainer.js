@@ -7,10 +7,10 @@ export default function TableContainer({
   className,
   ...props
 }) {
-  const tableContainerClasses = classNames('table-container', className);
+  const classes = classNames('table-container', className);
 
   return (
-    <div className={tableContainerClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

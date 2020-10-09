@@ -15,10 +15,10 @@ export default function Card({
   className,
   ...props
 }) {
-  const cardClasses = classNames('card', className);
+  const classes = classNames('card', className);
 
   return (
-    <div className={cardClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

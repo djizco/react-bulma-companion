@@ -45,12 +45,12 @@ export default function Image({
   };
   const isRatio = ratio && ratioMap[ratio];
 
-  const imageClasses = classNames('image', className, isSize, isRatio, {
+  const classes = classNames('image', className, isSize, isRatio, {
     'is-fullwidth': fullwidth,
   });
 
   return (
-    <figure className={imageClasses} {...props}>
+    <figure className={classes} {...props}>
       {children}
     </figure>
   );

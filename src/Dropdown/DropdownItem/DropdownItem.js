@@ -10,10 +10,10 @@ export default function DropdownItem({
 }) {
   const Element = link ? 'a' : 'div';
 
-  const dropdownItemClasses = classNames('dropdown-item', className);
+  const classes = classNames('dropdown-item', className);
 
   return (
-    <Element className={dropdownItemClasses} {...props}>
+    <Element className={classes} {...props}>
       {children}
     </Element>
   );

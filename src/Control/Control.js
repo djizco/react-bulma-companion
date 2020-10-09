@@ -20,7 +20,7 @@ export default function Control({
   };
   const isSize = size && sizeMap[size];
 
-  const controlClasses = classNames('control', className, isSize, {
+  const classes = classNames('control', className, isSize, {
     'has-icons-left': iconsLeft,
     'has-icons-right': iconsRight,
     'is-expanded': expanded,
@@ -28,7 +28,7 @@ export default function Control({
   });
 
   return (
-    <div className={controlClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

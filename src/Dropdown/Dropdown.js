@@ -17,7 +17,7 @@ export default function Dropdown({
   up,
   ...props
 }) {
-  const dropdownClasses = classNames('dropdown', className, {
+  const classes = classNames('dropdown', className, {
     'is-active': active,
     'is-hoverable': hoverable,
     'is-right': right,
@@ -25,7 +25,7 @@ export default function Dropdown({
   });
 
   return (
-    <div className={dropdownClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

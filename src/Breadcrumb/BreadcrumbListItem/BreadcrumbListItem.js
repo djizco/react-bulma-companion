@@ -8,12 +8,12 @@ export default function BreadcrumbListItem({
   className,
   ...props
 }) {
-  const breadcrumbListItemClasses = classNames(className, {
+  const classes = classNames(className, {
     'is-active': active,
   });
 
   return (
-    <li className={breadcrumbListItemClasses} {...props}>
+    <li className={classes} {...props}>
       {children}
     </li>
   );

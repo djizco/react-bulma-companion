@@ -32,10 +32,10 @@ export default function Progress({
   };
   const isSize = size && sizeMap[size];
 
-  const progressClasses = classNames('progress', className, isColor, isSize);
+  const classes = classNames('progress', className, isColor, isSize);
 
   return (
-    <progress className={progressClasses} {...props}>
+    <progress className={classes} {...props}>
       {children}
     </progress>
   );

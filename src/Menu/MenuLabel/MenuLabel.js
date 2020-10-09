@@ -7,10 +7,10 @@ export default function MenuLabel({
   className,
   ...props
 }) {
-  const menuLabelClasses = classNames('menu-label', className);
+  const classes = classNames('menu-label', className);
 
   return (
-    <p className={menuLabelClasses} {...props}>
+    <p className={classes} {...props}>
       {children}
     </p>
   );

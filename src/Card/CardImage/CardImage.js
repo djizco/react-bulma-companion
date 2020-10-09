@@ -7,10 +7,10 @@ export default function CardImage({
   className,
   ...props
 }) {
-  const cardImageClasses = classNames('card-image', className);
+  const classes = classNames('card-image', className);
 
   return (
-    <div className={cardImageClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

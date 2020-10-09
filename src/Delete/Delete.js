@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export default function Delete({
-  children,
   className,
   size,
   ...props
@@ -15,23 +14,19 @@ export default function Delete({
   };
   const isSize = size && sizeMap[size];
 
-  const deleteClasses = classNames('delete', className, isSize);
+  const classes = classNames('delete', className, isSize);
 
   return (
-    <a className={deleteClasses} {...props}>
-      {children}
-    </a>
+    <button type="button" className={classes} {...props} />
   );
 }
 
 Delete.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
 Delete.defaultProps = {
   className: undefined,
-  children: null,
   size: undefined,
 };

@@ -8,12 +8,12 @@ export default function CardHeaderTitle({
   className,
   ...props
 }) {
-  const cardHeaderTitleClasses = classNames('card-header-title', className, {
+  const classes = classNames('card-header-title', className, {
     'is-centered': centered,
   });
 
   return (
-    <p className={cardHeaderTitleClasses} {...props}>
+    <p className={classes} {...props}>
       {children}
     </p>
   );

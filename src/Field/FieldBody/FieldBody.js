@@ -7,10 +7,10 @@ export default function FieldBody({
   className,
   ...props
 }) {
-  const fieldBodyClasses = classNames('field-body', className);
+  const classes = classNames('field-body', className);
 
   return (
-    <div className={fieldBodyClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

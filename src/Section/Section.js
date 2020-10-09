@@ -14,10 +14,10 @@ export default function Section({
   };
   const isSize = size && sizeMap[size];
 
-  const sectionClasses = classNames('section', className, isSize);
+  const classes = classNames('section', className, isSize);
 
   return (
-    <section className={sectionClasses} {...props}>
+    <section className={classes} {...props}>
       {children}
     </section>
   );

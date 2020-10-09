@@ -7,10 +7,10 @@ export default function DropdownMenu({
   className,
   ...props
 }) {
-  const dropdownMenuClasses = classNames('dropdown-menu', className);
+  const classes = classNames('dropdown-menu', className);
 
   return (
-    <div className={dropdownMenuClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

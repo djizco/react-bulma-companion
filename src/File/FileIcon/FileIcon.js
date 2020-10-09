@@ -7,10 +7,10 @@ export default function FileIcon({
   className,
   ...props
 }) {
-  const fileIconClasses = classNames('file-icon', className);
+  const classes = classNames('file-icon', className);
 
   return (
-    <span className={fileIconClasses} {...props}>
+    <span className={classes} {...props}>
       {children}
     </span>
   );

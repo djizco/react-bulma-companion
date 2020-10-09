@@ -7,10 +7,10 @@ export default function DropdownContent({
   className,
   ...props
 }) {
-  const dropdownContentClasses = classNames('dropdown-content', className);
+  const classes = classNames('dropdown-content', className);
 
   return (
-    <div className={dropdownContentClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

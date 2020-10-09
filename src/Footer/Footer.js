@@ -7,10 +7,10 @@ export default function Footer({
   className,
   ...props
 }) {
-  const footerClasses = classNames('footer', className);
+  const classes = classNames('footer', className);
 
   return (
-    <footer className={footerClasses} {...props}>
+    <footer className={classes} {...props}>
       {children}
     </footer>
   );

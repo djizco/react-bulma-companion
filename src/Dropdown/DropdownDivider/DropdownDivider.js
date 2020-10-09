@@ -6,10 +6,10 @@ export default function DropdownDivider({
   className,
   ...props
 }) {
-  const dropdownDividerClasses = classNames('dropdown-divider', className);
+  const classes = classNames('dropdown-divider', className);
 
   return (
-    <hr className={dropdownDividerClasses} {...props} />
+    <hr className={classes} {...props} />
   );
 }
 

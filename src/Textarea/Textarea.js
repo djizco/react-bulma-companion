@@ -37,7 +37,7 @@ export default function Textarea({
   };
   const isSize = size && sizeMap[size];
 
-  const textareaClasses = classNames('textarea', className, isColor, isSize, {
+  const classes = classNames('textarea', className, isColor, isSize, {
     'has-fixed-size': fixed,
     'is-inline': inline,
     'is-fullwidth': fullwidth,
@@ -47,7 +47,7 @@ export default function Textarea({
   });
 
   return (
-    <textarea className={textareaClasses} {...props} />
+    <textarea className={classes} {...props} />
   );
 }
 

@@ -7,10 +7,10 @@ export default function MediaLeft({
   className,
   ...props
 }) {
-  const mediaLeftClasses = classNames('media-left', className);
+  const classes = classNames('media-left', className);
 
   return (
-    <figure className={mediaLeftClasses} {...props}>
+    <figure className={classes} {...props}>
       {children}
     </figure>
   );

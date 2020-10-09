@@ -9,10 +9,10 @@ export default function CardFooterItem({
   ...props
 }) {
   const Element = link ? 'a' : 'div';
-  const cardFooterItemClasses = classNames('card-footer-item', className);
+  const classes = classNames('card-footer-item', className);
 
   return (
-    <Element className={cardFooterItemClasses} {...props}>
+    <Element className={classes} {...props}>
       {children}
     </Element>
   );

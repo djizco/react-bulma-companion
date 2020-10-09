@@ -26,14 +26,14 @@ export default function TableDataCell({
   };
   const isColor = color && colorMap[color];
 
-  const tableDataCellClasses = classNames(className, isColor, {
+  const classes = classNames(className, isColor, {
     'is-selected': selected,
     'is-narrow': narrow,
     'is-vcentered': vcentered,
   });
 
   return (
-    <td className={tableDataCellClasses} {...props}>
+    <td className={classes} {...props}>
       {children}
     </td>
   );

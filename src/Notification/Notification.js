@@ -24,12 +24,12 @@ export default function Notification({
   };
   const isColor = color && colorMap[color];
 
-  const notificationClasses = classNames('notification', className, isColor, {
+  const classes = classNames('notification', className, isColor, {
     'is-light': light,
   });
 
   return (
-    <div className={notificationClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

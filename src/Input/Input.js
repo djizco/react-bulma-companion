@@ -37,7 +37,7 @@ export default function Input({
   };
   const isSize = size && sizeMap[size];
 
-  const inputClasses = classNames('input', className, isColor, isSize, {
+  const classes = classNames('input', className, isColor, isSize, {
     'is-inline': inline,
     'is-fullwidth': fullwidth,
     'is-active': active,
@@ -51,7 +51,7 @@ export default function Input({
   delete props.static;
 
   return (
-    <input className={inputClasses} {...props} />
+    <input className={classes} {...props} />
   );
 }
 

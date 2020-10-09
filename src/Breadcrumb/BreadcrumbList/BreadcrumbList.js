@@ -7,10 +7,10 @@ export default function BreadcrumbList({
   className,
   ...props
 }) {
-  const breadcrumbListClasses = classNames(className);
+  const classes = classNames(className);
 
   return (
-    <ul className={breadcrumbListClasses} {...props}>
+    <ul className={classes} {...props}>
       {children}
     </ul>
   );

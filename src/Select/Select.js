@@ -39,7 +39,7 @@ export default function Select({
   };
   const isSize = size && sizeMap[size];
 
-  const selectClasses = classNames('select', className, isColor, isSize, {
+  const classes = classNames('select', className, isColor, isSize, {
     'is-fullwidth': fullwidth,
     'is-multiple': multiple,
     'is-rounded': rounded,
@@ -47,7 +47,7 @@ export default function Select({
   });
 
   return (
-    <div className={selectClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

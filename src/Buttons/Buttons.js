@@ -25,12 +25,12 @@ export default function Buttons({
   };
   const isAlign = align && alignMap[align];
 
-  const buttonsClasses = classNames('buttons', className, areSize, isAlign, {
+  const classes = classNames('buttons', className, areSize, isAlign, {
     'has-addons': addons,
   });
 
   return (
-    <div className={buttonsClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

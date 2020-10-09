@@ -18,7 +18,7 @@ export default function Field({
   narrow,
   ...props
 }) {
-  const fieldClasses = classNames('field', className, {
+  const classes = classNames('field', className, {
     'is-grouped': grouped,
     'has-addons': addons,
     'has-addons-centered': addons && align === 'center',
@@ -32,7 +32,7 @@ export default function Field({
   });
 
   return (
-    <div className={fieldClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

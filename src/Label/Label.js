@@ -15,10 +15,10 @@ export default function Label({
   };
   const isSize = size && sizeMap[size];
 
-  const labelClasses = classNames('label', className, isSize);
+  const classes = classNames('label', className, isSize);
 
   return (
-    <label className={labelClasses} {...props}>
+    <label className={classes} {...props}>
       {children}
     </label>
   );

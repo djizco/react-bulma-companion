@@ -10,14 +10,14 @@ export default function SelectContent({
   hovered,
   ...props
 }) {
-  const selectContentClasses = classNames(className, {
+  const classes = classNames(className, {
     'is-hovered': hovered,
     'is-focused': focused,
     'is-active': active,
   });
 
   return (
-    <select className={selectContentClasses} {...props}>
+    <select className={classes} {...props}>
       {children}
     </select>
   );

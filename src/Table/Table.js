@@ -20,7 +20,7 @@ export default function Table({
   striped,
   ...props
 }) {
-  const tableClasses = classNames('table', className, {
+  const classes = classNames('table', className, {
     'is-bordered': bordered,
     'is-striped': striped,
     'is-narrow': narrow,
@@ -29,7 +29,7 @@ export default function Table({
   });
 
   return (
-    <table className={tableClasses} {...props}>
+    <table className={classes} {...props}>
       {children}
     </table>
   );

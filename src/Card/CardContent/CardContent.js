@@ -7,10 +7,10 @@ export default function CardContent({
   className,
   ...props
 }) {
-  const cardContentClasses = classNames('card-content', className);
+  const classes = classNames('card-content', className);
 
   return (
-    <div className={cardContentClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

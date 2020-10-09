@@ -24,12 +24,12 @@ export default function Tags({
   };
   const isAlign = align && alignMap[align];
 
-  const tagsClasses = classNames('tags', className, areSize, isAlign, {
+  const classes = classNames('tags', className, areSize, isAlign, {
     'has-addons': addons,
   });
 
   return (
-    <div className={tagsClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

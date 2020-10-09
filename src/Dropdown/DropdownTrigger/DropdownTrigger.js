@@ -7,10 +7,10 @@ export default function DropdownTrigger({
   className,
   ...props
 }) {
-  const dropdownTriggerClasses = classNames('dropdown-trigger', className);
+  const classes = classNames('dropdown-trigger', className);
 
   return (
-    <div className={dropdownTriggerClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

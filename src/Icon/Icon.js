@@ -60,10 +60,10 @@ export default function Icon({
   };
   const isAlign = align && alignMap[align];
 
-  const iconClasses = classNames('icon', className, isColor, isSize, isAlign);
+  const classes = classNames('icon', className, isColor, isSize, isAlign);
 
   return (
-    <span className={iconClasses} {...props}>
+    <span className={classes} {...props}>
       {children}
     </span>
   );

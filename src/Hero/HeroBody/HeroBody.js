@@ -7,10 +7,10 @@ export default function HeroBody({
   className,
   ...props
 }) {
-  const heroBodyClasses = classNames('hero-body', className);
+  const classes = classNames('hero-body', className);
 
   return (
-    <div className={heroBodyClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

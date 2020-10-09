@@ -7,10 +7,10 @@ export default function HeroFoot({
   className,
   ...props
 }) {
-  const heroFootClasses = classNames('hero-foot', className);
+  const classes = classNames('hero-foot', className);
 
   return (
-    <div className={heroFootClasses} {...props}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );
