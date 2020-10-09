@@ -1,0 +1,214 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons/faAngleDown';
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons/faAngleUp';
+
+import Dropdown from './Dropdown';
+import Button from '../Button';
+import Icon from '../Icon';
+
+<Meta title="Components/Dropdown" component={Dropdown} />
+
+# Dropdown
+
+### An interactive **dropdown menu** for discoverable content
+
+[Bulma Documentation](https://bulma.io/documentation/components/dropdown/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The `<Dropdown>` is a container /*for*/ a dropdown button and a dropdown menu.
+
+- `<Dropdown>`: the main container
+  - `<Dropdown.Trigger>` the container for a button
+  - `<Dropdown.Menu>` the toggable menu, hidden by default
+    - `<Dropdown.Content>` the dropdown box, with a white background and a shadow
+      - `<Dropdown.Item>` each single item of the dropdown, which can either be a a or a div
+      - `<Dropdown.Divider>` a horizontal line to separate dropdown items
+
+
+<Canvas>
+  <Story name="Default">
+    <div className="has-text-centered" style={{ minHeight: 250 }}>
+      <Dropdown active>
+        <Dropdown.Trigger>
+          <Button aria-haspopup="true" aria-controls="dropdown-menu">
+            <span>Dropdown Button</span>
+            <Icon size="small">
+              <FontAwesomeIcon icon={faAngleDown} />
+            </Icon>
+          </Button>
+        </Dropdown.Trigger>
+        <Dropdown.Menu id="dropdown-menu" role="menu">
+          <Dropdown.Content>
+            <Dropdown.Item link>
+              Dropdown item
+            </Dropdown.Item>
+            <Dropdown.Item link>
+              Other dropdown item
+            </Dropdown.Item>
+            <Dropdown.Item link>
+              Active dropdown item
+            </Dropdown.Item>
+            <Dropdown.Item link>
+              Other dropdown item
+            </Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item link>
+              With Divider
+            </Dropdown.Item>
+          </Dropdown.Content>
+        </Dropdown.Menu>
+      </Dropdown>
+    </div>
+  </Story>
+</Canvas>
+
+## Dropdown Content
+
+While the `<Dropdown.Item>` can be rendered as an anchor link `<a>` by using the `link` prop, the default `<div>` allows almost any type of content.
+
+Toggle the `active` prop to make the dropdown content display.
+
+<Canvas>
+  <Story name="Content">
+    <div className="has-text-centered" style={{ minHeight: 280 }}>
+      <Dropdown active>
+        <Dropdown.Trigger>
+          <Button aria-haspopup="true" aria-controls="dropdown-menu-2">
+            <span>Content</span>
+            <Icon size="small">
+              <FontAwesomeIcon icon={faAngleDown} />
+            </Icon>
+          </Button>
+        </Dropdown.Trigger>
+        <Dropdown.Menu id="dropdown-menu-2" role="menu">
+          <Dropdown.Content>
+            <Dropdown.Item>
+              <p>You can insert <strong>any type of content</strong> within the dropdown menu.</p>
+            </Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item>
+              <p>You simply need to use a default dropdown item.</p>
+            </Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item link>
+              This is a link
+            </Dropdown.Item>
+          </Dropdown.Content>
+        </Dropdown.Menu>
+      </Dropdown>
+    </div>
+  </Story>
+</Canvas>
+
+## Hoverable
+
+Add the `hoverable` prop to make the dropdown show up when **hovering** the `<Dropdown.Trigger>`
+
+<Canvas>
+  <Story name="Hoverable">
+    <div className="has-text-centered" style={{ minHeight: 150 }}>
+      <Dropdown hoverable>
+        <Dropdown.Trigger>
+          <Button aria-haspopup="true" aria-controls="dropdown-menu-4">
+            <span>Hover me</span>
+            <Icon size="small">
+              <FontAwesomeIcon icon={faAngleDown} />
+            </Icon>
+          </Button>
+        </Dropdown.Trigger>
+        <Dropdown.Menu id="dropdown-menu-4" role="menu">
+          <Dropdown.Content>
+            <Dropdown.Item>
+              <p>You can insert <strong>any type of content</strong> within the dropdown menu.</p>
+            </Dropdown.Item>
+          </Dropdown.Content>
+        </Dropdown.Menu>
+      </Dropdown>
+    </div>
+  </Story>
+</Canvas>
+
+## Right aligned
+
+You can add the `right` prop to have a **right-aligned** dropdown. The dropdown menu will line up with the right side of the dropdown trigger.
+
+<Canvas>
+  <Story name="Right Aligned">
+    <div className="has-text-centered" style={{ minHeight: 150 }}>
+      <Dropdown right active>
+        <Dropdown.Trigger>
+          <Button aria-haspopup="true" aria-controls="dropdown-menu-6">
+            <span>Right aligned</span>
+            <Icon size="small">
+              <FontAwesomeIcon icon={faAngleDown} />
+            </Icon>
+          </Button>
+        </Dropdown.Trigger>
+        <Dropdown.Menu id="dropdown-menu-6">
+          <Dropdown.Content>
+            <Dropdown.Item>
+              <p>Add the <code>right</code> prop for a <strong>right-aligned</strong> dropdown.</p>
+            </Dropdown.Item>
+          </Dropdown.Content>
+        </Dropdown.Menu>
+      </Dropdown>
+    </div>
+  </Story>
+</Canvas>
+
+## Dropup
+
+You can add the `up` prop to have a dropdown menu that appears above the dropdown button.
+
+<Canvas>
+  <Story name="Dropup">
+    <div className="has-text-centered">
+      <Dropdown style={{ marginTop: 150 }} up active>
+        <Dropdown.Trigger>
+          <Button aria-haspopup="true" aria-controls="dropdown-menu-7">
+            <span>Dropup Button</span>
+            <Icon size="small">
+              <FontAwesomeIcon icon={faAngleUp} />
+            </Icon>
+          </Button>
+        </Dropdown.Trigger>
+        <Dropdown.Menu id="dropdown-menu-7">
+          <Dropdown.Content>
+            <Dropdown.Item>
+              <p>You can add the <code>up</code> prop to have a dropdown menu that appears above the dropdown button.</p>
+            </Dropdown.Item>
+          </Dropdown.Content>
+        </Dropdown.Menu>
+      </Dropdown>
+    </div>
+  </Story>
+</Canvas>
+
+## Dropdown Props
+
+<ArgsTable of={Dropdown} />
+
+## Dropdown.Trigger Props
+
+<ArgsTable of={Dropdown.Trigger} />
+
+## Dropdown.Menu Props
+
+<ArgsTable of={Dropdown.Menu} />
+
+## Dropdown.Content Props
+
+<ArgsTable of={Dropdown.Content} />
+
+## Dropdown.Item Props
+
+<ArgsTable of={Dropdown.Item} />
+
+## Dropdown.Divider Props
+
+<ArgsTable of={Dropdown.Divider} />
