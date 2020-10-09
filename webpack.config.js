@@ -10,7 +10,7 @@ const isDev = NODE_ENV === 'development';
 const BundleAnalyzerPluginConfig = new BundleAnalyzerPlugin({
   analyzerMode: LEGACY ? 'disabled' : 'static',
   reportFilename: isDev
-    ? 'reports/report-.html'
+    ? 'reports/report.html'
     : 'reports/report-min.html',
 });
 

@@ -1,0 +1,112 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Modal from './Modal';
+import Button from '../Button';
+import Image from '../Image';
+import Delete from '../Delete';
+
+<Meta title="Components/Modal" component={Modal} />
+
+# Modal
+
+### A classic **modal** overlay, in which you can include *any* content you want
+
+[Bulma Documentation](https://bulma.io/documentation/components/modal/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The modal structure is very simple:
+
+- `<Modal>`: the main container
+  - `<Modal.Background>`: a transparent overlay that can act as a click target to close the modal
+  - `<Modal.Content>`: a horizontally and vertically centered container, with a maximum width of 640px, in which you can include *any* content
+  - `<Modal.Close>`: a simple cross located in the top right corner
+
+You will need to implement a toggle of the `active` prop on the `<Modal>` with JavaScript. Reference the [Bulma Docs](https://bulma.io/documentation/components/modal/) to see a working example.
+
+<Canvas>
+  <Story name="Default">
+    <Modal>
+      <Modal.Background />
+      <Modal.Content>
+        <Image ratio="4by3">
+          <Image.Content src="https://bulma.io/images/placeholders/1280x960.png" />
+        </Image>
+      </Modal.Content>
+      <Modal.Close size="large" />
+    </Modal>
+    <Button color="primary" size="large">Launch Image Modal</Button>
+  </Story>
+</Canvas>
+
+## Modal Card
+
+If you want a more classic modal, with a **head**, a **body** and a **foot**, use the `<Modal.Card>` as a child of the `<Modal>`. Use the following structure:
+
+- `<Modal.Card>`
+  - `<Modal.CardHead>`
+    - `<Modal.CardTitle>`
+  - `<Modal.CardBody>`
+  - `<Modal.CardFoot>`
+
+<Canvas>
+  <Story name="Modal Card">
+    <Modal>
+      <Modal.Background />
+      <Modal.Card>
+        <Modal.CardHead>
+          <Modal.CardTitle>Modal Title</Modal.CardTitle>
+          <Delete />
+        </Modal.CardHead>
+        <Modal.CardBody>
+          <Image ratio="4by3">
+            <Image.Content src="https://bulma.io/images/placeholders/1280x960.png" />
+          </Image>
+        </Modal.CardBody>
+        <Modal.CardFoot>
+          <Button color="success">Save Changes</Button>
+          <Button>Cancel</Button>
+        </Modal.CardFoot>
+      </Modal.Card>
+    </Modal>
+    <Button color="primary" size="large">Launch Image Modal</Button>
+  </Story>
+</Canvas>
+
+## Modal Props
+
+<ArgsTable of={Modal} />
+
+## Modal.Background Props
+
+<ArgsTable of={Modal.Background} />
+
+## Modal.Content Props
+
+<ArgsTable of={Modal.Content} />
+
+## Modal.Close Props
+
+<ArgsTable of={Modal.Close} />
+
+## Modal.Card Props
+
+<ArgsTable of={Modal.Card} />
+
+## Modal.CardHead Props
+
+<ArgsTable of={Modal.CardHead} />
+
+## Modal.CardBody Props
+
+<ArgsTable of={Modal.CardBody} />
+
+## Modal.CardFoot Props
+
+<ArgsTable of={Modal.CardFoot} />
+
+## Modal.CardLabel Props
+
+<ArgsTable of={Modal.CardLabel} />

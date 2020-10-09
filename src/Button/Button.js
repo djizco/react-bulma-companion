@@ -116,7 +116,7 @@ Button.defaultProps = {
   children: null,
   type: 'button',
   link: false,
-  onClick: () => {},
+  onClick: undefined,
   color: undefined,
   light: false,
   size: undefined,
