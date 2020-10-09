@@ -1,0 +1,160 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Menu from './Menu';
+import Block from '../Block';
+
+<Meta title="Components/Menu" component={Menu} />
+
+# Menu
+
+### A simple **menu**, for any type of vertical navigation
+
+[Bulma Documentation](https://bulma.io/documentation/components/menu/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The `<Menu>` is a vertical navigation component that comprises:
+
+- the `<Menu>` container
+- informative `<Menu.Label>` labels
+- interactive `<Menu.List>` lists that can be nested up to 2 levels
+- `<Menu.ListItem>` as children of menu lists
+- `<Menu.Link>` as content for the list items
+
+<Canvas>
+  <Story name="Default">
+    <Menu>
+      <Menu.Label>General</Menu.Label>
+      <Menu.List>
+        <Menu.ListItem>
+          <Menu.Link>Dashboard</Menu.Link>
+        </Menu.ListItem>
+        <Menu.ListItem>
+          <Menu.Link>Customers</Menu.Link>
+        </Menu.ListItem>
+      </Menu.List>
+      <Menu.Label>Administration</Menu.Label>
+      <Menu.List>
+        <Menu.ListItem>
+          <Menu.Link>Team Settings</Menu.Link>
+        </Menu.ListItem>
+        <Menu.ListItem>
+          <Menu.Link active>Manage Your Team</Menu.Link>
+          <Menu.List>
+            <Menu.ListItem>
+              <Menu.Link>Members</Menu.Link>
+            </Menu.ListItem>
+            <Menu.ListItem>
+              <Menu.Link>Plugins</Menu.Link>
+            </Menu.ListItem>
+            <Menu.ListItem>
+              <Menu.Link>Add a member</Menu.Link>
+            </Menu.ListItem>
+          </Menu.List>
+        </Menu.ListItem>
+        <Menu.ListItem>
+          <Menu.Link>Invitations</Menu.Link>
+        </Menu.ListItem>
+        <Menu.ListItem>
+          <Menu.Link>Cloud Storage Environment Settings</Menu.Link>
+        </Menu.ListItem>
+        <Menu.ListItem>
+          <Menu.Link>Authentication</Menu.Link>
+        </Menu.ListItem>
+      </Menu.List>
+      <Menu.Label>Transactions</Menu.Label>
+      <Menu.List>
+        <Menu.ListItem>
+          <Menu.Link>Payments</Menu.Link>
+        </Menu.ListItem>
+        <Menu.ListItem>
+          <Menu.Link>Transfers</Menu.Link>
+        </Menu.ListItem>
+        <Menu.ListItem>
+          <Menu.Link>Balance</Menu.Link>
+        </Menu.ListItem>
+      </Menu.List>
+    </Menu>
+  </Story>
+</Canvas>
+
+## Sizes
+
+<Canvas>
+  <Story name="Sizes">
+    <Block>
+      <Menu size="small">
+        <Menu.Label>General</Menu.Label>
+        <Menu.List>
+          <Menu.ListItem>
+            <Menu.Link>Dashboard</Menu.Link>
+          </Menu.ListItem>
+          <Menu.ListItem>
+            <Menu.Link>Customers</Menu.Link>
+          </Menu.ListItem>
+        </Menu.List>
+      </Menu>
+    </Block>
+    <Block>
+      <Menu>
+        <Menu.Label>General</Menu.Label>
+        <Menu.List>
+          <Menu.ListItem>
+            <Menu.Link>Dashboard</Menu.Link>
+          </Menu.ListItem>
+          <Menu.ListItem>
+            <Menu.Link>Customers</Menu.Link>
+          </Menu.ListItem>
+        </Menu.List>
+      </Menu>
+    </Block>
+    <Block>
+      <Menu size="medium">
+        <Menu.Label>General</Menu.Label>
+        <Menu.List>
+          <Menu.ListItem>
+            <Menu.Link>Dashboard</Menu.Link>
+          </Menu.ListItem>
+          <Menu.ListItem>
+            <Menu.Link>Customers</Menu.Link>
+          </Menu.ListItem>
+        </Menu.List>
+      </Menu>
+    </Block>
+    <Block>
+      <Menu size="large">
+        <Menu.Label>General</Menu.Label>
+        <Menu.List>
+          <Menu.ListItem>
+            <Menu.Link>Dashboard</Menu.Link>
+          </Menu.ListItem>
+          <Menu.ListItem>
+            <Menu.Link>Customers</Menu.Link>
+          </Menu.ListItem>
+        </Menu.List>
+      </Menu>
+    </Block>
+  </Story>
+</Canvas>
+
+## Menu Props
+
+<ArgsTable of={Menu} />
+
+## Menu.Label Props
+
+<ArgsTable of={Menu.Label} />
+
+## Menu.List Props
+
+<ArgsTable of={Menu.List} />
+
+## Menu.ListItem Props
+
+<ArgsTable of={Menu.ListItem} />
+
+## Menu.Link Props
+
+<ArgsTable of={Menu.Link} />
