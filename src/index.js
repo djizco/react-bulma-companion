@@ -21,6 +21,9 @@ export { default as Card } from './Card';
 export { default as Dropdown } from './Dropdown';
 export { default as Menu } from './Menu';
 export { default as Message } from './Message';
+export { default as Modal } from './Modal';
+export { default as Pagination } from './Pagination';
+export { default as Panel } from './Panel';
 
 // Form
 export { default as Checkbox } from './Checkbox';

@@ -1,0 +1,215 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons/faSearch';
+import { faBook } from '@fortawesome/free-solid-svg-icons/faBook';
+import { faCodeBranch } from '@fortawesome/free-solid-svg-icons/faCodeBranch';
+
+import Panel from './Panel';
+import Control from '../Control';
+import Input from '../Input';
+import Button from '../Button';
+import Icon from '../Icon';
+
+<Meta title="Components/Panel" component={Panel} />
+
+# Panel
+
+### A composable **panel**, for compact controls
+
+[Bulma Documentation](https://bulma.io/documentation/components/panel/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The panel structure is as follows:
+
+- `<Panel>`
+  - `<Panel.Heading>`
+  - `<Panel.Block>`
+    - `<Panel.Icon>`
+  - `<Panel.Tabs>`
+    - `<Panel.Tab>`
+
+These examples use [React Fontawesome](https://github.com/FortAwesome/react-fontawesome) with Font Awesome icons.
+
+<Canvas>
+  <Story name="Default">
+    <Panel>
+      <Panel.Heading>
+        Repositories
+      </Panel.Heading>
+      <Panel.Block>
+        <Control iconsLeft>
+          <Input placeholder="Search" />
+          <Icon align="left">
+            <FontAwesomeIcon icon={faSearch} />
+          </Icon>
+        </Control>
+      </Panel.Block>
+      <Panel.Tabs>
+        <Panel.Tab active>All</Panel.Tab>
+        <Panel.Tab>Public</Panel.Tab>
+        <Panel.Tab>Private</Panel.Tab>
+        <Panel.Tab>Sources</Panel.Tab>
+        <Panel.Tab>Forks</Panel.Tab>
+      </Panel.Tabs>
+      <Panel.Block active link>
+        <Panel.Icon>
+          <FontAwesomeIcon icon={faBook} />
+        </Panel.Icon>
+        bulma
+      </Panel.Block>
+      <Panel.Block link>
+        <Panel.Icon>
+          <FontAwesomeIcon icon={faBook} />
+        </Panel.Icon>
+        marksheet
+      </Panel.Block>
+      <Panel.Block link>
+        <Panel.Icon>
+          <FontAwesomeIcon icon={faCodeBranch} />
+        </Panel.Icon>
+        jgthms.github.io
+      </Panel.Block>
+      <Panel.Block label>
+        <input type="checkbox" />
+        remember me
+      </Panel.Block>
+      <Panel.Block>
+        <Button color="link" outlined fullwidth>
+          Reset all filters
+        </Button>
+      </Panel.Block>
+    </Panel>
+  </Story>
+</Canvas>
+
+## Panel Block Types
+
+The `<Panel.Block>` is rendered as a `<div>` by default.
+
+To make it an `<a>` link element, use the `link` prop. It can also be a `<label>` with a checkbox inside by adding the `label` prop.
+
+You can only use either the `link` *or* `label` prop because they change the rendered element.
+
+<Canvas>
+  <Story name="Block Types">
+    <Panel>
+      <Panel.Heading>
+        Repositories
+      </Panel.Heading>
+      <Panel.Block>
+        <Control iconsLeft>
+          <Input placeholder="Search" />
+          <Icon align="left">
+            <FontAwesomeIcon icon={faSearch} />
+          </Icon>
+        </Control>
+      </Panel.Block>
+      <Panel.Block>
+        <Panel.Icon>
+          <FontAwesomeIcon icon={faBook} />
+        </Panel.Icon>
+        default block
+      </Panel.Block>
+      <Panel.Block active link>
+        <Panel.Icon>
+          <FontAwesomeIcon icon={faCodeBranch} />
+        </Panel.Icon>
+        active link block
+      </Panel.Block>
+      <Panel.Block link>
+        <Panel.Icon>
+          <FontAwesomeIcon icon={faCodeBranch} />
+        </Panel.Icon>
+        link block
+      </Panel.Block>
+      <Panel.Block label>
+        <input type="checkbox" />
+        label block with checkbox
+      </Panel.Block>
+    </Panel>
+  </Story>
+</Canvas>
+
+## Colors
+
+You can change the panel color with the `color` prop.
+
+<Canvas>
+  <Story name="Colors">
+    <Panel color="primary">
+      <Panel.Heading>
+        Repositories
+      </Panel.Heading>
+      <Panel.Block>
+        <Control iconsLeft>
+          <Input placeholder="Search" />
+          <Icon align="left">
+            <FontAwesomeIcon icon={faSearch} />
+          </Icon>
+        </Control>
+      </Panel.Block>
+      <Panel.Tabs>
+        <Panel.Tab active>All</Panel.Tab>
+        <Panel.Tab>Public</Panel.Tab>
+        <Panel.Tab>Private</Panel.Tab>
+        <Panel.Tab>Sources</Panel.Tab>
+        <Panel.Tab>Forks</Panel.Tab>
+      </Panel.Tabs>
+      <Panel.Block active link>
+        <Panel.Icon>
+          <FontAwesomeIcon icon={faBook} />
+        </Panel.Icon>
+        bulma
+      </Panel.Block>
+      <Panel.Block link>
+        <Panel.Icon>
+          <FontAwesomeIcon icon={faBook} />
+        </Panel.Icon>
+        marksheet
+      </Panel.Block>
+      <Panel.Block link>
+        <Panel.Icon>
+          <FontAwesomeIcon icon={faCodeBranch} />
+        </Panel.Icon>
+        jgthms.github.io
+      </Panel.Block>
+      <Panel.Block label>
+        <input type="checkbox" />
+        remember me
+      </Panel.Block>
+      <Panel.Block>
+        <Button color="link" outlined fullwidth>
+          Reset all filters
+        </Button>
+      </Panel.Block>
+    </Panel>
+  </Story>
+</Canvas>
+
+## Panel Props
+
+<ArgsTable of={Panel} />
+
+## Panel.Heading Props
+
+<ArgsTable of={Panel.Heading} />
+
+## Panel.Block Props
+
+<ArgsTable of={Panel.Block} />
+
+## Panel.Icon Props
+
+<ArgsTable of={Panel.Icon} />
+
+## Panel.Tabs Props
+
+<ArgsTable of={Panel.Tabs} />
+
+## Panel.Tab Props
+
+<ArgsTable of={Panel.Tab} />
