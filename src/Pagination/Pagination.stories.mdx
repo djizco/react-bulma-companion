@@ -1,0 +1,279 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Pagination from './Pagination';
+
+<Meta title="Components/Pagination" component={Pagination} />
+
+# Pagination
+
+### A responsive, usable, and flexible **pagination**
+
+[Bulma Documentation](https://bulma.io/documentation/components/pagination/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The Pagination structure is as follows:
+
+- `<Pagination>`
+  - `<Pagination.Previous>`
+  - `<Pagination.Next>`
+  - `<Pagination.List>`
+    - `<Pagination.ListItem>`
+      - `<Pagination.Link>`
+      - `<Pagination.Ellipsis>`
+
+All elements are optional so you can compose your pagination as you wish.
+
+<Canvas>
+  <Story name="Default">
+    <Pagination>
+      <Pagination.Previous>Previous</Pagination.Previous>
+      <Pagination.Next>Next Page</Pagination.Next>
+      <Pagination.List>
+        <Pagination.ListItem>
+          <Pagination.Link>1</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Ellipsis>&hellip;</Pagination.Ellipsis>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>45</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>46</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>47</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Ellipsis>&hellip;</Pagination.Ellipsis>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>86</Pagination.Link>
+        </Pagination.ListItem>
+      </Pagination.List>
+    </Pagination>
+  </Story>
+</Canvas>
+
+## States
+
+You can disable some links if they are not active, or change the amount of page numbers available.
+
+You can disable the `<Pagination.Previous>`,`<Pagination.Next>`, or `<Pagination.Link>` with the `disabled` prop.
+
+You can also mark a `<Pagination.Link>` as the current page with the `current` prop.
+
+<Canvas>
+  <Story name="States">
+    <Pagination>
+      <Pagination.Previous disabled>Previous</Pagination.Previous>
+      <Pagination.Next>Next</Pagination.Next>
+      <Pagination.List>
+        <Pagination.ListItem>
+          <Pagination.Link current>1</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>2</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>3</Pagination.Link>
+        </Pagination.ListItem>
+      </Pagination.List>
+    </Pagination>
+  </Story>
+</Canvas>
+
+## Alignment
+
+By default on tablet, the list is located on the left, and the previous/next buttons on the right. But you can change the order of these elements by using the `align` prop.
+
+<Canvas>
+  <Story name="Alignment">
+    <Pagination>
+      <Pagination.Previous>Previous</Pagination.Previous>
+      <Pagination.Next>Next</Pagination.Next>
+      <Pagination.List>
+        <Pagination.ListItem>
+          <Pagination.Link>1</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>2</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>3</Pagination.Link>
+        </Pagination.ListItem>
+      </Pagination.List>
+    </Pagination>
+    <hr />
+    <Pagination align="center">
+      <Pagination.Previous>Previous</Pagination.Previous>
+      <Pagination.Next>Next</Pagination.Next>
+      <Pagination.List>
+        <Pagination.ListItem>
+          <Pagination.Link>1</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>2</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>3</Pagination.Link>
+        </Pagination.ListItem>
+      </Pagination.List>
+    </Pagination>
+    <hr />
+    <Pagination align="right">
+      <Pagination.Previous>Previous</Pagination.Previous>
+      <Pagination.Next>Next</Pagination.Next>
+      <Pagination.List>
+        <Pagination.ListItem>
+          <Pagination.Link>1</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>2</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>3</Pagination.Link>
+        </Pagination.ListItem>
+      </Pagination.List>
+    </Pagination>
+  </Story>
+</Canvas>
+
+## Styles
+
+Add the `rounded` prop to have rounded pagination items.
+
+<Canvas>
+  <Story name="Rounded">
+    <Pagination rounded>
+      <Pagination.Previous>Previous</Pagination.Previous>
+      <Pagination.Next>Next Page</Pagination.Next>
+      <Pagination.List>
+        <Pagination.ListItem>
+          <Pagination.Link>1</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Ellipsis>&hellip;</Pagination.Ellipsis>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>45</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>46</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>47</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Ellipsis>&hellip;</Pagination.Ellipsis>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>86</Pagination.Link>
+        </Pagination.ListItem>
+      </Pagination.List>
+    </Pagination>
+  </Story>
+</Canvas>
+
+## Sizes
+
+The `<Pagination>` comes in 4 sizes by use of the `size` prop.
+
+<Canvas>
+  <Story name="Sizes">
+    <Pagination size="small">
+      <Pagination.Previous>Previous</Pagination.Previous>
+      <Pagination.Next>Next</Pagination.Next>
+      <Pagination.List>
+        <Pagination.ListItem>
+          <Pagination.Link>1</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>2</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>3</Pagination.Link>
+        </Pagination.ListItem>
+      </Pagination.List>
+    </Pagination>
+    <hr />
+    <Pagination>
+      <Pagination.Previous>Previous</Pagination.Previous>
+      <Pagination.Next>Next</Pagination.Next>
+      <Pagination.List>
+        <Pagination.ListItem>
+          <Pagination.Link>1</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>2</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>3</Pagination.Link>
+        </Pagination.ListItem>
+      </Pagination.List>
+    </Pagination>
+    <hr />
+    <Pagination size="medium">
+      <Pagination.Previous>Previous</Pagination.Previous>
+      <Pagination.Next>Next</Pagination.Next>
+      <Pagination.List>
+        <Pagination.ListItem>
+          <Pagination.Link>1</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>2</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>3</Pagination.Link>
+        </Pagination.ListItem>
+      </Pagination.List>
+    </Pagination>
+    <hr />
+    <Pagination size="large">
+      <Pagination.Previous>Previous</Pagination.Previous>
+      <Pagination.Next>Next</Pagination.Next>
+      <Pagination.List>
+        <Pagination.ListItem>
+          <Pagination.Link>1</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>2</Pagination.Link>
+        </Pagination.ListItem>
+        <Pagination.ListItem>
+          <Pagination.Link>3</Pagination.Link>
+        </Pagination.ListItem>
+      </Pagination.List>
+    </Pagination>
+  </Story>
+</Canvas>
+
+## Pagination Props
+
+<ArgsTable of={Pagination} />
+
+## Pagination.Previous Props
+
+<ArgsTable of={Pagination.Previous} />
+
+## Pagination.Next Props
+
+<ArgsTable of={Pagination.Next} />
+
+## Pagination.List Props
+
+<ArgsTable of={Pagination.List} />
+
+## Pagination.ListItem Props
+
+<ArgsTable of={Pagination.ListItem} />
+
+## Pagination.Link Props
+
+<ArgsTable of={Pagination.Link} />
+
+## Pagination.Ellipsis Props
+
+<ArgsTable of={Pagination.Ellipsis} />
