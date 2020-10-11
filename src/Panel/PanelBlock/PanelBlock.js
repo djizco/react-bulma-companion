@@ -32,9 +32,6 @@ export default function PanelBlock({
 PanelBlock.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-  /**
-   * link will take precedence over label
-   */
   link: PropTypes.bool,
   label: PropTypes.bool,
   active: PropTypes.bool,

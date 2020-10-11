@@ -1,0 +1,290 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faImage } from '@fortawesome/free-solid-svg-icons/faImage';
+import { faMusic } from '@fortawesome/free-solid-svg-icons/faMusic';
+import { faFilm } from '@fortawesome/free-solid-svg-icons/faFilm';
+import { faFileAlt } from '@fortawesome/free-solid-svg-icons/faFileAlt';
+
+import Tabs from './Tabs';
+import Icon from '../Icon';
+
+<Meta title="Components/Tabs" component={Tabs} />
+
+# Tabs
+
+### Simple responsive horizontal navigation **tabs**, with different styles
+
+[Bulma Documentation](https://bulma.io/documentation/components/tabs/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The Bulma tabs are a straightforward navigation component that come in a variety of versions. They only require the following structure:
+
+- `<Tabs>` container
+  - `<Tabs.List>`: the unordered list
+    - `<Tabs.ListItem>`: each list item
+      - `<Tabs.Link>`: renders as an anchor element for each link
+
+The default tabs style has a single border at the bottom.
+
+<Canvas>
+  <Story name="Default">
+    <Tabs>
+      <Tabs.List className="is-large">
+        <Tabs.ListItem active>
+          <Tabs.Link>Pictures</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Videos</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Documents</Tabs.Link>
+        </Tabs.ListItem>
+      </Tabs.List>
+    </Tabs>
+  </Story>
+</Canvas>
+
+## Alignment
+
+To align the tabs list, use the `align` prop on the `<Tabs>` container:
+
+<Canvas>
+  <Story name="Alignment">
+    <Tabs align="center">
+      <Tabs.List>
+        <Tabs.ListItem active>
+          <Tabs.Link>Pictures</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Videos</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Documents</Tabs.Link>
+        </Tabs.ListItem>
+      </Tabs.List>
+    </Tabs>
+    <Tabs align="right">
+      <Tabs.List>
+        <Tabs.ListItem active>
+          <Tabs.Link>Pictures</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Videos</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Documents</Tabs.Link>
+        </Tabs.ListItem>
+      </Tabs.List>
+    </Tabs>
+  </Story>
+</Canvas>
+
+## Icons
+
+You can add icons to tabs.
+
+These examples use [React Fontawesome](https://github.com/FortAwesome/react-fontawesome) with Font Awesome icons.
+
+<Canvas>
+  <Story name="Icons">
+    <Tabs align="center">
+      <Tabs.List>
+        <Tabs.ListItem active>
+          <Tabs.Link>
+            <Icon size="small">
+              <FontAwesomeIcon icon={faImage} />
+            </Icon>
+            <span>Pictures</span>
+          </Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>
+            <Icon size="small">
+              <FontAwesomeIcon icon={faMusic} />
+            </Icon>
+            <span>Music</span>
+          </Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>
+            <Icon size="small">
+              <FontAwesomeIcon icon={faFilm} />
+            </Icon>
+            <span>Video</span>
+          </Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>
+            <Icon size="small">
+              <FontAwesomeIcon icon={faFileAlt} />
+            </Icon>
+            <span>Documents</span>
+          </Tabs.Link>
+        </Tabs.ListItem>
+      </Tabs.List>
+    </Tabs>
+  </Story>
+</Canvas>
+
+## Sizes
+
+`<Tabs>` come in 4 sizes by use of the `size` prop
+
+<Canvas>
+  <Story name="Sizes">
+    <Tabs size="small">
+      <Tabs.List>
+        <Tabs.ListItem active>
+          <Tabs.Link>Pictures</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Videos</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Documents</Tabs.Link>
+        </Tabs.ListItem>
+      </Tabs.List>
+    </Tabs>
+    <Tabs>
+      <Tabs.List>
+        <Tabs.ListItem active>
+          <Tabs.Link>Pictures</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Videos</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Documents</Tabs.Link>
+        </Tabs.ListItem>
+      </Tabs.List>
+    </Tabs>
+    <Tabs size="medium">
+      <Tabs.List>
+        <Tabs.ListItem active>
+          <Tabs.Link>Pictures</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Videos</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Documents</Tabs.Link>
+        </Tabs.ListItem>
+      </Tabs.List>
+    </Tabs>
+    <Tabs size="large">
+      <Tabs.List>
+        <Tabs.ListItem active>
+          <Tabs.Link>Pictures</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Videos</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Documents</Tabs.Link>
+        </Tabs.ListItem>
+      </Tabs.List>
+    </Tabs>
+  </Story>
+</Canvas>
+
+## Styles
+
+If you want a more classic style with borders, just append the `boxed` prop.
+
+<Canvas>
+  <Story name="Boxed">
+    <Tabs boxed>
+      <Tabs.List>
+        <Tabs.ListItem active>
+          <Tabs.Link>Pictures</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Videos</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Documents</Tabs.Link>
+        </Tabs.ListItem>
+      </Tabs.List>
+    </Tabs>
+  </Story>
+</Canvas>
+
+If you want **mutually exclusive** tabs (like radio buttons where clicking one deselects all other ones), use the `toggle` prop.
+
+<Canvas>
+  <Story name="Toggle">
+    <Tabs toggle>
+      <Tabs.List>
+        <Tabs.ListItem active>
+          <Tabs.Link>Pictures</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Videos</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Documents</Tabs.Link>
+        </Tabs.ListItem>
+      </Tabs.List>
+    </Tabs>
+  </Story>
+</Canvas>
+
+If you use both `toggle` and `rounded` props, the first and last items will be rounded.
+
+<Canvas>
+  <Story name="Toggle Rounded">
+    <Tabs toggle rounded>
+      <Tabs.List>
+        <Tabs.ListItem active>
+          <Tabs.Link>Pictures</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Videos</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Documents</Tabs.Link>
+        </Tabs.ListItem>
+      </Tabs.List>
+    </Tabs>
+  </Story>
+</Canvas>
+
+If you want the tabs to take up the whole width available, use the `fullwidth` prop.
+
+<Canvas>
+  <Story name="Fullwidth">
+    <Tabs fullwidth>
+      <Tabs.List>
+        <Tabs.ListItem active>
+          <Tabs.Link>Pictures</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Videos</Tabs.Link>
+        </Tabs.ListItem>
+        <Tabs.ListItem>
+          <Tabs.Link>Documents</Tabs.Link>
+        </Tabs.ListItem>
+      </Tabs.List>
+    </Tabs>
+  </Story>
+</Canvas>
+
+## Tabs Props
+
+<ArgsTable of={Tabs} />
+
+## Tabs.List Props
+
+<ArgsTable of={Tabs.List} />
+
+## Tabs.ListItem Props
+
+<ArgsTable of={Tabs.ListItem} />
+
+## Tabs.Link Props
+
+<ArgsTable of={Tabs.Link} />
