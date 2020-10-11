@@ -1,0 +1,837 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Navbar from './Navbar';
+import Hero from '../Hero';
+import Buttons from '../Buttons';
+import Button from '../Button';
+import Title from '../Title';
+
+<Meta title="Components/Navbar" component={Navbar} />
+
+# Navbar
+
+### A responsive horizontal **navbar** that can support images, links, buttons, and dropdowns
+
+[Bulma Documentation](https://bulma.io/documentation/components/navbar/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+The `<Navbar>` is a responsive and versatile horizontal navigation bar with the following structure:
+
+- `<Navbar>`:  the **main** container
+  - `<Navbar.Brand>`: the **left side**, always visible, which usually contains the **logo** and optionally some links or icons
+    - `<Navbar.Burger>`: the **hamburger** icon, which toggles the navbar menu on touch devices
+  - `<Navbar.Menu>`: the **right side**, hidden on touch devices, visible on desktop
+    - `<Navbar.Start>`: the **left part** of the menu, which appears next to the navbar brand on desktop
+    - `<Navbar.End>`: the **right part** of the menu, which appears at the end of the navbar
+    - `<Navbar.Item>`: each **single item** of the navbar, which can either be an `<a>` or a `<div>`
+      - `<Navbar.Link>`: a **link** as the sibling of a dropdown, with an arrow
+      - `<Navbar.Dropdown>`: the **dropdown menu**, which can include navbar items and dividers
+        - `<Navbar.Divider>`: a **horizontal line** to separate navbar items
+
+To **get started quickly**, here is what a complete basic navbar looks like:
+
+<Canvas>
+  <Story name="Default">
+    <Navbar>
+      <Navbar.Brand>
+        <Navbar.Item href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+        </Navbar.Item>
+        <Navbar.Burger />
+      </Navbar.Brand>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item link>Home</Navbar.Item>
+          <Navbar.Item link>Documentation</Navbar.Item>
+          <Navbar.Item hasDropdown hoverable>
+            <Navbar.Link>More</Navbar.Link>
+            <Navbar.Dropdown>
+              <Navbar.Item link>About</Navbar.Item>
+              <Navbar.Item link>Jobs</Navbar.Item>
+              <Navbar.Item link>Contact</Navbar.Item>
+              <Navbar.Divider />
+              <Navbar.Item link>Report an issue</Navbar.Item>
+            </Navbar.Dropdown>
+          </Navbar.Item>
+        </Navbar.Start>
+        <Navbar.End>
+          <Navbar.Item>
+            <Buttons>
+              <Button color="primary"><strong>Sign up</strong></Button>
+              <Button color="light">Log in</Button>
+            </Buttons>
+          </Navbar.Item>
+        </Navbar.End>
+      </Navbar.Menu>
+    </Navbar>
+    <Hero color="primary">
+      <Hero.Body>
+        <Title>Documentation</Title>
+        <Title subtitle>
+          Everything you need to <strong>create a website</strong> with Bulma
+        </Title>
+      </Hero.Body>
+    </Hero>
+  </Story>
+</Canvas>
+
+## Navbar Brand
+
+The `<Navbar.Brand>` is the left side of the navbar. It can contain:
+
+- a number of `<Navbar.Item>`
+- the `<Navbar.Burger>` as last child
+
+## Navbar Burger
+
+The `<Navbar.Burger>` is a hamburger menu that only appears on touch devices. It has to appear as the last child of `<Navbar.Brand>`. You can add the `active` prop to turn it into a cross.
+
+<Canvas>
+  <Story name="Navbar Burger">
+    <Navbar>
+      <Navbar.Brand>
+        <Navbar.Item href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+        </Navbar.Item>
+        <Navbar.Burger active />
+      </Navbar.Brand>
+    </Navbar>
+  </Story>
+</Canvas>
+
+## Navbar Menu
+
+The `<Navbar.Menu>` is the **counterpart** of the navbar brand. As such, it must appear as a direct child of `<Navbar>`, as a sibling of `<Navbar.Brand>`.
+
+The `<Navbar.Manu>` is hidden on touch devices `< 1024px`. You need to add the `active` prop to display it.
+
+On desktop `>= 1024px` , the `<Navbar.Menu>` will **fill up the space** available in the navbar, leaving the navbar brand just the space it needs. It needs, however, two elements as direct children: `<Navbar.Start>` and `<Navbar.End>`.
+
+## Navbar Start and Navbar End
+
+The `<Navbar.Start>` and `<Navbar.End>` are the two direct and only children of the `<Navbar.Menu>`.
+
+On desktop `>= 1024px`, `<Navbar.Start>` will appear on the **left** and `<Navbar.End>` will appear on the **right**.
+
+Each of them can contain any number of `<Navbar.Item`s.
+
+## Navbar Item
+
+A `<Navbar.Item>` is a repeatable element that can be:
+
+- a navigation link
+- a container for the brand logo
+- the parent of a dropdown menu
+- a child of a navbar dropdown
+- a container for almost anything you want, like a `<Field>`
+
+By default the `<Navbar.Item>` will render as a `<div>`. Use the `link` prop to render it as an `<a>` anchor tag.
+
+It can be a **direct child** of either:
+
+- `<Navbar>`
+- `<Navbar.Brand>`
+- `<Navbar.Start>`
+- `<Navbar.End>`
+- `<Navbar.Dropdown>`
+
+You can add the following modifier props:
+
+- `expanded`: to make it fullwidth
+- `tab`: to add a bottom border on hover and show the bottom border using `active`
+
+## Navbar Shadow
+
+To add a shadow to the `<Navbar>` simply add the `shadow` prop.
+
+<Canvas>
+  <Story name="Shadow">
+    <Navbar shadow>
+      <Navbar.Brand>
+        <Navbar.Item href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+        </Navbar.Item>
+        <Navbar.Burger />
+      </Navbar.Brand>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item link>Home</Navbar.Item>
+          <Navbar.Item link>Documentation</Navbar.Item>
+          <Navbar.Item hasDropdown>
+            <Navbar.Link>More</Navbar.Link>
+          </Navbar.Item>
+        </Navbar.Start>
+        <Navbar.End>
+          <Navbar.Item>
+            <Buttons>
+              <Button color="primary"><strong>Sign up</strong></Button>
+              <Button color="light">Log in</Button>
+            </Buttons>
+          </Navbar.Item>
+        </Navbar.End>
+      </Navbar.Menu>
+    </Navbar>
+  </Story>
+</Canvas>
+
+## Transparent Navbar
+
+To seamlessly integrate the navbar in any visual context, you can add the `transparent` prop on the `<Navbar>`. This will remove any hover or active background from the navbar items.
+
+<Canvas>
+  <Story name="Transparent">
+    <div style={{ minHeight: 220}}>
+      <Navbar transparent>
+        <Navbar.Brand>
+          <Navbar.Item href="https://bulma.io">
+            <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+          </Navbar.Item>
+          <Navbar.Burger />
+        </Navbar.Brand>
+        <Navbar.Menu>
+          <Navbar.Item link>Home</Navbar.Item>
+            <Navbar.Item link>Documentation</Navbar.Item>
+            <Navbar.Item hasDropdown hoverable>
+              <Navbar.Link>More</Navbar.Link>
+              <Navbar.Dropdown>
+                <Navbar.Item link>About</Navbar.Item>
+                <Navbar.Item link>Jobs</Navbar.Item>
+                <Navbar.Item link>Contact</Navbar.Item>
+                <Navbar.Divider />
+                <Navbar.Item link>Report an issue</Navbar.Item>
+              </Navbar.Dropdown>
+            </Navbar.Item>
+          <Navbar.End>
+            <Navbar.Item>
+              <Buttons>
+                <Button color="primary"><strong>Sign up</strong></Button>
+                <Button color="light">Log in</Button>
+              </Buttons>
+            </Navbar.Item>
+          </Navbar.End>
+        </Navbar.Menu>
+      </Navbar>
+    </div>
+  </Story>
+</Canvas>
+
+## Spaced Navbar
+
+Add the `spaced` prop to the `<Navbar>` to add top and bottom paddings of `1rem` and left and right paddings of `2rem`.
+
+<Canvas>
+  <Story name="Spaced">
+    <Navbar color="light" spaced>
+      <Navbar.Brand>
+        <Navbar.Item href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+        </Navbar.Item>
+        <Navbar.Burger />
+      </Navbar.Brand>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item link>Home</Navbar.Item>
+          <Navbar.Item link>Documentation</Navbar.Item>
+          <Navbar.Item hasDropdown>
+            <Navbar.Link>More</Navbar.Link>
+          </Navbar.Item>
+        </Navbar.Start>
+        <Navbar.End>
+          <Navbar.Item>
+            <Buttons>
+              <Button color="primary"><strong>Sign up</strong></Button>
+              <Button color="light">Log in</Button>
+            </Buttons>
+          </Navbar.Item>
+        </Navbar.End>
+      </Navbar.Menu>
+    </Navbar>
+  </Story>
+</Canvas>
+
+## Navbar Tabs
+
+You can create navbar tabs by adding the `tab` prop to a navbar item.
+
+<Canvas>
+  <Story name="Tabs">
+    <Navbar>
+      <Navbar.Brand>
+        <Navbar.Item href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+        </Navbar.Item>
+        <Navbar.Burger />
+      </Navbar.Brand>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item tab>Home</Navbar.Item>
+          <Navbar.Item tab active>Documentation</Navbar.Item>
+          <Navbar.Item tab>About</Navbar.Item>
+          <Navbar.Item tab>Jobs</Navbar.Item>
+          <Navbar.Item tab>Contact</Navbar.Item>
+        </Navbar.Start>
+        <Navbar.End>
+          <Navbar.Item>
+            <Buttons>
+              <Button color="primary"><strong>Sign up</strong></Button>
+              <Button color="light">Log in</Button>
+            </Buttons>
+          </Navbar.Item>
+        </Navbar.End>
+      </Navbar.Menu>
+    </Navbar>
+  </Story>
+</Canvas>
+
+
+## Fixed Navbar
+
+You can now fix the `<Navbar>` to either the **top** or **bottom** of the page. This is a 2-step process:
+
+- Add either `fixed="top"` or `fixed="bottom"` to the `<Navbar>`.
+- Add the corresponding `has-navbar-fixed-top` or `has-navbar-fixed-bottom` modifier to either `<html>` or `<body>` element to provide the appropriate padding to the page.
+
+To create a `<Navbar>` that is only fixed on **mobile**:
+
+- Add either the `fixed="top-touch"` or `fixed="bottom-touch"` prop to the `<Navbar>`
+- Add the corresponding `has-navbar-fixed-top-touch` or `has-navbar-fixed-bottom-touch` modifier to either `<html>` or `<body>` element to provide the appropriate padding to the page.
+
+To create a `<Navbar>` that is only fixed on **desktop**:
+
+- Add either the `fixed="top-desktop"` or `fixed="bottom-desktop"` prop to the `<Navbar>`
+- Add the corresponding `has-navbar-fixed-top-desktop` or `has-navbar-fixed-bottom-desktop` modifier to either `<html>` or `<body>` element to provide the appropriate padding to the page.
+
+Reference the [Bulma Docs](https://bulma.io/documentation/components/navbar/#fixed-navbar) for a working example.
+
+## Dropdown Menu
+
+To create a **dropdown menu**, you will need 4 elements:
+
+- `<Navbar.Item>` with the `hasDropdown` prop
+- `<Navbar.Link>` which contains the dropdown arrow
+- `<Navbar.Dropdown>` which can contain instances of `<Navbar.Item>` and `<Navbar.Divider>`
+
+<Canvas>
+  <Story name="Dropdown">
+    <Navbar>
+      <Navbar.Item hasDropdown>
+        <Navbar.Link>More</Navbar.Link>
+        <Navbar.Dropdown>
+          <Navbar.Item link>About</Navbar.Item>
+          <Navbar.Item link>Jobs</Navbar.Item>
+          <Navbar.Item link>Contact</Navbar.Item>
+          <Navbar.Divider />
+          <Navbar.Item link>Report an issue</Navbar.Item>
+        </Navbar.Dropdown>
+      </Navbar.Item>
+    </Navbar>
+  </Story>
+</Canvas>
+
+The `<Navbar.Dropdown>` is visible on touch devices `< 1024px` but hidden on desktop `>= 1024px`. How the dropdown is displayed on desktop depends on the parent's class.
+
+### Show/hide the dropdown with either CSS or JavaScript
+
+The `<Navbar.Item>` with the `hasDropdown` prop, has 2 additional modifiers
+
+- `hoverable`: the dropdown will show up when hovering the parent navbar-item
+- `active`: the dropdown will show up all the time
+
+### Right dropdown
+
+If your parent `<Navbar.Item>` is on the right side, you can position the dropdown to start from the right with the `right` prop.
+
+<Canvas>
+  <Story name="Right Dropdown">
+    <div style={{ minHeight: 220}}>
+      <Navbar>
+        <Navbar.Menu>
+          <Navbar.Start>
+            <Navbar.Item hasDropdown active>
+              <Navbar.Link>Left</Navbar.Link>
+              <Navbar.Dropdown>
+                <Navbar.Item link>About</Navbar.Item>
+                <Navbar.Item link>Jobs</Navbar.Item>
+                <Navbar.Item link>Contact</Navbar.Item>
+                <Navbar.Divider />
+                <Navbar.Item link>Report an issue</Navbar.Item>
+              </Navbar.Dropdown>
+            </Navbar.Item>
+          </Navbar.Start>
+          <Navbar.End>
+            <Navbar.Item hasDropdown active>
+              <Navbar.Link>Right</Navbar.Link>
+              <Navbar.Dropdown right>
+                <Navbar.Item link>About</Navbar.Item>
+                <Navbar.Item link>Jobs</Navbar.Item>
+                <Navbar.Item link>Contact</Navbar.Item>
+                <Navbar.Divider />
+                <Navbar.Item link>Report an issue</Navbar.Item>
+              </Navbar.Dropdown>
+            </Navbar.Item>
+          </Navbar.End>
+        </Navbar.Menu>
+      </Navbar>
+      <Hero color="primary">
+        <Hero.Body>
+          <Title>Documentation</Title>
+          <Title subtitle>
+            Everything you need to <strong>create a website</strong> with Bulma
+          </Title>
+        </Hero.Body>
+      </Hero>
+    </div>
+  </Story>
+</Canvas>
+
+### Dropup
+
+If you're using a navbar at the bottom, like the fixed bottom navbar, you might want to use a **dropup menu**. Simply add the `hasDropup` prop instead to the parent `<Navbar.Item>`.
+
+<Canvas>
+  <Story name="Dropup">
+    <Hero color="primary">
+      <Hero.Body>
+        <Title>Documentation</Title>
+        <Title subtitle>
+          Everything you need to <strong>create a website</strong> with Bulma
+        </Title>
+      </Hero.Body>
+    </Hero>
+    <Navbar>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item hasDropup active>
+            <Navbar.Link>More</Navbar.Link>
+            <Navbar.Dropdown>
+              <Navbar.Item link>About</Navbar.Item>
+              <Navbar.Item link>Jobs</Navbar.Item>
+              <Navbar.Item link>Contact</Navbar.Item>
+              <Navbar.Divider />
+              <Navbar.Item link>Report an issue</Navbar.Item>
+            </Navbar.Dropdown>
+          </Navbar.Item>
+        </Navbar.Start>
+      </Navbar.Menu>
+    </Navbar>
+  </Story>
+</Canvas>
+
+### Dropdown without arrow
+
+You can remove the arrow in the items of the navbar by adding the `arrowless` prop to the `<Navbar.Link>`.
+
+<Canvas>
+  <Story name="Dropdown arrowless">
+    <Navbar>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item hasDropdown active>
+            <Navbar.Link arrowless>More</Navbar.Link>
+            <Navbar.Dropdown>
+              <Navbar.Item link>About</Navbar.Item>
+              <Navbar.Item link>Jobs</Navbar.Item>
+              <Navbar.Item link>Contact</Navbar.Item>
+              <Navbar.Divider />
+              <Navbar.Item link>Report an issue</Navbar.Item>
+            </Navbar.Dropdown>
+          </Navbar.Item>
+        </Navbar.Start>
+      </Navbar.Menu>
+    </Navbar>
+    <Hero color="primary">
+      <Hero.Body>
+        <Title>Documentation</Title>
+        <Title subtitle>
+          Everything you need to <strong>create a website</strong> with Bulma
+        </Title>
+      </Hero.Body>
+    </Hero>
+  </Story>
+</Canvas>
+
+### Styles for the dropdown menu
+
+By default, the `<Navbar.Dropdown>` has a grey border-top and a border-radius at both bottom corners.
+
+When having a transparent navbar, it is preferable to use the boxed version of the dropdown, by using the `boxed` prop.
+
+- the grey border is **removed**
+- a slight **inner shadow** is added
+- all corners are **rounded**
+- the hover/active state is **animated**
+
+<Canvas>
+  <Story name="Dropdown boxed">
+    <Navbar>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item hasDropdown hoverable>
+            <Navbar.Link>More</Navbar.Link>
+            <Navbar.Dropdown boxed>
+              <Navbar.Item link>About</Navbar.Item>
+              <Navbar.Item link>Jobs</Navbar.Item>
+              <Navbar.Item link>Contact</Navbar.Item>
+              <Navbar.Divider />
+              <Navbar.Item link>Report an issue</Navbar.Item>
+            </Navbar.Dropdown>
+          </Navbar.Item>
+        </Navbar.Start>
+      </Navbar.Menu>
+    </Navbar>
+    <Hero color="primary">
+      <Hero.Body>
+        <Title>Documentation</Title>
+        <Title subtitle>
+          Everything you need to <strong>create a website</strong> with Bulma
+        </Title>
+      </Hero.Body>
+    </Hero>
+  </Story>
+</Canvas>
+
+### Active dropdown navbar item
+
+<Canvas>
+  <Story name="Active dropdown item">
+    <Navbar>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item hasDropdown active>
+            <Navbar.Link>More</Navbar.Link>
+            <Navbar.Dropdown>
+              <Navbar.Item link>About</Navbar.Item>
+              <Navbar.Item link active>Jobs</Navbar.Item>
+              <Navbar.Item link>Contact</Navbar.Item>
+              <Navbar.Divider />
+              <Navbar.Item link>Report an issue</Navbar.Item>
+            </Navbar.Dropdown>
+          </Navbar.Item>
+        </Navbar.Start>
+      </Navbar.Menu>
+    </Navbar>
+    <Hero color="primary">
+      <Hero.Body>
+        <Title>Documentation</Title>
+        <Title subtitle>
+          Everything you need to <strong>create a website</strong> with Bulma
+        </Title>
+      </Hero.Body>
+    </Hero>
+  </Story>
+</Canvas>
+
+### Dropdown divider
+
+You can add a `<Navbar.Divider>` to display a horizontal rule in a `<Navbar.Dropdown>`.
+
+## Colors
+
+You can change the background color of the navbar by using the `color` prop.
+
+<Canvas>
+  <Story name="Colors">
+    <Navbar color="primary">
+      <Navbar.Brand>
+        <Navbar.Item href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo-white.png" width="112" height="28" />
+        </Navbar.Item>
+        <Navbar.Burger />
+      </Navbar.Brand>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item link>Home</Navbar.Item>
+          <Navbar.Item link>Documentation</Navbar.Item>
+          <Navbar.Item hasDropdown>
+            <Navbar.Link>More</Navbar.Link>
+          </Navbar.Item>
+        </Navbar.Start>
+        <Navbar.End>
+          <Navbar.Item>
+            <Buttons>
+              <Button color="primary"><strong>Sign up</strong></Button>
+              <Button color="light">Log in</Button>
+            </Buttons>
+          </Navbar.Item>
+        </Navbar.End>
+      </Navbar.Menu>
+    </Navbar>
+    <hr />
+    <Navbar color="info">
+      <Navbar.Brand>
+        <Navbar.Item href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo-white.png" width="112" height="28" />
+        </Navbar.Item>
+        <Navbar.Burger />
+      </Navbar.Brand>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item link>Home</Navbar.Item>
+          <Navbar.Item link>Documentation</Navbar.Item>
+          <Navbar.Item hasDropdown>
+            <Navbar.Link>More</Navbar.Link>
+          </Navbar.Item>
+        </Navbar.Start>
+        <Navbar.End>
+          <Navbar.Item>
+            <Buttons>
+              <Button color="primary"><strong>Sign up</strong></Button>
+              <Button color="light">Log in</Button>
+            </Buttons>
+          </Navbar.Item>
+        </Navbar.End>
+      </Navbar.Menu>
+    </Navbar>
+    <hr />
+    <Navbar color="link">
+      <Navbar.Brand>
+        <Navbar.Item href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo-white.png" width="112" height="28" />
+        </Navbar.Item>
+        <Navbar.Burger />
+      </Navbar.Brand>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item link>Home</Navbar.Item>
+          <Navbar.Item link>Documentation</Navbar.Item>
+          <Navbar.Item hasDropdown>
+            <Navbar.Link>More</Navbar.Link>
+          </Navbar.Item>
+        </Navbar.Start>
+        <Navbar.End>
+          <Navbar.Item>
+            <Buttons>
+              <Button color="primary"><strong>Sign up</strong></Button>
+              <Button color="light">Log in</Button>
+            </Buttons>
+          </Navbar.Item>
+        </Navbar.End>
+      </Navbar.Menu>
+    </Navbar>
+    <hr />
+    <Navbar color="success">
+      <Navbar.Brand>
+        <Navbar.Item href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo-white.png" width="112" height="28" />
+        </Navbar.Item>
+        <Navbar.Burger />
+      </Navbar.Brand>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item link>Home</Navbar.Item>
+          <Navbar.Item link>Documentation</Navbar.Item>
+          <Navbar.Item hasDropdown>
+            <Navbar.Link>More</Navbar.Link>
+          </Navbar.Item>
+        </Navbar.Start>
+        <Navbar.End>
+          <Navbar.Item>
+            <Buttons>
+              <Button color="primary"><strong>Sign up</strong></Button>
+              <Button color="light">Log in</Button>
+            </Buttons>
+          </Navbar.Item>
+        </Navbar.End>
+      </Navbar.Menu>
+    </Navbar>
+    <hr />
+    <Navbar color="warning">
+      <Navbar.Brand>
+        <Navbar.Item href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+        </Navbar.Item>
+        <Navbar.Burger />
+      </Navbar.Brand>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item link>Home</Navbar.Item>
+          <Navbar.Item link>Documentation</Navbar.Item>
+          <Navbar.Item hasDropdown>
+            <Navbar.Link>More</Navbar.Link>
+          </Navbar.Item>
+        </Navbar.Start>
+        <Navbar.End>
+          <Navbar.Item>
+            <Buttons>
+              <Button color="primary"><strong>Sign up</strong></Button>
+              <Button color="light">Log in</Button>
+            </Buttons>
+          </Navbar.Item>
+        </Navbar.End>
+      </Navbar.Menu>
+    </Navbar>
+    <hr />
+    <Navbar color="danger">
+      <Navbar.Brand>
+        <Navbar.Item href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo-white.png" width="112" height="28" />
+        </Navbar.Item>
+        <Navbar.Burger />
+      </Navbar.Brand>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item link>Home</Navbar.Item>
+          <Navbar.Item link>Documentation</Navbar.Item>
+          <Navbar.Item hasDropdown>
+            <Navbar.Link>More</Navbar.Link>
+          </Navbar.Item>
+        </Navbar.Start>
+        <Navbar.End>
+          <Navbar.Item>
+            <Buttons>
+              <Button color="primary"><strong>Sign up</strong></Button>
+              <Button color="light">Log in</Button>
+            </Buttons>
+          </Navbar.Item>
+        </Navbar.End>
+      </Navbar.Menu>
+    </Navbar>
+    <hr />
+    <Navbar color="white">
+      <Navbar.Brand>
+        <Navbar.Item href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+        </Navbar.Item>
+        <Navbar.Burger />
+      </Navbar.Brand>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item link>Home</Navbar.Item>
+          <Navbar.Item link>Documentation</Navbar.Item>
+          <Navbar.Item hasDropdown>
+            <Navbar.Link>More</Navbar.Link>
+          </Navbar.Item>
+        </Navbar.Start>
+        <Navbar.End>
+          <Navbar.Item>
+            <Buttons>
+              <Button color="primary"><strong>Sign up</strong></Button>
+              <Button color="light">Log in</Button>
+            </Buttons>
+          </Navbar.Item>
+        </Navbar.End>
+      </Navbar.Menu>
+    </Navbar>
+    <hr />
+    <Navbar color="black">
+      <Navbar.Brand>
+        <Navbar.Item href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo-white.png" width="112" height="28" />
+        </Navbar.Item>
+        <Navbar.Burger />
+      </Navbar.Brand>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item link>Home</Navbar.Item>
+          <Navbar.Item link>Documentation</Navbar.Item>
+          <Navbar.Item hasDropdown>
+            <Navbar.Link>More</Navbar.Link>
+          </Navbar.Item>
+        </Navbar.Start>
+        <Navbar.End>
+          <Navbar.Item>
+            <Buttons>
+              <Button color="primary"><strong>Sign up</strong></Button>
+              <Button color="light">Log in</Button>
+            </Buttons>
+          </Navbar.Item>
+        </Navbar.End>
+      </Navbar.Menu>
+    </Navbar>
+    <hr />
+    <Navbar color="light">
+      <Navbar.Brand>
+        <Navbar.Item href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+        </Navbar.Item>
+        <Navbar.Burger />
+      </Navbar.Brand>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item link>Home</Navbar.Item>
+          <Navbar.Item link>Documentation</Navbar.Item>
+          <Navbar.Item hasDropdown>
+            <Navbar.Link>More</Navbar.Link>
+          </Navbar.Item>
+        </Navbar.Start>
+        <Navbar.End>
+          <Navbar.Item>
+            <Buttons>
+              <Button color="primary"><strong>Sign up</strong></Button>
+              <Button color="light">Log in</Button>
+            </Buttons>
+          </Navbar.Item>
+        </Navbar.End>
+      </Navbar.Menu>
+    </Navbar>
+    <hr />
+    <Navbar color="dark">
+      <Navbar.Brand>
+        <Navbar.Item href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo-white.png" width="112" height="28" />
+        </Navbar.Item>
+        <Navbar.Burger />
+      </Navbar.Brand>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item link>Home</Navbar.Item>
+          <Navbar.Item link>Documentation</Navbar.Item>
+          <Navbar.Item hasDropdown>
+            <Navbar.Link>More</Navbar.Link>
+          </Navbar.Item>
+        </Navbar.Start>
+        <Navbar.End>
+          <Navbar.Item>
+            <Buttons>
+              <Button color="primary"><strong>Sign up</strong></Button>
+              <Button color="light">Log in</Button>
+            </Buttons>
+          </Navbar.Item>
+        </Navbar.End>
+      </Navbar.Menu>
+    </Navbar>
+  </Story>
+</Canvas>
+
+## Navbar Props
+
+<ArgsTable of={Navbar} />
+
+## Navbar.Brand Props
+
+<ArgsTable of={Navbar.Brand} />
+
+## Navbar.Burger Props
+
+<ArgsTable of={Navbar.Burger} />
+
+## Navbar.Menu Props
+
+<ArgsTable of={Navbar.Menu} />
+
+## Navbar.Start Props
+
+<ArgsTable of={Navbar.Start} />
+
+## Navbar.End Props
+
+<ArgsTable of={Navbar.End} />
+
+## Navbar.Item Props
+
+<ArgsTable of={Navbar.Item} />
+
+## Navbar.Link Props
+
+<ArgsTable of={Navbar.Link} />
+
+## Navbar.Dropdown Props
+
+<ArgsTable of={Navbar.Dropdown} />
+
+## Navbar.Divider Props
+
+<ArgsTable of={Navbar.Divider} />
