@@ -5,6 +5,8 @@ import classNames from 'classnames';
 import HeroHead from './HeroHead';
 import HeroBody from './HeroBody';
 import HeroFoot from './HeroFoot';
+import HeroVideo from './HeroVideo';
+import HeroButtons from './HeroButtons';
 
 export default function Hero({
   bold,
@@ -54,6 +56,8 @@ export default function Hero({
 Hero.Head = HeroHead;
 Hero.Body = HeroBody;
 Hero.Foot = HeroFoot;
+Hero.Video = HeroVideo;
+Hero.Buttons = HeroButtons;
 
 Hero.propTypes = {
   className: PropTypes.string,

@@ -1,8 +1,15 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons/faDownload';
+
 import Hero from './Hero';
 import Container from '../Container';
 import Title from '../Title';
+import Button from '../Button';
+import Navbar from '../Navbar';
+import Icon from '../Icon';
+import Tabs from '../Tabs';
 
 <Meta title="Layout/Hero" component={Hero} />
 
@@ -15,6 +22,15 @@ import Title from '../Title';
 Supported Versions: `0.9.1`, `0.9.0`
 
 ## Default
+
+The `<Hero>` allows you to add a full width banner to your webpage, which can optionally cover the full height of the page as well.
+
+The basic requirement of this component are:
+
+- `<Hero>`: as the main container
+- `<Hero.Body>`: as a direct child, in which you can put all your content
+
+For the fullheight hero to work, you will also need a `<Hero.Head>` and a `<Hero.Foot>`.
 
 <Canvas>
   <Story name="Default">
@@ -31,7 +47,410 @@ Supported Versions: `0.9.1`, `0.9.0`
 
 ## Colors
 
+The `<Hero>` is available in different colors by use of the `color` prop.
+
+<Canvas>
+  <Story name="Colors">
+    <Hero color="primary">
+      <Hero.Body>
+        <Container>
+          <Title>Primary Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="link">
+      <Hero.Body>
+        <Container>
+          <Title>Link Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="info">
+      <Hero.Body>
+        <Container>
+          <Title>Info Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="success">
+      <Hero.Body>
+        <Container>
+          <Title>Success Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="warning">
+      <Hero.Body>
+        <Container>
+          <Title>Warning Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="danger">
+      <Hero.Body>
+        <Container>
+          <Title>Danger Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="white">
+      <Hero.Body>
+        <Container>
+          <Title>White Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="black">
+      <Hero.Body>
+        <Container>
+          <Title>Black Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="light">
+      <Hero.Body>
+        <Container>
+          <Title>Light Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="dark">
+      <Hero.Body>
+        <Container>
+          <Title>Dark Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+  </Story>
+</Canvas>
+
+## Gradients
+
+By adding the `bold` prop, you can generate a subtle **gradient**
+
+<Canvas>
+  <Story name="Bold Colors">
+    <Hero color="primary" bold>
+      <Hero.Body>
+        <Container>
+          <Title>Primary Bold Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="link" bold>
+      <Hero.Body>
+        <Container>
+          <Title>Link Bold Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="info" bold>
+      <Hero.Body>
+        <Container>
+          <Title>Info Bold Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="success" bold>
+      <Hero.Body>
+        <Container>
+          <Title>Success Bold Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="warning" bold>
+      <Hero.Body>
+        <Container>
+          <Title>Warning Bold Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="danger" bold>
+      <Hero.Body>
+        <Container>
+          <Title>Danger Bold Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="white" bold>
+      <Hero.Body>
+        <Container>
+          <Title>White Bold Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="black" bold>
+      <Hero.Body>
+        <Container>
+          <Title>Black Bold Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="light" bold>
+      <Hero.Body>
+        <Container>
+          <Title>Light Bold Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="dark" bold>
+      <Hero.Body>
+        <Container>
+          <Title>Dark Bold Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+  </Story>
+</Canvas>
+
 ## Sizes
+
+You can have even more imposing banners by using one of 3 different sizes:
+
+<Canvas>
+  <Story name="Sizes">
+    <Hero size="small" color="light">
+      <Hero.Body>
+        <Container>
+          <Title>Small Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="dark">
+      <Hero.Body>
+        <Container>
+          <Title>Default Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero size="medium" color="light">
+      <Hero.Body>
+        <Container>
+          <Title>Medium Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero size="large" color="dark">
+      <Hero.Body>
+        <Container>
+          <Title>Large Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero size="halfheight" color="light">
+      <Hero.Body>
+        <Container>
+          <Title>Halfheight Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero size="fullheight" color="dark">
+      <Hero.Body>
+        <Container>
+          <Title>Fullheight Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+  </Story>
+</Canvas>
+
+## Fullheight with Navbar
+
+<Canvas>
+  <Story name="Fullheight with navbar">
+    <Navbar color="light">
+      <Navbar.Brand>
+        <Navbar.Item href="https://bulma.io">
+          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+        </Navbar.Item>
+        <Navbar.Burger />
+      </Navbar.Brand>
+      <Navbar.Menu>
+        <Navbar.Start>
+          <Navbar.Item link>Home</Navbar.Item>
+          <Navbar.Item link>Documentation</Navbar.Item>
+          <Navbar.Item hasDropdown>
+            <Navbar.Link>More</Navbar.Link>
+          </Navbar.Item>
+        </Navbar.Start>
+        <Navbar.End>
+          <Navbar.Item>
+            <Buttons>
+              <Button color="primary"><strong>Sign up</strong></Button>
+              <Button color="light">Log in</Button>
+            </Buttons>
+          </Navbar.Item>
+        </Navbar.End>
+      </Navbar.Menu>
+    </Navbar>
+    <Hero size="fullheight-navbar" color="dark">
+      <Hero.Body>
+        <Container>
+          <Title>Fullheight Navbar Hero</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+  </Story>
+</Canvas>
+
+## Hero in 3 Parts
+
+<Canvas>
+  <Story name="Hero parts">
+    <Hero color="success" size="fullheight">
+      <Hero.Head>
+        <Container>
+          <Navbar>
+            <Navbar.Brand>
+              <Navbar.Item>
+                <img src="https://bulma.io/images/bulma-type-white.png" />
+              </Navbar.Item>
+              <Navbar.Burger />
+            </Navbar.Brand>
+            <Navbar.Menu>
+              <Navbar.End>
+                <Navbar.Item link active>Home</Navbar.Item>
+                <Navbar.Item link>Examples</Navbar.Item>
+                <Navbar.Item link>Documentation</Navbar.Item>
+                <Navbar.Item>
+                  <Button color="success" inverted link>
+                    <Icon>
+                      <FontAwesomeIcon icon={faDownload} />
+                    </Icon>
+                    <span>Download</span>
+                  </Button>
+                </Navbar.Item>
+              </Navbar.End>
+            </Navbar.Menu>
+          </Navbar>
+        </Container>
+      </Hero.Head>
+      <Hero.Body>
+        <Container className="has-text-centered">
+          <Title>Hero title</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+      <Hero.Foot>
+        <Tabs boxed fullwidth>
+          <Container>
+            <Tabs.List>
+              <Tabs.ListItem active>
+                <Tabs.Link>Overview</Tabs.Link>
+              </Tabs.ListItem>
+              <Tabs.ListItem>
+                <Tabs.Link>Modifiers</Tabs.Link>
+              </Tabs.ListItem>
+              <Tabs.ListItem>
+                <Tabs.Link>Grid</Tabs.Link>
+              </Tabs.ListItem>
+              <Tabs.ListItem>
+                <Tabs.Link>Elements</Tabs.Link>
+              </Tabs.ListItem>
+              <Tabs.ListItem>
+                <Tabs.Link>Components</Tabs.Link>
+              </Tabs.ListItem>
+              <Tabs.ListItem>
+                <Tabs.Link>Layout</Tabs.Link>
+              </Tabs.ListItem>
+            </Tabs.List>
+          </Container>
+        </Tabs>
+      </Hero.Foot>
+    </Hero>
+  </Story>
+</Canvas>
+
+## Hero Buttons
+
+You can create a section of buttons with the `<Hero.Buttons>` container.
+
+<Canvas>
+  <Story name="Hero Buttons">
+    <Hero size="small" color="light">
+      <Hero.Buttons>
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </Hero.Buttons>
+      <Hero.Body>
+        <Container className="has-text-centered">
+          <Title>Hero title</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+  </Story>
+</Canvas>
+
+## Hero Video
+
+Use the `<Hero.Video>` container around an [HTML video](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video) to create a video background.
+
+<Canvas>
+  <Story name="Video">
+    <Hero size="fullheight">
+      <Hero.Video>
+        <video autoPlay muted loop>
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+        </video>
+      </Hero.Video>
+      <Hero.Body>
+        <Container className="has-text-centered">
+          <Title>Hero title</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+  </Story>
+</Canvas>
+
+To make the background video transparent, add the `transparent` prop.
+
+<Canvas>
+  <Story name="Transparent Video">
+    <Hero size="fullheight">
+      <Hero.Video transparent>
+        <video autoPlay muted loop>
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+        </video>
+      </Hero.Video>
+      <Hero.Body>
+        <Container className="has-text-centered">
+          <Title>Hero title</Title>
+          <Title subtitle>Hero subtitle</Title>
+        </Container>
+      </Hero.Body>
+    </Hero>
+  </Story>
+</Canvas>
 
 ## Hero Props
 
