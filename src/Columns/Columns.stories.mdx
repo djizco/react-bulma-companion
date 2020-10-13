@@ -1,0 +1,51 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import Columns from './Columns';
+import Column from '../Column';
+import Notification from '../Notification'
+
+<Meta title="Layout/Columns" component={Columns} />
+
+# Columns
+
+### The power of **Flexbox** in a simple interface
+
+[Bulma Documentation](https://bulma.io/documentation/columns/basics/)
+
+Supported Versions: `0.9.1`, `0.9.0`
+
+## Default
+
+Building a columns layout with Bulma is very simple:
+
+- Add a `<Columns>` container
+- Add as many `<Column>` elements as you want
+
+Each column will have an equal width, no matter the number of columns.
+
+<Canvas>
+  <Story name="Default">
+    <Columns className="has-text-centered">
+      <Column>
+        <Notification color="primary">First column</Notification>
+      </Column>
+      <Column>
+        <Notification color="primary">Second column</Notification>
+      </Column>
+      <Column>
+        <Notification color="primary">Third column</Notification>
+      </Column>
+      <Column>
+        <Notification color="primary">Fourth column</Notification>
+      </Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+## Columns Props
+
+<ArgsTable of={Columns} />
+
+## Column Props
+
+<ArgsTable of={Column} />

@@ -10,7 +10,7 @@ export default function Tile({
   light,
   type,
   vertical,
-  width,
+  size,
   ...props
 }) {
   // Types
@@ -36,8 +36,8 @@ export default function Tile({
   };
   const isColor = color && colorMap[color];
 
-  // Widths
-  const widthMap = {
+  // Sizes
+  const sizeMap = {
     1: 'is-1',
     2: 'is-2',
     3: 'is-3',
@@ -51,9 +51,9 @@ export default function Tile({
     11: 'is-11',
     12: 'is-12',
   };
-  const isWidth = width && widthMap[width];
+  const isSize = size && sizeMap[size];
 
-  const classes = classNames('tile', className, isType, isColor, isWidth, {
+  const classes = classNames('tile', className, isType, isColor, isSize, {
     notification: color,
     'is-light': light,
     'is-vertical': vertical,
@@ -75,7 +75,7 @@ Tile.propTypes = {
     'parent',
     'child',
   ]),
-  width: PropTypes.oneOf([
+  size: PropTypes.oneOf([
     '1',
     '2',
     '3',
@@ -110,7 +110,7 @@ Tile.defaultProps = {
   className: undefined,
   children: null,
   type: undefined,
-  width: undefined,
+  size: undefined,
   color: undefined,
   light: false,
   vertical: false,

@@ -23,7 +23,7 @@ To build intricate 2-dimensional layouts, you only need a **single element**: th
 <Canvas>
   <Story name="Default">
     <Tile type="ancestor">
-      <Tile width="8" vertical>
+      <Tile size="8" vertical>
         <Tile>
           <Tile type="parent" vertical>
             <Tile color="primary" type="child">
@@ -73,7 +73,7 @@ To build intricate 2-dimensional layouts, you only need a **single element**: th
 The tile comes with several modifiers props.
 
 - `type`: `ancestor`, `parent`, or `child`.
-- `width`: `1` - `12`
+- `size`: `1` - `12`
 - `color` and `light`: uses the notification class under the hood to alter the tile colors.
 - `vertical`: to create a vertical tile
 - `box`: add the box styling to a tile
