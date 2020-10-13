@@ -18,7 +18,7 @@
   white-space: nowrap;
 }
 
-.sbdocs .number {
+.sbdocs .token.number {
   align-items: inherit;
   background-color: inherit;
   border-radius: 0;
