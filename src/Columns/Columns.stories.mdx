@@ -3,6 +3,8 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import Columns from './Columns';
 import Column from '../Column';
 import Notification from '../Notification'
+import Box from '../Box'
+import Title from '../Title'
 
 <Meta title="Layout/Columns" component={Columns} />
 
@@ -21,7 +23,7 @@ Building a columns layout with Bulma is very simple:
 - Add a `<Columns>` container
 - Add as many `<Column>` elements as you want
 
-Each column will have an equal width, no matter the number of columns.
+Each column will have an equal width, no matter the number of columns. By default the columns become fullwidth on mobile.
 
 <Canvas>
   <Story name="Default">
@@ -38,6 +40,594 @@ Each column will have an equal width, no matter the number of columns.
       <Column>
         <Notification color="primary">Fourth column</Notification>
       </Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+## Sizes
+
+If you want to change the size of a single column, you can use one the `size` property. The other columns will fill up the remaining space automatically.
+
+<Canvas>
+  <Story name="Sizes">
+    <Columns className="has-text-centered">
+      <Column size="full">
+        <Notification color="primary">full</Notification>
+      </Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="four-fifths">
+        <Notification color="primary">four-fifths</Notification>
+      </Column>
+      <Column>
+        <Notification>Auto</Notification>
+      </Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="three-quarters">
+        <Notification color="primary">three-quarters</Notification>
+      </Column>
+      <Column>
+        <Notification>Auto</Notification>
+      </Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="two-thirds">
+        <Notification color="primary">two-thirds</Notification>
+      </Column>
+      <Column>
+        <Notification>Auto</Notification>
+      </Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="three-fifths">
+        <Notification color="primary">three-fifths</Notification>
+      </Column>
+      <Column>
+        <Notification>Auto</Notification>
+      </Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="half">
+        <Notification color="primary">half</Notification>
+      </Column>
+      <Column>
+        <Notification>Auto</Notification>
+      </Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="two-fifths">
+        <Notification color="primary">two-fifths</Notification>
+      </Column>
+      <Column>
+        <Notification>Auto</Notification>
+      </Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="one-third">
+        <Notification color="primary">one-third</Notification>
+      </Column>
+      <Column>
+        <Notification>Auto</Notification>
+      </Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column>
+        <Notification>Auto</Notification>
+      </Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="one-fifth">
+        <Notification color="primary">one-fifth</Notification>
+      </Column>
+      <Column>
+        <Notification>Auto</Notification>
+      </Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+## 12 column system
+
+As the grid can be divided into 12 columns, there are additional sizes for each division
+
+<Canvas>
+  <Story name="12 column sizes">
+    <Columns className="has-text-centered">
+      <Column size="1">
+        <Notification color="primary">1</Notification>
+      </Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="2">
+        <Notification color="primary">2</Notification>
+      </Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="3">
+        <Notification color="primary">3</Notification>
+      </Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="4">
+        <Notification color="primary">4</Notification>
+      </Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="5">
+        <Notification color="primary">5</Notification>
+      </Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="6">
+        <Notification color="primary">6</Notification>
+      </Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="7">
+        <Notification color="primary">7</Notification>
+      </Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="8">
+        <Notification color="primary">8</Notification>
+      </Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="9">
+        <Notification color="primary">9</Notification>
+      </Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="10">
+        <Notification color="primary">10</Notification>
+      </Column>
+      <Column size="1"><Notification>1</Notification></Column>
+      <Column size="1"><Notification>1</Notification></Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="11">
+        <Notification color="primary">11</Notification>
+      </Column>
+      <Column size="1"><Notification>1</Notification></Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="12">
+        <Notification color="primary">12</Notification>
+      </Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+## Offset
+
+While you can use empty columns to create horizontal space around columns, you can also use the `offset` prop.
+
+<Canvas>
+  <Story name="Offset">
+    <Columns className="has-text-centered">
+      <Column size="half" offset="one-quarter">
+        <Notification color="primary">Size: half, Offset: one-quarter</Notification>
+      </Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="three-fifths" offset="one-fifth">
+        <Notification color="primary">Size: three-fifth, Offset: one-fifth</Notification>
+      </Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="4" offset="8">
+        <Notification color="primary">Size: 4, Offset: 8</Notification>
+      </Column>
+    </Columns>
+    <Columns className="has-text-centered">
+      <Column size="11" offset="1">
+        <Notification color="primary">Size: 11, Offset: 1</Notification>
+      </Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+## Narrow Column
+
+If you want a column to only take the space it needs, use the `narrow` prop. The other column(s) will fill up the remaining space.
+
+<Canvas>
+  <Story name="Narrow">
+    <Columns className="has-text-centered">
+      <Column narrow>
+        <Box style={{ width: 200 }}>
+          <Title size="5">Narrow Column</Title>
+          <Title subtitle>This column is only 200px wide</Title>
+        </Box>
+      </Column>
+      <Column>
+        <Box>
+          <Title size="5">Flexible Column</Title>
+          <Title subtitle>This column will take up the remaining space available.</Title>
+        </Box>
+      </Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+You can have narrow columns for different breakpoints by adding the following props.
+
+- `narrowMobile`
+- `narrowTablet`
+- `narrowTouch`
+- `narrowDesktop`
+- `narrowWidescreen`
+- `narrowFullhd`
+
+## Mobile Columns
+
+By default, columns are only activated from **tablet** onwards. This means columns are stacked on top of each other on **mobile**.
+
+If you want columns to work on **mobile too**, just add the `mobile` prop on the `<Columns>` container:
+
+<Canvas>
+  <Story name="Mobile">
+    <Columns className="has-text-centered" mobile>
+      <Column><Notification color="primary">1</Notification></Column>
+      <Column><Notification color="primary">2</Notification></Column>
+      <Column><Notification color="primary">3</Notification></Column>
+      <Column><Notification color="primary">4</Notification></Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+If you *only* want columns on **desktop** upwards, just use the `desktop` prop on the columns container:
+
+<Canvas>
+  <Story name="Desktop">
+    <Columns className="has-text-centered" desktop>
+      <Column><Notification color="primary">1</Notification></Column>
+      <Column><Notification color="primary">2</Notification></Column>
+      <Column><Notification color="primary">3</Notification></Column>
+      <Column><Notification color="primary">4</Notification></Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+## Different column sizes per breakpoint
+
+You can define a column size for each viewport size: mobile, tablet, touch, desktop, widescreen, and fullhd.
+
+<Canvas>
+  <Story name="Multiple Breakpoints">
+    <Columns className="has-text-centered" mobile>
+      <Column
+        mobileSize="three-quarters"
+        tabletSize="two-thirds"
+        desktopSize="half"
+        widescreenSize="one-third"
+        fullhdSize="one-quarter"
+      >
+        <Notification color="primary">
+          <p>Mobile: three-quarters</p>
+          <p>Tablet: two-thirds</p>
+          <p>Desktop: half</p>
+          <p>Widescreen: one-third</p>
+          <p>Fullhd: one-quarter</p>
+        </Notification>
+      </Column>
+      <Column>
+        <Notification>Auto</Notification>
+      </Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+## Nesting
+
+You can **nest** columns to have more flexibility in your design. You only need to follow this structure:
+
+- `<Columns>`: top-level columns container
+  - `<Column>`
+    - `<Columns>`: nested columns
+      - `<Column>`: and so on...
+
+The difference with multiline columns is the order in the code: all the blue columns appear before the red ones. Resize to a narrower viewport to see the result.
+
+<Canvas>
+  <Story name="Multiline Nesting">
+    <Columns className="has-text-centered">
+      <Column>
+        <Notification color="info">First column</Notification>
+        <Columns mobile>
+          <Column>
+            <Notification color="info">First nested column</Notification>
+          </Column>
+          <Column>
+            <Notification color="info">Second nested column</Notification>
+          </Column>
+        </Columns>
+      </Column>
+      <Column>
+        <Notification color="danger">Second column</Notification>
+        <Columns mobile>
+          <Column size="half">
+            <Notification color="danger">50%</Notification>
+          </Column>
+          <Column>
+            <Notification color="danger">Auto</Notification>
+          </Column>
+          <Column>
+            <Notification color="danger">Auto</Notification>
+          </Column>
+        </Columns>
+      </Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+Multiline columns will also have a **gap** between each **line**.
+
+## Vertical Alignment
+
+To align your columns vertically, add the `vcentered` prop to the `<Columns>` container.
+
+<Canvas>
+  <Story name="Vertical Alignment">
+    <Columns vcentered>
+      <Column size="8">
+        <Notification color="primary">First Column</Notification>
+      </Column>
+      <Column>
+        <Notification color="primary">
+          Second column with more content. This is so you can see the vertical alignment.
+        </Notification>
+      </Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+You can see the left column aligns itself vertically to the right column.
+
+## Multiline
+
+Whenever you want to start a new line, you can close a columns container and start a new one. But you can also add the `multiline` prop and add more column elements than would fit in a single row.
+
+<Canvas>
+  <Story name="Multiline">
+    <Columns className="has-text-centered" multiline mobile>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column size="half">
+        <Notification color="primary">half</Notification>
+      </Column>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column>
+        <Notification color="primary">Auto</Notification>
+      </Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+## Centering Columns
+
+While you can use *empty columns* to create horizontal space around columns, you can also use `centered` on the parent `<Columns>`:
+
+<Canvas>
+  <Story name="Centered">
+    <Columns className="has-text-centered" mobile centered>
+      <Column size="half">
+        <Notification color="primary">is-half</Notification>
+      </Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+Use with `multiline` to create a flexible, centered list
+
+<Canvas>
+  <Story name="Centered multiline">
+    <Columns className="has-text-centered" mobile multiline centered>
+      <Column narrow>
+        <Notification color="primary">narrow</Notification>
+      </Column>
+      <Column narrow>
+        <Notification color="primary">narrow</Notification>
+      </Column>
+      <Column narrow>
+        <Notification color="primary">narrow</Notification>
+      </Column>
+      <Column narrow>
+        <Notification color="primary">narrow</Notification>
+      </Column>
+      <Column narrow>
+        <Notification color="primary">narrow</Notification>
+      </Column>
+      <Column narrow>
+        <Notification color="primary">narrow</Notification>
+      </Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+## Gaps
+
+Each column has a gap equal to the variable `$column-gap`, which has a default value of 0.75rem.
+Since the gap is on each side of a column, the gap between two adjacent columns will be twice the value of `$column-gap`, or 1.5rem by default.
+
+### Gapless
+
+If you want to remove the **space** between the columns, add the `gapless` prop on the `<Columns>` container:
+
+<Canvas>
+  <Story name="Gapless">
+    <Columns className="has-text-centered" gapless>
+      <Column><Notification color="primary">No gap</Notification></Column>
+      <Column><Notification color="primary">No gap</Notification></Column>
+      <Column><Notification color="primary">No gap</Notification></Column>
+      <Column><Notification color="primary">No gap</Notification></Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+You can combine it with the `multiline` prop:
+
+<Canvas>
+  <Story name="Multiline Gapless">
+    <Columns className="has-text-centered" gapless multiline mobile>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column size="half">
+        <Notification color="primary">half</Notification>
+      </Column>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column>
+        <Notification color="primary">Auto</Notification>
+      </Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+### Variable Gap
+
+You can specify a **custom column gap** by appending the `gap` prop on the `<Columns>` container.
+
+This feature is only available in browsers that support CSS Variables.
+
+<Canvas>
+  <Story name="Variable Gap">
+    <Columns className="has-text-centered" gap="1">
+      <Column><Notification color="primary">Gap 1</Notification></Column>
+      <Column><Notification color="primary">Gap 1</Notification></Column>
+      <Column><Notification color="primary">Gap 1</Notification></Column>
+      <Column><Notification color="primary">Gap 1</Notification></Column>
+    </Columns>
+    <Columns className="has-text-centered" gap="8">
+      <Column><Notification color="primary">Gap 8</Notification></Column>
+      <Column><Notification color="primary">Gap 8</Notification></Column>
+      <Column><Notification color="primary">Gap 8</Notification></Column>
+      <Column><Notification color="primary">Gap 8</Notification></Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+### Breakpoint Column Gaps
+
+You can define a column gap for each viewport size:
+
+<Canvas>
+  <Story name="Breakpoint Variable Gaps">
+    <Columns
+      className="has-text-centered"
+      mobileGap="1"
+      tabletGap="0"
+      desktopGap="3"
+      widescreenGap="8"
+      fullhdGap="2"
+      mobile
+    >
+      <Column><Notification color="primary">Column</Notification></Column>
+      <Column><Notification color="primary">Column</Notification></Column>
+      <Column><Notification color="primary">Column</Notification></Column>
+      <Column><Notification color="primary">Column</Notification></Column>
     </Columns>
   </Story>
 </Canvas>

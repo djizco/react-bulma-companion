@@ -7,6 +7,7 @@ const gaps = ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
 const gapMap = {};
 const mobileGapMap = {};
 const tabletGapMap = {};
+const touchGapMap = {};
 const desktopGapMap = {};
 const widescreenGapMap = {};
 const fullhdGapMap = {};
@@ -18,6 +19,7 @@ gaps.forEach(gap => {
   gapMap[gap] = `is-${gap}`;
   mobileGapMap[gap] = `is-${gap}-mobile`;
   tabletGapMap[gap] = `is-${gap}-tablet`;
+  touchGapMap[gap] = `is-${gap}-touch`;
   desktopGapMap[gap] = `is-${gap}-desktop`;
   widescreenGapMap[gap] = `is-${gap}-widescreen`;
   fullhdGapMap[gap] = `is-${gap}-fullhd`;
@@ -41,6 +43,7 @@ export default function Columns({
   multiline,
   tabletGap,
   tabletOnlyGap,
+  touchGap,
   vcentered,
   widescreenGap,
   widescreenOnlyGap,
@@ -49,9 +52,13 @@ export default function Columns({
   const isGap = gap && gapMap[gap];
   const isMobileGap = mobileGap && mobileGapMap[mobileGap];
   const isTabletGap = tabletGap && tabletGapMap[tabletGap];
+  const isTouchGap = touchGap && touchGapMap[touchGap];
   const isDesktopGap = desktopGap && desktopGapMap[desktopGap];
   const isWidescreenGap = widescreenGap && widescreenGapMap[widescreenGap];
   const isFullhdGap = fullhdGap && fullhdGapMap[fullhdGap];
+  const isTabletOnlyGap = tabletOnlyGap && tabletOnlyGapMap[tabletOnlyGap];
+  const isDesktopOnlyGap = desktopOnlyGap && desktopOnlyGapMap[desktopOnlyGap];
+  const isWidescreenOnlyGap = widescreenOnlyGap && widescreenOnlyGapMap[widescreenOnlyGap];
 
   const classes = classNames(
     'columns',
@@ -59,9 +66,13 @@ export default function Columns({
     isGap,
     isMobileGap,
     isTabletGap,
+    isTouchGap,
     isDesktopGap,
     isWidescreenGap,
     isFullhdGap,
+    isTabletOnlyGap,
+    isDesktopOnlyGap,
+    isWidescreenOnlyGap,
     {
       'is-mobile': mobile,
       'is-desktop': desktop,
@@ -69,7 +80,9 @@ export default function Columns({
       'is-vcentered': vcentered,
       'is-gapless': gapless,
       'is-multiline': multiline,
-      'is-variable': !!gap,
+      'is-variable':
+        !!gap || !!mobileGap || !!tabletGap || !!touchGap || !!desktopGap || !!widescreenGap
+        || !!fullhdGap || !!tabletOnlyGap || !!desktopOnlyGap || !!widescreenOnlyGap,
     },
   );
 
@@ -86,6 +99,7 @@ Columns.propTypes = {
   gap: PropTypes.oneOf(gaps),
   mobileGap: PropTypes.oneOf(gaps),
   tabletGap: PropTypes.oneOf(gaps),
+  touchGap: PropTypes.oneOf(gaps),
   desktopGap: PropTypes.oneOf(gaps),
   widescreenGap: PropTypes.oneOf(gaps),
   fullhdGap: PropTypes.oneOf(gaps),
@@ -106,6 +120,7 @@ Columns.defaultProps = {
   gap: undefined,
   mobileGap: undefined,
   tabletGap: undefined,
+  touchGap: undefined,
   desktopGap: undefined,
   widescreenGap: undefined,
   fullhdGap: undefined,

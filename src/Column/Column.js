@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 const sizes = [
   'full', 'half', 'one-third', 'two-thirds', 'one-quarter', 'three-quarters',
-  'one-fifth', 'two-fifth', 'three-fifth', 'four-fifth',
+  'one-fifth', 'two-fifths', 'three-fifths', 'four-fifths',
   '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12',
 ];
 
@@ -14,6 +14,8 @@ const mobileSizeMap = {};
 const mobileOffsetMap = {};
 const tabletSizeMap = {};
 const tabletOffsetMap = {};
+const touchSizeMap = {};
+const touchOffsetMap = {};
 const desktopSizeMap = {};
 const desktopOffsetMap = {};
 const widescreenSizeMap = {};
@@ -23,11 +25,13 @@ const fullhdOffsetMap = {};
 
 sizes.forEach(size => {
   sizeMap[size] = `is-${size}`;
-  offsetMap[size] = `is-offset-${size};`;
+  offsetMap[size] = `is-offset-${size}`;
   mobileSizeMap[size] = `is-${size}-mobile`;
   mobileOffsetMap[size] = `is-offset-${size}-mobile`;
   tabletSizeMap[size] = `is-${size}-tablet`;
   tabletOffsetMap[size] = `is-offset-${size}-tablet`;
+  touchSizeMap[size] = `is-${size}-touch`;
+  touchOffsetMap[size] = `is-offset-${size}-touch`;
   desktopSizeMap[size] = `is-${size}-desktop`;
   desktopOffsetMap[size] = `is-offset-${size}-desktop`;
   widescreenSizeMap[size] = `is-${size}-widescreen`;
@@ -48,6 +52,7 @@ export default function Column({
   narrow,
   narrowMobile,
   narrowTablet,
+  narrowTouch,
   narrowDesktop,
   narrowWidescreen,
   narrowFullhd,
@@ -55,6 +60,8 @@ export default function Column({
   size,
   tabletOffset,
   tabletSize,
+  touchOffset,
+  touchSize,
   widescreenOffset,
   widescreenSize,
   ...props
@@ -65,6 +72,8 @@ export default function Column({
   const isMobileOffset = mobileOffset && mobileOffsetMap[mobileOffset];
   const isTabletSize = tabletSize && tabletSizeMap[tabletSize];
   const isTabletOffset = tabletOffset && tabletOffsetMap[tabletOffset];
+  const isTouchSize = touchSize && touchSizeMap[touchSize];
+  const isTouchOffset = touchOffset && touchOffsetMap[touchOffset];
   const isDesktopSize = desktopSize && desktopSizeMap[desktopSize];
   const isDesktopOffset = desktopOffset && desktopOffsetMap[desktopOffset];
   const isWidescreenSize = widescreenSize && widescreenSizeMap[widescreenSize];
@@ -81,6 +90,8 @@ export default function Column({
     isMobileOffset,
     isTabletSize,
     isTabletOffset,
+    isTouchSize,
+    isTouchOffset,
     isDesktopSize,
     isDesktopOffset,
     isWidescreenSize,
@@ -91,6 +102,7 @@ export default function Column({
       'is-narrow': narrow,
       'is-narrow-mobile': narrowMobile,
       'is-narrow-tablet': narrowTablet,
+      'is-narrow-touch': narrowTouch,
       'is-narrow-desktop': narrowDesktop,
       'is-narrow-widescreen': narrowWidescreen,
       'is-narrow-fullhd': narrowFullhd,
@@ -113,6 +125,8 @@ Column.propTypes = {
   mobileOffset: PropTypes.oneOf(sizes),
   tabletSize: PropTypes.oneOf(sizes),
   tabletOffset: PropTypes.oneOf(sizes),
+  touchSize: PropTypes.oneOf(sizes),
+  touchOffset: PropTypes.oneOf(sizes),
   desktopSize: PropTypes.oneOf(sizes),
   desktopOffset: PropTypes.oneOf(sizes),
   widescreenSize: PropTypes.oneOf(sizes),
@@ -122,6 +136,7 @@ Column.propTypes = {
   narrow: PropTypes.bool,
   narrowMobile: PropTypes.bool,
   narrowTablet: PropTypes.bool,
+  narrowTouch: PropTypes.bool,
   narrowDesktop: PropTypes.bool,
   narrowWidescreen: PropTypes.bool,
   narrowFullhd: PropTypes.bool,
@@ -136,6 +151,8 @@ Column.defaultProps = {
   mobileOffset: undefined,
   tabletSize: undefined,
   tabletOffset: undefined,
+  touchSize: undefined,
+  touchOffset: undefined,
   desktopSize: undefined,
   desktopOffset: undefined,
   widescreenSize: undefined,
@@ -145,6 +162,7 @@ Column.defaultProps = {
   narrow: false,
   narrowMobile: false,
   narrowTablet: false,
+  narrowTouch: false,
   narrowDesktop: false,
   narrowWidescreen: false,
   narrowFullhd: false,
