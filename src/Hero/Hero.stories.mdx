@@ -23,7 +23,7 @@ Supported Versions: `0.9.1`, `0.9.0`
 
 ## Default
 
-The `<Hero>` allows you to add a full width banner to your webpage, which can optionally cover the full height of the page as well.
+The `<Hero>` allows you to add a **full width banner** to your webpage, which can optionally cover the full height of the page as well.
 
 The basic requirement of this component are:
 
@@ -282,6 +282,8 @@ You can have even more imposing banners by using one of 3 different sizes:
 
 ## Fullheight with Navbar
 
+If you are using a fixed navbar, you can use the `size="fullheight-navbar"` prop on the hero for it to occupy the viewport height minus the navbar height.
+
 <Canvas>
   <Story name="Fullheight with navbar">
     <Navbar color="light">
@@ -321,6 +323,13 @@ You can have even more imposing banners by using one of 3 different sizes:
 </Canvas>
 
 ## Hero in 3 Parts
+
+To obtain a hero that will cover the whole height of the viewport, you can split it in 3 vertical parts:
+
+- `<Hero>`
+  - `<Hero.Head>` (always at the top)
+  - `<Hero.Body>` (always vertically centered)
+  - `<Hero.Foot>` (always at the bottom)
 
 <Canvas>
   <Story name="Hero parts">

@@ -18,12 +18,12 @@ Supported Versions: `0.9.1`, `0.9.0`
 
 ## Default
 
-Building a columns layout with Bulma is very simple:
+Building a **columns layout** with Bulma is very simple:
 
 - Add a `<Columns>` container
 - Add as many `<Column>` elements as you want
 
-Each column will have an equal width, no matter the number of columns. By default the columns become fullwidth on mobile.
+Each column will have an **equal width**, no matter the number of columns. By default the columns become fullwidth on mobile.
 
 <Canvas>
   <Story name="Default">
@@ -46,7 +46,9 @@ Each column will have an equal width, no matter the number of columns. By defaul
 
 ## Sizes
 
-If you want to change the size of a single column, you can use one the `size` property. The other columns will fill up the remaining space automatically.
+If you want to change the **size** of a single column, you can use one the `size` property.
+
+The *other* columns will fill up the **remaining** space automatically.
 
 <Canvas>
   <Story name="Sizes">
@@ -132,7 +134,7 @@ If you want to change the size of a single column, you can use one the `size` pr
 
 ## 12 column system
 
-As the grid can be divided into 12 columns, there are additional sizes for each division
+As the grid can be divided into **12** columns, there are additional sizes for each division
 
 <Canvas>
   <Story name="12 column sizes">
@@ -296,7 +298,7 @@ While you can use empty columns to create horizontal space around columns, you c
 
 ## Narrow Column
 
-If you want a column to only take the space it needs, use the `narrow` prop. The other column(s) will fill up the remaining space.
+If you want a column to only take the **space it needs**, use the `narrow` prop. The other column(s) will fill up the remaining space.
 
 <Canvas>
   <Story name="Narrow">
@@ -317,7 +319,7 @@ If you want a column to only take the space it needs, use the `narrow` prop. The
   </Story>
 </Canvas>
 
-You can have narrow columns for different breakpoints by adding the following props.
+You can have narrow columns for different **breakpoints** by adding the following props.
 
 - `narrowMobile`
 - `narrowTablet`
@@ -358,7 +360,7 @@ If you *only* want columns on **desktop** upwards, just use the `desktop` prop o
 
 ## Different column sizes per breakpoint
 
-You can define a column size for each viewport size: mobile, tablet, touch, desktop, widescreen, and fullhd.
+You can define a **column size** for each viewport size: mobile, tablet, touch, desktop, widescreen, and fullhd.
 
 <Canvas>
   <Story name="Multiple Breakpoints">
@@ -394,7 +396,7 @@ You can **nest** columns to have more flexibility in your design. You only need 
     - `<Columns>`: nested columns
       - `<Column>`: and so on...
 
-The difference with multiline columns is the order in the code: all the blue columns appear before the red ones. Resize to a narrower viewport to see the result.
+The difference with multiline columns is the **order** in the code: all the blue columns appear before the red ones. Resize to a narrower viewport to see the result.
 
 <Canvas>
   <Story name="Multiline Nesting">
@@ -453,7 +455,7 @@ You can see the left column aligns itself vertically to the right column.
 
 ## Multiline
 
-Whenever you want to start a new line, you can close a columns container and start a new one. But you can also add the `multiline` prop and add more column elements than would fit in a single row.
+Whenever you want to start a new line, you can close a columns container and start a new one. But you can also add the `multiline` prop and add **more** column elements than would fit in a single row.
 
 <Canvas>
   <Story name="Multiline">
@@ -532,7 +534,7 @@ Use with `multiline` to create a flexible, centered list
 
 ## Gaps
 
-Each column has a gap equal to the variable `$column-gap`, which has a default value of 0.75rem.
+Each column has a **gap** equal to the **variable** `$column-gap`, which has a default value of 0.75rem.
 Since the gap is on each side of a column, the gap between two adjacent columns will be twice the value of `$column-gap`, or 1.5rem by default.
 
 ### Gapless
@@ -609,7 +611,7 @@ This feature is only available in browsers that support CSS Variables.
   </Story>
 </Canvas>
 
-### Breakpoint Column Gaps
+### Breakpoint Based Column Gaps
 
 You can define a column gap for each viewport size:
 
