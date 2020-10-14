@@ -1,12 +1,22 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Title from './Title';
 
-const wrapper = shallow(<Title />);
+describe('Title', () => {
+  test('renders', () => {
+    render(<Title />);
+  });
 
-describe('<Title />', () => {
-  test('Renders as a <p> element by default', () => {
-    expect(wrapper.type()).toEqual('p');
+  it('should have class .title', () => {
+    const { container }  = render(<Title />);
+
+    expect(container.firstChild).toHaveClass('title');
+  });
+
+  it('should have class .subtitle with subtitle prop', () => {
+    const { container }  = render(<Title subtitle />);
+
+    expect(container.firstChild).toHaveClass('subtitle');
   });
 });

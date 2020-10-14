@@ -1,12 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Card from './Card';
 
-const wrapper = shallow(<Card />);
+describe('Card', () => {
+  test('renders', () => {
+    render(<Card />);
+  });
 
-describe('<Card />', () => {
-  test('Renders as a <div> element', () => {
-    expect(wrapper.type()).toEqual('div');
+  it('should have class .card', () => {
+    const { container }  = render(<Card />);
+
+    expect(container.firstChild).toHaveClass('card');
   });
 });

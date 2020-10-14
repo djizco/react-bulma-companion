@@ -1,12 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Control from './Control';
 
-const wrapper = shallow(<Control />);
+describe('Control', () => {
+  test('renders', () => {
+    render(<Control />);
+  });
 
-describe('<Control />', () => {
-  test('Renders as a <div> element', () => {
-    expect(wrapper.type()).toEqual('div');
+  it('should have class .control', () => {
+    const { container }  = render(<Control />);
+
+    expect(container.firstChild).toHaveClass('control');
   });
 });

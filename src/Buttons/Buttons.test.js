@@ -1,12 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Buttons from './Buttons';
 
-const wrapper = shallow(<Buttons />);
+describe('Buttons', () => {
+  test('renders', () => {
+    render(<Buttons />);
+  });
 
-describe('<Buttons />', () => {
-  test('Renders as a <div> element', () => {
-    expect(wrapper.type()).toEqual('div');
+  it('should have class .buttons', () => {
+    const { container }  = render(<Buttons />);
+
+    expect(container.firstChild).toHaveClass('buttons');
   });
 });

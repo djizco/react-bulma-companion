@@ -1,12 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Box from './Box';
 
-const wrapper = shallow(<Box />);
+describe('Box', () => {
+  it('renders', () => {
+    render(<Box />);
+  });
 
-describe('<Box />', () => {
-  test('Renders as a <div> element', () => {
-    expect(wrapper.type()).toEqual('div');
+  it('should have class .box', () => {
+    const { container }  = render(<Box />);
+
+    expect(container.firstChild).toHaveClass('box');
   });
 });

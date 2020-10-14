@@ -1,12 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Table from './Table';
 
-const wrapper = shallow(<Table />);
+describe('Table', () => {
+  test('renders', () => {
+    render(<Table />);
+  });
 
-describe('<Table />', () => {
-  test('Renders as a <table> element by default', () => {
-    expect(wrapper.type()).toEqual('table');
+  it('should have class .table', () => {
+    const { container }  = render(<Table />);
+
+    expect(container.firstChild).toHaveClass('table');
   });
 });

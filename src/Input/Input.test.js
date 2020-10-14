@@ -1,12 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Input from './Input';
 
-const wrapper = shallow(<Input />);
+describe('Input', () => {
+  test('renders', () => {
+    render(<Input />);
+  });
 
-describe('<Input />', () => {
-  test('Renders as a <input> element', () => {
-    expect(wrapper.type()).toEqual('input');
+  it('should have class .input', () => {
+    const { container }  = render(<Input />);
+
+    expect(container.firstChild).toHaveClass('input');
   });
 });

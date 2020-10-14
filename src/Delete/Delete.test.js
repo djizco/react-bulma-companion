@@ -1,12 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Delete from './Delete';
 
-const wrapper = shallow(<Delete />);
+describe('Delete', () => {
+  test('renders', () => {
+    render(<Delete />);
+  });
 
-describe('<Delete />', () => {
-  test('Renders as an <button> element', () => {
-    expect(wrapper.type()).toEqual('button');
+  it('should have class .delete', () => {
+    const { container }  = render(<Delete />);
+
+    expect(container.firstChild).toHaveClass('delete');
   });
 });

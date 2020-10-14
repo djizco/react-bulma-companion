@@ -1,12 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Help from './Help';
 
-const wrapper = shallow(<Help />);
+describe('Help', () => {
+  test('renders', () => {
+    render(<Help />);
+  });
 
-describe('<Help />', () => {
-  test('Renders as a <p> element', () => {
-    expect(wrapper.type()).toEqual('p');
+  it('should have class .help', () => {
+    const { container }  = render(<Help />);
+
+    expect(container.firstChild).toHaveClass('help');
   });
 });

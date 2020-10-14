@@ -1,12 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Label from './Label';
 
-const wrapper = shallow(<Label />);
+describe('Label', () => {
+  test('renders', () => {
+    render(<Label />);
+  });
 
-describe('<Label />', () => {
-  test('Renders as a <label> element', () => {
-    expect(wrapper.type()).toEqual('label');
+  it('should have class .label', () => {
+    const { container }  = render(<Label />);
+
+    expect(container.firstChild).toHaveClass('label');
   });
 });

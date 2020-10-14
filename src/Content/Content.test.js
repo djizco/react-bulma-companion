@@ -1,12 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Content from './Content';
 
-const wrapper = shallow(<Content />);
+describe('Content', () => {
+  test('renders', () => {
+    render(<Content />);
+  });
 
-describe('<Content />', () => {
-  test('Renders as a <div> element', () => {
-    expect(wrapper.type()).toEqual('div');
+  it('should have class .content', () => {
+    const { container }  = render(<Content />);
+
+    expect(container.firstChild).toHaveClass('content');
   });
 });

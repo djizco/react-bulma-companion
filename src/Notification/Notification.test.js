@@ -1,12 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Notification from './Notification';
 
-const wrapper = shallow(<Notification />);
+describe('Notification', () => {
+  test('renders', () => {
+    render(<Notification />);
+  });
 
-describe('<Notification />', () => {
-  test('Renders as a <div> element', () => {
-    expect(wrapper.type()).toEqual('div');
+  it('should have class .notification', () => {
+    const { container }  = render(<Notification />);
+
+    expect(container.firstChild).toHaveClass('notification');
   });
 });

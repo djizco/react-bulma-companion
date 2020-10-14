@@ -1,12 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Image from './Image';
 
-const wrapper = shallow(<Image />);
+describe('Image', () => {
+  test('renders', () => {
+    render(<Image />);
+  });
 
-describe('<Image />', () => {
-  test('Renders as an <figure> element', () => {
-    expect(wrapper.type()).toEqual('figure');
+  it('should have class .image', () => {
+    const { container }  = render(<Image />);
+
+    expect(container.firstChild).toHaveClass('image');
   });
 });

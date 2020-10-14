@@ -1,12 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Button from './Button';
 
-const wrapper = shallow(<Button />);
+describe('Button', () => {
+  test('renders', () => {
+    render(<Button />);
+  });
 
-describe('<Button />', () => {
-  test('Renders as a <button> element', () => {
-    expect(wrapper.type()).toEqual('button');
+  it('should have class .button', () => {
+    const { container }  = render(<Button />);
+
+    expect(container.firstChild).toHaveClass('button');
   });
 });

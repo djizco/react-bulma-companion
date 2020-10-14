@@ -1,12 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Field from './Field';
 
-const wrapper = shallow(<Field />);
+describe('Field', () => {
+  test('renders', () => {
+    render(<Field />);
+  });
 
-describe('<Field />', () => {
-  test('Renders as a <div> element', () => {
-    expect(wrapper.type()).toEqual('div');
+  it('should have class .field', () => {
+    const { container }  = render(<Field />);
+
+    expect(container.firstChild).toHaveClass('field');
   });
 });

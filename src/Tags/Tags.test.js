@@ -1,12 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Tags from './Tags';
 
-const wrapper = shallow(<Tags />);
+describe('Tags', () => {
+  test('renders', () => {
+    render(<Tags />);
+  });
 
-describe('<Tags />', () => {
-  test('Renders as a <div> element', () => {
-    expect(wrapper.type()).toEqual('div');
+  it('should have class .tags', () => {
+    const { container }  = render(<Tags />);
+
+    expect(container.firstChild).toHaveClass('tags');
   });
 });

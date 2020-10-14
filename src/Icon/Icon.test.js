@@ -1,12 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Icon from './Icon';
 
-const wrapper = shallow(<Icon />);
+describe('Icon', () => {
+  test('renders', () => {
+    render(<Icon />);
+  });
 
-describe('<Icon />', () => {
-  test('Renders as an <span> element', () => {
-    expect(wrapper.type()).toEqual('span');
+  it('should have class .icon', () => {
+    const { container }  = render(<Icon />);
+
+    expect(container.firstChild).toHaveClass('icon');
   });
 });

@@ -1,12 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import Progress from './Progress';
 
-const wrapper = shallow(<Progress />);
+describe('Progress', () => {
+  test('renders', () => {
+    render(<Progress />);
+  });
 
-describe('<Progress />', () => {
-  test('Renders as a <progress> element', () => {
-    expect(wrapper.type()).toEqual('progress');
+  it('should have class .progress', () => {
+    const { container }  = render(<Progress />);
+
+    expect(container.firstChild).toHaveClass('progress');
   });
 });
