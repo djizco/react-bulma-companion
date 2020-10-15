@@ -57,12 +57,7 @@ export default function Input({
 
 Input.propTypes = {
   className: PropTypes.string,
-  id: PropTypes.string,
-  name: PropTypes.string,
   type: PropTypes.oneOf(['text', 'password', 'email', 'tel']),
-  placeholder: PropTypes.string,
-  value: PropTypes.string,
-  onChange: PropTypes.func,
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -89,12 +84,7 @@ Input.propTypes = {
 
 Input.defaultProps = {
   className: undefined,
-  id: undefined,
-  name: undefined,
   type: undefined,
-  placeholder: undefined,
-  value: undefined,
-  onChange: undefined,
   color: undefined,
   size: undefined,
   inline: false,

@@ -53,12 +53,6 @@ export default function Textarea({
 
 Textarea.propTypes = {
   className: PropTypes.string,
-  id: PropTypes.string,
-  name: PropTypes.string,
-  placeholder: PropTypes.string,
-  value: PropTypes.string,
-  onChange: PropTypes.func,
-  rows: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -84,12 +78,6 @@ Textarea.propTypes = {
 
 Textarea.defaultProps = {
   className: undefined,
-  id: undefined,
-  name: undefined,
-  placeholder: undefined,
-  value: undefined,
-  onChange: undefined,
-  rows: undefined,
   color: undefined,
   size: undefined,
   fixed: false,

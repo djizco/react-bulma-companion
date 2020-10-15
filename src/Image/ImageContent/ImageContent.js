@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export default function Image({
-  alt,
   className,
   rounded,
   ...props
@@ -13,19 +12,17 @@ export default function Image({
   });
 
   return (
-    <img className={classes} alt={alt} {...props} />
+    // eslint-disable-next-line
+    <img className={classes} {...props} />
   );
 }
 
 Image.propTypes = {
   className: PropTypes.string,
   rounded: PropTypes.bool,
-  src: PropTypes.string.isRequired,
-  alt: PropTypes.string,
 };
 
 Image.defaultProps = {
   className: undefined,
   rounded: false,
-  alt: undefined,
 };

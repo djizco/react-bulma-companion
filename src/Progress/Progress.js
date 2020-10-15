@@ -57,8 +57,6 @@ Progress.propTypes = {
     'dark',
   ]),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  max: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 Progress.defaultProps = {
@@ -66,6 +64,4 @@ Progress.defaultProps = {
   children: null,
   color: undefined,
   size: undefined,
-  value: undefined,
-  max: undefined,
 };
