@@ -7,7 +7,7 @@
     "start": "NODE_ENV=development webpack --mode=development --watch",
     "prebuild": "rm -rf dist && rm -rf lib",
     "build": "npm run build:lib && npm run build:dev && npm run build:prd && npm run build:legacy",
-    "build:dev": "NODE_ENV=development webpack --mode=development",
+    "build:dev": "NODE_ENV=development webpack --mode=production",
     "build:prd": "NODE_ENV=production webpack --mode=production",
     "build:legacy": "./build-legacy.sh",
     "build:lib": "babel src --out-dir lib --ignore 'src/**/*.test.js'",
