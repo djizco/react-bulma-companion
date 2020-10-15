@@ -5,11 +5,11 @@ A set of React Components for the [Bulma](http://bulma.io/) CSS framework.
 
 The current Bulma version this library supports is `0.9.1`. To use an older version of Bulma with this library, please reference the **Legacy Support** section.
 
-React Bulma Companion works as a **companion** to Bulma's CSS classes. It doesn't include any styles itself. This allows you to import Bulma and customize it in any way you choose.
+React Bulma Companion works as a **companion** to Bulma's CSS classes. It doesn't include any CSS itself. This allows you to import Bulma and customize it in any way you choose.
 
 ## Configure Bulma
 
-Because React Bulma Companion doesn't include any CSS, you must import and configure Bulma yourself. Please follow instructions on the [Bulma Github page](https://github.com/jgthms/bulma). This gives you flexibility and control of your bulma customization.
+Because React Bulma Companion doesn't include any CSS, you must import and configure Bulma yourself. Please follow instructions on the [Bulma Github page](https://github.com/jgthms/bulma). This gives you flexibility and control of your bulma installation.
 
 ## Installation
 
@@ -64,7 +64,7 @@ module.exports = {
 };
 ```
 
-To use **tree shaking** with a legacy version of Bulma, you must import the correct components. Please reference the **version component map** in the [documentation](http://react-bulma-companion.surge.sh/) to see which component you should use with your version. Legacy components are labeled with its **latest compatible version**.
+To use **tree shaking** with a legacy version of Bulma, you must import the correct components. Please reference the **legacy component map** in the [documentation](http://react-bulma-companion.surge.sh/?path=/docs/legacy-component-map--page) to see which component you should use with your version. Legacy components are labeled with its **latest compatible version**.
 
 ```javascript
 import Button from 'react-bulma-companion/lib/Button-[version]';

@@ -2,7 +2,7 @@
   "name": "react-bulma-companion",
   "version": "0.1.0",
   "description": "React Components for Bulma",
-  "main": "dist/react-bulma-companion.js",
+  "main": "lib/index.js",
   "scripts": {
     "start": "NODE_ENV=development webpack --mode=development --watch",
     "prebuild": "rm -rf dist && rm -rf lib",
