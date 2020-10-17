@@ -77,7 +77,6 @@ Button.propTypes = {
   children: PropTypes.node,
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   link: PropTypes.bool,
-  onClick: PropTypes.func,
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -116,7 +115,6 @@ Button.defaultProps = {
   children: null,
   type: 'button',
   link: false,
-  onClick: undefined,
   color: undefined,
   light: false,
   size: undefined,

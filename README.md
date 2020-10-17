@@ -50,6 +50,8 @@ Bundled versions can be located in the `dist` folder.
 
 React Bulma Companion's [component documentation](http://react-bulma-companion.surge.sh/) was built with Storybook.
 
+You can also see React Bulma Companion in use [here](https://github.com/djizco/mern-boilerplate/tree/master/client/components).
+
 ## Legacy Support
 
 The current Bulma version this library supports is `0.9.1`, however React Bulma Companion was created with the idea of legacy support in mind.
