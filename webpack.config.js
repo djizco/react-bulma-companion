@@ -58,4 +58,7 @@ module.exports = {
   plugins: [
     BundleAnalyzerPluginConfig,
   ],
+  performance: {
+    hints: false,
+  },
 };
