@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import IconText from './IconText';
-
 export default function Icon({
   align,
   children,
@@ -70,8 +68,6 @@ export default function Icon({
     </span>
   );
 }
-
-Icon.Text = IconText;
 
 Icon.propTypes = {
   className: PropTypes.string,

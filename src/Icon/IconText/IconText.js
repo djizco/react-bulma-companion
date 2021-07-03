@@ -2,16 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import IconText from './IconText';
-
-export default function Icon({
-  align,
+export default function IconText({
   children,
   className,
   color,
-  size,
+  component,
   ...props
 }) {
+  const Element = component;
+
   // Colors
   const colorMap = {
     primary: 'has-text-primary',
@@ -47,35 +46,19 @@ export default function Icon({
   };
   const isColor = color && colorMap[color];
 
-  // Sizes
-  const sizeMap = {
-    small: 'is-small',
-    medium: 'is-medium',
-    large: 'is-large',
-  };
-  const isSize = size && sizeMap[size];
-
-  // Align
-  const alignMap = {
-    left: 'is-left',
-    right: 'is-right',
-  };
-  const isAlign = align && alignMap[align];
-
-  const classes = classNames('icon', className, isColor, isSize, isAlign);
+  const classes = classNames('icon-text', className, isColor);
 
   return (
-    <span className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </span>
+    </Element>
   );
 }
 
-Icon.Text = IconText;
-
-Icon.propTypes = {
+IconText.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -108,14 +91,11 @@ Icon.propTypes = {
     'warning-dark',
     'danger-dark',
   ]),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  align: PropTypes.oneOf(['left', 'right']),
 };
 
-Icon.defaultProps = {
+IconText.defaultProps = {
   className: undefined,
   children: null,
   color: undefined,
-  size: undefined,
-  align: undefined,
+  component: 'span',
 };

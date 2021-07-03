@@ -36,6 +36,7 @@ export default function Button({
     light: 'is-light',
     dark: 'is-dark',
     text: 'is-text',
+    ghost: 'is-ghost',
   };
   const isColor = color && colorMap[color];
 
@@ -89,6 +90,7 @@ Button.propTypes = {
     'light',
     'dark',
     'text',
+    'ghost',
   ]),
   light: PropTypes.bool,
   size: PropTypes.oneOf([
