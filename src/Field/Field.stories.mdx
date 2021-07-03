@@ -50,18 +50,20 @@ This container allows form fields to be **spaced consistently**.
 
 <Canvas>
   <Story name="Spaced Fields">
-    <Field>
-      <Label>Name</Label>
-      <Control>
-        <Input placeholder="e.g. Alex Smith" />
-      </Control>
-    </Field>
-    <Field>
-      <Label>Email</Label>
-      <Control>
-        <Input type="email" placeholder="e.g. alexsmith@gmail.com" />
-      </Control>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <Label>Name</Label>
+        <Control>
+          <Input placeholder="e.g. Alex Smith" />
+        </Control>
+      </Field>
+      <Field>
+        <Label>Email</Label>
+        <Control>
+          <Input type="email" placeholder="e.g. alexsmith@gmail.com" />
+        </Control>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -69,83 +71,85 @@ This container allows form fields to be **spaced consistently**.
 
 <Canvas>
   <Story name="Form Example">
-    <Field>
-      <Label>Name</Label>
-      <Control>
-        <Input placeholder="Text input" />
-      </Control>
-    </Field>
-    <Field>
-      <Label>Username</Label>
-      <Control iconsLeft iconsRight>
-        <Input color="success" placeholder="Text input" />
-        <Icon size="small" align="left">
-          <FontAwesomeIcon icon={faUser} />
-        </Icon>
-        <Icon size="small" align="right">
-          <FontAwesomeIcon icon={faCheck} />
-        </Icon>
-      </Control>
-      <Help color="success">This username is available</Help>
-    </Field>
-    <Field>
-      <Label>Email</Label>
-      <Control iconsLeft iconsRight>
-        <Input type="email" color="danger" placeholder="Email input" />
-        <Icon size="small" align="left">
-          <FontAwesomeIcon icon={faEnvelope} />
-        </Icon>
-        <Icon size="small" align="right">
-          <FontAwesomeIcon icon={faExclamationTriangle} />
-        </Icon>
-      </Control>
-      <Help color="danger">This email is invalid</Help>
-    </Field>
-    <Field>
-      <Label>Subject</Label>
-      <Control>
-        <Select>
-          <Select.Content>
-            <Select.Option>Select dropdown</Select.Option>
-            <Select.Option>With options</Select.Option>
-          </Select.Content>
-        </Select>
-      </Control>
-    </Field>
-    <Field>
-      <Label>Message</Label>
-      <Control>
-        <Textarea placeholder="Textarea" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Checkbox>
-          <input type="checkbox" />
-          <span>{' I agree to the '}<a>{'terms and conditions'}</a></span>
-        </Checkbox>
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Radio>
-          <input type="radio" name="answer" />
-          <span>{' Yes'}</span>
-        </Radio>
-        <Radio>
-          <input type="radio" name="answer" />
-          <span>{' No'}</span>
-        </Radio>
-      </Control>
-    </Field>
-    <Field grouped>
-      <Control>
-        <Button color="link">Submit</Button>
-      </Control>
-      <Control>
-        <Button color="link" light>Cancel</Button>
-      </Control>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <Label>Name</Label>
+        <Control>
+          <Input placeholder="Text input" />
+        </Control>
+      </Field>
+      <Field>
+        <Label>Username</Label>
+        <Control iconsLeft iconsRight>
+          <Input color="success" placeholder="Text input" />
+          <Icon size="small" align="left">
+            <FontAwesomeIcon icon={faUser} />
+          </Icon>
+          <Icon size="small" align="right">
+            <FontAwesomeIcon icon={faCheck} />
+          </Icon>
+        </Control>
+        <Help color="success">This username is available</Help>
+      </Field>
+      <Field>
+        <Label>Email</Label>
+        <Control iconsLeft iconsRight>
+          <Input type="email" color="danger" placeholder="Email input" />
+          <Icon size="small" align="left">
+            <FontAwesomeIcon icon={faEnvelope} />
+          </Icon>
+          <Icon size="small" align="right">
+            <FontAwesomeIcon icon={faExclamationTriangle} />
+          </Icon>
+        </Control>
+        <Help color="danger">This email is invalid</Help>
+      </Field>
+      <Field>
+        <Label>Subject</Label>
+        <Control>
+          <Select>
+            <Select.Content>
+              <Select.Option>Select dropdown</Select.Option>
+              <Select.Option>With options</Select.Option>
+            </Select.Content>
+          </Select>
+        </Control>
+      </Field>
+      <Field>
+        <Label>Message</Label>
+        <Control>
+          <Textarea placeholder="Textarea" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Checkbox>
+            <input type="checkbox" />
+            <span>{' I agree to the '}<a>{'terms and conditions'}</a></span>
+          </Checkbox>
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Radio>
+            <input type="radio" name="answer" />
+            <span>{' Yes'}</span>
+          </Radio>
+          <Radio>
+            <input type="radio" name="answer" />
+            <span>{' No'}</span>
+          </Radio>
+        </Control>
+      </Field>
+      <Field grouped>
+        <Control>
+          <Button color="link">Submit</Button>
+        </Control>
+        <Control>
+          <Button color="link" light>Cancel</Button>
+        </Control>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 

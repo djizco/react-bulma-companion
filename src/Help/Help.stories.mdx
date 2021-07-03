@@ -36,20 +36,22 @@ The `<Help>` component is available in different colors by use of the `color` pr
 
 <Canvas>
   <Story name="Colors">
-    <Field>
-      <Label>Username</Label>
-      <Control>
-        <Input color="success" placeholder="Username" />
-      </Control>
-      <Help color="success">Username available</Help>
-    </Field>
-    <Field>
-      <Label>Email</Label>
-      <Control>
-        <Input color="danger" placeholder="Email" />
-      </Control>
-      <Help color="danger">This email is invalid</Help>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <Label>Username</Label>
+        <Control>
+          <Input color="success" placeholder="Username" />
+        </Control>
+        <Help color="success">Username available</Help>
+      </Field>
+      <Field>
+        <Label>Email</Label>
+        <Control>
+          <Input color="danger" placeholder="Email" />
+        </Control>
+        <Help color="danger">This email is invalid</Help>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 

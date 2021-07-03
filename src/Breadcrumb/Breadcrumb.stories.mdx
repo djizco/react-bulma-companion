@@ -44,32 +44,34 @@ For alternative alignments, use the `align` prop on the breadcrumb container.
 
 <Canvas>
   <Story name="Alignment">
-    <Breadcrumb>
-      <Breadcrumb.List>
-        <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
-      </Breadcrumb.List>
-    </Breadcrumb>
-    <hr />
-    <Breadcrumb align="center">
-      <Breadcrumb.List>
-        <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
-      </Breadcrumb.List>
-    </Breadcrumb>
-    <hr />
-    <Breadcrumb align="right">
-      <Breadcrumb.List>
-        <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
-      </Breadcrumb.List>
-    </Breadcrumb>
+    <div>
+      <Breadcrumb>
+        <Breadcrumb.List>
+          <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
+        </Breadcrumb.List>
+      </Breadcrumb>
+      <hr />
+      <Breadcrumb align="center">
+        <Breadcrumb.List>
+          <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
+        </Breadcrumb.List>
+      </Breadcrumb>
+      <hr />
+      <Breadcrumb align="right">
+        <Breadcrumb.List>
+          <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
+        </Breadcrumb.List>
+      </Breadcrumb>
+    </div>
   </Story>
 </Canvas>
 
@@ -124,41 +126,43 @@ You can choose between **4 additional separators** by use of the `separator` pro
 
 <Canvas>
   <Story name="Separators">
-    <Breadcrumb separator="arrow">
-      <Breadcrumb.List>
-        <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
-      </Breadcrumb.List>
-    </Breadcrumb>
-    <hr />
-    <Breadcrumb separator="bullet">
-      <Breadcrumb.List>
-        <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
-      </Breadcrumb.List>
-    </Breadcrumb>
-    <hr />
-    <Breadcrumb separator="dot">
-      <Breadcrumb.List>
-        <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
-      </Breadcrumb.List>
-    </Breadcrumb>
-    <hr />
-    <Breadcrumb separator="succeeds">
-      <Breadcrumb.List>
-        <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
-      </Breadcrumb.List>
-    </Breadcrumb>
+    <React.Fragment>
+      <Breadcrumb separator="arrow">
+        <Breadcrumb.List>
+          <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
+        </Breadcrumb.List>
+      </Breadcrumb>
+      <hr />
+      <Breadcrumb separator="bullet">
+        <Breadcrumb.List>
+          <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
+        </Breadcrumb.List>
+      </Breadcrumb>
+      <hr />
+      <Breadcrumb separator="dot">
+        <Breadcrumb.List>
+          <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
+        </Breadcrumb.List>
+      </Breadcrumb>
+      <hr />
+      <Breadcrumb separator="succeeds">
+        <Breadcrumb.List>
+          <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
+        </Breadcrumb.List>
+      </Breadcrumb>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -168,41 +172,43 @@ The `Breadcrumb` component is available in 4 sizes by use of the `size` prop.
 
 <Canvas>
   <Story name="Sizes">
-    <Breadcrumb size="small">
-      <Breadcrumb.List>
-        <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
-      </Breadcrumb.List>
-    </Breadcrumb>
-    <hr />
-    <Breadcrumb>
-      <Breadcrumb.List>
-        <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
-      </Breadcrumb.List>
-    </Breadcrumb>
-    <hr />
-    <Breadcrumb size="medium">
-      <Breadcrumb.List>
-        <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
-      </Breadcrumb.List>
-    </Breadcrumb>
-    <hr />
-    <Breadcrumb size="large">
-      <Breadcrumb.List>
-        <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
-        <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
-      </Breadcrumb.List>
-    </Breadcrumb>
+    <React.Fragment>
+      <Breadcrumb size="small">
+        <Breadcrumb.List>
+          <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
+        </Breadcrumb.List>
+      </Breadcrumb>
+      <hr />
+      <Breadcrumb>
+        <Breadcrumb.List>
+          <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
+        </Breadcrumb.List>
+      </Breadcrumb>
+      <hr />
+      <Breadcrumb size="medium">
+        <Breadcrumb.List>
+          <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
+        </Breadcrumb.List>
+      </Breadcrumb>
+      <hr />
+      <Breadcrumb size="large">
+        <Breadcrumb.List>
+          <Breadcrumb.ListItem><a>Bulma</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Documentation</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem><a>Components</a></Breadcrumb.ListItem>
+          <Breadcrumb.ListItem active><a>Breadcrumb</a></Breadcrumb.ListItem>
+        </Breadcrumb.List>
+      </Breadcrumb>
+    </React.Fragment>
   </Story>
 </Canvas>
 

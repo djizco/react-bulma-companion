@@ -33,18 +33,20 @@ By default, it will be a text input.
 
 <Canvas>
   <Story name="Default">
-    <Field>
-      <Input placeholder="Text input" />
-    </Field>
-    <Field>
-      <Input type="password" placeholder="Password input" />
-    </Field>
-    <Field>
-      <Input type="email" placeholder="Email input" />
-    </Field>
-    <Field>
-      <Input type="tel" placeholder="Telephone input" />
-    </Field>
+    <React.Fragment>
+      <Field>
+        <Input placeholder="Text input" />
+      </Field>
+      <Field>
+        <Input type="password" placeholder="Password input" />
+      </Field>
+      <Field>
+        <Input type="email" placeholder="Email input" />
+      </Field>
+      <Field>
+        <Input type="tel" placeholder="Telephone input" />
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -54,36 +56,38 @@ Change colors with the `color` prop.
 
 <Canvas>
   <Story name="Colors">
-    <Field>
-      <Control>
-        <Input color="primary" placeholder="Primary input" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Input color="link" placeholder="Link input" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Input color="info" placeholder="Info input" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Input color="success" placeholder="Success input" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Input color="warning" placeholder="Warning input" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Input color="danger" placeholder="Danger input" />
-      </Control>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <Control>
+          <Input color="primary" placeholder="Primary input" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Input color="link" placeholder="Link input" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Input color="info" placeholder="Info input" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Input color="success" placeholder="Success input" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Input color="warning" placeholder="Warning input" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Input color="danger" placeholder="Danger input" />
+        </Control>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -93,26 +97,28 @@ It comes in 4 sizes by use of the `size` prop.
 
 <Canvas>
   <Story name="Sizes">
-    <Field>
-      <Control>
-        <Input size="small" placeholder="Small input" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Input placeholder="Normal input" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Input size="medium" placeholder="Medium input" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Input size="large" placeholder="Large input" />
-      </Control>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <Control>
+          <Input size="small" placeholder="Small input" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Input placeholder="Normal input" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Input size="medium" placeholder="Medium input" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Input size="large" placeholder="Large input" />
+        </Control>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -134,16 +140,18 @@ You can alter the width by adding either `fullwidth` or `inline`.
 
 <Canvas>
   <Story name="Width">
-    <Field>
-      <Control>
-        <Input placeholder="Fullwidth input" fullwidth />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Input placeholder="Inline input" inline />
-      </Control>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <Control>
+          <Input placeholder="Fullwidth input" fullwidth />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Input placeholder="Inline input" inline />
+        </Control>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -153,31 +161,33 @@ You can alter states in the following ways:
 
 <Canvas>
   <Story name="States">
-    <Field>
-      <Control>
-        <Input placeholder="Normal input"/>
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Input placeholder="Hovered input" hovered />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Input placeholder="Active input" active />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Input placeholder="Focused input" focused />
-      </Control>
-    </Field>
-    <Field>
-      <Control loading>
-        <Input placeholder="Loading input" />
-      </Control>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <Control>
+          <Input placeholder="Normal input"/>
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Input placeholder="Hovered input" hovered />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Input placeholder="Active input" active />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Input placeholder="Focused input" focused />
+        </Control>
+      </Field>
+      <Field>
+        <Control loading>
+          <Input placeholder="Loading input" />
+        </Control>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -185,26 +195,28 @@ For a loading input, add the `loading` prop on the `<Control>` container. Change
 
 <Canvas>
   <Story name="Loading">
-    <Field>
-      <Control size="small" loading>
-        <Input size="small" placeholder="Small loading input" />
-      </Control>
-    </Field>
-    <Field>
-      <Control loading>
-        <Input placeholder="Normal loading input" />
-      </Control>
-    </Field>
-    <Field>
-      <Control size="medium" loading>
-        <Input size="medium" placeholder="Medium loading input" />
-      </Control>
-    </Field>
-    <Field>
-      <Control size="large" loading>
-        <Input size="medium" placeholder="Large loading input" />
-      </Control>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <Control size="small" loading>
+          <Input size="small" placeholder="Small loading input" />
+        </Control>
+      </Field>
+      <Field>
+        <Control loading>
+          <Input placeholder="Normal loading input" />
+        </Control>
+      </Field>
+      <Field>
+        <Control size="medium" loading>
+          <Input size="medium" placeholder="Medium loading input" />
+        </Control>
+      </Field>
+      <Field>
+        <Control size="large" loading>
+          <Input size="medium" placeholder="Large loading input" />
+        </Control>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -232,30 +244,32 @@ If you *also* append the `static` prop, it removes the background, border, shado
 
 <Canvas>
   <Story name="Static">
-    <Field horizontal>
-      <Field.Label size="normal">
-        <Label>From</Label>
-      </Field.Label>
-      <Field.Body>
-        <Field>
-          <Control>
-            <Input type="email" value="me@example.com" static readOnly />
-          </Control>
-        </Field>
-      </Field.Body>
-    </Field>
-    <Field horizontal>
-      <Field.Label size="normal">
-        <Label>To</Label>
-      </Field.Label>
-      <Field.Body>
-        <Field>
-          <Control>
-            <Input type="email" placeholder="Recipient email" />
-          </Control>
-        </Field>
-      </Field.Body>
-    </Field>
+    <React.Fragment>
+      <Field horizontal>
+        <Field.Label size="normal">
+          <Label>From</Label>
+        </Field.Label>
+        <Field.Body>
+          <Field>
+            <Control>
+              <Input type="email" value="me@example.com" static readOnly />
+            </Control>
+          </Field>
+        </Field.Body>
+      </Field>
+      <Field horizontal>
+        <Field.Label size="normal">
+          <Label>To</Label>
+        </Field.Label>
+        <Field.Body>
+          <Field>
+            <Control>
+              <Input type="email" placeholder="Recipient email" />
+            </Control>
+          </Field>
+        </Field.Body>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -295,50 +309,52 @@ If the `<Control>` contains an `<Icon>`, Bulma will make sure the `<Icon>` remai
 
 <Canvas>
   <Story name="Icon Sizes">
-    <Field>
-      <Control iconsLeft iconsRight>
-        <Input size="small" type="email" placeholder="Email" />
-        <Icon size="small" align="left">
+    <React.Fragment>
+      <Field>
+        <Control iconsLeft iconsRight>
+          <Input size="small" type="email" placeholder="Email" />
+          <Icon size="small" align="left">
+              <FontAwesomeIcon icon={faEnvelope} />
+            </Icon>
+            <Icon size="small" align="right">
+              <FontAwesomeIcon icon={faCheck} />
+            </Icon>
+        </Control>
+      </Field>
+      <Field>
+        <Control iconsLeft iconsRight>
+          <Input type="email" placeholder="Email" />
+          <Icon size="small" align="left">
             <FontAwesomeIcon icon={faEnvelope} />
           </Icon>
           <Icon size="small" align="right">
             <FontAwesomeIcon icon={faCheck} />
           </Icon>
-      </Control>
-    </Field>
-    <Field>
-      <Control iconsLeft iconsRight>
-        <Input type="email" placeholder="Email" />
-        <Icon size="small" align="left">
-          <FontAwesomeIcon icon={faEnvelope} />
-        </Icon>
-        <Icon size="small" align="right">
-          <FontAwesomeIcon icon={faCheck} />
-        </Icon>
-      </Control>
-    </Field>
-    <Field>
-      <Control iconsLeft iconsRight>
-        <Input size="medium" type="email" placeholder="Email" />
-        <Icon align="left">
-          <FontAwesomeIcon icon={faEnvelope} />
-        </Icon>
-        <Icon align="right">
-          <FontAwesomeIcon icon={faCheck} />
-        </Icon>
-      </Control>
-    </Field>
-    <Field>
-      <Control iconsLeft iconsRight>
-        <Input size="large" type="email" placeholder="Email" />
-        <Icon size="medium" align="left">
-          <FontAwesomeIcon icon={faEnvelope} />
-        </Icon>
-        <Icon size="medium" align="right">
-          <FontAwesomeIcon icon={faCheck} />
-        </Icon>
-      </Control>
-    </Field>
+        </Control>
+      </Field>
+      <Field>
+        <Control iconsLeft iconsRight>
+          <Input size="medium" type="email" placeholder="Email" />
+          <Icon align="left">
+            <FontAwesomeIcon icon={faEnvelope} />
+          </Icon>
+          <Icon align="right">
+            <FontAwesomeIcon icon={faCheck} />
+          </Icon>
+        </Control>
+      </Field>
+      <Field>
+        <Control iconsLeft iconsRight>
+          <Input size="large" type="email" placeholder="Email" />
+          <Icon size="medium" align="left">
+            <FontAwesomeIcon icon={faEnvelope} />
+          </Icon>
+          <Icon size="medium" align="right">
+            <FontAwesomeIcon icon={faCheck} />
+          </Icon>
+        </Control>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 

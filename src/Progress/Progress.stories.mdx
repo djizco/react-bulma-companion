@@ -28,12 +28,14 @@ The `<Progress>` component is available in **different colors** by use of the `c
 
 <Canvas>
   <Story name="Colors">
-    <Progress color="primary" value={15} max={100}>15%</Progress>
-    <Progress color="link" value={30} max={100}>30%</Progress>
-    <Progress color="info" value={45} max={100}>45%</Progress>
-    <Progress color="success" value={60} max={100}>60%</Progress>
-    <Progress color="warning" value={75} max={100}>75%</Progress>
-    <Progress color="danger" value={90} max={100}>90%</Progress>
+    <React.Fragment>
+      <Progress color="primary" value={15} max={100}>15%</Progress>
+      <Progress color="link" value={30} max={100}>30%</Progress>
+      <Progress color="info" value={45} max={100}>45%</Progress>
+      <Progress color="success" value={60} max={100}>60%</Progress>
+      <Progress color="warning" value={75} max={100}>75%</Progress>
+      <Progress color="danger" value={90} max={100}>90%</Progress>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -43,10 +45,12 @@ The `<Progress>` component is available in 4 sizes by use of the `size` prop.
 
 <Canvas>
   <Story name="Sizes">
-    <Progress size="small" value={20} max={100}>20%</Progress>
-    <Progress value={40} max={100}>40%</Progress>
-    <Progress size="medium" value={60} max={100}>60%</Progress>
-    <Progress size="large" value={80} max={100}>80%</Progress>
+    <React.Fragment>
+      <Progress size="small" value={20} max={100}>20%</Progress>
+      <Progress value={40} max={100}>40%</Progress>
+      <Progress size="medium" value={60} max={100}>60%</Progress>
+      <Progress size="large" value={80} max={100}>80%</Progress>
+    </React.Fragment>
   </Story>
 </Canvas>
 

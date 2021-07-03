@@ -169,72 +169,74 @@ The `<File>` component is available in **different colors** by use of the `color
 
 <Canvas>
   <Story name="Colors">
-    <Field>
-      <File color="primary">
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Primary file...
-            </File.Text>
-          </File.CTA>
-        </File.Label>
-      </File>
-    </Field>
-    <Field>
-      <File color="info" hasName>
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Info file...
-            </File.Text>
-          </File.CTA>
-          <File.Name>
-            Screen Shot 2017-07-29 at 15.54.25.png
-          </File.Name>
-        </File.Label>
-      </File>
-    </Field>
-    <Field>
-      <File color="warning" boxed>
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faCloudUploadAlt} />
-            </File.Icon>
-            <File.Text>
-              Warning file...
-            </File.Text>
-          </File.CTA>
-        </File.Label>
-      </File>
-    </Field>
-    <Field>
-      <File color="danger" boxed hasName>
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faCloudUploadAlt} />
-            </File.Icon>
-            <File.Text>
-              Danger file...
-            </File.Text>
-          </File.CTA>
-          <File.Name>
-            Screen Shot 2017-07-29 at 15.54.25.png
-          </File.Name>
-        </File.Label>
-      </File>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <File color="primary">
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Primary file...
+              </File.Text>
+            </File.CTA>
+          </File.Label>
+        </File>
+      </Field>
+      <Field>
+        <File color="info" hasName>
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Info file...
+              </File.Text>
+            </File.CTA>
+            <File.Name>
+              Screen Shot 2017-07-29 at 15.54.25.png
+            </File.Name>
+          </File.Label>
+        </File>
+      </Field>
+      <Field>
+        <File color="warning" boxed>
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faCloudUploadAlt} />
+              </File.Icon>
+              <File.Text>
+                Warning file...
+              </File.Text>
+            </File.CTA>
+          </File.Label>
+        </File>
+      </Field>
+      <Field>
+        <File color="danger" boxed hasName>
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faCloudUploadAlt} />
+              </File.Icon>
+              <File.Text>
+                Danger file...
+              </File.Text>
+            </File.CTA>
+            <File.Name>
+              Screen Shot 2017-07-29 at 15.54.25.png
+            </File.Name>
+          </File.Label>
+        </File>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -244,66 +246,68 @@ It comes in 4 sizes by use of the `size` prop.
 
 <Canvas>
   <Story name="Sizes">
-    <Field>
-      <File size="small">
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Small file...
-            </File.Text>
-          </File.CTA>
-        </File.Label>
-      </File>
-    </Field>
-    <Field>
-      <File>
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Normal file...
-            </File.Text>
-          </File.CTA>
-        </File.Label>
-      </File>
-    </Field>
-    <Field>
-      <File size="medium">
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Medium file...
-            </File.Text>
-          </File.CTA>
-        </File.Label>
-      </File>
-    </Field>
-    <Field>
-      <File size="large">
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Large file...
-            </File.Text>
-          </File.CTA>
-        </File.Label>
-      </File>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <File size="small">
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Small file...
+              </File.Text>
+            </File.CTA>
+          </File.Label>
+        </File>
+      </Field>
+      <Field>
+        <File>
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Normal file...
+              </File.Text>
+            </File.CTA>
+          </File.Label>
+        </File>
+      </Field>
+      <Field>
+        <File size="medium">
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Medium file...
+              </File.Text>
+            </File.CTA>
+          </File.Label>
+        </File>
+      </Field>
+      <Field>
+        <File size="large">
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Large file...
+              </File.Text>
+            </File.CTA>
+          </File.Label>
+        </File>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -311,220 +315,226 @@ Sizes work with `hasName` and `boxed` props.
 
 <Canvas>
   <Story name="Sizes with name">
-    <Field>
-      <File size="small" hasName>
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Small file...
-            </File.Text>
-          </File.CTA>
-          <File.Name>
-            Screen Shot 2017-07-29 at 15.54.25.png
-          </File.Name>
-        </File.Label>
-      </File>
-    </Field>
-    <Field>
-      <File hasName>
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Normal file...
-            </File.Text>
-          </File.CTA>
-          <File.Name>
-            Screen Shot 2017-07-29 at 15.54.25.png
-          </File.Name>
-        </File.Label>
-      </File>
-    </Field>
-    <Field>
-      <File size="medium" hasName>
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Medium file...
-            </File.Text>
-          </File.CTA>
-          <File.Name>
-            Screen Shot 2017-07-29 at 15.54.25.png
-          </File.Name>
-        </File.Label>
-      </File>
-    </Field>
-    <Field>
-      <File size="large" hasName>
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Large file...
-            </File.Text>
-          </File.CTA>
-          <File.Name>
-            Screen Shot 2017-07-29 at 15.54.25.png
-          </File.Name>
-        </File.Label>
-      </File>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <File size="small" hasName>
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Small file...
+              </File.Text>
+            </File.CTA>
+            <File.Name>
+              Screen Shot 2017-07-29 at 15.54.25.png
+            </File.Name>
+          </File.Label>
+        </File>
+      </Field>
+      <Field>
+        <File hasName>
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Normal file...
+              </File.Text>
+            </File.CTA>
+            <File.Name>
+              Screen Shot 2017-07-29 at 15.54.25.png
+            </File.Name>
+          </File.Label>
+        </File>
+      </Field>
+      <Field>
+        <File size="medium" hasName>
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Medium file...
+              </File.Text>
+            </File.CTA>
+            <File.Name>
+              Screen Shot 2017-07-29 at 15.54.25.png
+            </File.Name>
+          </File.Label>
+        </File>
+      </Field>
+      <Field>
+        <File size="large" hasName>
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Large file...
+              </File.Text>
+            </File.CTA>
+            <File.Name>
+              Screen Shot 2017-07-29 at 15.54.25.png
+            </File.Name>
+          </File.Label>
+        </File>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
 <Canvas>
   <Story name="Boxed sizes">
-    <Field>
-      <File size="small" boxed>
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Small file...
-            </File.Text>
-          </File.CTA>
-        </File.Label>
-      </File>
-    </Field>
-    <Field>
-      <File boxed>
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Normal file...
-            </File.Text>
-          </File.CTA>
-        </File.Label>
-      </File>
-    </Field>
-    <Field>
-      <File size="medium" boxed>
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Medium file...
-            </File.Text>
-          </File.CTA>
-        </File.Label>
-      </File>
-    </Field>
-    <Field>
-      <File size="large" boxed>
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Large file...
-            </File.Text>
-          </File.CTA>
-        </File.Label>
-      </File>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <File size="small" boxed>
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Small file...
+              </File.Text>
+            </File.CTA>
+          </File.Label>
+        </File>
+      </Field>
+      <Field>
+        <File boxed>
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Normal file...
+              </File.Text>
+            </File.CTA>
+          </File.Label>
+        </File>
+      </Field>
+      <Field>
+        <File size="medium" boxed>
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Medium file...
+              </File.Text>
+            </File.CTA>
+          </File.Label>
+        </File>
+      </Field>
+      <Field>
+        <File size="large" boxed>
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Large file...
+              </File.Text>
+            </File.CTA>
+          </File.Label>
+        </File>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
 <Canvas>
   <Story name="Boxed sizes with name">
-    <Field>
-      <File size="small" boxed hasName>
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Small file...
-            </File.Text>
-          </File.CTA>
-          <File.Name>
-            Screen Shot 2017-07-29 at 15.54.25.png
-          </File.Name>
-        </File.Label>
-      </File>
-    </Field>
-    <Field>
-      <File boxed hasName>
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Normal file...
-            </File.Text>
-          </File.CTA>
-          <File.Name>
-            Screen Shot 2017-07-29 at 15.54.25.png
-          </File.Name>
-        </File.Label>
-      </File>
-    </Field>
-    <Field>
-      <File size="medium" boxed hasName>
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Medium file...
-            </File.Text>
-          </File.CTA>
-          <File.Name>
-            Screen Shot 2017-07-29 at 15.54.25.png
-          </File.Name>
-        </File.Label>
-      </File>
-    </Field>
-    <Field>
-      <File size="large" boxed hasName>
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Large file...
-            </File.Text>
-          </File.CTA>
-          <File.Name>
-            Screen Shot 2017-07-29 at 15.54.25.png
-          </File.Name>
-        </File.Label>
-      </File>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <File size="small" boxed hasName>
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Small file...
+              </File.Text>
+            </File.CTA>
+            <File.Name>
+              Screen Shot 2017-07-29 at 15.54.25.png
+            </File.Name>
+          </File.Label>
+        </File>
+      </Field>
+      <Field>
+        <File boxed hasName>
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Normal file...
+              </File.Text>
+            </File.CTA>
+            <File.Name>
+              Screen Shot 2017-07-29 at 15.54.25.png
+            </File.Name>
+          </File.Label>
+        </File>
+      </Field>
+      <Field>
+        <File size="medium" boxed hasName>
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Medium file...
+              </File.Text>
+            </File.CTA>
+            <File.Name>
+              Screen Shot 2017-07-29 at 15.54.25.png
+            </File.Name>
+          </File.Label>
+        </File>
+      </Field>
+      <Field>
+        <File size="large" boxed hasName>
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Large file...
+              </File.Text>
+            </File.CTA>
+            <File.Name>
+              Screen Shot 2017-07-29 at 15.54.25.png
+            </File.Name>
+          </File.Label>
+        </File>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -534,42 +544,44 @@ You can align the file input with the `align` prop.
 
 <Canvas>
   <Story name="Alignment">
-    <Field>
-      <File align="center" color="success" boxed hasName>
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Centered file...
-            </File.Text>
-          </File.CTA>
-          <File.Name>
-            Screen Shot 2017-07-29 at 15.54.25.png
-          </File.Name>
-        </File.Label>
-      </File>
-    </Field>
-    <Field>
-      <File align="right" color="info" hasName>
-        <File.Label>
-          <File.Input name="resume" />
-          <File.CTA>
-            <File.Icon>
-              <FontAwesomeIcon icon={faUpload} />
-            </File.Icon>
-            <File.Text>
-              Right file...
-            </File.Text>
-          </File.CTA>
-          <File.Name>
-            Screen Shot 2017-07-29 at 15.54.25.png
-          </File.Name>
-        </File.Label>
-      </File>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <File align="center" color="success" boxed hasName>
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Centered file...
+              </File.Text>
+            </File.CTA>
+            <File.Name>
+              Screen Shot 2017-07-29 at 15.54.25.png
+            </File.Name>
+          </File.Label>
+        </File>
+      </Field>
+      <Field>
+        <File align="right" color="info" hasName>
+          <File.Label>
+            <File.Input name="resume" />
+            <File.CTA>
+              <File.Icon>
+                <FontAwesomeIcon icon={faUpload} />
+              </File.Icon>
+              <File.Text>
+                Right file...
+              </File.Text>
+            </File.CTA>
+            <File.Name>
+              Screen Shot 2017-07-29 at 15.54.25.png
+            </File.Name>
+          </File.Label>
+        </File>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 

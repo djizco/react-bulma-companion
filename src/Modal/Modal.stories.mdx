@@ -28,16 +28,18 @@ You will need to implement a toggle of the `active` prop on the `<Modal>` with J
 
 <Canvas>
   <Story name="Default">
-    <Modal>
-      <Modal.Background />
-      <Modal.Content>
-        <Image ratio="4by3">
-          <Image.Content src="https://bulma.io/images/placeholders/1280x960.png" />
-        </Image>
-      </Modal.Content>
-      <Modal.Close size="large" />
-    </Modal>
-    <Button color="primary" size="large">Launch Image Modal</Button>
+    <React.Fragment>
+      <Modal>
+        <Modal.Background />
+        <Modal.Content>
+          <Image ratio="4by3">
+            <Image.Content src="https://bulma.io/images/placeholders/1280x960.png" />
+          </Image>
+        </Modal.Content>
+        <Modal.Close size="large" />
+      </Modal>
+      <Button color="primary">Launch Image Modal</Button>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -53,25 +55,27 @@ If you want a more classic modal, with a **head**, a **body** and a **foot**, us
 
 <Canvas>
   <Story name="Modal Card">
-    <Modal>
-      <Modal.Background />
-      <Modal.Card>
-        <Modal.CardHead>
-          <Modal.CardTitle>Modal Title</Modal.CardTitle>
-          <Delete />
-        </Modal.CardHead>
-        <Modal.CardBody>
-          <Image ratio="4by3">
-            <Image.Content src="https://bulma.io/images/placeholders/1280x960.png" />
-          </Image>
-        </Modal.CardBody>
-        <Modal.CardFoot>
-          <Button color="success">Save Changes</Button>
-          <Button>Cancel</Button>
-        </Modal.CardFoot>
-      </Modal.Card>
-    </Modal>
-    <Button color="primary" size="large">Launch Image Modal</Button>
+    <React.Fragment>
+      <Modal>
+        <Modal.Background />
+        <Modal.Card>
+          <Modal.CardHead>
+            <Modal.CardTitle>Modal Title</Modal.CardTitle>
+            <Delete />
+          </Modal.CardHead>
+          <Modal.CardBody>
+            <Image ratio="4by3">
+              <Image.Content src="https://bulma.io/images/placeholders/1280x960.png" />
+            </Image>
+          </Modal.CardBody>
+          <Modal.CardFoot>
+            <Button color="success">Save Changes</Button>
+            <Button>Cancel</Button>
+          </Modal.CardFoot>
+        </Modal.Card>
+      </Modal>
+      <Button color="primary">Launch Image Modal</Button>
+    </React.Fragment>
   </Story>
 </Canvas>
 

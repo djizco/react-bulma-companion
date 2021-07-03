@@ -64,16 +64,18 @@ You can change the size of all tags at once with the `<Tags>` component.
 
 <Canvas>
   <Story name="Sizes">
-    <Tags size="medium">
-      <Tag>All</Tag>
-      <Tag>Medium</Tag>
-      <Tag>Size</Tag>
-    </Tags>
-    <Tags size="large">
-      <Tag>All</Tag>
-      <Tag>Large</Tag>
-      <Tag>Size</Tag>
-    </Tags>
+    <React.Fragment>
+      <Tags size="medium">
+        <Tag>All</Tag>
+        <Tag>Medium</Tag>
+        <Tag>Size</Tag>
+      </Tags>
+      <Tags size="large">
+        <Tag>All</Tag>
+        <Tag>Large</Tag>
+        <Tag>Size</Tag>
+      </Tags>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -97,21 +99,23 @@ Use the `align` prop to alter the alignment.
 
 <Canvas>
   <Story name="Alignment">
-    <Tags>
-      <Tag>One</Tag>
-      <Tag>Two</Tag>
-      <Tag>Three</Tag>
-    </Tags>
-    <Tags align="center">
-      <Tag>One</Tag>
-      <Tag>Two</Tag>
-      <Tag>Three</Tag>
-    </Tags>
-    <Tags align="right">
-      <Tag>One</Tag>
-      <Tag>Two</Tag>
-      <Tag>Three</Tag>
-    </Tags>
+    <React.Fragment>
+      <Tags>
+        <Tag>One</Tag>
+        <Tag>Two</Tag>
+        <Tag>Three</Tag>
+      </Tags>
+      <Tags align="center">
+        <Tag>One</Tag>
+        <Tag>Two</Tag>
+        <Tag>Three</Tag>
+      </Tags>
+      <Tags align="right">
+        <Tag>One</Tag>
+        <Tag>Two</Tag>
+        <Tag>Three</Tag>
+      </Tags>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -181,7 +185,7 @@ This can be useful for a long list of blog tags.
       </Control>
       <Control>
         <Tags addons>
-          <Tag color="link">CSs</Tag>
+          <Tag color="link">CSS</Tag>
           <Tag delete />
         </Tags>
       </Control>

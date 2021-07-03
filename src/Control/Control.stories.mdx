@@ -39,26 +39,28 @@ The `<Control>` is a versatile **block** container meant to **enhance single for
 
 <Canvas>
   <Story name="Default">
-    <Field>
-      <Control>
-        <Input placeholder="Text input" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Select>
-          <Select.Content>
-            <Select.Option>Select Dropdown</Select.Option>
-            <Select.Option>With options</Select.Option>
-          </Select.Content>
-        </Select>
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Button color="primary">Submit</Button>
-      </Control>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <Control>
+          <Input placeholder="Text input" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Select>
+            <Select.Content>
+              <Select.Option>Select Dropdown</Select.Option>
+              <Select.Option>With options</Select.Option>
+            </Select.Content>
+          </Select>
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Button color="primary">Submit</Button>
+        </Control>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -66,30 +68,32 @@ The `<Control>` is a versatile **block** container meant to **enhance single for
 
 <Canvas>
   <Story name="Icons">
-    <Field>
-      <Control iconsLeft iconsRight>
-        <Input type="email" placeholder="Email" />
-        <Icon size="small" align="left">
-          <FontAwesomeIcon icon={faEnvelope} />
-        </Icon>
-        <Icon size="small" align="right">
-          <FontAwesomeIcon icon={faCheck} />
-        </Icon>
-      </Control>
-    </Field>
-    <Field>
-      <Control iconsLeft>
-        <Input type="password" placeholder="Password" />
-        <Icon size="small" align="left">
-          <FontAwesomeIcon icon={faLock} />
-        </Icon>
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Button color="success">Login</Button>
-      </Control>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <Control iconsLeft iconsRight>
+          <Input type="email" placeholder="Email" />
+          <Icon size="small" align="left">
+            <FontAwesomeIcon icon={faEnvelope} />
+          </Icon>
+          <Icon size="small" align="right">
+            <FontAwesomeIcon icon={faCheck} />
+          </Icon>
+        </Control>
+      </Field>
+      <Field>
+        <Control iconsLeft>
+          <Input type="password" placeholder="Password" />
+          <Icon size="small" align="left">
+            <FontAwesomeIcon icon={faLock} />
+          </Icon>
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Button color="success">Login</Button>
+        </Control>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -162,40 +166,42 @@ Use the `expanded` prop on the `<Control>` you want to fill up the remaining spa
 
 <Canvas>
   <Story name="Expanded">
-    <Field addons>
-      <Control>
-        <Select>
-          <Select.Content>
-            <Select.Option>$</Select.Option>
-            <Select.Option>£</Select.Option>
-            <Select.Option>€</Select.Option>
-          </Select.Content>
-        </Select>
-      </Control>
-      <Control>
-        <Input placeholder="Amount of money" />
-      </Control>
-      <Control>
-        <Button link>Transfer</Button>
-      </Control>
-    </Field>
-    <Field addons>
-      <Control>
-        <Select>
-          <Select.Content>
-            <Select.Option>$</Select.Option>
-            <Select.Option>£</Select.Option>
-            <Select.Option>€</Select.Option>
-          </Select.Content>
-        </Select>
-      </Control>
-      <Control expanded>
-        <Input placeholder="Amount of money" />
-      </Control>
-      <Control>
-        <Button link>Transfer</Button>
-      </Control>
-    </Field>
+    <React.Fragment>
+      <Field addons>
+        <Control>
+          <Select>
+            <Select.Content>
+              <Select.Option>$</Select.Option>
+              <Select.Option>£</Select.Option>
+              <Select.Option>€</Select.Option>
+            </Select.Content>
+          </Select>
+        </Control>
+        <Control>
+          <Input placeholder="Amount of money" />
+        </Control>
+        <Control>
+          <Button link>Transfer</Button>
+        </Control>
+      </Field>
+      <Field addons>
+        <Control>
+          <Select>
+            <Select.Content>
+              <Select.Option>$</Select.Option>
+              <Select.Option>£</Select.Option>
+              <Select.Option>€</Select.Option>
+            </Select.Content>
+          </Select>
+        </Control>
+        <Control expanded>
+          <Input placeholder="Amount of money" />
+        </Control>
+        <Control>
+          <Button link>Transfer</Button>
+        </Control>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -233,40 +239,42 @@ Use the `addons` prop with the `align` prop on the `<Field>` to alter the **alig
 
 <Canvas>
   <Story name="Alignment">
-    <Field align="center" addons>
-      <Control>
-        <Select>
-          <Select.Content>
-            <Select.Option>$</Select.Option>
-            <Select.Option>£</Select.Option>
-            <Select.Option>€</Select.Option>
-          </Select.Content>
-        </Select>
-      </Control>
-      <Control>
-        <Input placeholder="Amount of money" />
-      </Control>
-      <Control>
-        <Button color="primary" link>Transfer</Button>
-      </Control>
-    </Field>
-    <Field align="right" addons>
-      <Control>
-        <Select>
-          <Select.Content>
-            <Select.Option>$</Select.Option>
-            <Select.Option>£</Select.Option>
-            <Select.Option>€</Select.Option>
-          </Select.Content>
-        </Select>
-      </Control>
-      <Control>
-        <Input placeholder="Amount of money" />
-      </Control>
-      <Control>
-        <Button color="primary" link>Transfer</Button>
-      </Control>
-    </Field>
+    <React.Fragment>
+      <Field align="center" addons>
+        <Control>
+          <Select>
+            <Select.Content>
+              <Select.Option>$</Select.Option>
+              <Select.Option>£</Select.Option>
+              <Select.Option>€</Select.Option>
+            </Select.Content>
+          </Select>
+        </Control>
+        <Control>
+          <Input placeholder="Amount of money" />
+        </Control>
+        <Control>
+          <Button color="primary" link>Transfer</Button>
+        </Control>
+      </Field>
+      <Field align="right" addons>
+        <Control>
+          <Select>
+            <Select.Content>
+              <Select.Option>$</Select.Option>
+              <Select.Option>£</Select.Option>
+              <Select.Option>€</Select.Option>
+            </Select.Content>
+          </Select>
+        </Control>
+        <Control>
+          <Input placeholder="Amount of money" />
+        </Control>
+        <Control>
+          <Button color="primary" link>Transfer</Button>
+        </Control>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -291,22 +299,24 @@ Use the `grouped` prop with the `align` prop to alter the alignment.
 
 <Canvas>
   <Story name="Field Group Alignment">
-    <Field align="center" grouped>
-      <Control>
-        <Button color="primary" link>Submit</Button>
-      </Control>
-      <Control>
-        <Button color="light" link>Cancel</Button>
-      </Control>
-    </Field>
-    <Field align="right" grouped>
-      <Control>
-        <Button color="primary" link>Submit</Button>
-      </Control>
-      <Control>
-        <Button color="light" link>Cancel</Button>
-      </Control>
-    </Field>
+    <React.Fragment>
+      <Field align="center" grouped>
+        <Control>
+          <Button color="primary" link>Submit</Button>
+        </Control>
+        <Control>
+          <Button color="light" link>Cancel</Button>
+        </Control>
+      </Field>
+      <Field align="right" grouped>
+        <Control>
+          <Button color="primary" link>Submit</Button>
+        </Control>
+        <Control>
+          <Button color="light" link>Cancel</Button>
+        </Control>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -390,122 +400,124 @@ You can use `grouped` or `addons` for the child elements.
 
 <Canvas>
   <Story name="Horizontal Form">
-    <Field horizontal>
-      <Field.Label size="normal">
-        <Label>From</Label>
-      </Field.Label>
-      <Field.Body>
-        <Field>
-          <Control expanded iconsLeft>
-            <Input placeholder="Name" />
-            <Icon size="small" align="left">
-              <FontAwesomeIcon icon={faUser} />
-            </Icon>
-          </Control>
-        </Field>
-        <Field>
-          <Control expanded iconsLeft iconsRight>
-            <Input type="email" color="success" placeholder="Email" />
-            <Icon size="small" align="left">
-              <FontAwesomeIcon icon={faEnvelope} />
-            </Icon>
-            <Icon size="small" align="right">
-              <FontAwesomeIcon icon={faCheck} />
-            </Icon>
-          </Control>
-        </Field>
-      </Field.Body>
-    </Field>
-    <Field horizontal>
-      <Field.Label />
-      <Field.Body>
-        <Field expanded>
-          <Field addons>
-            <Control>
-              <Button static link>+44</Button>
-            </Control>
-            <Control expanded>
-              <Input type="tel" placeholder="Your phone number" />
+    <React.Fragment>
+      <Field horizontal>
+        <Field.Label size="normal">
+          <Label>From</Label>
+        </Field.Label>
+        <Field.Body>
+          <Field>
+            <Control expanded iconsLeft>
+              <Input placeholder="Name" />
+              <Icon size="small" align="left">
+                <FontAwesomeIcon icon={faUser} />
+              </Icon>
             </Control>
           </Field>
-          <Help>Do not enter the first zero</Help>
-        </Field>
-      </Field.Body>
-    </Field>
-    <Field horizontal>
-      <Field.Label size="normal">
-        <Label>Department</Label>
-      </Field.Label>
-      <Field.Body>
-        <Field narrow>
-          <Control>
-            <Select fullwidth>
-              <Select.Content>
-                <Select.Option>Business development</Select.Option>
-                <Select.Option>Marketing</Select.Option>
-                <Select.Option>Sales</Select.Option>
-              </Select.Content>
-            </Select>
-          </Control>
-        </Field>
-      </Field.Body>
-    </Field>
-    <Field horizontal>
-      <Field.Label>
-        <Label>Already a member?</Label>
-      </Field.Label>
-      <Field.Body>
-        <Field narrow>
-          <Control>
-            <Radio>
-              <input type="radio" name="member" />
-              <span>{' Yes'}</span>
-            </Radio>
-            <Radio>
-              <input type="radio" name="member" />
-              <span>{' No'}</span>
-            </Radio>
-          </Control>
-        </Field>
-      </Field.Body>
-    </Field>
-    <Field horizontal>
-      <Field.Label size="normal">
-        <Label>Subject</Label>
-      </Field.Label>
-      <Field.Body>
-        <Field>
-          <Control>
-            <Input color="danger" placeholder="e.g. Partnership opportunity" />
-          </Control>
-          <Help color="danger">
-            This field is required
-          </Help>
-        </Field>
-      </Field.Body>
-    </Field>
-    <Field horizontal>
-      <Field.Label size="normal">
-        <Label>Question</Label>
-      </Field.Label>
-      <Field.Body>
-        <Field>
-          <Control>
-            <Textarea placeholder="Explain how we can help you" />
-          </Control>
-        </Field>
-      </Field.Body>
-    </Field>
-    <Field horizontal>
-      <Field.Label />
-      <Field.Body>
-        <Field>
-          <Control>
-            <Button color="primary">Send message</Button>
-          </Control>
-        </Field>
-      </Field.Body>
-    </Field>
+          <Field>
+            <Control expanded iconsLeft iconsRight>
+              <Input type="email" color="success" placeholder="Email" />
+              <Icon size="small" align="left">
+                <FontAwesomeIcon icon={faEnvelope} />
+              </Icon>
+              <Icon size="small" align="right">
+                <FontAwesomeIcon icon={faCheck} />
+              </Icon>
+            </Control>
+          </Field>
+        </Field.Body>
+      </Field>
+      <Field horizontal>
+        <Field.Label />
+        <Field.Body>
+          <Field expanded>
+            <Field addons>
+              <Control>
+                <Button static link>+44</Button>
+              </Control>
+              <Control expanded>
+                <Input type="tel" placeholder="Your phone number" />
+              </Control>
+            </Field>
+            <Help>Do not enter the first zero</Help>
+          </Field>
+        </Field.Body>
+      </Field>
+      <Field horizontal>
+        <Field.Label size="normal">
+          <Label>Department</Label>
+        </Field.Label>
+        <Field.Body>
+          <Field narrow>
+            <Control>
+              <Select fullwidth>
+                <Select.Content>
+                  <Select.Option>Business development</Select.Option>
+                  <Select.Option>Marketing</Select.Option>
+                  <Select.Option>Sales</Select.Option>
+                </Select.Content>
+              </Select>
+            </Control>
+          </Field>
+        </Field.Body>
+      </Field>
+      <Field horizontal>
+        <Field.Label>
+          <Label>Already a member?</Label>
+        </Field.Label>
+        <Field.Body>
+          <Field narrow>
+            <Control>
+              <Radio>
+                <input type="radio" name="member" />
+                <span>{' Yes'}</span>
+              </Radio>
+              <Radio>
+                <input type="radio" name="member" />
+                <span>{' No'}</span>
+              </Radio>
+            </Control>
+          </Field>
+        </Field.Body>
+      </Field>
+      <Field horizontal>
+        <Field.Label size="normal">
+          <Label>Subject</Label>
+        </Field.Label>
+        <Field.Body>
+          <Field>
+            <Control>
+              <Input color="danger" placeholder="e.g. Partnership opportunity" />
+            </Control>
+            <Help color="danger">
+              This field is required
+            </Help>
+          </Field>
+        </Field.Body>
+      </Field>
+      <Field horizontal>
+        <Field.Label size="normal">
+          <Label>Question</Label>
+        </Field.Label>
+        <Field.Body>
+          <Field>
+            <Control>
+              <Textarea placeholder="Explain how we can help you" />
+            </Control>
+          </Field>
+        </Field.Body>
+      </Field>
+      <Field horizontal>
+        <Field.Label />
+        <Field.Body>
+          <Field>
+            <Control>
+              <Button color="primary">Send message</Button>
+            </Control>
+          </Field>
+        </Field.Body>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 

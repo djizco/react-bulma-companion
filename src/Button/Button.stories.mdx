@@ -58,23 +58,25 @@ The `<Button>` component is available in **different colors** by use of the `col
 
 <Canvas>
   <Story name="Colors">
-    <Buttons>
-      <Button color="white">White</Button>
-      <Button color="light">Light</Button>
-      <Button color="dark">Dark</Button>
-      <Button color="black">Black</Button>
-      <Button color="text">Text</Button>
-    </Buttons>
-    <Buttons>
-      <Button color="primary">Primary</Button>
-      <Button color="link">Link</Button>
-    </Buttons>
-    <Buttons>
-      <Button color="info">Info</Button>
-      <Button color="success">Success</Button>
-      <Button color="warning">Warning</Button>
-      <Button color="danger">Danger</Button>
-    </Buttons>
+    <React.Fragment>
+      <Buttons>
+        <Button color="white">White</Button>
+        <Button color="light">Light</Button>
+        <Button color="dark">Dark</Button>
+        <Button color="black">Black</Button>
+        <Button color="text">Text</Button>
+      </Buttons>
+      <Buttons>
+        <Button color="primary">Primary</Button>
+        <Button color="link">Link</Button>
+      </Buttons>
+      <Buttons>
+        <Button color="info">Info</Button>
+        <Button color="success">Success</Button>
+        <Button color="warning">Warning</Button>
+        <Button color="danger">Danger</Button>
+      </Buttons>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -82,16 +84,18 @@ Each color now comes in its **light version**. Simply add the `light` prop to th
 
 <Canvas>
   <Story name="Light Colors">
-    <Buttons>
-      <Button color="primary" light>Primary</Button>
-      <Button color="link" light>Link</Button>
-    </Buttons>
-    <Buttons>
-      <Button color="info" light>Info</Button>
-      <Button color="success" light>Success</Button>
-      <Button color="warning" light>Warning</Button>
-      <Button color="danger" light>Danger</Button>
-    </Buttons>
+    <React.Fragment>
+      <Buttons>
+        <Button color="primary" light>Primary</Button>
+        <Button color="link" light>Link</Button>
+      </Buttons>
+      <Buttons>
+        <Button color="info" light>Info</Button>
+        <Button color="success" light>Success</Button>
+        <Button color="warning" light>Warning</Button>
+        <Button color="danger" light>Danger</Button>
+      </Buttons>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -161,36 +165,38 @@ Button styles can be altered in the following ways:
 
 <Canvas className="has-background-light">
   <Story name="Styles">
-    <Buttons>
-      <Button outlined>Outlined</Button>
-      <Button color="primary" outlined>Outlined</Button>
-      <Button color="link" outlined>Outlined</Button>
-      <Button color="info" outlined>Outlined</Button>
-      <Button color="success" outlined>Outlined</Button>
-      <Button color="danger" outlined>Outlined</Button>
-    </Buttons>
-    <Buttons>
-      <Button color="primary" inverted>Inverted</Button>
-      <Button color="link" inverted>Inverted</Button>
-      <Button color="info" inverted>Inverted</Button>
-      <Button color="success" inverted>Inverted</Button>
-      <Button color="danger" inverted>Inverted</Button>
-    </Buttons>
-    <Buttons>
-      <Button color="primary" inverted outlined>Invert Outlined</Button>
-      <Button color="link" inverted outlined>Invert Outlined</Button>
-      <Button color="info" inverted outlined>Invert Outlined</Button>
-      <Button color="success" inverted outlined>Invert Outlined</Button>
-      <Button color="danger" inverted outlined>Invert Outlined</Button>
-    </Buttons>
-    <Buttons>
-      <Button rounded>Rounded</Button>
-      <Button color="primary" rounded>Rounded</Button>
-      <Button color="link" rounded>Rounded</Button>
-      <Button color="info" rounded>Rounded</Button>
-      <Button color="success" rounded>Rounded</Button>
-      <Button color="danger" rounded>Rounded</Button>
-    </Buttons>
+    <React.Fragment>
+      <Buttons>
+        <Button outlined>Outlined</Button>
+        <Button color="primary" outlined>Outlined</Button>
+        <Button color="link" outlined>Outlined</Button>
+        <Button color="info" outlined>Outlined</Button>
+        <Button color="success" outlined>Outlined</Button>
+        <Button color="danger" outlined>Outlined</Button>
+      </Buttons>
+      <Buttons>
+        <Button color="primary" inverted>Inverted</Button>
+        <Button color="link" inverted>Inverted</Button>
+        <Button color="info" inverted>Inverted</Button>
+        <Button color="success" inverted>Inverted</Button>
+        <Button color="danger" inverted>Inverted</Button>
+      </Buttons>
+      <Buttons>
+        <Button color="primary" inverted outlined>Invert Outlined</Button>
+        <Button color="link" inverted outlined>Invert Outlined</Button>
+        <Button color="info" inverted outlined>Invert Outlined</Button>
+        <Button color="success" inverted outlined>Invert Outlined</Button>
+        <Button color="danger" inverted outlined>Invert Outlined</Button>
+      </Buttons>
+      <Buttons>
+        <Button rounded>Rounded</Button>
+        <Button color="primary" rounded>Rounded</Button>
+        <Button color="link" rounded>Rounded</Button>
+        <Button color="info" rounded>Rounded</Button>
+        <Button color="success" rounded>Rounded</Button>
+        <Button color="danger" rounded>Rounded</Button>
+      </Buttons>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -200,60 +206,62 @@ Bulma styles the different states of its buttons. This allows you to obtain the 
 
 <Canvas>
   <Story name="States">
-    <Buttons>
-      <Button>Normal</Button>
-      <Button color="primary">Normal</Button>
-      <Button color="link">Normal</Button>
-      <Button color="info">Normal</Button>
-      <Button color="success">Normal</Button>
-      <Button color="warning">Normal</Button>
-      <Button color="danger">Normal</Button>
-    </Buttons>
-    <Buttons>
-      <Button>Hover</Button>
-      <Button color="primary"hovered>Hovered</Button>
-      <Button color="link"hovered>Hovered</Button>
-      <Button color="info"hovered>Hovered</Button>
-      <Button color="success"hovered>Hovered</Button>
-      <Button color="warning"hovered>Hovered</Button>
-      <Button color="danger"hovered>Hovered</Button>
-    </Buttons>
-    <Buttons>
-      <Button>Focus</Button>
-      <Button color="primary" focused>Focused</Button>
-      <Button color="link" focused>Focused</Button>
-      <Button color="info" focused>Focused</Button>
-      <Button color="success" focused>Focused</Button>
-      <Button color="warning" focused>Focused</Button>
-      <Button color="danger" focused>Focused</Button>
-    </Buttons>
-    <Buttons>
-      <Button>Active</Button>
-      <Button color="primary" active>Active</Button>
-      <Button color="link" active>Active</Button>
-      <Button color="info" active>Active</Button>
-      <Button color="success" active>Active</Button>
-      <Button color="warning" active>Active</Button>
-      <Button color="danger" active>Active</Button>
-    </Buttons>
-    <Buttons>
-      <Button loading>Loading</Button>
-      <Button color="primary" loading>Loading</Button>
-      <Button color="link" loading>Loading</Button>
-      <Button color="info" loading>Loading</Button>
-      <Button color="success" loading>Loading</Button>
-      <Button color="warning" loading>Loading</Button>
-      <Button color="danger" loading>Loading</Button>
-    </Buttons>
-    <Buttons>
-      <Button disabled>Disabled</Button>
-      <Button color="primary" disabled>Disabled</Button>
-      <Button color="link" disabled>Disabled</Button>
-      <Button color="info" disabled>Disabled</Button>
-      <Button color="success" disabled>Disabled</Button>
-      <Button color="warning" disabled>Disabled</Button>
-      <Button color="danger" disabled>Disabled</Button>
-    </Buttons>
+    <React.Fragment>
+      <Buttons>
+        <Button>Normal</Button>
+        <Button color="primary">Normal</Button>
+        <Button color="link">Normal</Button>
+        <Button color="info">Normal</Button>
+        <Button color="success">Normal</Button>
+        <Button color="warning">Normal</Button>
+        <Button color="danger">Normal</Button>
+      </Buttons>
+      <Buttons>
+        <Button>Hover</Button>
+        <Button color="primary"hovered>Hovered</Button>
+        <Button color="link"hovered>Hovered</Button>
+        <Button color="info"hovered>Hovered</Button>
+        <Button color="success"hovered>Hovered</Button>
+        <Button color="warning"hovered>Hovered</Button>
+        <Button color="danger"hovered>Hovered</Button>
+      </Buttons>
+      <Buttons>
+        <Button>Focus</Button>
+        <Button color="primary" focused>Focused</Button>
+        <Button color="link" focused>Focused</Button>
+        <Button color="info" focused>Focused</Button>
+        <Button color="success" focused>Focused</Button>
+        <Button color="warning" focused>Focused</Button>
+        <Button color="danger" focused>Focused</Button>
+      </Buttons>
+      <Buttons>
+        <Button>Active</Button>
+        <Button color="primary" active>Active</Button>
+        <Button color="link" active>Active</Button>
+        <Button color="info" active>Active</Button>
+        <Button color="success" active>Active</Button>
+        <Button color="warning" active>Active</Button>
+        <Button color="danger" active>Active</Button>
+      </Buttons>
+      <Buttons>
+        <Button loading>Loading</Button>
+        <Button color="primary" loading>Loading</Button>
+        <Button color="link" loading>Loading</Button>
+        <Button color="info" loading>Loading</Button>
+        <Button color="success" loading>Loading</Button>
+        <Button color="warning" loading>Loading</Button>
+        <Button color="danger" loading>Loading</Button>
+      </Buttons>
+      <Buttons>
+        <Button disabled>Disabled</Button>
+        <Button color="primary" disabled>Disabled</Button>
+        <Button color="link" disabled>Disabled</Button>
+        <Button color="info" disabled>Disabled</Button>
+        <Button color="success" disabled>Disabled</Button>
+        <Button color="warning" disabled>Disabled</Button>
+        <Button color="danger" disabled>Disabled</Button>
+      </Buttons>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -261,21 +269,23 @@ Add the `selected` prop to make sure the selected button is above its siblings.
 
 <Canvas>
   <Story name="Selected">
-    <Buttons addons>
-      <Button color="success" selected>Yes</Button>
-      <Button>Maybe</Button>
-      <Button>No</Button>
-    </Buttons>
-    <Buttons addons>
-      <Button>Yes</Button>
-      <Button color="info" selected>Maybe</Button>
-      <Button>No</Button>
-    </Buttons>
-    <Buttons addons>
-      <Button >Yes</Button>
-      <Button >Maybe</Button>
-      <Button color="danger" selected>No</Button>
-    </Buttons>
+    <React.Fragment>
+      <Buttons addons>
+        <Button color="success" selected>Yes</Button>
+        <Button>Maybe</Button>
+        <Button>No</Button>
+      </Buttons>
+      <Buttons addons>
+        <Button>Yes</Button>
+        <Button color="info" selected>Maybe</Button>
+        <Button>No</Button>
+      </Buttons>
+      <Buttons addons>
+        <Button >Yes</Button>
+        <Button >Maybe</Button>
+        <Button color="danger" selected>No</Button>
+      </Buttons>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -320,59 +330,61 @@ If the button only contains an icon, Bulma will make sure the button remains **s
 
 <Canvas>
   <Story name="Square Icons">
-    <Buttons size="small">
-      <Button>
-        <Icon size="small">
-          <FontAwesomeIcon icon={faHeading} />
-        </Icon>
-      </Button>
-    </Buttons>
-    <Buttons>
-      <Button>
-        <Icon size="small">
-          <FontAwesomeIcon icon={faHeading} />
-        </Icon>
-      </Button>
-      <Button>
-        <Icon>
-          <FontAwesomeIcon icon={faHeading} size="lg" />
-        </Icon>
-      </Button>
-    </Buttons>
-    <Buttons size="medium">
-      <Button>
-        <Icon size="small">
-          <FontAwesomeIcon icon={faHeading} />
-        </Icon>
-      </Button>
-      <Button>
-        <Icon>
-          <FontAwesomeIcon icon={faHeading} size="lg" />
-        </Icon>
-      </Button>
-      <Button>
-        <Icon size="medium">
-          <FontAwesomeIcon icon={faHeading} size="2x" />
-        </Icon>
-      </Button>
-    </Buttons>
-    <Buttons size="large">
-      <Button>
-        <Icon size="small">
-          <FontAwesomeIcon icon={faHeading} />
-        </Icon>
-      </Button>
-      <Button>
-        <Icon>
-          <FontAwesomeIcon icon={faHeading} size="lg" />
-        </Icon>
-      </Button>
-      <Button>
-        <Icon size="medium">
-          <FontAwesomeIcon icon={faHeading} size="2x" />
-        </Icon>
-      </Button>
-    </Buttons>
+    <React.Fragment>
+      <Buttons size="small">
+        <Button>
+          <Icon size="small">
+            <FontAwesomeIcon icon={faHeading} />
+          </Icon>
+        </Button>
+      </Buttons>
+      <Buttons>
+        <Button>
+          <Icon size="small">
+            <FontAwesomeIcon icon={faHeading} />
+          </Icon>
+        </Button>
+        <Button>
+          <Icon>
+            <FontAwesomeIcon icon={faHeading} size="lg" />
+          </Icon>
+        </Button>
+      </Buttons>
+      <Buttons size="medium">
+        <Button>
+          <Icon size="small">
+            <FontAwesomeIcon icon={faHeading} />
+          </Icon>
+        </Button>
+        <Button>
+          <Icon>
+            <FontAwesomeIcon icon={faHeading} size="lg" />
+          </Icon>
+        </Button>
+        <Button>
+          <Icon size="medium">
+            <FontAwesomeIcon icon={faHeading} size="2x" />
+          </Icon>
+        </Button>
+      </Buttons>
+      <Buttons size="large">
+        <Button>
+          <Icon size="small">
+            <FontAwesomeIcon icon={faHeading} />
+          </Icon>
+        </Button>
+        <Button>
+          <Icon>
+            <FontAwesomeIcon icon={faHeading} size="lg" />
+          </Icon>
+        </Button>
+        <Button>
+          <Icon size="medium">
+            <FontAwesomeIcon icon={faHeading} size="2x" />
+          </Icon>
+        </Button>
+      </Buttons>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -437,58 +449,60 @@ You can group together addons as well:
 
 <Canvas>
   <Story name="Group with Addons">
-    <Field addons>
-      <Control>
-        <Button>
-          <Icon size="small">
-            <FontAwesomeIcon icon={faBold} />
-          </Icon>
-          <span>Bold</span>
-        </Button>
-      </Control>
-      <Control>
-        <Button>
-          <Icon size="small">
-            <FontAwesomeIcon icon={faItalic} />
-          </Icon>
-          <span>Italic</span>
-        </Button>
-      </Control>
-      <Control>
-        <Button>
-          <Icon size="small">
-            <FontAwesomeIcon icon={faUnderline} />
-          </Icon>
-          <span>Underline</span>
-        </Button>
-      </Control>
-    </Field>
-    <Field addons>
-      <Control>
-        <Button>
-          <Icon size="small">
-            <FontAwesomeIcon icon={faAlignLeft}  />
-          </Icon>
-          <span>Left</span>
-        </Button>
-      </Control>
-      <Control>
-        <Button>
-          <Icon size="small">
-            <FontAwesomeIcon icon={faAlignCenter}  />
-          </Icon>
-          <span>Center</span>
-        </Button>
-      </Control>
-      <Control>
-        <Button>
-          <Icon size="small">
-            <FontAwesomeIcon icon={faAlignRight}  />
-          </Icon>
-          <span>Right</span>
-        </Button>
-      </Control>
-    </Field>
+    <React.Fragment>
+      <Field addons>
+        <Control>
+          <Button>
+            <Icon size="small">
+              <FontAwesomeIcon icon={faBold} />
+            </Icon>
+            <span>Bold</span>
+          </Button>
+        </Control>
+        <Control>
+          <Button>
+            <Icon size="small">
+              <FontAwesomeIcon icon={faItalic} />
+            </Icon>
+            <span>Italic</span>
+          </Button>
+        </Control>
+        <Control>
+          <Button>
+            <Icon size="small">
+              <FontAwesomeIcon icon={faUnderline} />
+            </Icon>
+            <span>Underline</span>
+          </Button>
+        </Control>
+      </Field>
+      <Field addons>
+        <Control>
+          <Button>
+            <Icon size="small">
+              <FontAwesomeIcon icon={faAlignLeft}  />
+            </Icon>
+            <span>Left</span>
+          </Button>
+        </Control>
+        <Control>
+          <Button>
+            <Icon size="small">
+              <FontAwesomeIcon icon={faAlignCenter}  />
+            </Icon>
+            <span>Center</span>
+          </Button>
+        </Control>
+        <Control>
+          <Button>
+            <Icon size="small">
+              <FontAwesomeIcon icon={faAlignRight}  />
+            </Icon>
+            <span>Right</span>
+          </Button>
+        </Control>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 

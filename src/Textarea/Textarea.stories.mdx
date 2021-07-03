@@ -38,36 +38,38 @@ The `<Textarea>` component is available in **different colors** by use of the `c
 
 <Canvas>
   <Story name="Colors">
-    <Field>
-      <Control>
-        <Textarea placeholder="Primary textarea" color="primary" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Textarea placeholder="Link textarea" color="link" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Textarea placeholder="Info textarea" color="info" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Textarea placeholder="Success textarea" color="success" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Textarea placeholder="Warning textarea" color="warning" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Textarea placeholder="Danger textarea" color="danger" />
-      </Control>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <Control>
+          <Textarea placeholder="Primary textarea" color="primary" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Textarea placeholder="Link textarea" color="link" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Textarea placeholder="Info textarea" color="info" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Textarea placeholder="Success textarea" color="success" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Textarea placeholder="Warning textarea" color="warning" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Textarea placeholder="Danger textarea" color="danger" />
+        </Control>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -77,26 +79,28 @@ The `<Textarea>` comes in 4 different sizes by use of the `size` prop.
 
 <Canvas>
   <Story name="Sizes">
-    <Field>
-      <Control>
-        <Textarea placeholder="Small textarea" size="small" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Textarea placeholder="Normal textarea" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Textarea placeholder="Medium textarea" size="medium" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Textarea placeholder="Large textarea" size="large" />
-      </Control>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <Control>
+          <Textarea placeholder="Small textarea" size="small" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Textarea placeholder="Normal textarea" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Textarea placeholder="Medium textarea" size="medium" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Textarea placeholder="Large textarea" size="large" />
+        </Control>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -106,26 +110,28 @@ You can alter states in the following ways:
 
 <Canvas>
   <Story name="States">
-    <Field>
-      <Control>
-        <Textarea placeholder="Normal textarea" />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Textarea placeholder="Hover textarea" hovered />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Textarea placeholder="Active textarea" active />
-      </Control>
-    </Field>
-    <Field>
-      <Control>
-        <Textarea placeholder="Focus textarea" focused />
-      </Control>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <Control>
+          <Textarea placeholder="Normal textarea" />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Textarea placeholder="Hover textarea" hovered />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Textarea placeholder="Active textarea" active />
+        </Control>
+      </Field>
+      <Field>
+        <Control>
+          <Textarea placeholder="Focus textarea" focused />
+        </Control>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
@@ -135,26 +141,28 @@ You can control the loading state with the `loading` prop on the `<Control>` con
 
 <Canvas>
   <Story name="Loading">
-    <Field>
-      <Control size="small" loading>
-        <Textarea size="small" placeholder="Small loading textarea" />
-      </Control>
-    </Field>
-    <Field>
-      <Control loading>
-        <Textarea placeholder="Normal loading textarea" />
-      </Control>
-    </Field>
-    <Field>
-      <Control size="medium" loading>
-        <Textarea size="medium" placeholder="Medium loading textarea" />
-      </Control>
-    </Field>
-    <Field>
-      <Control size="large" loading>
-        <Textarea size="large" placeholder="Large loading textarea" />
-      </Control>
-    </Field>
+    <React.Fragment>
+      <Field>
+        <Control size="small" loading>
+          <Textarea size="small" placeholder="Small loading textarea" />
+        </Control>
+      </Field>
+      <Field>
+        <Control loading>
+          <Textarea placeholder="Normal loading textarea" />
+        </Control>
+      </Field>
+      <Field>
+        <Control size="medium" loading>
+          <Textarea size="medium" placeholder="Medium loading textarea" />
+        </Control>
+      </Field>
+      <Field>
+        <Control size="large" loading>
+          <Textarea size="large" placeholder="Large loading textarea" />
+        </Control>
+      </Field>
+    </React.Fragment>
   </Story>
 </Canvas>
 
