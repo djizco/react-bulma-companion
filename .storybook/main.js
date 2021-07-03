@@ -5,5 +5,8 @@ module.exports = {
   ],
   "addons": [
     "@storybook/addon-essentials",
-  ]
+  ],
+  features: {
+    postcss: false,
+  },
 }

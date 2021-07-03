@@ -7,6 +7,7 @@ module.exports = {
   setupFilesAfterEnv: [
     '<rootDir>/jest.setup.js',
   ],
+  testEnvironment: 'jest-environment-jsdom',
   testMatch: [path.join(__dirname, 'src/**/*.test.js')],
   transform: {
     '^.+\\.[t|j]sx?$': 'babel-jest',
