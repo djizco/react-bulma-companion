@@ -38,14 +38,14 @@ export { default as Input } from './Input';
 export { default as Label } from './Label';
 export { default as Radio } from './Radio';
 export { default as Select } from './Select';
-export { default as Textarea } from './Radio';
+export { default as Textarea } from './Textarea';
 
 // Layout
 export { default as Column } from './Column';
 export { default as Columns } from './Columns';
 export { default as Container } from './Container-0.9.0';
 export { default as Footer } from './Footer';
-export { default as Hero } from './Container';
+export { default as Hero } from './Hero';
 export { default as Level } from './Level';
 export { default as Media } from './Media';
 export { default as Section } from './Section';

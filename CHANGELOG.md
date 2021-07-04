@@ -1,5 +1,11 @@
 # React Bulma Companion Changelog
 
+## 0.2.1
+
+Bug Fixes
+
+- Fix issue where Hero and Textarea components were importing the incorrect component in the dist builds.
+
 ## 0.2.0
 
 ### New Features
