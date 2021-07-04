@@ -3,7 +3,7 @@
 
 A set of React Components for the [Bulma](http://bulma.io/) CSS framework.
 
-The current Bulma version this library supports is `0.9.2`. To use an older version of Bulma with this library, please reference the **Legacy Support** section.
+The current Bulma version this library supports is `0.9.3`. To use an older version of Bulma with this library, please reference the **Legacy Support** section.
 
 React Bulma Companion works as a **companion** to Bulma's CSS classes. It doesn't include any CSS itself. This allows you to import Bulma and customize it in any way you choose.
 
@@ -84,7 +84,7 @@ To use **tree shaking** with a legacy version of Bulma, you must import the corr
 import Button from 'react-bulma-companion/lib/Button-[version]';
 ```
 
-Legacy Bulma Versions Supported: `0.9.0`, `0.9.1`
+Legacy Bulma Versions Supported: `0.9.2`, `0.9.1`, `0.9.0`
 
 ## To Do
 

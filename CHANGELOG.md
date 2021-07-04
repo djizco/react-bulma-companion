@@ -1,5 +1,13 @@
 # React Bulma Companion Changelog
 
+## 0.3.0
+
+### New Features
+
+- Update Current Version to Bulma 0.9.3.
+- Add Legacy Component Content-0.9.2.
+- Add Legacy Component File-0.9.2.
+
 ## 0.2.1
 
 ### Bug Fixes
