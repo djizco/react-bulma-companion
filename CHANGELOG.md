@@ -4,19 +4,19 @@
 
 ### New Features
 
-- Update Current Version to Bulma 0.9.2
-- Add Icon.Text Subcomponent
-- Add Legacy Component Icon-0.9.1
+- Update Current Version to Bulma 0.9.2.
+- Add Icon.Text Subcomponent.
+- Add Legacy Component Icon-0.9.1.
 
 ### Improvements
 
-- All components now accept a `component` prop that allows you to pass in custom a component.
-- Expand Docs for Card Component.
+- All components now accept a `component` prop that allows you to pass in a custom component.
+- Expand Docs for the Card Component.
 - Update Storybook to 6.3.
 
 ## Bug Fixes
 
-- Docs: code block spacing should now be fixed.
+- Docs: Code block spacing should now be fixed.
 
 ### Deprecation warning
 
@@ -26,14 +26,14 @@
 
 ### Bug Fixes
 
-- Remove onClick prop-type from Button
+- Remove onClick prop-type from Button.
 
 ## 0.1.1
 
 ### Bug Fixes
 
-- Fix legacy dev build
+- Fix legacy dev build.
 
 ## 0.1.0
 
-- Initial Release
+- Initial Release.
