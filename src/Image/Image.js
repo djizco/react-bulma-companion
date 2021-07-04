@@ -7,11 +7,14 @@ import ImageContent from './ImageContent';
 export default function Image({
   children,
   className,
+  component,
   fullwidth,
   ratio,
   size,
   ...props
 }) {
+  const Element = component;
+
   // Sizes
   const sizeMap = {
     '16x16': 'is-16x16',
@@ -50,9 +53,9 @@ export default function Image({
   });
 
   return (
-    <figure className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </figure>
+    </Element>
   );
 }
 
@@ -61,6 +64,7 @@ Image.Content = ImageContent;
 Image.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   size: PropTypes.oneOf([
     '16x16',
     '24x24',
@@ -94,6 +98,7 @@ Image.propTypes = {
 Image.defaultProps = {
   className: undefined,
   children: null,
+  component: 'figure',
   size: undefined,
   ratio: undefined,
   fullwidth: false,

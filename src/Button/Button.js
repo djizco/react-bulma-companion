@@ -8,6 +8,7 @@ export default function Button({
   children,
   className,
   color,
+  component,
   focused,
   fullwidth,
   hovered,
@@ -21,7 +22,12 @@ export default function Button({
   size,
   ...props
 }) {
-  const Element = link ? 'a' : 'button';
+  if (process.env.NODE_ENV === 'development' && link) {
+    // eslint-disable-next-line
+    console.warn('Using the `link` prop is deprecated. Use `component="a"` instead.');
+  }
+
+  const Element = link ? 'a' : component;
 
   // Colors
   const colorMap = {
@@ -76,7 +82,11 @@ export default function Button({
 Button.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
+  /**
+    Deprecation Warning: Use `component="a"`.
+  */
   link: PropTypes.bool,
   color: PropTypes.oneOf([
     'primary',
@@ -115,6 +125,7 @@ Button.propTypes = {
 Button.defaultProps = {
   className: undefined,
   children: null,
+  component: 'button',
   type: 'button',
   link: false,
   color: undefined,

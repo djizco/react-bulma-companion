@@ -26,7 +26,7 @@ import Help from '../Help';
 
 [Bulma Documentation](https://bulma.io/documentation/form/general/#form-control)
 
-Supported Versions: `0.9.1`, `0.9.0`
+Supported Versions: `0.9.2`, `0.9.1`, `0.9.0`
 
 ## Default
 
@@ -139,7 +139,7 @@ If you want to **attach** `<Controls>` together, use the `addons` prop on the `<
         <Input placeholder="Text input"/>
       </Control>
       <Control>
-        <Button color="info" link>Search</Button>
+        <Button color="info" component="a">Search</Button>
       </Control>
     </Field>
   </Story>
@@ -181,7 +181,7 @@ Use the `expanded` prop on the `<Control>` you want to fill up the remaining spa
           <Input placeholder="Amount of money" />
         </Control>
         <Control>
-          <Button link>Transfer</Button>
+          <Button component="a">Transfer</Button>
         </Control>
       </Field>
       <Field addons>
@@ -198,7 +198,7 @@ Use the `expanded` prop on the `<Control>` you want to fill up the remaining spa
           <Input placeholder="Amount of money" />
         </Control>
         <Control>
-          <Button link>Transfer</Button>
+          <Button component="a">Transfer</Button>
         </Control>
       </Field>
     </React.Fragment>
@@ -254,7 +254,7 @@ Use the `addons` prop with the `align` prop on the `<Field>` to alter the **alig
           <Input placeholder="Amount of money" />
         </Control>
         <Control>
-          <Button color="primary" link>Transfer</Button>
+          <Button color="primary" component="a">Transfer</Button>
         </Control>
       </Field>
       <Field align="right" addons>
@@ -271,7 +271,7 @@ Use the `addons` prop with the `align` prop on the `<Field>` to alter the **alig
           <Input placeholder="Amount of money" />
         </Control>
         <Control>
-          <Button color="primary" link>Transfer</Button>
+          <Button color="primary" component="a">Transfer</Button>
         </Control>
       </Field>
     </React.Fragment>
@@ -286,10 +286,10 @@ If you want to **group** controls together, use the `grouped` prop on the `<Fiel
   <Story name="Field Group">
     <Field grouped>
       <Control>
-        <Button color="primary" link>Submit</Button>
+        <Button color="primary" component="a">Submit</Button>
       </Control>
       <Control>
-        <Button color="light" link>Cancel</Button>
+        <Button color="light" component="a">Cancel</Button>
       </Control>
     </Field>
   </Story>
@@ -302,18 +302,18 @@ Use the `grouped` prop with the `align` prop to alter the alignment.
     <React.Fragment>
       <Field align="center" grouped>
         <Control>
-          <Button color="primary" link>Submit</Button>
+          <Button color="primary" component="a">Submit</Button>
         </Control>
         <Control>
-          <Button color="light" link>Cancel</Button>
+          <Button color="light" component="a">Cancel</Button>
         </Control>
       </Field>
       <Field align="right" grouped>
         <Control>
-          <Button color="primary" link>Submit</Button>
+          <Button color="primary" component="a">Submit</Button>
         </Control>
         <Control>
-          <Button color="light" link>Cancel</Button>
+          <Button color="light" component="a">Cancel</Button>
         </Control>
       </Field>
     </React.Fragment>
@@ -329,7 +329,7 @@ Add the `expanded` prop on the `<Control>` you want to **fill up the remaining s
         <Input placeholder="Find a repository" />
       </Control>
       <Control>
-        <Button color="info" link>Search</Button>
+        <Button color="info" component="a">Search</Button>
       </Control>
     </Field>
   </Story>
@@ -341,49 +341,49 @@ Add the `grouped` and `multiline` prop to allow controls to fill up multiple lin
   <Story name="Multiline Group">
     <Field grouped multiline>
       <Control>
-        <Button link>One</Button>
+        <Button component="a">One</Button>
       </Control>
       <Control>
-        <Button link>Two</Button>
+        <Button component="a">Two</Button>
       </Control>
       <Control>
-        <Button link>Three</Button>
+        <Button component="a">Three</Button>
       </Control>
       <Control>
-        <Button link>Four</Button>
+        <Button component="a">Four</Button>
       </Control>
       <Control>
-        <Button link>Five</Button>
+        <Button component="a">Five</Button>
       </Control>
       <Control>
-        <Button link>Six</Button>
+        <Button component="a">Six</Button>
       </Control>
       <Control>
-        <Button link>Seven</Button>
+        <Button component="a">Seven</Button>
       </Control>
       <Control>
-        <Button link>Eight</Button>
+        <Button component="a">Eight</Button>
       </Control>
       <Control>
-        <Button link>Nine</Button>
+        <Button component="a">Nine</Button>
       </Control>
       <Control>
-        <Button link>Ten</Button>
+        <Button component="a">Ten</Button>
       </Control>
       <Control>
-        <Button link>Eleven</Button>
+        <Button component="a">Eleven</Button>
       </Control>
       <Control>
-        <Button link>Twelve</Button>
+        <Button component="a">Twelve</Button>
       </Control>
       <Control>
-        <Button link>Thirteen</Button>
+        <Button component="a">Thirteen</Button>
       </Control>
       <Control>
-        <Button link>Fourteen</Button>
+        <Button component="a">Fourteen</Button>
       </Control>
       <Control>
-        <Button link>Fifteen</Button>
+        <Button component="a">Fifteen</Button>
       </Control>
     </Field>
   </Story>
@@ -433,7 +433,7 @@ You can use `grouped` or `addons` for the child elements.
           <Field expanded>
             <Field addons>
               <Control>
-                <Button static link>+44</Button>
+                <Button static component="a">+44</Button>
               </Control>
               <Control expanded>
                 <Input type="tel" placeholder="Your phone number" />

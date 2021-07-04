@@ -7,12 +7,15 @@ export default function Tile({
   children,
   className,
   color,
+  component,
   light,
   type,
   vertical,
   size,
   ...props
 }) {
+  const Element = component;
+
   // Types
   const typeMap = {
     ancestor: 'is-ancestor',
@@ -61,15 +64,16 @@ export default function Tile({
   });
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 Tile.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   type: PropTypes.oneOf([
     'ancestor',
     'parent',
@@ -109,6 +113,7 @@ Tile.propTypes = {
 Tile.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   type: undefined,
   size: undefined,
   color: undefined,

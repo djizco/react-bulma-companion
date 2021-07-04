@@ -6,11 +6,14 @@ export default function TableDataCell({
   children,
   className,
   color,
+  component,
   narrow,
   selected,
   vcentered,
   ...props
 }) {
+  const Element = component;
+
   // Colors
   const colorMap = {
     primary: 'is-primary',
@@ -33,15 +36,16 @@ export default function TableDataCell({
   });
 
   return (
-    <td className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </td>
+    </Element>
   );
 }
 
 TableDataCell.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -62,6 +66,7 @@ TableDataCell.propTypes = {
 TableDataCell.defaultProps = {
   className: undefined,
   children: null,
+  component: 'td',
   color: undefined,
   selected: false,
   narrow: false,

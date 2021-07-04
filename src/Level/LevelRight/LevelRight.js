@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function LevelRight({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('level-right', className);
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 LevelRight.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 LevelRight.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
 };

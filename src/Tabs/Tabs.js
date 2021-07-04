@@ -11,12 +11,15 @@ export default function Tabs({
   boxed,
   children,
   className,
+  component,
   fullwidth,
   rounded,
   size,
   toggle,
   ...props
 }) {
+  const Element = component;
+
   // Sizes
   const sizeMap = {
     small: 'is-small',
@@ -40,9 +43,9 @@ export default function Tabs({
   });
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
@@ -53,6 +56,7 @@ Tabs.Link = TabsLink;
 Tabs.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   align: PropTypes.oneOf(['center', 'right']),
   boxed: PropTypes.bool,
@@ -67,6 +71,7 @@ Tabs.propTypes = {
 Tabs.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   size: undefined,
   align: undefined,
   boxed: false,

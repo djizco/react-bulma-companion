@@ -6,9 +6,12 @@ export default function Progress({
   children,
   className,
   color,
+  component,
   size,
   ...props
 }) {
+  const Element = component;
+
   // Colors
   const colorMap = {
     primary: 'is-primary',
@@ -35,15 +38,16 @@ export default function Progress({
   const classes = classNames('progress', className, isColor, isSize);
 
   return (
-    <progress className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </progress>
+    </Element>
   );
 }
 
 Progress.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -62,6 +66,7 @@ Progress.propTypes = {
 Progress.defaultProps = {
   className: undefined,
   children: null,
+  component: 'progress',
   color: undefined,
   size: undefined,
 };

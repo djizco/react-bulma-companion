@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function NavbarBrand({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('navbar-brand', className);
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 NavbarBrand.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 NavbarBrand.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
 };

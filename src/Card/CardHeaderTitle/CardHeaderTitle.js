@@ -6,27 +6,32 @@ export default function CardHeaderTitle({
   centered,
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('card-header-title', className, {
     'is-centered': centered,
   });
 
   return (
-    <p className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </p>
+    </Element>
   );
 }
 
 CardHeaderTitle.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   centered: PropTypes.bool,
 };
 
 CardHeaderTitle.defaultProps = {
   className: undefined,
   children: null,
+  component: 'p',
   centered: false,
 };

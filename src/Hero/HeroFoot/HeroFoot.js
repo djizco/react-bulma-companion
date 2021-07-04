@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function HeroFoot({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('hero-foot', className);
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 HeroFoot.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 HeroFoot.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
 };

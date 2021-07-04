@@ -6,10 +6,13 @@ export default function SelectContent({
   active,
   children,
   className,
+  component,
   focused,
   hovered,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames(className, {
     'is-hovered': hovered,
     'is-focused': focused,
@@ -17,15 +20,16 @@ export default function SelectContent({
   });
 
   return (
-    <select className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </select>
+    </Element>
   );
 }
 
 SelectContent.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   hovered: PropTypes.bool,
   focused: PropTypes.bool,
   active: PropTypes.bool,
@@ -34,6 +38,7 @@ SelectContent.propTypes = {
 SelectContent.defaultProps = {
   className: undefined,
   children: null,
+  component: 'select',
   hovered: false,
   focused: false,
   active: false,

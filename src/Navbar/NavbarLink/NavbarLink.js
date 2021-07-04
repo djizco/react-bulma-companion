@@ -6,27 +6,32 @@ export default function NavbarLink({
   arrowless,
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('navbar-link', className, {
     'is-arrowless': arrowless,
   });
 
   return (
-    <a className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </a>
+    </Element>
   );
 }
 
 NavbarLink.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   arrowless: PropTypes.bool,
 };
 
 NavbarLink.defaultProps = {
   className: undefined,
   children: null,
+  component: 'a',
   arrowless: false,
 };

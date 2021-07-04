@@ -12,11 +12,14 @@ export default function Dropdown({
   active,
   children,
   className,
+  component,
   hoverable,
   right,
   up,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('dropdown', className, {
     'is-active': active,
     'is-hoverable': hoverable,
@@ -25,9 +28,9 @@ export default function Dropdown({
   });
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
@@ -40,6 +43,7 @@ Dropdown.Trigger = DropdownTrigger;
 Dropdown.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   active: PropTypes.bool,
   hoverable: PropTypes.bool,
   right: PropTypes.bool,
@@ -49,6 +53,7 @@ Dropdown.propTypes = {
 Dropdown.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   active: false,
   hoverable: false,
   right: false,

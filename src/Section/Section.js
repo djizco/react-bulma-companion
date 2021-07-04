@@ -5,9 +5,12 @@ import classNames from 'classnames';
 export default function Section({
   children,
   className,
+  component,
   size,
   ...props
 }) {
+  const Element = component;
+
   const sizeMap = {
     medium: 'is-medium',
     large: 'is-large',
@@ -17,20 +20,22 @@ export default function Section({
   const classes = classNames('section', className, isSize);
 
   return (
-    <section className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </section>
+    </Element>
   );
 }
 
 Section.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   size: PropTypes.oneOf(['medium', 'large']),
 };
 
 Section.defaultProps = {
   className: undefined,
   children: null,
+  component: 'section',
   size: undefined,
 };

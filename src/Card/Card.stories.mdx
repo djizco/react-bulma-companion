@@ -18,7 +18,7 @@ import Content from '../Content';
 
 [Bulma Documentation](https://bulma.io/documentation/components/card/)
 
-Supported Versions: `0.9.1`, `0.9.0`
+Supported Versions: `0.9.2`, `0.9.1`, `0.9.0`
 
 ## Default
 
@@ -41,7 +41,7 @@ The `<Card>` comprises several components that you can mix and match:
           <Card.HeaderTitle>
             Card Header
           </Card.HeaderTitle>
-          <Card.HeaderIcon link>
+          <Card.HeaderIcon component="a">
             <Icon>
               <FontAwesomeIcon icon={faAngleDown} />
             </Icon>
@@ -96,6 +96,77 @@ You can center the `<Card.HeaderTitle>` by appending the `centered` prop.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
           </Content>
         </Card.Content>
+      </Card>
+    </div>
+  </Story>
+</Canvas>
+
+## Card Parts
+
+The `<Card.Header>` can have a **title** and a Bulma `<Icon>`:
+
+<Canvas>
+  <Story name="Card Header">
+    <div style={{ maxWidth: '300px', margin: '0 auto' }}>
+      <Card>
+        <Card.Header>
+          <Card.HeaderTitle>
+            Card Header
+          </Card.HeaderTitle>
+          <Card.HeaderIcon>
+            <Icon>
+              <FontAwesomeIcon icon={faAngleDown} />
+            </Icon>
+          </Card.HeaderIcon>
+        </Card.Header>
+      </Card>
+    </div>
+  </Story>
+</Canvas>
+
+The `<Card.Image>` is a container for a Bulma `<Image>` element:
+
+<Canvas>
+  <Story name="Card Image">
+    <div style={{ maxWidth: '300px', margin: '0 auto' }}>
+      <Card>
+        <Card.Image>
+          <Image ratio="4by3">
+            <Image.Content src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
+          </Image>
+        </Card.Image>
+      </Card>
+    </div>
+  </Story>
+</Canvas>
+
+The `<Card.Content>` is the main part, ideal for **text content**, thanks to its padding:
+
+<Canvas>
+  <Story name="Card Content">
+    <div style={{ maxWidth: '300px', margin: '0 auto' }}>
+      <Card>
+        <Card.Content>
+          <Content>
+            Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
+          </Content>
+        </Card.Content>
+      </Card>
+    </div>
+  </Story>
+</Canvas>
+
+The `<Card.Footer>` acts as a list of for several `<Card.FooterItem>` elements. The `<Card.FooterItem>` can be rendered as a link with component="a".
+
+<Canvas>
+  <Story name="Card Footer">
+    <div style={{ maxWidth: '300px', margin: '0 auto' }}>
+      <Card>
+        <Card.Footer>
+          <Card.FooterItem component="a">Save</Card.FooterItem>
+          <Card.FooterItem component="a">Edit</Card.FooterItem>
+          <Card.FooterItem component="a">Delete</Card.FooterItem>
+        </Card.Footer>
       </Card>
     </div>
   </Story>

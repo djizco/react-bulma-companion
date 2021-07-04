@@ -15,11 +15,14 @@ export default function File({
   children,
   className,
   color,
+  component,
   fullwidth,
   hasName,
   size,
   ...props
 }) {
+  const Element = component;
+
   // Colors
   const colorMap = {
     primary: 'is-primary',
@@ -57,9 +60,9 @@ export default function File({
   });
 
   return (
-    <div type="file" className={classes} {...props}>
+    <Element type="file" className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
@@ -73,6 +76,7 @@ File.Name = FileName;
 File.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -95,6 +99,7 @@ File.propTypes = {
 File.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   color: undefined,
   size: undefined,
   align: undefined,

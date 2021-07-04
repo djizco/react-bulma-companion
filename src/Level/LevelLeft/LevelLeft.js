@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function LevelLeft({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('level-left', className);
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 LevelLeft.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 LevelLeft.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
 };

@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function BreadcrumbList({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames(className);
 
   return (
-    <ul className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </ul>
+    </Element>
   );
 }
 
 BreadcrumbList.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 BreadcrumbList.defaultProps = {
   className: undefined,
   children: null,
+  component: 'ul',
 };

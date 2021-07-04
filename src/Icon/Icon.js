@@ -9,9 +9,12 @@ export default function Icon({
   children,
   className,
   color,
+  component,
   size,
   ...props
 }) {
+  const Element = component;
+
   // Colors
   const colorMap = {
     primary: 'has-text-primary',
@@ -65,9 +68,9 @@ export default function Icon({
   const classes = classNames('icon', className, isColor, isSize, isAlign);
 
   return (
-    <span className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </span>
+    </Element>
   );
 }
 
@@ -76,6 +79,7 @@ Icon.Text = IconText;
 Icon.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -115,6 +119,7 @@ Icon.propTypes = {
 Icon.defaultProps = {
   className: undefined,
   children: null,
+  component: 'span',
   color: undefined,
   size: undefined,
   align: undefined,

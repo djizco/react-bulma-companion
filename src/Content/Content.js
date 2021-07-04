@@ -5,9 +5,12 @@ import classNames from 'classnames';
 export default function Content({
   children,
   className,
+  component,
   size,
   ...props
 }) {
+  const Element = component;
+
   const sizeMap = {
     small: 'is-small',
     medium: 'is-medium',
@@ -18,20 +21,22 @@ export default function Content({
   const classes = classNames('content', className, isSize);
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 Content.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
 Content.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   size: undefined,
 };

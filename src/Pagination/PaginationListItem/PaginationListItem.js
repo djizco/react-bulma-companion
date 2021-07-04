@@ -4,21 +4,26 @@ import PropTypes from 'prop-types';
 export default function PaginationListItem({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   return (
-    <li className={className} {...props}>
+    <Element className={className} {...props}>
       {children}
-    </li>
+    </Element>
   );
 }
 
 PaginationListItem.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 PaginationListItem.defaultProps = {
   className: undefined,
   children: null,
+  component: 'li',
 };

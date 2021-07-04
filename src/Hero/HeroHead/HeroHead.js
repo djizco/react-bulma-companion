@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function HeroHead({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('hero-head', className);
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 HeroHead.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 HeroHead.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
 };

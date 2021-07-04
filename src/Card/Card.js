@@ -13,14 +13,17 @@ import CardImage from './CardImage';
 export default function Card({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('card', className);
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
@@ -35,9 +38,11 @@ Card.Image = CardImage;
 Card.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 Card.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
 };

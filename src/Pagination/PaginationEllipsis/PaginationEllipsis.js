@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function PaginationEllipsis({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('pagination-ellipsis', className);
 
   return (
-    <span className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </span>
+    </Element>
   );
 }
 
 PaginationEllipsis.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 PaginationEllipsis.defaultProps = {
   className: undefined,
   children: null,
+  component: 'span',
 };

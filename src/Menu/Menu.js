@@ -10,9 +10,12 @@ import MenuLink from './MenuLink';
 export default function Menu({
   children,
   className,
+  component,
   size,
   ...props
 }) {
+  const Element = component;
+
   // Sizes
   const sizeMap = {
     small: 'is-small',
@@ -24,9 +27,9 @@ export default function Menu({
   const classes = classNames('menu', className, isSize);
 
   return (
-    <aside className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </aside>
+    </Element>
   );
 }
 
@@ -38,11 +41,13 @@ Menu.Link = MenuLink;
 Menu.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
 Menu.defaultProps = {
   className: undefined,
   children: null,
+  component: 'aside',
   size: undefined,
 };

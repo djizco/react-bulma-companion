@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function Block({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('block', className);
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 Block.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 Block.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
 };

@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function NavbarEnd({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('navbar-end', className);
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 NavbarEnd.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 NavbarEnd.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
 };

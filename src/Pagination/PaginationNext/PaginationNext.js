@@ -5,25 +5,30 @@ import classNames from 'classnames';
 export default function PaginationNext({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('pagination-next', className);
 
   return (
-    <a className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </a>
+    </Element>
   );
 }
 
 PaginationNext.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   disabled: PropTypes.bool,
 };
 
 PaginationNext.defaultProps = {
   className: undefined,
   children: null,
+  component: 'a',
   disabled: false,
 };

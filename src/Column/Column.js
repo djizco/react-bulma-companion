@@ -43,6 +43,7 @@ sizes.forEach(size => {
 export default function Column({
   children,
   className,
+  component,
   desktopOffset,
   desktopSize,
   fullhdOffset,
@@ -66,6 +67,8 @@ export default function Column({
   widescreenSize,
   ...props
 }) {
+  const Element = component;
+
   const isSize = size && sizeMap[size];
   const isOffset = offset && offsetMap[offset];
   const isMobileSize = mobileSize && mobileSizeMap[mobileSize];
@@ -110,15 +113,16 @@ export default function Column({
   );
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 Column.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   size: PropTypes.oneOf(sizes),
   offset: PropTypes.oneOf(sizes),
   mobileSize: PropTypes.oneOf(sizes),
@@ -145,6 +149,7 @@ Column.propTypes = {
 Column.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   size: undefined,
   offset: undefined,
   mobileSize: undefined,

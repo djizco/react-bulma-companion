@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function CardHeader({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('card-header', className);
 
   return (
-    <header className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </header>
+    </Element>
   );
 }
 
 CardHeader.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 CardHeader.defaultProps = {
   className: undefined,
   children: null,
+  component: 'header',
 };

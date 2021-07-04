@@ -14,12 +14,15 @@ export default function Table({
   bordered,
   children,
   className,
+  component,
   fullwidth,
   hoverable,
   narrow,
   striped,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('table', className, {
     'is-bordered': bordered,
     'is-striped': striped,
@@ -29,9 +32,9 @@ export default function Table({
   });
 
   return (
-    <table className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </table>
+    </Element>
   );
 }
 
@@ -46,6 +49,7 @@ Table.Container = TableContainer;
 Table.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   bordered: PropTypes.bool,
   striped: PropTypes.bool,
   narrow: PropTypes.bool,
@@ -56,6 +60,7 @@ Table.propTypes = {
 Table.defaultProps = {
   className: undefined,
   children: null,
+  component: 'table',
   bordered: false,
   striped: false,
   narrow: false,

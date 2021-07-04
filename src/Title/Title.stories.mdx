@@ -11,7 +11,7 @@ import Block from '../Block';
 
 [Bulma Documentation](https://bulma.io/documentation/elements/title/)
 
-Supported Versions: `0.9.1`, `0.9.0`
+Supported Versions: `0.9.2`, `0.9.1`, `0.9.0`
 
 ## Default
 
@@ -95,26 +95,26 @@ You can maintain the normal spacing between titles and subtitles by using the `s
 
 ## Header Tags
 
-By default, the `<Title>` component will render as a `p` tag.  If you want to use the native header tags, such as `h1`, add the `header` prop.
+By default, the `<Title>` component will render as a `p` tag.  If you want to use the native header tags, such as `h1`, use the `component` prop.
 
 <Canvas>
   <Story name="Header Tags">
     <React.Fragment>
       <Block>
-        <Title size="1" header>Title 1</Title>
-        <Title size="2" header>Title 2</Title>
-        <Title header>Title 3</Title>
-        <Title size="4" header>Title 4</Title>
-        <Title size="5" header>Title 5</Title>
-        <Title size="6" header>Title 6</Title>
+        <Title size="1" component="h1">Title 1</Title>
+        <Title size="2" component="h2">Title 2</Title>
+        <Title component="h3">Title 3</Title>
+        <Title size="4" component="h4">Title 4</Title>
+        <Title size="5" component="h5">Title 5</Title>
+        <Title size="6" component="h6">Title 6</Title>
       </Block>
       <Block>
-        <Title size="1" subtitle header>Subtitle 1</Title>
-        <Title size="2" subtitle header>Subtitle 2</Title>
-        <Title size="3" subtitle header>Subtitle 3</Title>
-        <Title size="4" subtitle header>Subtitle 4</Title>
-        <Title subtitle header>Subtitle 5</Title>
-        <Title size="6" subtitle header>Subtitle 6</Title>
+        <Title size="1" subtitle component="h1">Subtitle 1</Title>
+        <Title size="2" subtitle component="h2">Subtitle 2</Title>
+        <Title size="3" subtitle component="h3">Subtitle 3</Title>
+        <Title size="4" subtitle component="h4">Subtitle 4</Title>
+        <Title subtitle component="h5">Subtitle 5</Title>
+        <Title size="6" subtitle component="h6">Subtitle 6</Title>
       </Block>
     </React.Fragment>
   </Story>

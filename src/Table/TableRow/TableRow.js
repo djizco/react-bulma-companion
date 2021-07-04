@@ -5,28 +5,33 @@ import classNames from 'classnames';
 export default function TableRow({
   children,
   className,
+  component,
   selected,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames(className, {
     'is-selected': selected,
   });
 
   return (
-    <tr className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </tr>
+    </Element>
   );
 }
 
 TableRow.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   selected: PropTypes.bool,
 };
 
 TableRow.defaultProps = {
   className: undefined,
   children: null,
+  component: 'tr',
   selected: false,
 };

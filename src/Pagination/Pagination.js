@@ -13,10 +13,13 @@ export default function Pagination({
   align,
   children,
   className,
+  component,
   rounded,
   size,
   ...props
 }) {
+  const Element = component;
+
   const sizeMap = {
     small: 'is-small',
     medium: 'is-medium',
@@ -35,9 +38,9 @@ export default function Pagination({
   });
 
   return (
-    <nav role="navigation" className={classes} {...props}>
+    <Element role="navigation" className={classes} {...props}>
       {children}
-    </nav>
+    </Element>
   );
 }
 
@@ -51,6 +54,7 @@ Pagination.Previous = PaginationPrevious;
 Pagination.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   align: PropTypes.oneOf(['center', 'right']),
   rounded: PropTypes.bool,
@@ -59,6 +63,7 @@ Pagination.propTypes = {
 Pagination.defaultProps = {
   className: undefined,
   children: null,
+  component: 'nav',
   size: undefined,
   align: undefined,
   rounded: false,

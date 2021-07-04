@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function CardFooter({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('card-footer', className);
 
   return (
-    <footer className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </footer>
+    </Element>
   );
 }
 
 CardFooter.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 CardFooter.defaultProps = {
   className: undefined,
   children: null,
+  component: 'footer',
 };

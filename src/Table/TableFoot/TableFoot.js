@@ -4,21 +4,26 @@ import PropTypes from 'prop-types';
 export default function TableFoot({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   return (
-    <tfoot className={className} {...props}>
+    <Element className={className} {...props}>
       {children}
-    </tfoot>
+    </Element>
   );
 }
 
 TableFoot.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 TableFoot.defaultProps = {
   className: undefined,
   children: null,
+  component: 'tfoot',
 };

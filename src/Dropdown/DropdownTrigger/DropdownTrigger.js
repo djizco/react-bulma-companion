@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function DropdownTrigger({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('dropdown-trigger', className);
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 DropdownTrigger.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 DropdownTrigger.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
 };

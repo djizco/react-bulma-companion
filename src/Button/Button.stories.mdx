@@ -25,7 +25,7 @@ import Control from '../Control';
 
 [Bulma Documentation](https://bulma.io/documentation/elements/button/)
 
-Supported Versions: `0.9.1`, `0.9.0`
+Supported Versions: `0.9.2`, `0.9.1`, `0.9.0`
 
 ## Default
 
@@ -39,12 +39,12 @@ The `<Button>` component is an essential element of any design. It's meant to lo
 
 ## Types
 
-The `<Button>` can be rendered as an `<a>` anchor with the `link` prop. You can make a submit button or reset button with the `type` prop.
+The `<Button>` can be rendered as a link by using `component="a"`. You can make a submit button or reset button with the `type` prop.
 
 <Canvas>
   <Story name="Types">
     <Buttons>
-      <Button link>Anchor Button</Button>
+      <Button component="a">Anchor Button</Button>
       <Button>Regular Button</Button>
       <Button type="submit">Submit Button</Button>
       <Button type="reset">Reset Button</Button>

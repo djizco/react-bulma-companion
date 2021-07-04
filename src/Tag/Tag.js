@@ -6,13 +6,19 @@ export default function Tag({
   children,
   className,
   color,
+  component,
   light,
   link,
   rounded,
   size,
   ...props
 }) {
-  const Element = link ? 'a' : 'span';
+  if (process.env.NODE_ENV === 'development' && link) {
+    // eslint-disable-next-line
+    console.warn('Using the `link` prop is deprecated. Use `component="a"` instead.');
+  }
+
+  const Element = link ? 'a' : component;
 
   // Colors
   const colorMap = {
@@ -56,6 +62,10 @@ export default function Tag({
 Tag.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
+  /**
+    Deprecation Warning: Use `component="a"`.
+  */
   link: PropTypes.bool,
   color: PropTypes.oneOf([
     'primary',
@@ -78,6 +88,7 @@ Tag.propTypes = {
 Tag.defaultProps = {
   className: undefined,
   children: null,
+  component: 'span',
   link: false,
   color: undefined,
   light: false,

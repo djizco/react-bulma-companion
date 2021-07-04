@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function PanelIcon({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('panel-icon', className);
 
   return (
-    <span className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </span>
+    </Element>
   );
 }
 
 PanelIcon.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 PanelIcon.defaultProps = {
   className: undefined,
   children: null,
+  component: 'span',
 };

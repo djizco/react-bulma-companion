@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function MediaLeft({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('media-left', className);
 
   return (
-    <figure className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </figure>
+    </Element>
   );
 }
 
 MediaLeft.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 MediaLeft.defaultProps = {
   className: undefined,
   children: null,
+  component: 'figure',
 };

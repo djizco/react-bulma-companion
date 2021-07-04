@@ -6,27 +6,32 @@ export default function PanelTab({
   active,
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames(className, {
     'is-active': active,
   });
 
   return (
-    <a className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </a>
+    </Element>
   );
 }
 
 PanelTab.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   active: PropTypes.bool,
 };
 
 PanelTab.defaultProps = {
   className: undefined,
   children: null,
+  component: 'a',
   active: false,
 };

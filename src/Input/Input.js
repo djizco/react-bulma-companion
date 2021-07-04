@@ -6,6 +6,7 @@ export default function Input({
   active,
   className,
   color,
+  component,
   focused,
   fullwidth,
   hovered,
@@ -14,6 +15,8 @@ export default function Input({
   size,
   ...props
 }) {
+  const Element = component;
+
   // Colors
   const colorMap = {
     primary: 'is-primary',
@@ -51,12 +54,13 @@ export default function Input({
   delete props.static;
 
   return (
-    <input className={classes} {...props} />
+    <Element className={classes} {...props} />
   );
 }
 
 Input.propTypes = {
   className: PropTypes.string,
+  component: PropTypes.elementType,
   type: PropTypes.oneOf(['text', 'password', 'email', 'tel']),
   color: PropTypes.oneOf([
     'primary',
@@ -84,6 +88,7 @@ Input.propTypes = {
 
 Input.defaultProps = {
   className: undefined,
+  component: 'input',
   type: undefined,
   color: undefined,
   size: undefined,

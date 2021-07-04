@@ -14,7 +14,7 @@ import Title from '../Title';
 
 [Bulma Documentation](https://bulma.io/documentation/components/navbar/)
 
-Supported Versions: `0.9.1`, `0.9.0`
+Supported Versions: `0.9.2`, `0.9.1`, `0.9.0`
 
 ## Example
 
@@ -45,16 +45,16 @@ To **get started quickly**, here is what a complete basic navbar looks like:
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Start>
-            <Navbar.Item link>Home</Navbar.Item>
-            <Navbar.Item link>Documentation</Navbar.Item>
+            <Navbar.Item component="a">Home</Navbar.Item>
+            <Navbar.Item component="a">Documentation</Navbar.Item>
             <Navbar.Item hasDropdown hoverable>
               <Navbar.Link>More</Navbar.Link>
               <Navbar.Dropdown>
-                <Navbar.Item link>About</Navbar.Item>
-                <Navbar.Item link>Jobs</Navbar.Item>
-                <Navbar.Item link>Contact</Navbar.Item>
+                <Navbar.Item component="a">About</Navbar.Item>
+                <Navbar.Item component="a">Jobs</Navbar.Item>
+                <Navbar.Item component="a">Contact</Navbar.Item>
                 <Navbar.Divider />
-                <Navbar.Item link>Report an issue</Navbar.Item>
+                <Navbar.Item component="a">Report an issue</Navbar.Item>
               </Navbar.Dropdown>
             </Navbar.Item>
           </Navbar.Start>
@@ -160,8 +160,8 @@ To add a shadow to the `<Navbar>` simply add the `shadow` prop.
       </Navbar.Brand>
       <Navbar.Menu>
         <Navbar.Start>
-          <Navbar.Item link>Home</Navbar.Item>
-          <Navbar.Item link>Documentation</Navbar.Item>
+          <Navbar.Item component="a">Home</Navbar.Item>
+          <Navbar.Item component="a">Documentation</Navbar.Item>
           <Navbar.Item hasDropdown>
             <Navbar.Link>More</Navbar.Link>
           </Navbar.Item>
@@ -194,16 +194,16 @@ To seamlessly integrate the navbar in any visual context, you can add the `trans
           <Navbar.Burger />
         </Navbar.Brand>
         <Navbar.Menu>
-          <Navbar.Item link>Home</Navbar.Item>
-            <Navbar.Item link>Documentation</Navbar.Item>
+          <Navbar.Item component="a">Home</Navbar.Item>
+            <Navbar.Item component="a">Documentation</Navbar.Item>
             <Navbar.Item hasDropdown hoverable>
               <Navbar.Link>More</Navbar.Link>
               <Navbar.Dropdown>
-                <Navbar.Item link>About</Navbar.Item>
-                <Navbar.Item link>Jobs</Navbar.Item>
-                <Navbar.Item link>Contact</Navbar.Item>
+                <Navbar.Item component="a">About</Navbar.Item>
+                <Navbar.Item component="a">Jobs</Navbar.Item>
+                <Navbar.Item component="a">Contact</Navbar.Item>
                 <Navbar.Divider />
-                <Navbar.Item link>Report an issue</Navbar.Item>
+                <Navbar.Item component="a">Report an issue</Navbar.Item>
               </Navbar.Dropdown>
             </Navbar.Item>
           <Navbar.End>
@@ -235,8 +235,8 @@ Add the `spaced` prop to the `<Navbar>` to add top and bottom paddings of `1rem`
       </Navbar.Brand>
       <Navbar.Menu>
         <Navbar.Start>
-          <Navbar.Item link>Home</Navbar.Item>
-          <Navbar.Item link>Documentation</Navbar.Item>
+          <Navbar.Item component="a">Home</Navbar.Item>
+          <Navbar.Item component="a">Documentation</Navbar.Item>
           <Navbar.Item hasDropdown>
             <Navbar.Link>More</Navbar.Link>
           </Navbar.Item>
@@ -322,11 +322,11 @@ To create a **dropdown menu**, you will need 4 elements:
       <Navbar.Item hasDropdown>
         <Navbar.Link>More</Navbar.Link>
         <Navbar.Dropdown>
-          <Navbar.Item link>About</Navbar.Item>
-          <Navbar.Item link>Jobs</Navbar.Item>
-          <Navbar.Item link>Contact</Navbar.Item>
+          <Navbar.Item component="a">About</Navbar.Item>
+          <Navbar.Item component="a">Jobs</Navbar.Item>
+          <Navbar.Item component="a">Contact</Navbar.Item>
           <Navbar.Divider />
-          <Navbar.Item link>Report an issue</Navbar.Item>
+          <Navbar.Item component="a">Report an issue</Navbar.Item>
         </Navbar.Dropdown>
       </Navbar.Item>
     </Navbar>
@@ -355,11 +355,11 @@ If your parent `<Navbar.Item>` is on the right side, you can position the dropdo
             <Navbar.Item hasDropdown active>
               <Navbar.Link>Left</Navbar.Link>
               <Navbar.Dropdown>
-                <Navbar.Item link>About</Navbar.Item>
-                <Navbar.Item link>Jobs</Navbar.Item>
-                <Navbar.Item link>Contact</Navbar.Item>
+                <Navbar.Item component="a">About</Navbar.Item>
+                <Navbar.Item component="a">Jobs</Navbar.Item>
+                <Navbar.Item component="a">Contact</Navbar.Item>
                 <Navbar.Divider />
-                <Navbar.Item link>Report an issue</Navbar.Item>
+                <Navbar.Item component="a">Report an issue</Navbar.Item>
               </Navbar.Dropdown>
             </Navbar.Item>
           </Navbar.Start>
@@ -367,11 +367,11 @@ If your parent `<Navbar.Item>` is on the right side, you can position the dropdo
             <Navbar.Item hasDropdown active>
               <Navbar.Link>Right</Navbar.Link>
               <Navbar.Dropdown right>
-                <Navbar.Item link>About</Navbar.Item>
-                <Navbar.Item link>Jobs</Navbar.Item>
-                <Navbar.Item link>Contact</Navbar.Item>
+                <Navbar.Item component="a">About</Navbar.Item>
+                <Navbar.Item component="a">Jobs</Navbar.Item>
+                <Navbar.Item component="a">Contact</Navbar.Item>
                 <Navbar.Divider />
-                <Navbar.Item link>Report an issue</Navbar.Item>
+                <Navbar.Item component="a">Report an issue</Navbar.Item>
               </Navbar.Dropdown>
             </Navbar.Item>
           </Navbar.End>
@@ -410,11 +410,11 @@ If you're using a navbar at the bottom, like the fixed bottom navbar, you might 
             <Navbar.Item hasDropup active>
               <Navbar.Link>More</Navbar.Link>
               <Navbar.Dropdown>
-                <Navbar.Item link>About</Navbar.Item>
-                <Navbar.Item link>Jobs</Navbar.Item>
-                <Navbar.Item link>Contact</Navbar.Item>
+                <Navbar.Item component="a">About</Navbar.Item>
+                <Navbar.Item component="a">Jobs</Navbar.Item>
+                <Navbar.Item component="a">Contact</Navbar.Item>
                 <Navbar.Divider />
-                <Navbar.Item link>Report an issue</Navbar.Item>
+                <Navbar.Item component="a">Report an issue</Navbar.Item>
               </Navbar.Dropdown>
             </Navbar.Item>
           </Navbar.Start>
@@ -437,11 +437,11 @@ You can remove the arrow in the items of the navbar by adding the `arrowless` pr
             <Navbar.Item hasDropdown active>
               <Navbar.Link arrowless>More</Navbar.Link>
               <Navbar.Dropdown>
-                <Navbar.Item link>About</Navbar.Item>
-                <Navbar.Item link>Jobs</Navbar.Item>
-                <Navbar.Item link>Contact</Navbar.Item>
+                <Navbar.Item component="a">About</Navbar.Item>
+                <Navbar.Item component="a">Jobs</Navbar.Item>
+                <Navbar.Item component="a">Contact</Navbar.Item>
                 <Navbar.Divider />
-                <Navbar.Item link>Report an issue</Navbar.Item>
+                <Navbar.Item component="a">Report an issue</Navbar.Item>
               </Navbar.Dropdown>
             </Navbar.Item>
           </Navbar.Start>
@@ -479,11 +479,11 @@ When having a transparent navbar, it is preferable to use the boxed version of t
             <Navbar.Item hasDropdown hoverable>
               <Navbar.Link>More</Navbar.Link>
               <Navbar.Dropdown boxed>
-                <Navbar.Item link>About</Navbar.Item>
-                <Navbar.Item link>Jobs</Navbar.Item>
-                <Navbar.Item link>Contact</Navbar.Item>
+                <Navbar.Item component="a">About</Navbar.Item>
+                <Navbar.Item component="a">Jobs</Navbar.Item>
+                <Navbar.Item component="a">Contact</Navbar.Item>
                 <Navbar.Divider />
-                <Navbar.Item link>Report an issue</Navbar.Item>
+                <Navbar.Item component="a">Report an issue</Navbar.Item>
               </Navbar.Dropdown>
             </Navbar.Item>
           </Navbar.Start>
@@ -512,11 +512,11 @@ When having a transparent navbar, it is preferable to use the boxed version of t
             <Navbar.Item hasDropdown active>
               <Navbar.Link>More</Navbar.Link>
               <Navbar.Dropdown>
-                <Navbar.Item link>About</Navbar.Item>
-                <Navbar.Item link active>Jobs</Navbar.Item>
-                <Navbar.Item link>Contact</Navbar.Item>
+                <Navbar.Item component="a">About</Navbar.Item>
+                <Navbar.Item component="a" active>Jobs</Navbar.Item>
+                <Navbar.Item component="a">Contact</Navbar.Item>
                 <Navbar.Divider />
-                <Navbar.Item link>Report an issue</Navbar.Item>
+                <Navbar.Item component="a">Report an issue</Navbar.Item>
               </Navbar.Dropdown>
             </Navbar.Item>
           </Navbar.Start>
@@ -554,8 +554,8 @@ You can change the background color of the navbar by using the `color` prop.
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Start>
-            <Navbar.Item link>Home</Navbar.Item>
-            <Navbar.Item link>Documentation</Navbar.Item>
+            <Navbar.Item component="a">Home</Navbar.Item>
+            <Navbar.Item component="a">Documentation</Navbar.Item>
             <Navbar.Item hasDropdown>
               <Navbar.Link>More</Navbar.Link>
             </Navbar.Item>
@@ -580,8 +580,8 @@ You can change the background color of the navbar by using the `color` prop.
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Start>
-            <Navbar.Item link>Home</Navbar.Item>
-            <Navbar.Item link>Documentation</Navbar.Item>
+            <Navbar.Item component="a">Home</Navbar.Item>
+            <Navbar.Item component="a">Documentation</Navbar.Item>
             <Navbar.Item hasDropdown>
               <Navbar.Link>More</Navbar.Link>
             </Navbar.Item>
@@ -606,8 +606,8 @@ You can change the background color of the navbar by using the `color` prop.
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Start>
-            <Navbar.Item link>Home</Navbar.Item>
-            <Navbar.Item link>Documentation</Navbar.Item>
+            <Navbar.Item component="a">Home</Navbar.Item>
+            <Navbar.Item component="a">Documentation</Navbar.Item>
             <Navbar.Item hasDropdown>
               <Navbar.Link>More</Navbar.Link>
             </Navbar.Item>
@@ -632,8 +632,8 @@ You can change the background color of the navbar by using the `color` prop.
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Start>
-            <Navbar.Item link>Home</Navbar.Item>
-            <Navbar.Item link>Documentation</Navbar.Item>
+            <Navbar.Item component="a">Home</Navbar.Item>
+            <Navbar.Item component="a">Documentation</Navbar.Item>
             <Navbar.Item hasDropdown>
               <Navbar.Link>More</Navbar.Link>
             </Navbar.Item>
@@ -658,8 +658,8 @@ You can change the background color of the navbar by using the `color` prop.
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Start>
-            <Navbar.Item link>Home</Navbar.Item>
-            <Navbar.Item link>Documentation</Navbar.Item>
+            <Navbar.Item component="a">Home</Navbar.Item>
+            <Navbar.Item component="a">Documentation</Navbar.Item>
             <Navbar.Item hasDropdown>
               <Navbar.Link>More</Navbar.Link>
             </Navbar.Item>
@@ -684,8 +684,8 @@ You can change the background color of the navbar by using the `color` prop.
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Start>
-            <Navbar.Item link>Home</Navbar.Item>
-            <Navbar.Item link>Documentation</Navbar.Item>
+            <Navbar.Item component="a">Home</Navbar.Item>
+            <Navbar.Item component="a">Documentation</Navbar.Item>
             <Navbar.Item hasDropdown>
               <Navbar.Link>More</Navbar.Link>
             </Navbar.Item>
@@ -710,8 +710,8 @@ You can change the background color of the navbar by using the `color` prop.
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Start>
-            <Navbar.Item link>Home</Navbar.Item>
-            <Navbar.Item link>Documentation</Navbar.Item>
+            <Navbar.Item component="a">Home</Navbar.Item>
+            <Navbar.Item component="a">Documentation</Navbar.Item>
             <Navbar.Item hasDropdown>
               <Navbar.Link>More</Navbar.Link>
             </Navbar.Item>
@@ -736,8 +736,8 @@ You can change the background color of the navbar by using the `color` prop.
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Start>
-            <Navbar.Item link>Home</Navbar.Item>
-            <Navbar.Item link>Documentation</Navbar.Item>
+            <Navbar.Item component="a">Home</Navbar.Item>
+            <Navbar.Item component="a">Documentation</Navbar.Item>
             <Navbar.Item hasDropdown>
               <Navbar.Link>More</Navbar.Link>
             </Navbar.Item>
@@ -762,8 +762,8 @@ You can change the background color of the navbar by using the `color` prop.
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Start>
-            <Navbar.Item link>Home</Navbar.Item>
-            <Navbar.Item link>Documentation</Navbar.Item>
+            <Navbar.Item component="a">Home</Navbar.Item>
+            <Navbar.Item component="a">Documentation</Navbar.Item>
             <Navbar.Item hasDropdown>
               <Navbar.Link>More</Navbar.Link>
             </Navbar.Item>
@@ -788,8 +788,8 @@ You can change the background color of the navbar by using the `color` prop.
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Start>
-            <Navbar.Item link>Home</Navbar.Item>
-            <Navbar.Item link>Documentation</Navbar.Item>
+            <Navbar.Item component="a">Home</Navbar.Item>
+            <Navbar.Item component="a">Documentation</Navbar.Item>
             <Navbar.Item hasDropdown>
               <Navbar.Link>More</Navbar.Link>
             </Navbar.Item>

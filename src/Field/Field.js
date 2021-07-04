@@ -10,6 +10,7 @@ export default function Field({
   addons,
   children,
   className,
+  component,
   expanded,
   fullwidth,
   grouped,
@@ -18,6 +19,8 @@ export default function Field({
   narrow,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('field', className, {
     'is-grouped': grouped,
     'has-addons': addons,
@@ -32,9 +35,9 @@ export default function Field({
   });
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
@@ -44,6 +47,7 @@ Field.Body = FieldBody;
 Field.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   grouped: PropTypes.bool,
   addons: PropTypes.bool,
   align: PropTypes.oneOf(['center', 'right']),
@@ -57,6 +61,7 @@ Field.propTypes = {
 Field.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   grouped: false,
   addons: false,
   align: undefined,

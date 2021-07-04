@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function MediaRight({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('media-right', className);
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 MediaRight.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 MediaRight.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
 };

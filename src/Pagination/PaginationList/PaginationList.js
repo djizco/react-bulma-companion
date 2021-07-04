@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function PaginationList({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('pagination-list', className);
 
   return (
-    <ul className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </ul>
+    </Element>
   );
 }
 
 PaginationList.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 PaginationList.defaultProps = {
   className: undefined,
   children: null,
+  component: 'ul',
 };

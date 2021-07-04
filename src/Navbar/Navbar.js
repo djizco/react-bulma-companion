@@ -16,12 +16,15 @@ export default function Navbar({
   children,
   className,
   color,
+  component,
   fixed,
   shadow,
   spaced,
   transparent,
   ...props
 }) {
+  const Element = component;
+
   // Colors
   const colorMap = {
     primary: 'is-primary',
@@ -55,9 +58,9 @@ export default function Navbar({
   });
 
   return (
-    <nav role="navigation" className={classes} {...props}>
+    <Element role="navigation" className={classes} {...props}>
       {children}
-    </nav>
+    </Element>
   );
 }
 
@@ -74,6 +77,7 @@ Navbar.Start = NavbarStart;
 Navbar.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -102,6 +106,7 @@ Navbar.propTypes = {
 Navbar.defaultProps = {
   className: undefined,
   children: null,
+  component: 'nav',
   color: undefined,
   fixed: undefined,
   shadow: false,

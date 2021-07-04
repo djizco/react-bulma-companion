@@ -5,9 +5,12 @@ import classNames from 'classnames';
 export default function Label({
   children,
   className,
+  component,
   size,
   ...props
 }) {
+  const Element = component;
+
   const sizeMap = {
     small: 'is-small',
     medium: 'is-medium',
@@ -18,20 +21,22 @@ export default function Label({
   const classes = classNames('label', className, isSize);
 
   return (
-    <label className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </label>
+    </Element>
   );
 }
 
 Label.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
 Label.defaultProps = {
   className: undefined,
   children: null,
+  component: 'label',
   size: undefined,
 };

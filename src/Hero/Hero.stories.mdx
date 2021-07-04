@@ -6,6 +6,7 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons/faDownload';
 import Hero from './Hero';
 import Container from '../Container';
 import Title from '../Title';
+import Buttons from '../Buttons';
 import Button from '../Button';
 import Navbar from '../Navbar';
 import Icon from '../Icon';
@@ -19,7 +20,7 @@ import Tabs from '../Tabs';
 
 [Bulma Documentation](https://bulma.io/documentation/layout/hero/)
 
-Supported Versions: `0.9.1`, `0.9.0`
+Supported Versions: `0.9.2`, `0.9.1`, `0.9.0`
 
 ## Default
 
@@ -302,8 +303,8 @@ If you are using a fixed navbar, you can use the `size="fullheight-navbar"` prop
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Start>
-            <Navbar.Item link>Home</Navbar.Item>
-            <Navbar.Item link>Documentation</Navbar.Item>
+            <Navbar.Item component="a">Home</Navbar.Item>
+            <Navbar.Item component="a">Documentation</Navbar.Item>
             <Navbar.Item hasDropdown>
               <Navbar.Link>More</Navbar.Link>
             </Navbar.Item>
@@ -353,11 +354,11 @@ To obtain a hero that will cover the whole height of the viewport, you can split
             </Navbar.Brand>
             <Navbar.Menu>
               <Navbar.End>
-                <Navbar.Item link active>Home</Navbar.Item>
-                <Navbar.Item link>Examples</Navbar.Item>
-                <Navbar.Item link>Documentation</Navbar.Item>
+                <Navbar.Item component="a" active>Home</Navbar.Item>
+                <Navbar.Item component="a">Examples</Navbar.Item>
+                <Navbar.Item component="a">Documentation</Navbar.Item>
                 <Navbar.Item>
-                  <Button color="success" inverted link>
+                  <Button color="success" inverted component="a">
                     <Icon>
                       <FontAwesomeIcon icon={faDownload} />
                     </Icon>

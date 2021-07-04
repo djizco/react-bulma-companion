@@ -6,6 +6,7 @@ export default function Textarea({
   active,
   className,
   color,
+  component,
   fixed,
   focused,
   fullwidth,
@@ -14,6 +15,8 @@ export default function Textarea({
   size,
   ...props
 }) {
+  const Element = component;
+
   // Colors
   const colorMap = {
     primary: 'is-primary',
@@ -47,12 +50,13 @@ export default function Textarea({
   });
 
   return (
-    <textarea className={classes} {...props} />
+    <Element className={classes} {...props} />
   );
 }
 
 Textarea.propTypes = {
   className: PropTypes.string,
+  component: PropTypes.elementType,
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -78,6 +82,7 @@ Textarea.propTypes = {
 
 Textarea.defaultProps = {
   className: undefined,
+  component: 'textarea',
   color: undefined,
   size: undefined,
   fixed: false,

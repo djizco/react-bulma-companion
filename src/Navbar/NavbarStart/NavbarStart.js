@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function NavbarStart({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('navbar-start', className);
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 NavbarStart.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 NavbarStart.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
 };

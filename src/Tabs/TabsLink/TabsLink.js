@@ -4,21 +4,26 @@ import PropTypes from 'prop-types';
 export default function TabsLink({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   return (
-    <a className={className} {...props}>
+    <Element className={className} {...props}>
       {children}
-    </a>
+    </Element>
   );
 }
 
 TabsLink.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 TabsLink.defaultProps = {
   className: undefined,
   children: null,
+  component: 'a',
 };

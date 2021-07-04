@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function ModalCardBody({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('modal-card-body', className);
 
   return (
-    <section className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </section>
+    </Element>
   );
 }
 
 ModalCardBody.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 ModalCardBody.defaultProps = {
   className: undefined,
   children: null,
+  component: 'section',
 };

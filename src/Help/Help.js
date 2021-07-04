@@ -6,8 +6,11 @@ export default function Block({
   children,
   className,
   color,
+  component,
   ...props
 }) {
+  const Element = component;
+
   // Colors
   const colorMap = {
     primary: 'is-primary',
@@ -26,15 +29,16 @@ export default function Block({
   const classes = classNames('help', className, isColor);
 
   return (
-    <p className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </p>
+    </Element>
   );
 }
 
 Block.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -53,5 +57,6 @@ Block.propTypes = {
 Block.defaultProps = {
   className: undefined,
   children: null,
+  component: 'p',
   color: undefined,
 };

@@ -9,10 +9,13 @@ export default function Breadcrumb({
   align,
   children,
   className,
+  component,
   separator,
   size,
   ...props
 }) {
+  const Element = component;
+
   // Align
   const alignMap = {
     center: 'is-centered',
@@ -40,9 +43,9 @@ export default function Breadcrumb({
   const classes = classNames('breadcrumb', className, isAlign, isSeparator, isSize);
 
   return (
-    <nav className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </nav>
+    </Element>
   );
 }
 
@@ -52,6 +55,7 @@ Breadcrumb.ListItem = BreadcrumbListItem;
 Breadcrumb.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   align: PropTypes.oneOf(['center', 'right']),
   separator: PropTypes.oneOf(['arrow', 'bullet', 'dot', 'succeeds']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
@@ -60,6 +64,7 @@ Breadcrumb.propTypes = {
 Breadcrumb.defaultProps = {
   className: undefined,
   children: null,
+  component: 'nav',
   align: undefined,
   separator: undefined,
   size: undefined,

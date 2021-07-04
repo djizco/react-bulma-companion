@@ -16,7 +16,7 @@ import Icon from '../Icon';
 
 [Bulma Documentation](https://bulma.io/documentation/components/dropdown/)
 
-Supported Versions: `0.9.1`, `0.9.0`
+Supported Versions: `0.9.2`, `0.9.1`, `0.9.0`
 
 ## Default
 
@@ -44,20 +44,20 @@ The `<Dropdown>` is a container for a dropdown button and a dropdown menu.
         </Dropdown.Trigger>
         <Dropdown.Menu id="dropdown-menu" role="menu">
           <Dropdown.Content>
-            <Dropdown.Item link>
+            <Dropdown.Item component="a">
               Dropdown item
             </Dropdown.Item>
-            <Dropdown.Item link>
+            <Dropdown.Item component="a">
               Other dropdown item
             </Dropdown.Item>
-            <Dropdown.Item link>
+            <Dropdown.Item component="a">
               Active dropdown item
             </Dropdown.Item>
-            <Dropdown.Item link>
+            <Dropdown.Item component="a">
               Other dropdown item
             </Dropdown.Item>
             <Dropdown.Divider />
-            <Dropdown.Item link>
+            <Dropdown.Item component="a">
               With Divider
             </Dropdown.Item>
           </Dropdown.Content>
@@ -69,7 +69,7 @@ The `<Dropdown>` is a container for a dropdown button and a dropdown menu.
 
 ## Dropdown Content
 
-While the `<Dropdown.Item>` can be rendered as an anchor link `<a>` by using the `link` prop, the default `<div>` allows almost **any type of content**.
+While the `<Dropdown.Item>` can be rendered as a link with `component="a"`, the default `<div>` allows almost **any type of content**.
 
 Toggle the `active` prop to make the dropdown content display.
 
@@ -95,7 +95,7 @@ Toggle the `active` prop to make the dropdown content display.
               <p>You simply need to use a default dropdown item.</p>
             </Dropdown.Item>
             <Dropdown.Divider />
-            <Dropdown.Item link>
+            <Dropdown.Item component="a">
               This is a link
             </Dropdown.Item>
           </Dropdown.Content>

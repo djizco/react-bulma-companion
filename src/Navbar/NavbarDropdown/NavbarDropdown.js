@@ -6,24 +6,28 @@ export default function NavbarDropdown({
   boxed,
   children,
   className,
+  component,
   right,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('navbar-dropdown', className, {
     'is-right': right,
     'is-boxed': boxed,
   });
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 NavbarDropdown.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   right: PropTypes.bool,
   boxed: PropTypes.bool,
 };
@@ -31,6 +35,7 @@ NavbarDropdown.propTypes = {
 NavbarDropdown.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   right: undefined,
   boxed: false,
 };

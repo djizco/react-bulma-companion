@@ -9,17 +9,20 @@ import LevelItem from './LevelItem';
 export default function Level({
   children,
   className,
+  component,
   mobile,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('level', className, {
     'is-mobile': mobile,
   });
 
   return (
-    <nav className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </nav>
+    </Element>
   );
 }
 
@@ -30,11 +33,13 @@ Level.Item = LevelItem;
 Level.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   mobile: PropTypes.bool,
 };
 
 Level.defaultProps = {
   className: undefined,
   children: null,
+  component: 'nav',
   mobile: false,
 };

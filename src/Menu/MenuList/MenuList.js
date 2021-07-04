@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function MenuList({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('menu-list', className);
 
   return (
-    <ul className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </ul>
+    </Element>
   );
 }
 
 MenuList.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 MenuList.defaultProps = {
   className: undefined,
   children: null,
+  component: 'ul',
 };

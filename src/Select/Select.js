@@ -9,6 +9,7 @@ export default function Select({
   children,
   className,
   color,
+  component,
   fullwidth,
   loading,
   rounded,
@@ -16,6 +17,8 @@ export default function Select({
   multiple,
   ...props
 }) {
+  const Element = component;
+
   // Colors
   const colorMap = {
     primary: 'is-primary',
@@ -47,9 +50,9 @@ export default function Select({
   });
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
@@ -59,6 +62,7 @@ Select.Option = SelectOption;
 Select.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -81,6 +85,7 @@ Select.propTypes = {
 Select.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   color: undefined,
   size: undefined,
   fullwidth: false,

@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function DropdownMenu({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('dropdown-menu', className);
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 DropdownMenu.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 DropdownMenu.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
 };

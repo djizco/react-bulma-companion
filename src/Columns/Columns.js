@@ -32,6 +32,7 @@ export default function Columns({
   centered,
   children,
   className,
+  component,
   mobile,
   mobileGap,
   desktop,
@@ -49,6 +50,8 @@ export default function Columns({
   widescreenOnlyGap,
   ...props
 }) {
+  const Element = component;
+
   const isGap = gap && gapMap[gap];
   const isMobileGap = mobileGap && mobileGapMap[mobileGap];
   const isTabletGap = tabletGap && tabletGapMap[tabletGap];
@@ -87,15 +90,16 @@ export default function Columns({
   );
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 Columns.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   gap: PropTypes.oneOf(gaps),
   mobileGap: PropTypes.oneOf(gaps),
   tabletGap: PropTypes.oneOf(gaps),
@@ -117,6 +121,7 @@ Columns.propTypes = {
 Columns.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   gap: undefined,
   mobileGap: undefined,
   tabletGap: undefined,

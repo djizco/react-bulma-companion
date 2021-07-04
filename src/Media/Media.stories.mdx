@@ -24,7 +24,7 @@ import Checkbox from '../Checkbox';
 
 [Bulma Documentation](https://bulma.io/documentation/layout/media-object/)
 
-Supported Versions: `0.9.1`, `0.9.0`
+Supported Versions: `0.9.2`, `0.9.1`, `0.9.0`
 
 ## Default
 
@@ -55,17 +55,17 @@ The structure is as follows:
         </Content>
         <Level mobile>
           <Level.Left>
-            <Level.Item link>
+            <Level.Item component="a">
               <Icon size="small">
                 <FontAwesomeIcon icon={faReply} />
               </Icon>
             </Level.Item>
-            <Level.Item link>
+            <Level.Item component="a">
               <Icon size="small">
                 <FontAwesomeIcon icon={faRetweet} />
               </Icon>
             </Level.Item>
-            <Level.Item link>
+            <Level.Item component="a">
               <Icon size="small">
                 <FontAwesomeIcon icon={faHeart} />
               </Icon>
@@ -96,7 +96,7 @@ You can include *any* other Bulma element, like inputs, textareas, icons, button
         <Level>
           <Level.Left>
             <Level.Item>
-              <Button color="info" link>Submit</Button>
+              <Button color="info" component="a">Submit</Button>
             </Level.Item>
           </Level.Left>
           <Level.Right>

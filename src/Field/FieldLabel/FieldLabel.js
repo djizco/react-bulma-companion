@@ -5,9 +5,12 @@ import classNames from 'classnames';
 export default function FieldLabel({
   children,
   className,
+  component,
   size,
   ...props
 }) {
+  const Element = component;
+
   // Sizes
   const sizeMap = {
     small: 'is-small',
@@ -20,20 +23,22 @@ export default function FieldLabel({
   const classes = classNames('field-label', className, isSize);
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 FieldLabel.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   size: PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
 };
 
 FieldLabel.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   size: undefined,
 };

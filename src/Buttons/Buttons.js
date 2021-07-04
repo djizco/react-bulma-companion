@@ -7,9 +7,12 @@ export default function Buttons({
   align,
   children,
   className,
+  component,
   size,
   ...props
 }) {
+  const Element = component;
+
   // Size
   const sizeMap = {
     small: 'are-small',
@@ -30,15 +33,16 @@ export default function Buttons({
   });
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 Buttons.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   addons: PropTypes.bool,
   align: PropTypes.oneOf(['center', 'right']),
@@ -47,6 +51,7 @@ Buttons.propTypes = {
 Buttons.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   size: undefined,
   addons: false,
   align: undefined,

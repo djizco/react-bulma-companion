@@ -6,27 +6,32 @@ export default function NavbarMenu({
   active,
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('navbar-menu', className, {
     'is-active': active,
   });
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 NavbarMenu.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   active: PropTypes.bool,
 };
 
 NavbarMenu.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   active: false,
 };

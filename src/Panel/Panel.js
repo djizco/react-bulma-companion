@@ -12,8 +12,11 @@ export default function Panel({
   children,
   className,
   color,
+  component,
   ...props
 }) {
+  const Element = component;
+
   // Colors
   const colorMap = {
     primary: 'is-primary',
@@ -32,9 +35,9 @@ export default function Panel({
   const classes = classNames('panel', className, isColor);
 
   return (
-    <nav className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </nav>
+    </Element>
   );
 }
 
@@ -47,6 +50,7 @@ Panel.Tabs = PanelTabs;
 Panel.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -64,5 +68,6 @@ Panel.propTypes = {
 Panel.defaultProps = {
   className: undefined,
   children: null,
+  component: 'nav',
   color: undefined,
 };

@@ -6,27 +6,32 @@ export default function MenuLink({
   active,
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames(className, {
     'is-active': active,
   });
 
   return (
-    <a className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </a>
+    </Element>
   );
 }
 
 MenuLink.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   active: PropTypes.bool,
 };
 
 MenuLink.defaultProps = {
   className: undefined,
   children: null,
+  component: 'a',
   active: false,
 };

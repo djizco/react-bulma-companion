@@ -6,9 +6,12 @@ export default function Notification({
   children,
   className,
   color,
+  component,
   light,
   ...props
 }) {
+  const Element = component;
+
   // Colors
   const colorMap = {
     primary: 'is-primary',
@@ -29,15 +32,16 @@ export default function Notification({
   });
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 Notification.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -56,6 +60,7 @@ Notification.propTypes = {
 Notification.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   color: undefined,
   light: false,
 };

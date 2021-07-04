@@ -7,9 +7,12 @@ export default function Tags({
   align,
   children,
   className,
+  component,
   size,
   ...props
 }) {
+  const Element = component;
+
   // Sizes
   const sizeMap = {
     medium: 'are-medium',
@@ -29,15 +32,16 @@ export default function Tags({
   });
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 Tags.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   size: PropTypes.oneOf(['medium', 'large']),
   addons: PropTypes.bool,
   align: PropTypes.oneOf(['center', 'right']),
@@ -46,6 +50,7 @@ Tags.propTypes = {
 Tags.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   size: undefined,
   addons: false,
   align: undefined,

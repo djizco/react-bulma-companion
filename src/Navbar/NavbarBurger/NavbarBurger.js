@@ -5,27 +5,32 @@ import classNames from 'classnames';
 export default function NavbarBurger({
   active,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('navbar-burger', className, {
     'is-active': active,
   });
 
   return (
-    <a role="button" className={classes} {...props}>
+    <Element role="button" className={classes} {...props}>
       <span aria-hidden="true" />
       <span aria-hidden="true" />
       <span aria-hidden="true" />
-    </a>
+    </Element>
   );
 }
 
 NavbarBurger.propTypes = {
   className: PropTypes.string,
+  component: PropTypes.elementType,
   active: PropTypes.bool,
 };
 
 NavbarBurger.defaultProps = {
   className: undefined,
+  component: 'a',
   active: false,
 };

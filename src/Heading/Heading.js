@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function Heading({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('heading', className);
 
   return (
-    <p className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </p>
+    </Element>
   );
 }
 
 Heading.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 Heading.defaultProps = {
   className: undefined,
   children: null,
+  component: 'p',
 };

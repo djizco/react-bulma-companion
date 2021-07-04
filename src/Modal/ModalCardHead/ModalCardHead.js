@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function ModalCardHead({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('modal-card-head', className);
 
   return (
-    <header className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </header>
+    </Element>
   );
 }
 
 ModalCardHead.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 ModalCardHead.defaultProps = {
   className: undefined,
   children: null,
+  component: 'header',
 };

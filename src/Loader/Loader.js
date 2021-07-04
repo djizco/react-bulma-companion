@@ -4,19 +4,24 @@ import classNames from 'classnames';
 
 export default function Loader({
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('loader', className);
 
   return (
-    <span className={classes} {...props} />
+    <Element className={classes} {...props} />
   );
 }
 
 Loader.propTypes = {
   className: PropTypes.string,
+  component: PropTypes.elementType,
 };
 
 Loader.defaultProps = {
   className: undefined,
+  component: 'span',
 };

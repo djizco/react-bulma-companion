@@ -1,29 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 export default function SelectContent({
   children,
   className,
+  component,
   ...props
 }) {
-  const classes = classNames(className);
+  const Element = component;
 
   return (
-    <option className={classes} {...props}>
+    <Element className={className} {...props}>
       {children}
-    </option>
+    </Element>
   );
 }
 
 SelectContent.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   selected: PropTypes.bool,
 };
 
 SelectContent.defaultProps = {
   className: undefined,
   children: null,
+  component: 'option',
   selected: false,
 };

@@ -5,23 +5,27 @@ import classNames from 'classnames';
 export default function PaginationLink({
   children,
   className,
+  component,
   current,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('pagination-link', className, {
     'is-current': current,
   });
 
   return (
-    <a className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </a>
+    </Element>
   );
 }
 
 PaginationLink.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   current: PropTypes.bool,
   disabled: PropTypes.bool,
 };
@@ -29,6 +33,7 @@ PaginationLink.propTypes = {
 PaginationLink.defaultProps = {
   className: undefined,
   children: null,
+  component: 'a',
   current: false,
   disabled: false,
 };

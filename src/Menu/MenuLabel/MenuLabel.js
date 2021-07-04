@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function MenuLabel({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('menu-label', className);
 
   return (
-    <p className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </p>
+    </Element>
   );
 }
 
 MenuLabel.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 MenuLabel.defaultProps = {
   className: undefined,
   children: null,
+  component: 'p',
 };

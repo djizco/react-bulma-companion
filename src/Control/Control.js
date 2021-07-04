@@ -5,6 +5,7 @@ import classNames from 'classnames';
 export default function Control({
   children,
   className,
+  component,
   expanded,
   iconsLeft,
   iconsRight,
@@ -12,6 +13,8 @@ export default function Control({
   size,
   ...props
 }) {
+  const Element = component;
+
   // Sizes
   const sizeMap = {
     small: 'is-small',
@@ -28,15 +31,16 @@ export default function Control({
   });
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 Control.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   iconsLeft: PropTypes.bool,
   iconsRight: PropTypes.bool,
   expanded: PropTypes.bool,
@@ -47,6 +51,7 @@ Control.propTypes = {
 Control.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   iconsLeft: false,
   iconsRight: false,
   expanded: false,

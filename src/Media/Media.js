@@ -9,14 +9,17 @@ import MediaContent from './MediaContent';
 export default function Media({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('media', className);
 
   return (
-    <article className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </article>
+    </Element>
   );
 }
 
@@ -27,9 +30,11 @@ Media.Content = MediaContent;
 Media.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 Media.defaultProps = {
   className: undefined,
   children: null,
+  component: 'article',
 };

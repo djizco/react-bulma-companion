@@ -4,21 +4,26 @@ import PropTypes from 'prop-types';
 export default function TableBody({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   return (
-    <tbody className={className} {...props}>
+    <Element className={className} {...props}>
       {children}
-    </tbody>
+    </Element>
   );
 }
 
 TableBody.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 TableBody.defaultProps = {
   className: undefined,
   children: null,
+  component: 'tbody',
 };

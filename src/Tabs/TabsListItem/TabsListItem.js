@@ -6,27 +6,32 @@ export default function TabsListItem({
   active,
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames(className, {
     'is-active': active,
   });
 
   return (
-    <li className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </li>
+    </Element>
   );
 }
 
 TabsListItem.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   active: PropTypes.bool,
 };
 
 TabsListItem.defaultProps = {
   className: undefined,
   children: null,
+  component: 'li',
   active: false,
 };

@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function MessageHeader({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('message-header', className);
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 MessageHeader.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 MessageHeader.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
 };

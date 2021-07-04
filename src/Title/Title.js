@@ -5,14 +5,21 @@ import classNames from 'classnames';
 export default function Title({
   children,
   className,
+  component,
   size,
   spaced,
   subtitle,
   header,
   ...props
 }) {
+  if (process.env.NODE_ENV === 'development' && header) {
+    // eslint-disable-next-line
+    console.warn('Using the `header` prop is deprecated. Use the `component` prop instead.');
+  }
+
   const isTitle = !subtitle ? 'title' : 'subtitle';
-  let Element = 'p';
+
+  let Element = component;
 
   if (header) {
     if (size === '1') {
@@ -54,15 +61,20 @@ export default function Title({
 Title.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   subtitle: PropTypes.bool,
   size: PropTypes.oneOf(['1', '2', '3', '4', '5', '6']),
   spaced: PropTypes.bool,
+  /**
+    Deprecation Warning: Use `component`.
+  */
   header: PropTypes.bool,
 };
 
 Title.defaultProps = {
   className: undefined,
   children: null,
+  component: 'p',
   subtitle: false,
   size: undefined,
   spaced: false,

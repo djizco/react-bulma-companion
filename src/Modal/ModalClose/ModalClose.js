@@ -4,9 +4,12 @@ import classNames from 'classnames';
 
 export default function ModalClose({
   className,
+  component,
   size,
   ...props
 }) {
+  const Element = component;
+
   const sizeMap = {
     small: 'is-small',
     medium: 'is-medium',
@@ -17,16 +20,18 @@ export default function ModalClose({
   const classes = classNames('modal-close', className, isSize);
 
   return (
-    <button type="button" className={classes} {...props} />
+    <Element type="button" className={classes} {...props} />
   );
 }
 
 ModalClose.propTypes = {
   className: PropTypes.string,
+  component: PropTypes.elementType,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
 ModalClose.defaultProps = {
   className: undefined,
+  component: 'button',
   size: undefined,
 };

@@ -13,9 +13,12 @@ export default function Hero({
   children,
   className,
   color,
+  component,
   size,
   ...props
 }) {
+  const Element = component;
+
   // Colors
   const colorMap = {
     primary: 'is-primary',
@@ -47,9 +50,9 @@ export default function Hero({
   });
 
   return (
-    <section className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </section>
+    </Element>
   );
 }
 
@@ -62,6 +65,7 @@ Hero.Buttons = HeroButtons;
 Hero.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -88,6 +92,7 @@ Hero.propTypes = {
 Hero.defaultProps = {
   className: undefined,
   children: null,
+  component: 'section',
   color: undefined,
   size: undefined,
   bold: false,

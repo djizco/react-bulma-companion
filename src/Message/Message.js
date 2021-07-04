@@ -9,9 +9,12 @@ export default function Message({
   children,
   className,
   color,
+  component,
   size,
   ...props
 }) {
+  const Element = component;
+
   // Colors
   const colorMap = {
     primary: 'is-primary',
@@ -38,9 +41,9 @@ export default function Message({
   const classes = classNames('message', className, isColor, isSize);
 
   return (
-    <article className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </article>
+    </Element>
   );
 }
 
@@ -50,6 +53,7 @@ Message.Header = MessageHeader;
 Message.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -68,6 +72,7 @@ Message.propTypes = {
 Message.defaultProps = {
   className: undefined,
   children: null,
+  component: 'article',
   color: undefined,
   size: undefined,
 };

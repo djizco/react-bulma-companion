@@ -5,23 +5,28 @@ import classNames from 'classnames';
 export default function CardImage({
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('card-image', className);
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 CardImage.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
 };
 
 CardImage.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
 };

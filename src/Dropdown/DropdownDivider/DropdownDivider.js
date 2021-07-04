@@ -4,19 +4,24 @@ import classNames from 'classnames';
 
 export default function DropdownDivider({
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('dropdown-divider', className);
 
   return (
-    <hr className={classes} {...props} />
+    <Element className={classes} {...props} />
   );
 }
 
 DropdownDivider.propTypes = {
   className: PropTypes.string,
+  component: PropTypes.elementType,
 };
 
 DropdownDivider.defaultProps = {
   className: undefined,
+  component: 'hr',
 };

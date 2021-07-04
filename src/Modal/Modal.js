@@ -15,16 +15,19 @@ export default function Modal({
   active,
   children,
   className,
+  component,
   ...props
 }) {
+  const Element = component;
+
   const classes = classNames('modal', className, {
     'is-active': active,
   });
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
@@ -40,11 +43,13 @@ Modal.Content = ModalContent;
 Modal.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   active: PropTypes.bool,
 };
 
 Modal.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   active: false,
 };

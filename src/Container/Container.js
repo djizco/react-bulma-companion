@@ -6,9 +6,12 @@ export default function Container({
   breakpoint,
   children,
   className,
+  component,
   fluid,
   ...props
 }) {
+  const Element = component;
+
   const breakpointMap = {
     widescreen: 'is-widescreen',
     fullhd: 'is-fullhd',
@@ -23,15 +26,16 @@ export default function Container({
   });
 
   return (
-    <div className={classes} {...props}>
+    <Element className={classes} {...props}>
       {children}
-    </div>
+    </Element>
   );
 }
 
 Container.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  component: PropTypes.elementType,
   breakpoint: PropTypes.oneOf([
     'widescreen',
     'fullhd',
@@ -44,6 +48,7 @@ Container.propTypes = {
 Container.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   breakpoint: undefined,
   fluid: false,
 };
