@@ -20,7 +20,7 @@
 
 ### Deprecation warning
 
-- Using the `link` property is now deprecated. Use `component="a"` instead. This will be removed in a future version.
+- Using the `link`, `header`, or `label` prop is now deprecated. Use the `component` prop instead. This will be removed in a future version.
 
 ## 0.1.2
 
