@@ -2,7 +2,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 
 import Content from './Content';
 
-<Meta title="Elements/Content" component={Content} />
+<Meta title="Legacy/Content-0.9.2" component={Content} />
 
 # Content
 
@@ -35,23 +35,13 @@ This `<Content>` component can be used in any context where you just want to (or
 
 ## Sizes
 
-You can use the `size` property to change the font size. (Default normal)
+You can use the `size` property to change the font size.
 
 #### Small Content
 
 <Canvas>
   <Story name="Small">
     <Content size="small">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
-    </Content>
-  </Story>
-</Canvas>
-
-### Normal Content (Default)
-
-<Canvas>
-  <Story name="Normal">
-    <Content size="normal">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</p>
     </Content>
   </Story>

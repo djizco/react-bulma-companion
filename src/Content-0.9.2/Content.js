@@ -13,7 +13,6 @@ export default function Content({
 
   const sizeMap = {
     small: 'is-small',
-    normal: 'is-normal',
     medium: 'is-medium',
     large: 'is-large',
   };
@@ -32,7 +31,7 @@ Content.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   component: PropTypes.elementType,
-  size: PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
 Content.defaultProps = {

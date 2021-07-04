@@ -6,7 +6,7 @@ export { default as Buttons } from './Buttons';
 export { default as Content } from './Content-0.9.2';
 export { default as Delete } from './Delete';
 export { default as Heading } from './Heading';
-export { default as Icon } from './Icon-0.9.1';
+export { default as Icon } from './Icon';
 export { default as Image } from './Image';
 export { default as Loader } from './Loader';
 export { default as Notification } from './Notification';

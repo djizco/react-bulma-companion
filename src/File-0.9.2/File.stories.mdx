@@ -7,7 +7,7 @@ import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons/faCloudUploa
 import File from './File';
 import Field from '../Field';
 
-<Meta title="Form/File" component={File} />
+<Meta title="Legacy/File-0.9.2" component={File} />
 
 # File
 
@@ -242,7 +242,7 @@ The `<File>` component is available in **different colors** by use of the `color
 
 ## Sizes
 
-It comes in 4 sizes by use of the `size` prop. (Default normal)
+It comes in 4 sizes by use of the `size` prop.
 
 <Canvas>
   <Story name="Sizes">
@@ -263,7 +263,7 @@ It comes in 4 sizes by use of the `size` prop. (Default normal)
         </File>
       </Field>
       <Field>
-        <File size="normal">
+        <File>
           <File.Label>
             <File.Input name="resume" />
             <File.CTA>

@@ -41,7 +41,6 @@ export default function File({
   // Sizes
   const sizeMap = {
     small: 'is-small',
-    normal: 'is-normal',
     medium: 'is-medium',
     large: 'is-large',
   };
@@ -90,7 +89,7 @@ File.propTypes = {
     'light',
     'dark',
   ]),
-  size: PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   align: PropTypes.oneOf(['center', 'right']),
   hasName: PropTypes.bool,
   boxed: PropTypes.bool,
