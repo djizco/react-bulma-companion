@@ -43,7 +43,7 @@ export { default as Textarea } from './Radio';
 // Layout
 export { default as Column } from './Column';
 export { default as Columns } from './Columns';
-export { default as Container } from './Container-0.9.0';
+export { default as Container } from './Container';
 export { default as Footer } from './Footer';
 export { default as Hero } from './Container';
 export { default as Level } from './Level';
