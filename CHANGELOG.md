@@ -2,7 +2,7 @@
 
 ## 0.2.1
 
-Bug Fixes
+### Bug Fixes
 
 - Fix issue where Hero and Textarea components were importing the incorrect component in the dist builds.
 
@@ -20,7 +20,7 @@ Bug Fixes
 - Expand Docs for the Card Component.
 - Update Storybook to 6.3.
 
-## Bug Fixes
+### Bug Fixes
 
 - Docs: Code block spacing should now be fixed.
 
