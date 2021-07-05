@@ -1,6 +1,6 @@
 {
   "name": "react-bulma-companion",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "React Components for Bulma",
   "main": "lib/index.js",
   "scripts": {
@@ -12,6 +12,7 @@
     "build:legacy": "./build-legacy.sh",
     "build:lib": "babel src --out-dir lib --ignore 'src/**/*.test.js'",
     "build:docs": "rm -rf docs && build-storybook --docs -o docs",
+    "deploy": "npm run build && npm publish --access public",
     "deploy:docs": "surge docs react-bulma-companion.surge.sh",
     "storybook": "start-storybook -p 8008",
     "storybook:docs": "start-storybook -p 8008 --docs",

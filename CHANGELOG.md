@@ -1,5 +1,11 @@
 # React Bulma Companion Changelog
 
+## 0.2.2
+
+### Bug Fixes
+
+- Fix deployment issue.
+
 ## 0.2.1
 
 ### Bug Fixes
