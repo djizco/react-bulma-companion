@@ -1,7 +1,6 @@
 # React Bulma Companion
 
-
-A set of React Components for the [Bulma](http://bulma.io/) CSS framework.
+A set of React Components for the [Bulma](http://bulma.io/) CSS framework. Check out the [component documentation](http://react-bulma-companion.surge.sh/).
 
 The current Bulma version this library supports is `0.9.3`. To use an older version of Bulma with this library, please reference the **Legacy Support** section.
 
