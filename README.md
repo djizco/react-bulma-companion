@@ -53,7 +53,7 @@ You can also see React Bulma Companion in use [here](https://github.com/djizco/m
 
 ## Legacy Support
 
-The current Bulma version this library supports is `0.9.1`, however React Bulma Companion was created with the idea of legacy support in mind.
+The current Bulma version this library supports is `0.9.3`, however React Bulma Companion was created with the idea of legacy support in mind.
 
 Legacy-compatible versions of React Bulma Companion can be found at `dist/legacy/react-bulma-companion-[version].js` where the `version` number on the file name is for the **Bulma version** you are using.
 
