@@ -1,9 +1,19 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faReply } from '@fortawesome/free-solid-svg-icons/faReply';
+import { faRetweet } from '@fortawesome/free-solid-svg-icons/faRetweet';
+import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
+
 import Modal from './Modal';
+import Box from '../Box';
 import Button from '../Button';
+import Media from '../Media';
 import Image from '../Image';
 import Delete from '../Delete';
+import Content from '../Content';
+import Level from '../Level';
+import Icon from '../Icon';
 
 <Meta title="Components/Modal" component={Modal} />
 
@@ -28,6 +38,61 @@ You will need to implement a toggle of the `active` prop on the `<Modal>` with J
 
 <Canvas>
   <Story name="Default">
+    <React.Fragment>
+      <Modal>
+        <Modal.Background />
+        <Modal.Content>
+          <Box>
+            <Media>
+              <Media.Left>
+                <Image size="64x64">
+                  <Image.Content src="https://bulma.io/images/placeholders/128x128.png" />
+                </Image>
+              </Media.Left>
+              <Media.Content>
+                <Content>
+                  <p>
+                    <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                    <br />
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+                  </p>
+                </Content>
+                <Level mobile>
+                  <Level.Left>
+                    <Level.Item component="a">
+                      <Icon size="small">
+                        <FontAwesomeIcon icon={faReply} />
+                      </Icon>
+                    </Level.Item>
+                    <Level.Item component="a">
+                      <Icon size="small">
+                        <FontAwesomeIcon icon={faRetweet} />
+                      </Icon>
+                    </Level.Item>
+                    <Level.Item component="a">
+                      <Icon size="small">
+                        <FontAwesomeIcon icon={faHeart} />
+                      </Icon>
+                    </Level.Item>
+                  </Level.Left>
+                </Level>
+              </Media.Content>
+            </Media>
+          </Box>
+        </Modal.Content>
+        <Modal.Close size="large" />
+      </Modal>
+      <Button color="primary">Launch Example Modal</Button>
+    </React.Fragment>
+  </Story>
+</Canvas>
+
+## Image Modal
+
+Because a modal can contain **anything you want**, you can very simply use it to build an image gallery for example:
+
+<Canvas>
+  <Story name="Image Modal">
     <React.Fragment>
       <Modal>
         <Modal.Background />
