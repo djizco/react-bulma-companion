@@ -1,5 +1,12 @@
 # React Bulma Companion Changelog
 
+## 0.4.0
+
+### New Features
+
+- Update Current Version to Bulma 0.9.4
+- Add legacy Component Button-0.9.3
+
 ## 0.3.0
 
 ### New Features

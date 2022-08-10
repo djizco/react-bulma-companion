@@ -17,7 +17,6 @@ export default function Button({
   link,
   loading,
   outlined,
-  responsive,
   rounded,
   selected,
   size,
@@ -58,7 +57,6 @@ export default function Button({
 
   const classes = classNames('button', className, isColor, isSize, {
     'is-light': light,
-    'is-responsive': responsive,
     'is-fullwidth': fullwidth,
     'is-outlined': outlined,
     'is-inverted': inverted,
@@ -111,7 +109,6 @@ Button.propTypes = {
     'medium',
     'large',
   ]),
-  responsive: PropTypes.bool,
   fullwidth: PropTypes.bool,
   outlined: PropTypes.bool,
   inverted: PropTypes.bool,
@@ -134,7 +131,6 @@ Button.defaultProps = {
   color: undefined,
   light: false,
   size: undefined,
-  responsive: false,
   fullwidth: false,
   outlined: false,
   inverted: false,
