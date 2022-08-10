@@ -14,7 +14,6 @@ export default function Button({
   hovered,
   inverted,
   light,
-  link,
   loading,
   outlined,
   responsive,
@@ -23,12 +22,7 @@ export default function Button({
   size,
   ...props
 }) {
-  if (process.env.NODE_ENV === 'development' && link) {
-    // eslint-disable-next-line
-    console.warn('Using the `link` prop is deprecated. Use `component="a"` instead.');
-  }
-
-  const Element = link ? 'a' : component;
+  const Element = component;
 
   // Colors
   const colorMap = {
@@ -86,10 +80,6 @@ Button.propTypes = {
   children: PropTypes.node,
   component: PropTypes.elementType,
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
-  /**
-    Deprecation Warning: Use `component="a"`.
-  */
-  link: PropTypes.bool,
   color: PropTypes.oneOf([
     'primary',
     'link',
@@ -130,7 +120,6 @@ Button.defaultProps = {
   children: null,
   component: 'button',
   type: 'button',
-  link: false,
   color: undefined,
   light: false,
   size: undefined,

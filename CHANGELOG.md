@@ -2,9 +2,14 @@
 
 ## 0.4.0
 
+### Breaking Changes
+
+- Remove `link`, `header`, and `label` props. Use `component` prop instead. Remove Deprecation warning. Effected Components are: Button, Box, Card.FooterItem, Card.HeaderIcon, Dropdown.Item, Level.Item, Navbar.Item, Panel.Block, Tag, Title.
+
 ### New Features
 
 - Update Current Version to Bulma 0.9.4
+- Add Button `resposponsive` prop
 - Add legacy Component Button-0.9.3
 
 ## 0.3.0

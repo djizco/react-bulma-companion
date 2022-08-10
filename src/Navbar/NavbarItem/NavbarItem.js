@@ -11,16 +11,10 @@ export default function NavbarItem({
   hasDropdown,
   hasDropup,
   hoverable,
-  link,
   tab,
   ...props
 }) {
-  if (process.env.NODE_ENV === 'development' && link) {
-    // eslint-disable-next-line
-    console.warn('Using the `link` prop is deprecated. Use `component="a"` instead.');
-  }
-
-  const Element = link ? 'a' : component;
+  const Element = component;
 
   const classes = classNames('navbar-item', className, {
     'is-active': active,
@@ -42,7 +36,6 @@ NavbarItem.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   component: PropTypes.elementType,
-  link: PropTypes.bool,
   active: PropTypes.bool,
   hasDropdown: PropTypes.bool,
   hasDropup: PropTypes.bool,
@@ -55,10 +48,6 @@ NavbarItem.defaultProps = {
   className: undefined,
   children: null,
   component: 'div',
-  /**
-    Deprecation Warning: Use `component="a"`.
-  */
-  link: false,
   active: false,
   hasDropdown: false,
   hasDropup: false,
