@@ -5,6 +5,28 @@ import classNames from 'classnames';
 
 import Element from '../Element';
 
+const colorMap = {
+  primary: 'is-primary',
+  link: 'is-link',
+  info: 'is-info',
+  success: 'is-success',
+  warning: 'is-warning',
+  danger: 'is-danger',
+  white: 'is-white',
+  black: 'is-black',
+  light: 'is-light',
+  dark: 'is-dark',
+  text: 'is-text',
+  ghost: 'is-ghost',
+};
+
+const sizeMap = {
+  small: 'is-small',
+  normal: 'is-normal',
+  medium: 'is-medium',
+  large: 'is-large',
+};
+
 export default function Button({
   active,
   children,
@@ -23,30 +45,7 @@ export default function Button({
   size,
   ...props
 }) {
-  // Colors
-  const colorMap = {
-    primary: 'is-primary',
-    link: 'is-link',
-    info: 'is-info',
-    success: 'is-success',
-    warning: 'is-warning',
-    danger: 'is-danger',
-    white: 'is-white',
-    black: 'is-black',
-    light: 'is-light',
-    dark: 'is-dark',
-    text: 'is-text',
-    ghost: 'is-ghost',
-  };
   const isColor = color && colorMap[color];
-
-  // Sizes
-  const sizeMap = {
-    small: 'is-small',
-    normal: 'is-normal',
-    medium: 'is-medium',
-    large: 'is-large',
-  };
   const isSize = size && sizeMap[size];
 
   const classes = classNames('button', className, isColor, isSize, {
