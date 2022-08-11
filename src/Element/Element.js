@@ -1,0 +1,42 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
+export default function Element({
+  children,
+  className,
+  component,
+  textAlign,
+  ...props
+}) {
+  const Element = component;
+
+  // Text Align
+  const textAlignMap = {
+    center: 'has-text-centered',
+    justify: 'has-text-justifyed',
+    left: 'has-text-left',
+    right: 'has-text-right',
+  };
+  const isTextAlign = textAlign && textAlignMap[textAlign];
+
+  const classes = classNames(className, isTextAlign);
+
+  return (
+    <Element className={classes} {...props}>
+      {children}
+    </Element>
+  );
+}
+
+Element.propTypes = {
+  className: PropTypes.string.isRequired,
+  children: PropTypes.node,
+  component: PropTypes.elementType.isRequired,
+  textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
+};
+
+Element.defaultProps = {
+  children: null,
+  textAlign: undefined,
+};
