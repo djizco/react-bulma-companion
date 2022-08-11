@@ -87,6 +87,6 @@ Legacy Bulma Versions Supported: `0.9.3`, `0.9.2`, `0.9.1`, `0.9.0`
 
 ## To Do
 
-- [ ] Add Modifier Classes
+- [ ] Add Modifier Classes (in progress)
 - [ ] Typescript Support
 - [ ] Legacy Support for more Bulma versions: `0.8.1`, `0.7.5`, `0.6.2`, `0.5.3`, etc.

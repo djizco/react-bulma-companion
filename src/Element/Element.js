@@ -6,6 +6,7 @@ export default function Element({
   children,
   className,
   component,
+  domRef,
   textAlign,
   ...props
 }) {
@@ -23,7 +24,7 @@ export default function Element({
   const classes = classNames(className, isTextAlign);
 
   return (
-    <Element className={classes} {...props}>
+    <Element ref={domRef} className={classes} {...props}>
       {children}
     </Element>
   );
@@ -33,10 +34,12 @@ Element.propTypes = {
   className: PropTypes.string.isRequired,
   children: PropTypes.node,
   component: PropTypes.elementType.isRequired,
+  domRef: PropTypes.object, // Verify (ElementType?)
   textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
 };
 
 Element.defaultProps = {
   children: null,
+  domRef: undefined,
   textAlign: undefined,
 };
