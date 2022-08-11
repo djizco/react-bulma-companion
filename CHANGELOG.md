@@ -9,7 +9,7 @@
 ### New Features
 
 - Update Current Version to Bulma 0.9.4
-- Add Button `resposponsive` prop
+- Add Button `responsive` prop
 - Add legacy Component Button-0.9.3
 
 ## 0.3.0
