@@ -13,14 +13,6 @@ const colors = [
   'primary-dark', 'link-dark', 'info-dark', 'success-dark', 'warning-dark', 'danger-dark',
 ];
 
-const textColorMap = {};
-const backgroundColorMap = {};
-
-colors.forEach(color => {
-  textColorMap[color] = `has-text-${color}`;
-  backgroundColorMap[color] = `has-background-${color}`;
-});
-
 // Text Align
 const textAlignMap = {
   center: 'has-text-centered',
@@ -41,11 +33,12 @@ export default function Element({
 }) {
   const Element = component;
 
-  const hasTextColor = textColor && textColorMap[textColor];
-  const hasBackgroundColor = backgroundColor && backgroundColorMap[backgroundColor];
   const isTextAlign = textAlign && textAlignMap[textAlign];
 
-  const classes = classNames(className, hasTextColor, hasBackgroundColor, isTextAlign);
+  const classes = classNames(className, isTextAlign, {
+    [`has-text-${textColor}`]: !!textColor,
+    [`has-background-${backgroundColor}`]: !!backgroundColor,
+  });
 
   return (
     <Element ref={domRef} className={classes} {...props}>
@@ -57,16 +50,23 @@ export default function Element({
 Element.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-  component: PropTypes.elementType.isRequired,
-  domRef: PropTypes.object, // Verify (ElementType?)
-  textColor: PropTypes.oneOf([...colors]),
-  backgroundColor: PropTypes.oneOf([...colors]),
+  component: PropTypes.elementType,
+  domRef: PropTypes.object,
+  textColor: PropTypes.oneOfType([
+    PropTypes.oneOf([...colors]),
+    PropTypes.string,
+  ]),
+  backgroundColor: PropTypes.oneOfType([
+    PropTypes.oneOf([...colors]),
+    PropTypes.string,
+  ]),
   textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
 };
 
 Element.defaultProps = {
   className: undefined,
   children: null,
+  component: 'div',
   domRef: undefined,
   textColor: undefined,
   backgroundColor: undefined,
