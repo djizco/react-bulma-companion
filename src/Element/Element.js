@@ -13,6 +13,9 @@ const colors = [
   'primary-dark', 'link-dark', 'info-dark', 'success-dark', 'warning-dark', 'danger-dark',
 ];
 
+// Spacing
+const spaceValues = ['0', '1', '2', '3', '4', '5', '6'];
+
 // Text Align
 const textAlignMap = {
   center: 'has-text-centered',
@@ -29,6 +32,8 @@ export default function Element({
   textColor,
   backgroundColor,
   textAlign,
+  m, mt, mr, mb, ml, mx, my,
+  p, pt, pr, pb, pl, px, py,
   ...props
 }) {
   const Element = component;
@@ -38,6 +43,20 @@ export default function Element({
   const classes = classNames(className, isTextAlign, {
     [`has-text-${textColor}`]: !!textColor,
     [`has-background-${backgroundColor}`]: !!backgroundColor,
+    [`m-${m}`]: !!m,
+    [`mt-${mt}`]: !!mt,
+    [`mr-${mr}`]: !!mr,
+    [`mb-${mb}`]: !!mb,
+    [`ml-${ml}`]: !!ml,
+    [`mx-${mx}`]: !!mx,
+    [`my-${my}`]: !!my,
+    [`p-${p}`]: !!p,
+    [`pt-${pt}`]: !!pt,
+    [`pr-${pr}`]: !!pr,
+    [`pb-${pb}`]: !!pb,
+    [`pl-${pl}`]: !!pl,
+    [`px-${px}`]: !!px,
+    [`py-${py}`]: !!py,
   });
 
   return (
@@ -53,12 +72,82 @@ Element.propTypes = {
   component: PropTypes.elementType,
   domRef: PropTypes.object,
   textColor: PropTypes.oneOfType([
-    PropTypes.oneOf([...colors]),
+    PropTypes.oneOf(colors),
     PropTypes.string,
   ]),
   backgroundColor: PropTypes.oneOfType([
-    PropTypes.oneOf([...colors]),
+    PropTypes.oneOf(colors),
     PropTypes.string,
+  ]),
+  m: PropTypes.oneOfType([
+    PropTypes.oneOf(spaceValues),
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  mt: PropTypes.oneOfType([
+    PropTypes.oneOf(spaceValues),
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  mr: PropTypes.oneOfType([
+    PropTypes.oneOf(spaceValues),
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  mb: PropTypes.oneOfType([
+    PropTypes.oneOf(spaceValues),
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  ml: PropTypes.oneOfType([
+    PropTypes.oneOf(spaceValues),
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  mx: PropTypes.oneOfType([
+    PropTypes.oneOf(spaceValues),
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  my: PropTypes.oneOfType([
+    PropTypes.oneOf(spaceValues),
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  p: PropTypes.oneOfType([
+    PropTypes.oneOf(spaceValues),
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  pt: PropTypes.oneOfType([
+    PropTypes.oneOf(spaceValues),
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  pr: PropTypes.oneOfType([
+    PropTypes.oneOf(spaceValues),
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  pb: PropTypes.oneOfType([
+    PropTypes.oneOf(spaceValues),
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  pl: PropTypes.oneOfType([
+    PropTypes.oneOf(spaceValues),
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  px: PropTypes.oneOfType([
+    PropTypes.oneOf(spaceValues),
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  py: PropTypes.oneOfType([
+    PropTypes.oneOf(spaceValues),
+    PropTypes.string,
+    PropTypes.number,
   ]),
   textAlign: PropTypes.oneOf(['center', 'justify', 'left', 'right']),
 };
@@ -70,5 +159,19 @@ Element.defaultProps = {
   domRef: undefined,
   textColor: undefined,
   backgroundColor: undefined,
+  m: undefined,
+  mt: undefined,
+  mr: undefined,
+  mb: undefined,
+  ml: undefined,
+  mx: undefined,
+  my: undefined,
+  p: undefined,
+  pt: undefined,
+  pr: undefined,
+  pb: undefined,
+  pl: undefined,
+  px: undefined,
+  py: undefined,
   textAlign: undefined,
 };
