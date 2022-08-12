@@ -54,6 +54,15 @@ const fontMap = {
   code: 'is-family-code',
 };
 
+const displays = ['block', 'flex', 'inline', 'inline-block', 'inline-flex'];
+const displayMap = {
+  block: 'is-block',
+  flex: 'is-flex',
+  inline: 'is-inline',
+  'inline-block': 'is-inline-block',
+  'inline-flex': 'is-inline-flex',
+};
+
 export default function Element({
   children,
   className,
@@ -66,6 +75,10 @@ export default function Element({
   textTransform,
   textWeight,
   font,
+  display,
+  invisible,
+  hidden,
+  screenReaderOnly,
   m, mt, mr, mb, ml, mx, my,
   p, pt, pr, pb, pl, px, py,
   mobile,
@@ -82,6 +95,7 @@ export default function Element({
   const isTextTransform = textTransform && textTransformMap[textTransform];
   const hasTextWeight = textWeight && textWeightMap[textWeight];
   const isFont = font && fontMap[font];
+  const isDisplay = display && displayMap[display];
 
   const classes = classNames(
     className,
@@ -89,9 +103,12 @@ export default function Element({
     isTextTransform,
     hasTextWeight,
     isFont,
+    isDisplay,
     {
       [`has-background-${backgroundColor}`]: !!backgroundColor,
       [`has-text-${textColor}`]: !!textColor,
+
+      // Margin and Padding
       [`m-${m}`]: !!m,
       [`mt-${mt}`]: !!mt,
       [`mr-${mr}`]: !!mr,
@@ -106,12 +123,16 @@ export default function Element({
       [`pl-${pl}`]: !!pl,
       [`px-${px}`]: !!px,
       [`py-${py}`]: !!py,
-      [`is-size-${mobile.textSize}-mobile`]: !!mobile.textSize,
-      [`is-size-${touch.textSize}-touch`]: !!touch.textSize,
-      [`is-size-${tablet.textSize}-tablet`]: !!tablet.textSize,
-      [`is-size-${desktop.textSize}-desktop`]: !!desktop.textSize,
-      [`is-size-${widescreen.textSize}-widescreen`]: !!widescreen.textSize,
-      [`is-size-${fullhd.textSize}-fullhd`]: !!fullhd.textSize,
+
+      // Responsive Text Size
+      [`is-size-${mobile.textSize}-mobile`]: !!mobile.textSize && textSizes.includes(mobile.textSize),
+      [`is-size-${touch.textSize}-touch`]: !!touch.textSize && textSizes.includes(touch.textSize),
+      [`is-size-${tablet.textSize}-tablet`]: !!tablet.textSize && textSizes.includes(tablet.textSize),
+      [`is-size-${desktop.textSize}-desktop`]: !!desktop.textSize && textSizes.includes(desktop.textSize),
+      [`is-size-${widescreen.textSize}-widescreen`]: !!widescreen.textSize && textSizes.includes(widescreen.textSize),
+      [`is-size-${fullhd.textSize}-fullhd`]: !!fullhd.textSize && textSizes.includes(fullhd.textSize),
+
+      // Responsive Text Align
       [`${textAlignMap[mobile.textAlign]}-mobile`]:
         !!mobile.textAlign && textAligns.includes(mobile.textAlign),
       [`${textAlignMap[touch.textAlign]}-touch`]:
@@ -130,6 +151,40 @@ export default function Element({
         !!widescreen.textAlign && !widescreen.only && textAligns.includes(widescreen.textAlign),
       [`${textAlignMap[fullhd.textAlign]}-fullhd`]:
         !!fullhd.textAlign && textAligns.includes(fullhd.textAlign),
+
+      // Responsive Display
+      [`${displayMap[mobile.display]}-mobile`]:
+        !!mobile.display && displays.includes(mobile.display),
+      [`${displayMap[touch.display]}-touch`]:
+        !!touch.display && displays.includes(touch.display),
+      [`${displayMap[tablet.display]}-tablet-only`]:
+        !!tablet.display && tablet.only && displays.includes(tablet.display),
+      [`${displayMap[tablet.display]}-tablet`]:
+        !!tablet.display && !tablet.only && displays.includes(tablet.display),
+      [`${displayMap[desktop.display]}-desktop-only`]:
+        !!desktop.display && desktop.only && displays.includes(desktop.display),
+      [`${displayMap[desktop.display]}-desktop`]:
+        !!desktop.display && !desktop.only && displays.includes(desktop.display),
+      [`${displayMap[widescreen.display]}-widescreen-only`]:
+        !!widescreen.display && widescreen.only && displays.includes(widescreen.display),
+      [`${displayMap[widescreen.display]}-widescreen`]:
+        !!widescreen.display && !widescreen.only && displays.includes(widescreen.display),
+      [`${displayMap[fullhd.display]}-fullhd`]:
+        !!fullhd.display && displays.includes(fullhd.display),
+
+      'is-hidden-mobile': mobile.hidden,
+      'is-hidden-touch': touch.hidden,
+      'is-hidden-tablet-only': tablet.hidden && tablet.only,
+      'is-hidden-tablet': tablet.hidden && !tablet.only,
+      'is-hidden-desktop-only': desktop.hidden && desktop.only,
+      'is-hidden-desktop': desktop.hidden && !desktop.only,
+      'is-hidden-widescreen-only': widescreen.hidden && widescreen.only,
+      'is-hidden-widescreen': widescreen.hidden && !widescreen.only,
+      'is-hidden-fullhd': fullhd.hidden,
+
+      'is-invisible': invisible,
+      'is-hidden': hidden,
+      'is-sr-only': screenReaderOnly,
     },
   );
 
@@ -158,6 +213,10 @@ Element.propTypes = {
   textTransform: PropTypes.oneOf(textTransforms),
   textWeight: PropTypes.oneOf(textWeights),
   font: PropTypes.oneOf(fonts),
+  display: PropTypes.oneOf(displays),
+  invisible: PropTypes.bool,
+  hidden: PropTypes.bool,
+  screenReaderOnly: PropTypes.bool,
   m: PropTypes.oneOfType([
     PropTypes.oneOf(spacings),
     PropTypes.string,
@@ -231,29 +290,41 @@ Element.propTypes = {
   mobile: PropTypes.shape({
     textSize: PropTypes.oneOf(textSizes),
     textAlign: PropTypes.oneOf(textAligns),
+    display: PropTypes.oneOf(displays),
+    hidden: PropTypes.bool,
   }),
   touch: PropTypes.shape({
     textSize: PropTypes.oneOf(textSizes),
     textAlign: PropTypes.oneOf(textAligns),
+    display: PropTypes.oneOf(displays),
+    hidden: PropTypes.bool,
   }),
   tablet: PropTypes.shape({
     textSize: PropTypes.oneOf(textSizes),
     textAlign: PropTypes.oneOf(textAligns),
+    display: PropTypes.oneOf(displays),
+    hidden: PropTypes.bool,
     only: PropTypes.bool,
   }),
   desktop: PropTypes.shape({
     textSize: PropTypes.oneOf(textSizes),
     textAlign: PropTypes.oneOf(textAligns),
+    display: PropTypes.oneOf(displays),
+    hidden: PropTypes.bool,
     only: PropTypes.bool,
   }),
   widescreen: PropTypes.shape({
     textSize: PropTypes.oneOf(textSizes),
     textAlign: PropTypes.oneOf(textAligns),
+    display: PropTypes.oneOf(displays),
+    hidden: PropTypes.bool,
     only: PropTypes.bool,
   }),
   fullhd: PropTypes.shape({
     textSize: PropTypes.oneOf(textSizes),
     textAlign: PropTypes.oneOf(textAligns),
+    display: PropTypes.oneOf(displays),
+    hidden: PropTypes.bool,
   }),
 };
 
@@ -269,6 +340,10 @@ Element.defaultProps = {
   textTransform: undefined,
   textWeight: undefined,
   font: undefined,
+  display: undefined,
+  invisible: false,
+  hidden: false,
+  screenReaderOnly: false,
   m: undefined,
   mt: undefined,
   mr: undefined,
