@@ -14,7 +14,7 @@ const colors = [
 ];
 
 // Spacing
-const spacings = ['0', '1', '2', '3', '4', '5', '6'];
+const spacings = ['0', '1', '2', '3', '4', '5', '6', 'auto'];
 
 // Typography
 const textSizes = ['1', '2', '3', '4', '5', '6', '7'];
@@ -54,6 +54,7 @@ const fontMap = {
   code: 'is-family-code',
 };
 
+// Visibility
 const displays = ['block', 'flex', 'inline', 'inline-block', 'inline-flex'];
 const displayMap = {
   block: 'is-block',
@@ -62,6 +63,95 @@ const displayMap = {
   'inline-block': 'is-inline-block',
   'inline-flex': 'is-inline-flex',
 };
+
+// Flex
+const flexDirections = ['row', 'row-reverse', 'column', 'column-reverse'];
+const flexDirectionMap = {
+  row: 'is-flex-direction-row',
+  'row-reverse': 'is-flex-direction-row-reverse',
+  column: 'is-flex-direction-column',
+  'column-reverse': 'is-flex-direction-column-reverse',
+};
+
+const flexWraps = ['nowrap', 'wrap', 'wrap-reverse'];
+const flexWrapMap = {
+  nowrap: 'is-flex-wrap-nowrap',
+  wrap: 'is-flex-wrap-wrap',
+  'wrap-reverse': 'is-flex-wrap-wrap-reverse',
+};
+
+const justifyContents = [
+  'flex-start', 'flex-end', 'center',
+  'space-between', 'space-around', 'space-evenly',
+  'start', 'end', 'left', 'right',
+];
+const justifyContentMap = {
+  'flex-start': 'is-justify-content-flex-start',
+  'flex-end': 'is-justify-content-flex-end',
+  center: 'is-justify-content-center',
+  'space-between': 'is-justify-content-space-between',
+  'space-around': 'is-justify-content-space-around',
+  'space-evenly': 'is-justify-content-space-evenly',
+  start: 'is-justify-content-start',
+  end: 'is-justify-content-end',
+  left: 'is-justify-content-left',
+  right: 'is-justify-content-right',
+};
+
+const alignContents = [
+  'flex-start', 'flex-end', 'center',
+  'space-between', 'space-around', 'space-evenly',
+  'stretch', 'start', 'end', 'baseline',
+];
+const alignContentMap = {
+  'flex-start': 'is-align-content-flex-start',
+  'flex-end': 'is-align-content-flex-end',
+  center: 'is-align-content-center',
+  'space-between': 'is-align-content-space-between',
+  'space-around': 'is-align-content-space-around',
+  'space-evenly': 'is-align-content-space-evenly',
+  stretch: 'is-align-content-stretch',
+  start: 'is-align-content-start',
+  end: 'is-align-content-end',
+  baseline: 'is-align-content-baseline',
+};
+
+const alignItemses = [
+  'stretch', 'flex-start', 'flex-end', 'center', 'baseline',
+  'start', 'end', 'self-start', 'self-end',
+];
+const alignItemsMap = {
+  stretch: 'is-align-items-stretch',
+  'flex-start': 'is-align-items-flex-start',
+  'flex-end': 'is-align-items-flex-end',
+  center: 'is-align-items-center',
+  baseline: 'is-align-items-baseline',
+  start: 'is-align-items-start',
+  end: 'is-align-items-end',
+  'self-start': 'is-align-items-self-start',
+  'self-end': 'is-align-items-self-end',
+};
+
+const alignSelfs = [
+  'auto', 'flex-start', 'flex-end', 'center', 'baseline', 'stretch',
+];
+const alignSelfMap = {
+  auto: 'is-align-self-auto',
+  'flex-start': 'is-align-self-flex-start',
+  'flex-end': 'is-align-self-flex-end',
+  center: 'is-align-self-center',
+  baseline: 'is-align-self-baseline',
+  stretch: 'is-align-self-stretch',
+};
+
+const flexSizes = ['0', '1', '2', '3', '4', '5'];
+const flexGrowMap = {};
+const flexShrinkMap = {};
+
+flexSizes.forEach(size => {
+  flexGrowMap[size] = `is-flex-grow-${size}`;
+  flexShrinkMap[size] = `is-flex-shrink-${size}`;
+});
 
 export default function Element({
   children,
@@ -79,8 +169,28 @@ export default function Element({
   invisible,
   hidden,
   screenReaderOnly,
-  m, mt, mr, mb, ml, mx, my,
-  p, pt, pr, pb, pl, px, py,
+  flexDirection,
+  flexWrap,
+  justifyContent,
+  alignContent,
+  alignItems,
+  alignSelf,
+  flexGrow,
+  flexShrink,
+  margin,
+  marginTop,
+  marginRight,
+  marginBottom,
+  marginLeft,
+  marginHorizontal,
+  marginVertical,
+  padding,
+  paddingTop,
+  paddingRight,
+  paddingBottom,
+  paddingLeft,
+  paddingHorizontal,
+  paddingVertical,
   mobile,
   touch,
   tablet,
@@ -96,6 +206,14 @@ export default function Element({
   const hasTextWeight = textWeight && textWeightMap[textWeight];
   const isFont = font && fontMap[font];
   const isDisplay = display && displayMap[display];
+  const isFlexDirection = flexDirection && flexDirectionMap[flexDirection];
+  const isFlexWrap = flexWrap && flexWrapMap[flexWrap];
+  const isJustifyContent = justifyContent && justifyContentMap[justifyContent];
+  const isAlignContent = alignContent && alignContentMap[alignContent];
+  const isAlignItems = alignItems && alignItemsMap[alignItems];
+  const isAlignSelf = alignSelf && alignSelfMap[alignSelf];
+  const isFlexGrow = flexGrow && flexGrowMap[flexGrow];
+  const isFlexShrink = flexShrink && flexShrinkMap[flexShrink];
 
   const classes = classNames(
     className,
@@ -104,25 +222,33 @@ export default function Element({
     hasTextWeight,
     isFont,
     isDisplay,
+    isFlexDirection,
+    isFlexWrap,
+    isJustifyContent,
+    isAlignContent,
+    isAlignItems,
+    isAlignSelf,
+    isFlexGrow,
+    isFlexShrink,
     {
       [`has-background-${backgroundColor}`]: !!backgroundColor,
       [`has-text-${textColor}`]: !!textColor,
 
       // Margin and Padding
-      [`m-${m}`]: !!m,
-      [`mt-${mt}`]: !!mt,
-      [`mr-${mr}`]: !!mr,
-      [`mb-${mb}`]: !!mb,
-      [`ml-${ml}`]: !!ml,
-      [`mx-${mx}`]: !!mx,
-      [`my-${my}`]: !!my,
-      [`p-${p}`]: !!p,
-      [`pt-${pt}`]: !!pt,
-      [`pr-${pr}`]: !!pr,
-      [`pb-${pb}`]: !!pb,
-      [`pl-${pl}`]: !!pl,
-      [`px-${px}`]: !!px,
-      [`py-${py}`]: !!py,
+      [`m-${margin}`]: !!margin,
+      [`mt-${marginTop}`]: !!marginTop,
+      [`mr-${marginRight}`]: !!marginRight,
+      [`mb-${marginBottom}`]: !!marginBottom,
+      [`ml-${marginLeft}`]: !!marginLeft,
+      [`mx-${marginHorizontal}`]: !!marginHorizontal,
+      [`my-${marginVertical}`]: !!marginVertical,
+      [`p-${padding}`]: !!padding,
+      [`pt-${paddingTop}`]: !!paddingTop,
+      [`pr-${paddingRight}`]: !!paddingRight,
+      [`pb-${paddingBottom}`]: !!paddingBottom,
+      [`pl-${paddingLeft}`]: !!paddingLeft,
+      [`px-${paddingHorizontal}`]: !!paddingHorizontal,
+      [`py-${paddingVertical}`]: !!paddingVertical,
 
       // Responsive Text Size
       [`is-size-${mobile.textSize}-mobile`]: !!mobile.textSize && textSizes.includes(mobile.textSize),
@@ -217,72 +343,80 @@ Element.propTypes = {
   invisible: PropTypes.bool,
   hidden: PropTypes.bool,
   screenReaderOnly: PropTypes.bool,
-  m: PropTypes.oneOfType([
+  flexDirection: PropTypes.oneOf(flexDirections),
+  flexWrap: PropTypes.oneOf(flexWraps),
+  justifyContent: PropTypes.oneOf(justifyContents),
+  alignContent: PropTypes.oneOf(alignContents),
+  alignItems: PropTypes.oneOf(alignItemses),
+  alignSelf: PropTypes.oneOf(alignSelfs),
+  flexGrow: PropTypes.oneOf(flexSizes),
+  flexShrink: PropTypes.oneOf(flexSizes),
+  margin: PropTypes.oneOfType([
     PropTypes.oneOf(spacings),
     PropTypes.string,
     PropTypes.number,
   ]),
-  mt: PropTypes.oneOfType([
+  marginTop: PropTypes.oneOfType([
     PropTypes.oneOf(spacings),
     PropTypes.string,
     PropTypes.number,
   ]),
-  mr: PropTypes.oneOfType([
+  marginRight: PropTypes.oneOfType([
     PropTypes.oneOf(spacings),
     PropTypes.string,
     PropTypes.number,
   ]),
-  mb: PropTypes.oneOfType([
+  marginBottom: PropTypes.oneOfType([
     PropTypes.oneOf(spacings),
     PropTypes.string,
     PropTypes.number,
   ]),
-  ml: PropTypes.oneOfType([
+  marginLeft: PropTypes.oneOfType([
     PropTypes.oneOf(spacings),
     PropTypes.string,
     PropTypes.number,
   ]),
-  mx: PropTypes.oneOfType([
+  marginHorizontal: PropTypes.oneOfType([
     PropTypes.oneOf(spacings),
     PropTypes.string,
     PropTypes.number,
   ]),
-  my: PropTypes.oneOfType([
+  marginVertical: PropTypes.oneOfType([
     PropTypes.oneOf(spacings),
     PropTypes.string,
     PropTypes.number,
   ]),
-  p: PropTypes.oneOfType([
+  padding: PropTypes.oneOfType([
     PropTypes.oneOf(spacings),
     PropTypes.string,
     PropTypes.number,
   ]),
-  pt: PropTypes.oneOfType([
+  paddingTop: PropTypes.oneOfType([
     PropTypes.oneOf(spacings),
     PropTypes.string,
     PropTypes.number,
   ]),
-  pr: PropTypes.oneOfType([
+  paddingRight: PropTypes.oneOfType([
     PropTypes.oneOf(spacings),
     PropTypes.string,
     PropTypes.number,
   ]),
-  pb: PropTypes.oneOfType([
+  paddingBottom: PropTypes.oneOfType([
     PropTypes.oneOf(spacings),
     PropTypes.string,
     PropTypes.number,
   ]),
-  pl: PropTypes.oneOfType([
+  paddingLeft: PropTypes.oneOfType([
     PropTypes.oneOf(spacings),
     PropTypes.string,
     PropTypes.number,
   ]),
-  px: PropTypes.oneOfType([
+  paddingHorizontal: PropTypes.oneOfType([
     PropTypes.oneOf(spacings),
     PropTypes.string,
     PropTypes.number,
   ]),
-  py: PropTypes.oneOfType([
+  paddingVertical: PropTypes.oneOfType([
     PropTypes.oneOf(spacings),
     PropTypes.string,
     PropTypes.number,
@@ -344,20 +478,28 @@ Element.defaultProps = {
   invisible: false,
   hidden: false,
   screenReaderOnly: false,
-  m: undefined,
-  mt: undefined,
-  mr: undefined,
-  mb: undefined,
-  ml: undefined,
-  mx: undefined,
-  my: undefined,
-  p: undefined,
-  pt: undefined,
-  pr: undefined,
-  pb: undefined,
-  pl: undefined,
-  px: undefined,
-  py: undefined,
+  flexDirection: undefined,
+  flexWrap: undefined,
+  justifyContent: undefined,
+  alignContent: undefined,
+  alignItems: undefined,
+  alignSelf: undefined,
+  flexGrow: undefined,
+  flexShrink: undefined,
+  margin: undefined,
+  marginTop: undefined,
+  marginRight: undefined,
+  marginBottom: undefined,
+  marginLeft: undefined,
+  marginHorizontal: undefined,
+  marginVertical: undefined,
+  padding: undefined,
+  paddingTop: undefined,
+  paddingRight: undefined,
+  paddingBottom: undefined,
+  paddingLeft: undefined,
+  paddingHorizontal: undefined,
+  paddingVertical: undefined,
   mobile: {},
   touch: {},
   tablet: {},
