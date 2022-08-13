@@ -11,6 +11,19 @@ import PaginationPrevious from './PaginationPrevious';
 
 import Element from '../Element';
 
+const sizes = ['small', 'medium', 'large'];
+const sizeMap = {
+  small: 'is-small',
+  medium: 'is-medium',
+  large: 'is-large',
+};
+
+const aligns = ['center', 'right'];
+const alignMap = {
+  center: 'is-centered',
+  right: 'is-right',
+};
+
 export default function Pagination({
   align,
   children,
@@ -19,17 +32,7 @@ export default function Pagination({
   size,
   ...props
 }) {
-  const sizeMap = {
-    small: 'is-small',
-    medium: 'is-medium',
-    large: 'is-large',
-  };
   const isSize = size && sizeMap[size];
-
-  const alignMap = {
-    center: 'is-centered',
-    right: 'is-right',
-  };
   const isAlign = align && alignMap[align];
 
   const classes = classNames('pagination', className, isSize, isAlign, {
@@ -54,8 +57,8 @@ Pagination.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   component: PropTypes.elementType,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  align: PropTypes.oneOf(['center', 'right']),
+  size: PropTypes.oneOf(sizes),
+  align: PropTypes.oneOf(aligns),
   rounded: PropTypes.bool,
 };
 

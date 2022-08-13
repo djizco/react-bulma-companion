@@ -14,6 +14,29 @@ import NavbarStart from './NavbarStart';
 
 import Element from '../Element';
 
+const colors = [
+  'primary', 'link', 'info', 'success', 'warning', 'danger',
+  'white', 'black', 'light', 'dark',
+];
+const colorMap = {
+  primary: 'is-primary',
+  link: 'is-link',
+  info: 'is-info',
+  success: 'is-success',
+  warning: 'is-warning',
+  danger: 'is-danger',
+  white: 'is-white',
+  black: 'is-black',
+  light: 'is-light',
+  dark: 'is-dark',
+};
+
+const fixedDirections = ['top', 'bottom', 'top-desktop', 'bottom-desktop', 'top-touch', 'bottom-touch'];
+const fixedMap = {};
+fixedDirections.forEach(direction => {
+  fixedMap[direction] = `is-fixed-${direction}`;
+});
+
 export default function Navbar({
   children,
   className,
@@ -24,30 +47,7 @@ export default function Navbar({
   transparent,
   ...props
 }) {
-  // Colors
-  const colorMap = {
-    primary: 'is-primary',
-    link: 'is-link',
-    info: 'is-info',
-    success: 'is-success',
-    warning: 'is-warning',
-    danger: 'is-danger',
-    white: 'is-white',
-    black: 'is-black',
-    light: 'is-light',
-    dark: 'is-dark',
-  };
   const isColor = color && colorMap[color];
-
-  // Fixed
-  const fixedMap = {
-    top: 'is-fixed-top',
-    bottom: 'is-fixed-bottom',
-    'top-desktop': 'is-fixed-top-desktop',
-    'bottom-desktop': 'is-fixed-bottom-desktop',
-    'top-touch': 'is-fixed-top-touch',
-    'bottom-touch': 'is-fixed-bottom-touch',
-  };
   const isFixed = fixed && fixedMap[fixed];
 
   const classes = classNames('navbar', className, isColor, isFixed, {
@@ -77,26 +77,8 @@ Navbar.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   component: PropTypes.elementType,
-  color: PropTypes.oneOf([
-    'primary',
-    'link',
-    'info',
-    'success',
-    'warning',
-    'danger',
-    'white',
-    'black',
-    'light',
-    'dark',
-  ]),
-  fixed: PropTypes.oneOf([
-    'top',
-    'bottom',
-    'top-desktop',
-    'bottom-desktop',
-    'top-touch',
-    'bottom-touch',
-  ]),
+  color: PropTypes.oneOf(colors),
+  fixed: PropTypes.oneOf(fixedDirections),
   shadow: PropTypes.bool,
   transparent: PropTypes.bool,
   spaced: PropTypes.bool,

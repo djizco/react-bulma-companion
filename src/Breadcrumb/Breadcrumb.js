@@ -7,6 +7,27 @@ import BreadcrumbListItem from './BreadcrumbListItem';
 
 import Element from '../Element';
 
+const aligns = ['center', 'right'];
+const alignMap = {
+  center: 'is-centered',
+  right: 'is-right',
+};
+
+const separators = ['arrow', 'bullet', 'dot', 'succeeds'];
+const separatorMap = {
+  arrow: 'has-arrow-separator',
+  bullet: 'has-bullet-separator',
+  dot: 'has-dot-separator',
+  succeeds: 'has-succeeds-separator',
+};
+
+const sizes = ['small', 'medium', 'large'];
+const sizeMap = {
+  small: 'is-small',
+  medium: 'is-medium',
+  large: 'is-large',
+};
+
 export default function Breadcrumb({
   align,
   children,
@@ -15,28 +36,8 @@ export default function Breadcrumb({
   size,
   ...props
 }) {
-  // Align
-  const alignMap = {
-    center: 'is-centered',
-    right: 'is-right',
-  };
   const isAlign = align && alignMap[align];
-
-  // Separators
-  const separatorMap = {
-    arrow: 'has-arrow-separator',
-    bullet: 'has-bullet-separator',
-    dot: 'has-dot-separator',
-    succeeds: 'has-succeeds-separator',
-  };
   const isSeparator = separator && separatorMap[separator];
-
-  // Size
-  const sizeMap = {
-    small: 'is-small',
-    medium: 'is-medium',
-    large: 'is-large',
-  };
   const isSize = size && sizeMap[size];
 
   const classes = classNames('breadcrumb', className, isAlign, isSeparator, isSize);
@@ -55,9 +56,9 @@ Breadcrumb.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   component: PropTypes.elementType,
-  align: PropTypes.oneOf(['center', 'right']),
-  separator: PropTypes.oneOf(['arrow', 'bullet', 'dot', 'succeeds']),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  align: PropTypes.oneOf(aligns),
+  separator: PropTypes.oneOf(separators),
+  size: PropTypes.oneOf(sizes),
 };
 
 Breadcrumb.defaultProps = {

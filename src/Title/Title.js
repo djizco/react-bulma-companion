@@ -4,6 +4,12 @@ import classNames from 'classnames';
 
 import Element from '../Element';
 
+const sizes = ['1', '2', '3', '4', '5', '6'];
+const sizeMap = {};
+sizes.forEach(size => {
+  sizeMap[size] = `is-${size}`;
+});
+
 export default function Title({
   children,
   className,
@@ -13,15 +19,6 @@ export default function Title({
   ...props
 }) {
   const isTitle = !subtitle ? 'title' : 'subtitle';
-
-  const sizeMap = {
-    1: 'is-1',
-    2: 'is-2',
-    3: 'is-3',
-    4: 'is-4',
-    5: 'is-5',
-    6: 'is-6',
-  };
   const isSize = size && sizeMap[size];
 
   const classes = classNames(isTitle, className, isSize, {
@@ -40,7 +37,7 @@ Title.propTypes = {
   children: PropTypes.node,
   component: PropTypes.elementType,
   subtitle: PropTypes.bool,
-  size: PropTypes.oneOf(['1', '2', '3', '4', '5', '6']),
+  size: PropTypes.oneOf(sizes),
   spaced: PropTypes.bool,
 };
 

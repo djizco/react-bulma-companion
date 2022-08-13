@@ -4,6 +4,14 @@ import classNames from 'classnames';
 
 import Element from '../Element';
 
+const breakpoints = ['widescreen', 'fullhd', 'max-desktop', 'max-widescreen'];
+const breakpointMap = {
+  widescreen: 'is-widescreen',
+  fullhd: 'is-fullhd',
+  'max-desktop': 'is-max-desktop',
+  'max-widescreen': 'is-max-widescreen',
+};
+
 export default function Container({
   breakpoint,
   children,
@@ -11,13 +19,6 @@ export default function Container({
   fluid,
   ...props
 }) {
-  const breakpointMap = {
-    widescreen: 'is-widescreen',
-    fullhd: 'is-fullhd',
-    'max-desktop': 'is-max-desktop',
-    'max-widescreen': 'is-max-widescreen',
-  };
-
   const isBreakpoint = breakpoint && breakpointMap[breakpoint];
 
   const classes = classNames('container', className, isBreakpoint, {
@@ -35,12 +36,7 @@ Container.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   component: PropTypes.elementType,
-  breakpoint: PropTypes.oneOf([
-    'widescreen',
-    'fullhd',
-    'max-desktop',
-    'max-widescreen',
-  ]),
+  breakpoint: PropTypes.oneOf(breakpoints),
   fluid: PropTypes.bool,
 };
 

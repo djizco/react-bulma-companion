@@ -4,16 +4,18 @@ import classNames from 'classnames';
 
 import Element from '../Element';
 
+const sizes = ['small', 'medium', 'large'];
+const sizeMap = {
+  small: 'is-small',
+  medium: 'is-medium',
+  large: 'is-large',
+};
+
 export default function Delete({
   className,
   size,
   ...props
 }) {
-  const sizeMap = {
-    small: 'is-small',
-    medium: 'is-medium',
-    large: 'is-large',
-  };
   const isSize = size && sizeMap[size];
 
   const classes = classNames('delete', className, isSize);
@@ -26,7 +28,7 @@ export default function Delete({
 Delete.propTypes = {
   className: PropTypes.string,
   component: PropTypes.elementType,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(sizes),
 };
 
 Delete.defaultProps = {

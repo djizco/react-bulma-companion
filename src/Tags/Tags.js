@@ -4,6 +4,18 @@ import classNames from 'classnames';
 
 import Element from '../Element';
 
+const sizes = ['medium', 'large'];
+const sizeMap = {
+  medium: 'are-medium',
+  large: 'are-large',
+};
+
+const aligns = ['center', 'right'];
+const alignMap = {
+  center: 'is-centered',
+  right: 'is-right',
+};
+
 export default function Tags({
   addons,
   align,
@@ -12,18 +24,7 @@ export default function Tags({
   size,
   ...props
 }) {
-  // Sizes
-  const sizeMap = {
-    medium: 'are-medium',
-    large: 'are-large',
-  };
   const areSize = size && sizeMap[size];
-
-  // Align
-  const alignMap = {
-    center: 'is-centered',
-    right: 'is-right',
-  };
   const isAlign = align && alignMap[align];
 
   const classes = classNames('tags', className, areSize, isAlign, {
@@ -41,9 +42,9 @@ Tags.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   component: PropTypes.elementType,
-  size: PropTypes.oneOf(['medium', 'large']),
+  size: PropTypes.oneOf(sizes),
   addons: PropTypes.bool,
-  align: PropTypes.oneOf(['center', 'right']),
+  align: PropTypes.oneOf(aligns),
 };
 
 Tags.defaultProps = {

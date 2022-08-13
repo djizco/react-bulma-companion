@@ -4,6 +4,13 @@ import classNames from 'classnames';
 
 import Element from '../Element';
 
+const sizes = ['small', 'medium', 'large'];
+const sizeMap = {
+  small: 'is-small',
+  medium: 'is-medium',
+  large: 'is-large',
+};
+
 export default function Control({
   children,
   className,
@@ -14,12 +21,6 @@ export default function Control({
   size,
   ...props
 }) {
-  // Sizes
-  const sizeMap = {
-    small: 'is-small',
-    medium: 'is-medium',
-    large: 'is-large',
-  };
   const isSize = size && sizeMap[size];
 
   const classes = classNames('control', className, isSize, {
@@ -44,7 +45,7 @@ Control.propTypes = {
   iconsRight: PropTypes.bool,
   expanded: PropTypes.bool,
   loading: PropTypes.bool,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(sizes),
 };
 
 Control.defaultProps = {

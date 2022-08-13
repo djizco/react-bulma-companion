@@ -7,6 +7,30 @@ import MessageHeader from './MessageHeader';
 
 import Element from '../Element';
 
+const colors = [
+  'primary', 'link', 'info', 'success', 'warning', 'danger',
+  'white', 'black', 'light', 'dark',
+];
+const colorMap = {
+  primary: 'is-primary',
+  link: 'is-link',
+  info: 'is-info',
+  success: 'is-success',
+  warning: 'is-warning',
+  danger: 'is-danger',
+  white: 'is-white',
+  black: 'is-black',
+  light: 'is-light',
+  dark: 'is-dark',
+};
+
+const sizes = ['small', 'medium', 'large'];
+const sizeMap = {
+  small: 'is-small',
+  medium: 'is-medium',
+  large: 'is-large',
+};
+
 export default function Message({
   children,
   className,
@@ -14,27 +38,7 @@ export default function Message({
   size,
   ...props
 }) {
-  // Colors
-  const colorMap = {
-    primary: 'is-primary',
-    link: 'is-link',
-    info: 'is-info',
-    success: 'is-success',
-    warning: 'is-warning',
-    danger: 'is-danger',
-    white: 'is-white',
-    black: 'is-black',
-    light: 'is-light',
-    dark: 'is-dark',
-  };
   const isColor = color && colorMap[color];
-
-  // Sizes
-  const sizeMap = {
-    small: 'is-small',
-    medium: 'is-medium',
-    large: 'is-large',
-  };
   const isSize = size && sizeMap[size];
 
   const classes = classNames('message', className, isColor, isSize);
@@ -53,19 +57,8 @@ Message.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   component: PropTypes.elementType,
-  color: PropTypes.oneOf([
-    'primary',
-    'link',
-    'info',
-    'success',
-    'warning',
-    'danger',
-    'white',
-    'black',
-    'light',
-    'dark',
-  ]),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf(sizes),
 };
 
 Message.defaultProps = {

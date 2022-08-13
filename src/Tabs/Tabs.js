@@ -8,6 +8,19 @@ import TabsLink from './TabsLink';
 
 import Element from '../Element';
 
+const sizes = ['small', 'medium', 'large'];
+const sizeMap = {
+  small: 'is-small',
+  medium: 'is-medium',
+  large: 'is-large',
+};
+
+const aligns = ['center', 'right'];
+const alignMap = {
+  center: 'is-centered',
+  right: 'is-right',
+};
+
 export default function Tabs({
   align,
   boxed,
@@ -19,19 +32,7 @@ export default function Tabs({
   toggle,
   ...props
 }) {
-  // Sizes
-  const sizeMap = {
-    small: 'is-small',
-    medium: 'is-medium',
-    large: 'is-large',
-  };
   const isSize = size && sizeMap[size];
-
-  // Align
-  const alignMap = {
-    center: 'is-centered',
-    right: 'is-right',
-  };
   const isAlign = align && alignMap[align];
 
   const classes = classNames('tabs', className, isSize, isAlign, {
@@ -56,8 +57,8 @@ Tabs.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   component: PropTypes.elementType,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  align: PropTypes.oneOf(['center', 'right']),
+  size: PropTypes.oneOf(sizes),
+  align: PropTypes.oneOf(aligns),
   boxed: PropTypes.bool,
   fullwidth: PropTypes.bool,
   toggle: PropTypes.bool,

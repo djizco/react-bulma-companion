@@ -10,6 +10,33 @@ import HeroButtons from './HeroButtons';
 
 import Element from '../Element';
 
+const colors = [
+  'primary', 'link', 'info', 'success', 'warning', 'danger',
+  'white', 'black', 'light', 'dark',
+];
+const colorMap = {
+  primary: 'is-primary',
+  link: 'is-link',
+  info: 'is-info',
+  success: 'is-success',
+  warning: 'is-warning',
+  danger: 'is-danger',
+  white: 'is-white',
+  black: 'is-black',
+  light: 'is-light',
+  dark: 'is-dark',
+};
+
+const sizes = ['small', 'medium', 'large', 'halfheight', 'fullheight', 'fullheight-navbar'];
+const sizeMap = {
+  small: 'is-small',
+  medium: 'is-medium',
+  large: 'is-large',
+  halfheight: 'is-halfheight',
+  fullheight: 'is-fullheight',
+  'fullheight-navbar': 'is-fullheight-with-navbar',
+};
+
 export default function Hero({
   bold,
   children,
@@ -18,30 +45,7 @@ export default function Hero({
   size,
   ...props
 }) {
-  // Colors
-  const colorMap = {
-    primary: 'is-primary',
-    link: 'is-link',
-    info: 'is-info',
-    success: 'is-success',
-    warning: 'is-warning',
-    danger: 'is-danger',
-    white: 'is-white',
-    black: 'is-black',
-    light: 'is-light',
-    dark: 'is-dark',
-  };
   const isColor = color && colorMap[color];
-
-  // Sizes
-  const sizeMap = {
-    small: 'is-small',
-    medium: 'is-medium',
-    large: 'is-large',
-    halfheight: 'is-halfheight',
-    fullheight: 'is-fullheight',
-    'fullheight-navbar': 'is-fullheight-with-navbar',
-  };
   const isSize = size && sizeMap[size];
 
   const classes = classNames('hero', className, isColor, isSize, {
@@ -65,26 +69,8 @@ Hero.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   component: PropTypes.elementType,
-  color: PropTypes.oneOf([
-    'primary',
-    'link',
-    'info',
-    'success',
-    'warning',
-    'danger',
-    'white',
-    'black',
-    'light',
-    'dark',
-  ]),
-  size: PropTypes.oneOf([
-    'small',
-    'medium',
-    'large',
-    'halfheight',
-    'fullheight',
-    'fullheight-navbar',
-  ]),
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf(sizes),
   bold: PropTypes.bool,
 };
 

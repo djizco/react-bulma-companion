@@ -11,6 +11,37 @@ import FileName from './FileName';
 
 import Element from '../Element';
 
+const colors = [
+  'primary', 'link', 'info', 'success', 'warning', 'danger',
+  'white', 'black', 'light', 'dark',
+];
+const colorMap = {
+  primary: 'is-primary',
+  link: 'is-link',
+  info: 'is-info',
+  success: 'is-success',
+  warning: 'is-warning',
+  danger: 'is-danger',
+  white: 'is-white',
+  black: 'is-black',
+  light: 'is-light',
+  dark: 'is-dark',
+};
+
+const sizes = ['small', 'normal', 'medium', 'large'];
+const sizeMap = {
+  small: 'is-small',
+  normal: 'is-normal',
+  medium: 'is-medium',
+  large: 'is-large',
+};
+
+const aligns = ['center', 'right'];
+const alignMap = {
+  center: 'is-centered',
+  right: 'is-right',
+};
+
 export default function File({
   align,
   boxed,
@@ -22,35 +53,8 @@ export default function File({
   size,
   ...props
 }) {
-  // Colors
-  const colorMap = {
-    primary: 'is-primary',
-    link: 'is-link',
-    info: 'is-info',
-    success: 'is-success',
-    warning: 'is-warning',
-    danger: 'is-danger',
-    white: 'is-white',
-    black: 'is-black',
-    light: 'is-light',
-    dark: 'is-dark',
-  };
   const isColor = color && colorMap[color];
-
-  // Sizes
-  const sizeMap = {
-    small: 'is-small',
-    normal: 'is-normal',
-    medium: 'is-medium',
-    large: 'is-large',
-  };
   const isSize = size && sizeMap[size];
-
-  // Align
-  const alignMap = {
-    center: 'is-centered',
-    right: 'is-right',
-  };
   const isAlign = align && alignMap[align];
 
   const classes = classNames('file', className, isColor, isSize, isAlign, {
@@ -77,20 +81,9 @@ File.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   component: PropTypes.elementType,
-  color: PropTypes.oneOf([
-    'primary',
-    'link',
-    'info',
-    'success',
-    'warning',
-    'danger',
-    'white',
-    'black',
-    'light',
-    'dark',
-  ]),
-  size: PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
-  align: PropTypes.oneOf(['center', 'right']),
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf(sizes),
+  align: PropTypes.oneOf(aligns),
   hasName: PropTypes.bool,
   boxed: PropTypes.bool,
   fullwidth: PropTypes.bool,

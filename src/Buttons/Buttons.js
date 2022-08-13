@@ -4,6 +4,19 @@ import classNames from 'classnames';
 
 import Element from '../Element';
 
+const sizes = ['small', 'medium', 'large'];
+const sizeMap = {
+  small: 'are-small',
+  medium: 'are-medium',
+  large: 'are-large',
+};
+
+const aligns = ['center', 'right'];
+const alignMap = {
+  center: 'is-centered',
+  right: 'is-right',
+};
+
 export default function Buttons({
   addons,
   align,
@@ -12,19 +25,7 @@ export default function Buttons({
   size,
   ...props
 }) {
-  // Size
-  const sizeMap = {
-    small: 'are-small',
-    medium: 'are-medium',
-    large: 'are-large',
-  };
   const areSize = size && sizeMap[size];
-
-  // Align
-  const alignMap = {
-    center: 'is-centered',
-    right: 'is-right',
-  };
   const isAlign = align && alignMap[align];
 
   const classes = classNames('buttons', className, areSize, isAlign, {
@@ -42,9 +43,9 @@ Buttons.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   component: PropTypes.elementType,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(sizes),
   addons: PropTypes.bool,
-  align: PropTypes.oneOf(['center', 'right']),
+  align: PropTypes.oneOf(aligns),
 };
 
 Buttons.defaultProps = {

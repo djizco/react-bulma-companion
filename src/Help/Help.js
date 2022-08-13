@@ -4,25 +4,29 @@ import classNames from 'classnames';
 
 import Element from '../Element';
 
+const colors = [
+  'primary', 'link', 'info', 'success', 'warning', 'danger',
+  'white', 'black', 'light', 'dark', 'text',
+];
+const colorMap = {
+  primary: 'is-primary',
+  link: 'is-link',
+  info: 'is-info',
+  success: 'is-success',
+  warning: 'is-warning',
+  danger: 'is-danger',
+  white: 'is-white',
+  black: 'is-black',
+  light: 'is-light',
+  dark: 'is-dark',
+};
+
 export default function Block({
   children,
   className,
   color,
   ...props
 }) {
-  // Colors
-  const colorMap = {
-    primary: 'is-primary',
-    link: 'is-link',
-    info: 'is-info',
-    success: 'is-success',
-    warning: 'is-warning',
-    danger: 'is-danger',
-    white: 'is-white',
-    black: 'is-black',
-    light: 'is-light',
-    dark: 'is-dark',
-  };
   const isColor = color && colorMap[color];
 
   const classes = classNames('help', className, isColor);
@@ -38,19 +42,7 @@ Block.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   component: PropTypes.elementType,
-  color: PropTypes.oneOf([
-    'primary',
-    'link',
-    'info',
-    'success',
-    'warning',
-    'danger',
-    'white',
-    'black',
-    'light',
-    'dark',
-    'text',
-  ]),
+  color: PropTypes.oneOf(colors),
 };
 
 Block.defaultProps = {

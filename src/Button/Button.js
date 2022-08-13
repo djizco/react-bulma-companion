@@ -5,6 +5,10 @@ import classNames from 'classnames';
 
 import Element from '../Element';
 
+const colors = [
+  'primary', 'link', 'info', 'success', 'warning', 'danger',
+  'white', 'black', 'light', 'dark', 'text', 'ghost',
+];
 const colorMap = {
   primary: 'is-primary',
   link: 'is-link',
@@ -20,6 +24,7 @@ const colorMap = {
   ghost: 'is-ghost',
 };
 
+const sizes = ['small', 'normal', 'medium', 'large'];
 const sizeMap = {
   small: 'is-small',
   normal: 'is-normal',
@@ -78,27 +83,9 @@ Button.propTypes = {
   children: PropTypes.node,
   component: PropTypes.elementType,
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
-  color: PropTypes.oneOf([
-    'primary',
-    'link',
-    'info',
-    'success',
-    'warning',
-    'danger',
-    'white',
-    'black',
-    'light',
-    'dark',
-    'text',
-    'ghost',
-  ]),
+  color: PropTypes.oneOf(colors),
   light: PropTypes.bool,
-  size: PropTypes.oneOf([
-    'small',
-    'normal',
-    'medium',
-    'large',
-  ]),
+  size: PropTypes.oneOf(sizes),
   responsive: PropTypes.bool,
   fullwidth: PropTypes.bool,
   outlined: PropTypes.bool,
