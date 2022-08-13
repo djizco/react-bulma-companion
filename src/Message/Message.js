@@ -5,16 +5,15 @@ import classNames from 'classnames';
 import MessageBody from './MessageBody';
 import MessageHeader from './MessageHeader';
 
+import Element from '../Element';
+
 export default function Message({
   children,
   className,
   color,
-  component,
   size,
   ...props
 }) {
-  const Element = component;
-
   // Colors
   const colorMap = {
     primary: 'is-primary',

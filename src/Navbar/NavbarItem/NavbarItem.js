@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../../Element';
+
 export default function NavbarItem({
-  active,
   children,
   className,
-  component,
+  active,
   expanded,
   hasDropdown,
   hasDropup,
@@ -14,8 +15,6 @@ export default function NavbarItem({
   tab,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames('navbar-item', className, {
     'is-active': active,
     'has-dropdown': hasDropdown || hasDropup,

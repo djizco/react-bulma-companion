@@ -7,15 +7,14 @@ import MenuList from './MenuList';
 import MenuListItem from './MenuListItem';
 import MenuLink from './MenuLink';
 
+import Element from '../Element';
+
 export default function Menu({
   children,
   className,
-  component,
   size,
   ...props
 }) {
-  const Element = component;
-
   // Sizes
   const sizeMap = {
     small: 'is-small',

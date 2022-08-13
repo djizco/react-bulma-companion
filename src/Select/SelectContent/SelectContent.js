@@ -2,17 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../../Element';
+
 export default function SelectContent({
   active,
   children,
   className,
-  component,
   focused,
   hovered,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames(className, {
     'is-hovered': hovered,
     'is-focused': focused,

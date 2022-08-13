@@ -10,14 +10,13 @@ import CardHeaderIcon from './CardHeaderIcon';
 import CardHeaderTitle from './CardHeaderTitle';
 import CardImage from './CardImage';
 
+import Element from '../Element';
+
 export default function Card({
   children,
   className,
-  component,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames('card', className);
 
   return (

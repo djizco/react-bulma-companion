@@ -4,17 +4,16 @@ import classNames from 'classnames';
 
 import IconText from './IconText';
 
+import Element from '../Element';
+
 export default function Icon({
   align,
   children,
   className,
   color,
-  component,
   size,
   ...props
 }) {
-  const Element = component;
-
   // Colors
   const colorMap = {
     primary: 'has-text-primary',

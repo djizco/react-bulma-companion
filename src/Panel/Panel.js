@@ -8,15 +8,14 @@ import PanelIcon from './PanelIcon';
 import PanelTab from './PanelTab';
 import PanelTabs from './PanelTabs';
 
+import Element from '../Element';
+
 export default function Panel({
   children,
   className,
   color,
-  component,
   ...props
 }) {
-  const Element = component;
-
   // Colors
   const colorMap = {
     primary: 'is-primary',

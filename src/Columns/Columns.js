@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../Element';
+
 const gaps = ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
 
 const gapMap = {};
@@ -32,7 +34,6 @@ export default function Columns({
   centered,
   children,
   className,
-  component,
   mobile,
   mobileGap,
   desktop,
@@ -50,8 +51,6 @@ export default function Columns({
   widescreenOnlyGap,
   ...props
 }) {
-  const Element = component;
-
   const isGap = gap && gapMap[gap];
   const isMobileGap = mobileGap && mobileGapMap[mobileGap];
   const isTabletGap = tabletGap && tabletGapMap[tabletGap];

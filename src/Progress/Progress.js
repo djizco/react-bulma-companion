@@ -2,16 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../Element';
+
 export default function Progress({
   children,
   className,
   color,
-  component,
   size,
   ...props
 }) {
-  const Element = component;
-
   // Colors
   const colorMap = {
     primary: 'is-primary',

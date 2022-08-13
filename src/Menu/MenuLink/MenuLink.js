@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../../Element';
+
 export default function MenuLink({
   active,
   children,
   className,
-  component,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames(className, {
     'is-active': active,
   });

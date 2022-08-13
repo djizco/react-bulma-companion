@@ -1,43 +1,49 @@
 # React Bulma Companion Changelog
 
+## Next
+
+### New Features
+
+- Add `Element` component. This component provides helper classes and is rendered under the hood of every component.
+
 ## 0.4.0
 
 ### Breaking Changes
 
-- Remove `link`, `header`, and `label` props. Use `component` prop instead. Remove Deprecation warning. Effected Components are: Button, Box, Card.FooterItem, Card.HeaderIcon, Dropdown.Item, Level.Item, Navbar.Item, Panel.Block, Tag, Title.
+- Remove `link`, `header`, and `label` props. Use `component` prop instead. Remove Deprecation warning. Effected Components are: `Button`, `Box`, `Card.FooterItem`, `Card.HeaderIcon`, `Dropdown.Item`, `Level.Item`, `Navbar.Item`, `Panel.Block`, `Tag`, `Title`.
 
 ### New Features
 
 - Update Current Version to Bulma 0.9.4
 - Add Button `responsive` prop
-- Add legacy Component Button-0.9.3
+- Add legacy Component `Button-0.9.3`
 
 ## 0.3.0
 
 ### New Features
 
 - Update Current Version to Bulma 0.9.3.
-- Add Legacy Component Content-0.9.2.
-- Add Legacy Component File-0.9.2.
+- Add Legacy Component `Content-0.9.2`.
+- Add Legacy Component `File-0.9.2`.
 
 ## 0.2.1
 
 ### Bug Fixes
 
-- Fix issue where Hero and Textarea components were importing the incorrect component in the dist builds.
+- Fix issue where `Hero` and `Textarea` components were importing the incorrect component in the dist builds.
 
 ## 0.2.0
 
 ### New Features
 
 - Update Current Version to Bulma 0.9.2.
-- Add Icon.Text Subcomponent.
+- Add `Icon.Text` Subcomponent.
 - Add Legacy Component Icon-0.9.1.
 
 ### Improvements
 
 - All components now accept a `component` prop that allows you to pass in a custom component.
-- Expand Docs for the Card Component.
+- Expand Docs for the `Card` Component.
 - Update Storybook to 6.3.
 
 ### Bug Fixes
@@ -52,7 +58,7 @@
 
 ### Bug Fixes
 
-- Remove onClick prop-type from Button.
+- Remove onClick prop-type from `Button`.
 
 ## 0.1.1
 

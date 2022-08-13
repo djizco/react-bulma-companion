@@ -2,14 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../../Element';
+
 export default function CardFooter({
   children,
   className,
-  component,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames('card-footer', className);
 
   return (

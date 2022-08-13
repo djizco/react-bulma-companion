@@ -2,18 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../Element';
+
 export default function Title({
   children,
   className,
-  component,
   size,
   spaced,
   subtitle,
   ...props
 }) {
   const isTitle = !subtitle ? 'title' : 'subtitle';
-
-  const Element = component;
 
   const sizeMap = {
     1: 'is-1',

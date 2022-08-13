@@ -12,19 +12,18 @@ import NavbarLink from './NavbarLink';
 import NavbarMenu from './NavbarMenu';
 import NavbarStart from './NavbarStart';
 
+import Element from '../Element';
+
 export default function Navbar({
   children,
   className,
   color,
-  component,
   fixed,
   shadow,
   spaced,
   transparent,
   ...props
 }) {
-  const Element = component;
-
   // Colors
   const colorMap = {
     primary: 'is-primary',

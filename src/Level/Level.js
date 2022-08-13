@@ -6,15 +6,14 @@ import LevelLeft from './LevelLeft';
 import LevelRight from './LevelRight';
 import LevelItem from './LevelItem';
 
+import Element from '../Element';
+
 export default function Level({
   children,
   className,
-  component,
   mobile,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames('level', className, {
     'is-mobile': mobile,
   });

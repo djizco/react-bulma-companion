@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../Element';
+
 export default function Section({
   children,
   className,
-  component,
   size,
   ...props
 }) {
-  const Element = component;
-
   const sizeMap = {
     medium: 'is-medium',
     large: 'is-large',

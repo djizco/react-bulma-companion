@@ -2,17 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../Element';
+
 export default function Buttons({
   addons,
   align,
   children,
   className,
-  component,
   size,
   ...props
 }) {
-  const Element = component;
-
   // Size
   const sizeMap = {
     small: 'are-small',

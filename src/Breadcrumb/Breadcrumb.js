@@ -5,17 +5,16 @@ import classNames from 'classnames';
 import BreadcrumbList from './BreadcrumbList';
 import BreadcrumbListItem from './BreadcrumbListItem';
 
+import Element from '../Element';
+
 export default function Breadcrumb({
   align,
   children,
   className,
-  component,
   separator,
   size,
   ...props
 }) {
-  const Element = component;
-
   // Align
   const alignMap = {
     center: 'is-centered',

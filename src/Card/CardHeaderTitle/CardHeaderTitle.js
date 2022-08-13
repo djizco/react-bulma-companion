@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../../Element';
+
 export default function CardHeaderTitle({
   centered,
   children,
   className,
-  component,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames('card-header-title', className, {
     'is-centered': centered,
   });

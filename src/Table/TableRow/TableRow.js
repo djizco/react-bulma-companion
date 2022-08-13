@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../../Element';
+
 export default function TableRow({
   children,
   className,
-  component,
   selected,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames(className, {
     'is-selected': selected,
   });

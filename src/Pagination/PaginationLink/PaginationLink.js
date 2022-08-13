@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../../Element';
+
 export default function PaginationLink({
   children,
   className,
-  component,
   current,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames('pagination-link', className, {
     'is-current': current,
   });

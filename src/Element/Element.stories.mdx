@@ -1,7 +1,10 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 
 import Element from './Element';
+
+import Box from '../Box';
 import Button from '../Button';
+import Content from '../Content';
 
 <Meta title="Elements/Element" component={Element} />
 
@@ -9,15 +12,99 @@ import Button from '../Button';
 
 ### The root helper **element** for most components
 
-Supported Versions: `0.9.4`, `0.9.3`, `0.9.2`, `0.9.1`, `0.9.0`
+[Bulma Documentation](https://bulma.io/documentation/components/dropdown/)
 
-## Default
+Every component renders as an **Element** under the hood which allows you to add helpers.
+
+## Text Helpers
+
+Change the **color** of the text and/or background.
 
 <Canvas>
-  <Story name="Default">
-    <Button>Button</Button>
+  <Story name="Color">
+    <Content textColor="info" backgroundColor="info-light">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+    </Content>
   </Story>
 </Canvas>
+
+Change the size, weight, and other font properties of the text
+
+<Canvas>
+  <Story name="Size">
+    <Content textSize="4" textWeight="semibold" textTransform="capitalize" textAlign="right">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+    </Content>
+  </Story>
+</Canvas>
+
+## Spacing Helpers
+
+React Bulma Companion provides **margin** and **padding** helpers in all **directions**:
+
+<Canvas>
+  <Story name="Spacing">
+    <Content>
+      <Box marginBottom="4">
+        Margin bottom
+      </Box>
+      <Box paddingHorizontal="1">
+        Horizontal padding
+      </Box>
+      <Box marginRight="2" paddingTop="3">
+        Both
+      </Box>
+    </Content>
+  </Story>
+</Canvas>
+
+## Responsive Helpers
+
+Show/hide **content** depending on the width of the viewport
+
+<Canvas>
+  <Story name="Responsive">
+    <Content mobile={{ hidden: true }} tablet={{ textSize: '6', only: true }} desktop={{ textSize: '4' }}>
+      This text is hidden on mobile. Stretch me to change text size.
+    </Content>
+  </Story>
+</Canvas>
+
+## Visiblity Helpers
+
+- `display`
+- `invisible`
+- `hidden`
+- `screenReaderOnly`
+
+## Flex Helpers
+
+Combined with `display="flex"`, all of the **Flexbox CSS properties** are available as helpers:
+
+- `flexDirection`
+- `flexWrap`
+- `justifyContent`
+- `alignContent`
+- `alignItems`
+- `alignSelf`
+- `flexGrow`
+- `flexShrink`
+
+## Other Helpers
+
+Other useful helpers
+
+- `italic`
+- `underlined`
+- `float`
+- `clearfix`
+- `overlay`
+- `clipped`
+- `radiusless`
+- `shadowless`
+- `unselectable`
+- `clickable`
+- `relative`
 
 ## Element Props
 

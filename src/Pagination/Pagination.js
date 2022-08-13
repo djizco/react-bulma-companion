@@ -9,17 +9,16 @@ import PaginationListItem from './PaginationListItem';
 import PaginationNext from './PaginationNext';
 import PaginationPrevious from './PaginationPrevious';
 
+import Element from '../Element';
+
 export default function Pagination({
   align,
   children,
   className,
-  component,
   rounded,
   size,
   ...props
 }) {
-  const Element = component;
-
   const sizeMap = {
     small: 'is-small',
     medium: 'is-medium',

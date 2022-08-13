@@ -8,18 +8,17 @@ import DropdownItem from './DropdownItem';
 import DropdownMenu from './DropdownMenu';
 import DropdownTrigger from './DropdownTrigger';
 
+import Element from '../Element';
+
 export default function Dropdown({
   active,
   children,
   className,
-  component,
   hoverable,
   right,
   up,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames('dropdown', className, {
     'is-active': active,
     'is-hoverable': hoverable,

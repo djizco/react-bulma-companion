@@ -6,20 +6,19 @@ import TabsList from './TabsList';
 import TabsListItem from './TabsListItem';
 import TabsLink from './TabsLink';
 
+import Element from '../Element';
+
 export default function Tabs({
   align,
   boxed,
   children,
   className,
-  component,
   fullwidth,
   rounded,
   size,
   toggle,
   ...props
 }) {
-  const Element = component;
-
   // Sizes
   const sizeMap = {
     small: 'is-small',

@@ -5,12 +5,13 @@ import classNames from 'classnames';
 import FieldLabel from './FieldLabel';
 import FieldBody from './FieldBody';
 
+import Element from '../Element';
+
 export default function Field({
   align,
   addons,
   children,
   className,
-  component,
   expanded,
   fullwidth,
   grouped,
@@ -19,8 +20,6 @@ export default function Field({
   narrow,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames('field', className, {
     'is-grouped': grouped,
     'has-addons': addons,

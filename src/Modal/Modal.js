@@ -11,15 +11,14 @@ import ModalCardTitle from './ModalCardTitle';
 import ModalClose from './ModalClose';
 import ModalContent from './ModalContent';
 
+import Element from '../Element';
+
 export default function Modal({
   active,
   children,
   className,
-  component,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames('modal', className, {
     'is-active': active,
   });

@@ -9,20 +9,19 @@ import FileIcon from './FileIcon';
 import FileText from './FileText';
 import FileName from './FileName';
 
+import Element from '../Element';
+
 export default function File({
   align,
   boxed,
   children,
   className,
   color,
-  component,
   fullwidth,
   hasName,
   size,
   ...props
 }) {
-  const Element = component;
-
   // Colors
   const colorMap = {
     primary: 'is-primary',

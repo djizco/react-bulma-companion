@@ -10,19 +10,18 @@ import TableHeadCell from './TableHeadCell';
 import TableDataCell from './TableDataCell';
 import TableContainer from './TableContainer';
 
+import Element from '../Element';
+
 export default function Table({
   bordered,
   children,
   className,
-  component,
   fullwidth,
   hoverable,
   narrow,
   striped,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames('table', className, {
     'is-bordered': bordered,
     'is-striped': striped,

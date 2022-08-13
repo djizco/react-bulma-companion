@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../Element';
+
 const sizes = [
   'full', 'half', 'one-third', 'two-thirds', 'one-quarter', 'three-quarters',
   'one-fifth', 'two-fifths', 'three-fifths', 'four-fifths',
@@ -43,7 +45,6 @@ sizes.forEach(size => {
 export default function Column({
   children,
   className,
-  component,
   desktopOffset,
   desktopSize,
   fullhdOffset,
@@ -67,8 +68,6 @@ export default function Column({
   widescreenSize,
   ...props
 }) {
-  const Element = component;
-
   const isSize = size && sizeMap[size];
   const isOffset = offset && offsetMap[offset];
   const isMobileSize = mobileSize && mobileSizeMap[mobileSize];

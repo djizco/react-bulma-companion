@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Element from '../../Element';
+
 export default function SelectContent({
   children,
   className,
-  component,
   ...props
 }) {
-  const Element = component;
-
   return (
     <Element className={className} {...props}>
       {children}

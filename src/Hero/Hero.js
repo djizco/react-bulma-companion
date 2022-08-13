@@ -8,17 +8,16 @@ import HeroFoot from './HeroFoot';
 import HeroVideo from './HeroVideo';
 import HeroButtons from './HeroButtons';
 
+import Element from '../Element';
+
 export default function Hero({
   bold,
   children,
   className,
   color,
-  component,
   size,
   ...props
 }) {
-  const Element = component;
-
   // Colors
   const colorMap = {
     primary: 'is-primary',

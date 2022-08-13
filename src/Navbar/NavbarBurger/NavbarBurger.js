@@ -2,14 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../../Element';
+
 export default function NavbarBurger({
-  active,
   className,
-  component,
+  active,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames('navbar-burger', className, {
     'is-active': active,
   });

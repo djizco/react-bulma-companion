@@ -5,11 +5,12 @@ import classNames from 'classnames';
 import SelectContent from './SelectContent';
 import SelectOption from './SelectOption';
 
+import Element from '../Element';
+
 export default function Select({
   children,
   className,
   color,
-  component,
   fullwidth,
   loading,
   rounded,
@@ -17,8 +18,6 @@ export default function Select({
   multiple,
   ...props
 }) {
-  const Element = component;
-
   // Colors
   const colorMap = {
     primary: 'is-primary',

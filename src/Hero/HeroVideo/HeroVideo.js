@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../../Element';
+
 export default function HeroVideo({
   children,
   className,
-  component,
   transparent,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames('hero-video', className, {
     'is-transparent': transparent,
   });

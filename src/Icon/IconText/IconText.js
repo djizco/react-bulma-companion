@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../../Element';
+
 export default function IconText({
   children,
   className,
   color,
-  component,
   ...props
 }) {
-  const Element = component;
-
   // Colors
   const colorMap = {
     primary: 'has-text-primary',

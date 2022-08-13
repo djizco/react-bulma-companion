@@ -2,16 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../../Element';
+
 export default function PanelBlock({
   active,
   children,
   className,
-  component,
   wrapped,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames('panel-block', className, {
     'is-active': active,
     'is-wrapped': wrapped,

@@ -6,14 +6,13 @@ import MediaLeft from './MediaLeft';
 import MediaRight from './MediaRight';
 import MediaContent from './MediaContent';
 
+import Element from '../Element';
+
 export default function Media({
   children,
   className,
-  component,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames('media', className);
 
   return (

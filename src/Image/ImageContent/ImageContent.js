@@ -2,20 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../../Element';
+
 export default function Image({
   className,
-  component,
   rounded,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames('image', className, {
     'is-rounded': rounded,
   });
 
   return (
-    // eslint-disable-next-line
     <Element className={classes} {...props} />
   );
 }

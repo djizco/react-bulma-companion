@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../Element';
+
 export default function Label({
   children,
   className,
-  component,
   size,
   ...props
 }) {
-  const Element = component;
-
   const sizeMap = {
     small: 'is-small',
     medium: 'is-medium',

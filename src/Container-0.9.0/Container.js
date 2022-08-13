@@ -2,16 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../Element';
+
 export default function Container({
   breakpoint,
   children,
   className,
-  component,
   fluid,
   ...props
 }) {
-  const Element = component;
-
   const breakpointMap = {
     widescreen: 'is-widescreen',
     fullhd: 'is-fullhd',

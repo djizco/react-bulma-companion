@@ -2,16 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../../Element';
+
 export default function NavbarDropdown({
-  boxed,
   children,
   className,
-  component,
+  boxed,
   right,
   ...props
 }) {
-  const Element = component;
-
   const classes = classNames('navbar-dropdown', className, {
     'is-right': right,
     'is-boxed': boxed,

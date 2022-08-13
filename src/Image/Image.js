@@ -4,17 +4,16 @@ import classNames from 'classnames';
 
 import ImageContent from './ImageContent';
 
+import Element from '../Element';
+
 export default function Image({
   children,
   className,
-  component,
   fullwidth,
   ratio,
   size,
   ...props
 }) {
-  const Element = component;
-
   // Sizes
   const sizeMap = {
     '16x16': 'is-16x16',

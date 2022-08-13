@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Element from '../Element';
+
 export default function Control({
   children,
   className,
-  component,
   expanded,
   iconsLeft,
   iconsRight,
@@ -13,8 +14,6 @@ export default function Control({
   size,
   ...props
 }) {
-  const Element = component;
-
   // Sizes
   const sizeMap = {
     small: 'is-small',
