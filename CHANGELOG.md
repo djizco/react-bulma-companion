@@ -1,6 +1,11 @@
 # React Bulma Companion Changelog
 
-## Next
+## 0.5.0
+
+### Breaking Changes
+
+- Removes all Legacy Components. They are not really needed since components are mostly backwards-compatible. Update docs to help support older Bulma versions.
+- Refactor how `Column` and `Columns` props work to be more intuitive.
 
 ### New Features
 

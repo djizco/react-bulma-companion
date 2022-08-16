@@ -4,11 +4,11 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const resolve = dir => path.join(__dirname, './', dir);
 
-const { NODE_ENV, BULMA_VERSION = '0.9.0', LEGACY = false } = process.env;
+const { NODE_ENV } = process.env;
 const isDev = NODE_ENV === 'development';
 
 const BundleAnalyzerPluginConfig = new BundleAnalyzerPlugin({
-  analyzerMode: LEGACY ? 'disabled' : 'static',
+  analyzerMode: 'static',
   reportFilename: isDev
     ? 'reports/report.html'
     : 'reports/report-min.html',
@@ -16,13 +16,13 @@ const BundleAnalyzerPluginConfig = new BundleAnalyzerPlugin({
 
 module.exports = {
   entry: [
-    `./src/${LEGACY ? BULMA_VERSION : 'index'}.js`,
+    './src/index.js',
   ],
   output: {
     filename: isDev
-      ? `react-bulma-companion${LEGACY ? `-${BULMA_VERSION}` : ''}.js`
-      : `react-bulma-companion${LEGACY ? `-${BULMA_VERSION}` : ''}.min.js`,
-    path: resolve(LEGACY ? 'dist/legacy' : 'dist'),
+      ? 'react-bulma-companion.js'
+      : 'react-bulma-companion.min.js',
+    path: resolve('dist'),
     umdNamedDefine: true,
     libraryTarget: 'umd',
     library: 'react-bulma-companion',

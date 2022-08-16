@@ -2,9 +2,9 @@
 
 A set of React Components for the [Bulma](http://bulma.io/) CSS framework. Check out the [component documentation](http://react-bulma-companion.surge.sh/).
 
-The current Bulma version this library supports is `0.9.4`. To use an older version of Bulma with this library, please reference the **Legacy Support** section.
-
 React Bulma Companion works as a **companion** to Bulma's CSS classes. It doesn't include any CSS itself. This allows you to import Bulma and customize it in any way you choose.
+
+This library supports bulma versions `0.9.x` and has been updated for `0.9.4`.
 
 ## Why use React Bulma Companion
 
@@ -12,9 +12,7 @@ React Bulma Companion was created for a few reasons.
 
 - No CSS: The main reason React Bulma Companion was created was to have a Bulma component library that doesn't include any CSS. This allows you to install Bulma separately and still use these components without any duplicate stylesheets.
 
-- Easy to use: React Bulma Companion is built with a simple API and easy-to-read [documentation](http://react-bulma-companion.surge.sh/) that is based on the original [Bulma docs](https://bulma.io/documentation/). It is slightly opinionated in what elements it uses under the hood, while leaving you enough customization to take full advantage of Bulma's features.
-
-- Legacy Support: Because React Bulma Companion works completely by adding and removing Bulma classes, it isn't directly tied to any specific stylesheets. This makes it possible for components to be compatible with multiple versions of Bulma. A legacy support section has been added to help you use React Bulma Companion with older versions of Bulma.
+- Easy to use: React Bulma Companion is built with a simple API and easy-to-read [documentation](http://react-bulma-companion.surge.sh/) that is based on the original [Bulma docs](https://bulma.io/documentation/). It allows you to easily take full advantage of Bulma's features.
 
 ## Configure Bulma
 
@@ -51,41 +49,7 @@ React Bulma Companion's [component documentation](http://react-bulma-companion.s
 
 You can also see React Bulma Companion in use [here](https://github.com/djizco/mern-boilerplate/tree/master/client/components).
 
-## Legacy Support
 
-The current Bulma version this library supports is `0.9.4`, however React Bulma Companion was created with the idea of legacy support in mind.
+## The Element Component
 
-Legacy-compatible versions of React Bulma Companion can be found at `dist/legacy/react-bulma-companion-[version].js` where the `version` number on the file name is for the **Bulma version** you are using.
-
-Legacy index files are also created in the `lib` folder allowing you to easily important legacy components.
-
-```javascript
-import { Button, Table } from 'react-bulma-companion/dist/legacy/react-bulma-companion-[version]';
-
-import { Button, Table } from 'react-bulma-companion/lib/[version]';
-```
-
-If you are planning to stick with the above setup and are using webpack, I recommend setting up a [webpack alias](https://webpack.js.org/configuration/resolve/#resolvealias) to clean up your imports.
-
-```javascript
-module.exports = {
-  resolve: {
-    alias: {
-      'react-bulma-companion': 'react-bulma-companion/lib/[version]',
-    },
-  },
-};
-```
-
-To use **tree shaking** with a legacy version of Bulma, you must import the correct components. Please reference the **legacy component map** in the [documentation](http://react-bulma-companion.surge.sh/?path=/docs/legacy-component-map--page) to see which component you should use with your version. Legacy components are labeled with its **latest compatible version**.
-
-```javascript
-import Button from 'react-bulma-companion/lib/Button-[version]';
-```
-
-Legacy Bulma Versions Supported: `0.9.3`, `0.9.2`, `0.9.1`, `0.9.0`
-
-## To Do
-
-- [X] Add Modifier Classes
-- [ ] Typescript Support
+Under the hood, React Bulma Companion renders every component as an [Element](http://react-bulma-companion.surge.sh/?path=/docs/elements-element--color) component. This gives every component access to all the helper classes that Bulma has to offer. You may also pass a ref to every component through the `domRef` property.

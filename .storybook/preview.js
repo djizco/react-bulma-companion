@@ -9,7 +9,7 @@ export const parameters = {
   options: {
     storySort: {
       method: 'alphabetical',
-      order: ['Elements', 'Components', 'Form', 'Layout', 'Legacy', ['Component Map']],
+      order: ['Elements', 'Components', 'Form', 'Layout'],
     },
   },
   docs: {

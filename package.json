@@ -1,15 +1,14 @@
 {
   "name": "react-bulma-companion",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "React Components for Bulma",
   "main": "lib/index.js",
   "scripts": {
     "start": "NODE_ENV=development webpack --mode=development --watch",
     "prebuild": "rm -rf dist && rm -rf lib",
-    "build": "npm run build:lib && npm run build:dev && npm run build:prd && npm run build:legacy",
+    "build": "npm run build:lib && npm run build:dev && npm run build:prd",
     "build:dev": "NODE_ENV=development webpack --mode=production",
     "build:prd": "NODE_ENV=production webpack --mode=production",
-    "build:legacy": "./build-legacy.sh",
     "build:lib": "babel src --out-dir lib --ignore 'src/**/*.test.js'",
     "build:docs": "rm -rf docs && build-storybook --docs -o docs",
     "deploy:docs": "surge docs react-bulma-companion.surge.sh",
@@ -40,7 +39,6 @@
   "files": [
     "dist/react-bulma-companion.js",
     "dist/react-bulma-companion.min.js",
-    "dist/legacy",
     "lib"
   ],
   "dependencies": {
