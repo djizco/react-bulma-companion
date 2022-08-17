@@ -276,22 +276,22 @@ While you can use empty columns to create horizontal space around columns, you c
 <Canvas>
   <Story name="Offset">
     <React.Fragment>
-      <Columns textAlign="center">
+      <Columns textAlign="center" activate="mobile">
         <Column size="half" offset="one-quarter">
           <Notification color="primary">Size: half, Offset: one-quarter</Notification>
         </Column>
       </Columns>
-      <Columns textAlign="center">
+      <Columns textAlign="center" activate="mobile">
         <Column size="three-fifths" offset="one-fifth">
           <Notification color="primary">Size: three-fifth, Offset: one-fifth</Notification>
         </Column>
       </Columns>
-      <Columns textAlign="center">
+      <Columns textAlign="center" activate="mobile">
         <Column size="4" offset="8">
           <Notification color="primary">Size: 4, Offset: 8</Notification>
         </Column>
       </Columns>
-      <Columns textAlign="center">
+      <Columns textAlign="center" activate="mobile">
         <Column size="11" offset="1">
           <Notification color="primary">Size: 11, Offset: 1</Notification>
         </Column>
@@ -323,24 +323,17 @@ If you want a column to only take the **space it needs**, use the `narrow` prop.
   </Story>
 </Canvas>
 
-You can have narrow columns for different **breakpoints** by adding the following props.
-
-- `narrowMobile`
-- `narrowTablet`
-- `narrowTouch`
-- `narrowDesktop`
-- `narrowWidescreen`
-- `narrowFullhd`
+You can have narrow columns for different **breakpoints** by adding `narrow` to the corresponding responsive object. For example `mobile={{ narrow: true }}`
 
 ## Mobile Columns
 
 By default, columns are only activated from **tablet** onwards. This means columns are stacked on top of each other on **mobile**.
 
-If you want columns to work on **mobile too**, just add the `mobile` prop on the `<Columns>` container:
+If you want columns to work on **mobile too**, just add `activate="mobile"` on the `<Columns>` container:
 
 <Canvas>
   <Story name="Mobile">
-    <Columns textAlign="center" mobile>
+    <Columns textAlign="center" activate="mobile">
       <Column><Notification color="primary">1</Notification></Column>
       <Column><Notification color="primary">2</Notification></Column>
       <Column><Notification color="primary">3</Notification></Column>
@@ -349,11 +342,11 @@ If you want columns to work on **mobile too**, just add the `mobile` prop on the
   </Story>
 </Canvas>
 
-If you *only* want columns on **desktop** upwards, just use the `desktop` prop on the columns container:
+If you *only* want columns on **desktop** upwards, just add `activate="desktop"` on the columns container:
 
 <Canvas>
   <Story name="Desktop">
-    <Columns textAlign="center" desktop>
+    <Columns textAlign="center" activate="desktop">
       <Column><Notification color="primary">1</Notification></Column>
       <Column><Notification color="primary">2</Notification></Column>
       <Column><Notification color="primary">3</Notification></Column>
@@ -368,13 +361,13 @@ You can define a **column size** for each viewport size: mobile, tablet, touch, 
 
 <Canvas>
   <Story name="Multiple Breakpoints">
-    <Columns textAlign="center" mobile>
+    <Columns textAlign="center" activate="mobile">
       <Column
-        mobileSize="three-quarters"
-        tabletSize="two-thirds"
-        desktopSize="half"
-        widescreenSize="one-third"
-        fullhdSize="one-quarter"
+        mobile={{ size: 'three-quarters' }}
+        tablet={{ size: 'two-thirds' }}
+        desktop={{ size: 'half' }}
+        widescreen={{ size: 'one-third' }}
+        fullhd={{ size: 'one-quarter' }}
       >
         <Notification color="primary">
           <p>Mobile: three-quarters</p>
@@ -390,6 +383,8 @@ You can define a **column size** for each viewport size: mobile, tablet, touch, 
     </Columns>
   </Story>
 </Canvas>
+
+If you want to see these classes in action, resize your browser window and see how the same column varies in width at each breakpoint.
 
 ## Nesting
 
@@ -407,7 +402,7 @@ The difference with multiline columns is the **order** in the code: all the blue
     <Columns textAlign="center">
       <Column>
         <Notification color="info">First column</Notification>
-        <Columns mobile>
+        <Columns activate="mobile">
           <Column>
             <Notification color="info">First nested column</Notification>
           </Column>
@@ -418,7 +413,7 @@ The difference with multiline columns is the **order** in the code: all the blue
       </Column>
       <Column>
         <Notification color="danger">Second column</Notification>
-        <Columns mobile>
+        <Columns activate="mobile">
           <Column size="half">
             <Notification color="danger">50%</Notification>
           </Column>
@@ -436,110 +431,10 @@ The difference with multiline columns is the **order** in the code: all the blue
 
 Multiline columns will also have a **gap** between each **line**.
 
-## Vertical Alignment
-
-To align your columns vertically, add the `vcentered` prop to the `<Columns>` container.
-
-<Canvas>
-  <Story name="Vertical Alignment">
-    <Columns vcentered>
-      <Column size="8">
-        <Notification color="primary">First Column</Notification>
-      </Column>
-      <Column>
-        <Notification color="primary">
-          Second column with more content. This is so you can see the vertical alignment.
-        </Notification>
-      </Column>
-    </Columns>
-  </Story>
-</Canvas>
-
-You can see the left column aligns itself vertically to the right column.
-
-## Multiline
-
-Whenever you want to start a new line, you can close a columns container and start a new one. But you can also add the `multiline` prop and add **more** column elements than would fit in a single row.
-
-<Canvas>
-  <Story name="Multiline">
-    <Columns textAlign="center" multiline mobile>
-      <Column size="one-quarter">
-        <Notification color="primary">one-quarter</Notification>
-      </Column>
-      <Column size="one-quarter">
-        <Notification color="primary">one-quarter</Notification>
-      </Column>
-      <Column size="one-quarter">
-        <Notification color="primary">one-quarter</Notification>
-      </Column>
-      <Column size="one-quarter">
-        <Notification color="primary">one-quarter</Notification>
-      </Column>
-      <Column size="half">
-        <Notification color="primary">half</Notification>
-      </Column>
-      <Column size="one-quarter">
-        <Notification color="primary">one-quarter</Notification>
-      </Column>
-      <Column size="one-quarter">
-        <Notification color="primary">one-quarter</Notification>
-      </Column>
-      <Column size="one-quarter">
-        <Notification color="primary">one-quarter</Notification>
-      </Column>
-      <Column>
-        <Notification color="primary">Auto</Notification>
-      </Column>
-    </Columns>
-  </Story>
-</Canvas>
-
-## Centering Columns
-
-While you can use *empty columns* to create horizontal space around columns, you can also use `centered` on the parent `<Columns>`:
-
-<Canvas>
-  <Story name="Centered">
-    <Columns textAlign="center" mobile centered>
-      <Column size="half">
-        <Notification color="primary">is-half</Notification>
-      </Column>
-    </Columns>
-  </Story>
-</Canvas>
-
-Use with `multiline` to create a flexible, centered list
-
-<Canvas>
-  <Story name="Centered multiline">
-    <Columns mobile multiline centered>
-      <Column narrow>
-        <Notification color="primary">narrow</Notification>
-      </Column>
-      <Column narrow>
-        <Notification color="primary">narrow</Notification>
-      </Column>
-      <Column narrow>
-        <Notification color="primary">narrow</Notification>
-      </Column>
-      <Column narrow>
-        <Notification color="primary">narrow</Notification>
-      </Column>
-      <Column narrow>
-        <Notification color="primary">narrow</Notification>
-      </Column>
-      <Column narrow>
-        <Notification color="primary">narrow</Notification>
-      </Column>
-    </Columns>
-  </Story>
-</Canvas>
-
 ## Gaps
 
-Each column has a **gap** equal to the **variable** `$column-gap`, which has a default value of 0.75rem.
-Since the gap is on each side of a column, the gap between two adjacent columns will be twice the value of `$column-gap`, or 1.5rem by default.
+Each column has a **gap** equal to the **variable** `$column-gap`, which has a default value of `0.75rem`.
+Since the gap is on each side of a column, the gap between two adjacent columns will be twice the value of `$column-gap`, or `1.5rem` by default.
 
 ### Gapless
 
@@ -560,7 +455,7 @@ You can combine it with the `multiline` prop:
 
 <Canvas>
   <Story name="Multiline Gapless">
-    <Columns textAlign="center" gapless multiline mobile>
+    <Columns textAlign="center" activate="mobile" gapless multiline>
       <Column size="one-quarter">
         <Notification color="primary">one-quarter</Notification>
       </Column>
@@ -601,13 +496,13 @@ This feature is only available in browsers that support CSS Variables.
 <Canvas>
   <Story name="Variable Gap">
     <React.Fragment>
-      <Columns textAlign="center" gap="1">
+      <Columns textAlign="center" gap="1" activate="mobile">
         <Column><Notification color="primary">Gap 1</Notification></Column>
         <Column><Notification color="primary">Gap 1</Notification></Column>
         <Column><Notification color="primary">Gap 1</Notification></Column>
         <Column><Notification color="primary">Gap 1</Notification></Column>
       </Columns>
-      <Columns textAlign="center" gap="8">
+      <Columns textAlign="center" gap="8" activate="mobile">
         <Column><Notification color="primary">Gap 8</Notification></Column>
         <Column><Notification color="primary">Gap 8</Notification></Column>
         <Column><Notification color="primary">Gap 8</Notification></Column>
@@ -625,17 +520,124 @@ You can define a column gap for each viewport size:
   <Story name="Breakpoint Variable Gaps">
     <Columns
       textAlign="center"
-      mobileGap="1"
-      tabletGap="0"
-      desktopGap="3"
-      widescreenGap="8"
-      fullhdGap="2"
-      mobile
+      activate="mobile"
+      mobile={{ gap: '1' }}
+      tablet={{ gap: '0' }}
+      desktop={{ gap: '3' }}
+      widescreen={{ gap: '8' }}
+      fullhd={{ gap: '2' }}
     >
       <Column><Notification color="primary">Column</Notification></Column>
       <Column><Notification color="primary">Column</Notification></Column>
       <Column><Notification color="primary">Column</Notification></Column>
       <Column><Notification color="primary">Column</Notification></Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+## Vertical Alignment
+
+To align your columns vertically, add the `vcentered` prop to the `<Columns>` container.
+
+<Canvas>
+  <Story name="Vertical Alignment">
+    <Columns vcentered>
+      <Column size="8">
+        <Notification color="primary">First Column</Notification>
+      </Column>
+      <Column>
+        <Notification color="primary">
+          Second column with more content. This is so you can see the vertical alignment.
+        </Notification>
+      </Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+You can see the left column aligns itself vertically to the right column.
+
+## Multiline
+
+Whenever you want to start a new line, you can close a columns container and start a new one. But you can also add the `multiline` prop and add **more** column elements than would fit in a single row.
+
+<Canvas>
+  <Story name="Multiline">
+    <Columns textAlign="center" activate="mobile" multiline>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column size="half">
+        <Notification color="primary">half</Notification>
+      </Column>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column size="one-quarter">
+        <Notification color="primary">one-quarter</Notification>
+      </Column>
+      <Column>
+        <Notification color="primary">Auto</Notification>
+      </Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+## Centering Columns
+
+While you can use *empty columns* to create horizontal space around columns, you can also use `centered` on the parent `<Columns>`:
+
+<Canvas>
+  <Story name="Centered">
+    <Columns textAlign="center" activate="mobile" centered>
+      <Column size="half">
+        <Notification color="primary">is-half</Notification>
+      </Column>
+    </Columns>
+  </Story>
+</Canvas>
+
+Use with `multiline` to create a flexible, centered list
+
+<Canvas>
+  <Story name="Centered multiline">
+    <Columns activate="mobile" multiline centered>
+      <Column narrow>
+        <Notification color="primary">
+          First Column
+        </Notification>
+      </Column>
+      <Column narrow>
+        <Notification color="primary">
+          Second Column
+        </Notification>
+      </Column>
+      <Column narrow>
+        <Notification color="primary">
+          Third Column
+        </Notification>
+      </Column>
+      <Column narrow>
+        <Notification color="primary">
+          Fourth Column
+        </Notification>
+      </Column>
+      <Column narrow>
+        <Notification color="primary">
+          Fifth Column
+        </Notification>
+      </Column>
     </Columns>
   </Story>
 </Canvas>

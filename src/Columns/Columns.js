@@ -7,84 +7,62 @@ import Element from '../Element';
 const gaps = ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
 
 const gapMap = {};
-const mobileGapMap = {};
-const tabletGapMap = {};
-const touchGapMap = {};
-const desktopGapMap = {};
-const widescreenGapMap = {};
-const fullhdGapMap = {};
-const tabletOnlyGapMap = {};
-const desktopOnlyGapMap = {};
-const widescreenOnlyGapMap = {};
 
 gaps.forEach(gap => {
   gapMap[gap] = `is-${gap}`;
-  mobileGapMap[gap] = `is-${gap}-mobile`;
-  tabletGapMap[gap] = `is-${gap}-tablet`;
-  touchGapMap[gap] = `is-${gap}-touch`;
-  desktopGapMap[gap] = `is-${gap}-desktop`;
-  widescreenGapMap[gap] = `is-${gap}-widescreen`;
-  fullhdGapMap[gap] = `is-${gap}-fullhd`;
-  tabletOnlyGapMap[gap] = `is-${gap}-tablet-only`;
-  desktopOnlyGapMap[gap] = `is-${gap}-desktop-only`;
-  widescreenOnlyGapMap[gap] = `is-${gap}-widescreen-only`;
 });
 
 export default function Columns({
+  activate,
   centered,
   children,
   className,
-  mobile,
-  mobileGap,
   desktop,
-  desktopGap,
-  desktopOnlyGap,
-  fullhdGap,
   gap,
   gapless,
   multiline,
-  tabletGap,
-  tabletOnlyGap,
-  touchGap,
+  mobile,
   vcentered,
-  widescreenGap,
-  widescreenOnlyGap,
+  tablet,
+  touch,
+  widescreen,
+  fullhd,
   ...props
 }) {
   const isGap = gap && gapMap[gap];
-  const isMobileGap = mobileGap && mobileGapMap[mobileGap];
-  const isTabletGap = tabletGap && tabletGapMap[tabletGap];
-  const isTouchGap = touchGap && touchGapMap[touchGap];
-  const isDesktopGap = desktopGap && desktopGapMap[desktopGap];
-  const isWidescreenGap = widescreenGap && widescreenGapMap[widescreenGap];
-  const isFullhdGap = fullhdGap && fullhdGapMap[fullhdGap];
-  const isTabletOnlyGap = tabletOnlyGap && tabletOnlyGapMap[tabletOnlyGap];
-  const isDesktopOnlyGap = desktopOnlyGap && desktopOnlyGapMap[desktopOnlyGap];
-  const isWidescreenOnlyGap = widescreenOnlyGap && widescreenOnlyGapMap[widescreenOnlyGap];
 
   const classes = classNames(
     'columns',
     className,
     isGap,
-    isMobileGap,
-    isTabletGap,
-    isTouchGap,
-    isDesktopGap,
-    isWidescreenGap,
-    isFullhdGap,
-    isTabletOnlyGap,
-    isDesktopOnlyGap,
-    isWidescreenOnlyGap,
     {
-      'is-mobile': mobile,
-      'is-desktop': desktop,
+      [`${gapMap[mobile.gap]}-mobile`]:
+        !!mobile.gap && gaps.includes(mobile.gap),
+      [`${gapMap[tablet.gap]}-tablet`]:
+        !!tablet.gap && !tablet.only && gaps.includes(tablet.gap),
+      [`${gapMap[tablet.gap]}-tablet-only`]:
+        !!tablet.gap && tablet.only && gaps.includes(tablet.gap),
+      [`${gapMap[touch.gap]}-touch`]:
+        !!touch.gap && gaps.includes(touch.gap),
+      [`${gapMap[desktop.gap]}-desktop`]:
+        !!desktop.gap && !desktop.only && gaps.includes(desktop.gap),
+      [`${gapMap[desktop.gap]}-desktop-only`]:
+        !!desktop.gap && desktop.only && gaps.includes(desktop.gap),
+      [`${gapMap[widescreen.gap]}-widescreen`]:
+        !!widescreen.gap && !widescreen.only && gaps.includes(widescreen.gap),
+      [`${gapMap[widescreen.gap]}-widescreen-only`]:
+        !!widescreen.gap && widescreen.only && gaps.includes(widescreen.gap),
+      [`${gapMap[fullhd.gap]}-fullhd`]:
+        !!fullhd.gap && gaps.includes(fullhd.gap),
+
+      'is-mobile': activate === 'mobile',
+      'is-desktop': activate === 'tablet',
       'is-centered': centered,
       'is-vcentered': vcentered,
       'is-gapless': gapless,
       'is-multiline': multiline,
-      'is-variable':
-        !!gap || !!mobileGap || !!tabletGap || !!touchGap || !!desktopGap || !!widescreenGap
-        || !!fullhdGap || !!tabletOnlyGap || !!desktopOnlyGap || !!widescreenOnlyGap,
+      'is-variable': !!gap || !!mobile.gap || !!tablet.gap || !!touch.gap
+        || !!desktop.gap || !!widescreen.gap || !!fullhd.gap,
     },
   );
 
@@ -100,17 +78,28 @@ Columns.propTypes = {
   children: PropTypes.node,
   component: PropTypes.elementType,
   gap: PropTypes.oneOf(gaps),
-  mobileGap: PropTypes.oneOf(gaps),
-  tabletGap: PropTypes.oneOf(gaps),
-  touchGap: PropTypes.oneOf(gaps),
-  desktopGap: PropTypes.oneOf(gaps),
-  widescreenGap: PropTypes.oneOf(gaps),
-  fullhdGap: PropTypes.oneOf(gaps),
-  tabletOnlyGap: PropTypes.oneOf(gaps),
-  desktopOnlyGap: PropTypes.oneOf(gaps),
-  widescreenOnlyGap: PropTypes.oneOf(gaps),
-  mobile: PropTypes.bool,
-  desktop: PropTypes.bool,
+  mobile: PropTypes.shape({
+    gap: PropTypes.oneOf(gaps),
+  }),
+  tablet: PropTypes.shape({
+    gap: PropTypes.oneOf(gaps),
+    only: PropTypes.bool,
+  }),
+  touch: PropTypes.shape({
+    gap: PropTypes.oneOf(gaps),
+  }),
+  desktop: PropTypes.shape({
+    gap: PropTypes.oneOf(gaps),
+    only: PropTypes.bool,
+  }),
+  widescreen: PropTypes.shape({
+    gap: PropTypes.oneOf(gaps),
+    only: PropTypes.bool,
+  }),
+  fullhd: PropTypes.shape({
+    gap: PropTypes.oneOf(gaps),
+  }),
+  activate: PropTypes.oneOf(['mobile', 'tablet', 'desktop']),
   centered: PropTypes.bool,
   vcentered: PropTypes.bool,
   gapless: PropTypes.bool,
@@ -122,17 +111,13 @@ Columns.defaultProps = {
   children: null,
   component: 'div',
   gap: undefined,
-  mobileGap: undefined,
-  tabletGap: undefined,
-  touchGap: undefined,
-  desktopGap: undefined,
-  widescreenGap: undefined,
-  fullhdGap: undefined,
-  tabletOnlyGap: undefined,
-  desktopOnlyGap: undefined,
-  widescreenOnlyGap: undefined,
-  mobile: false,
-  desktop: false,
+  mobile: {},
+  tablet: {},
+  touch: {},
+  desktop: {},
+  widescreen: {},
+  fullhd: {},
+  activate: 'tablet',
   centered: false,
   vcentered: false,
   gapless: false,

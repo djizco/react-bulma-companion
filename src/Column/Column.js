@@ -12,102 +12,68 @@ const sizes = [
 
 const sizeMap = {};
 const offsetMap = {};
-const mobileSizeMap = {};
-const mobileOffsetMap = {};
-const tabletSizeMap = {};
-const tabletOffsetMap = {};
-const touchSizeMap = {};
-const touchOffsetMap = {};
-const desktopSizeMap = {};
-const desktopOffsetMap = {};
-const widescreenSizeMap = {};
-const widescreenOffsetMap = {};
-const fullhdSizeMap = {};
-const fullhdOffsetMap = {};
 
 sizes.forEach(size => {
   sizeMap[size] = `is-${size}`;
   offsetMap[size] = `is-offset-${size}`;
-  mobileSizeMap[size] = `is-${size}-mobile`;
-  mobileOffsetMap[size] = `is-offset-${size}-mobile`;
-  tabletSizeMap[size] = `is-${size}-tablet`;
-  tabletOffsetMap[size] = `is-offset-${size}-tablet`;
-  touchSizeMap[size] = `is-${size}-touch`;
-  touchOffsetMap[size] = `is-offset-${size}-touch`;
-  desktopSizeMap[size] = `is-${size}-desktop`;
-  desktopOffsetMap[size] = `is-offset-${size}-desktop`;
-  widescreenSizeMap[size] = `is-${size}-widescreen`;
-  widescreenOffsetMap[size] = `is-offset-${size}-widescreen`;
-  fullhdSizeMap[size] = `is-${size}-fullhd`;
-  fullhdOffsetMap[size] = `is-offset-${size}-fullhd`;
 });
 
 export default function Column({
   children,
   className,
-  desktopOffset,
-  desktopSize,
-  fullhdOffset,
-  fullhdSize,
-  mobileOffset,
-  mobileSize,
+  desktop,
+  fullhd,
+  mobile,
   narrow,
-  narrowMobile,
-  narrowTablet,
-  narrowTouch,
-  narrowDesktop,
-  narrowWidescreen,
-  narrowFullhd,
   offset,
   size,
-  tabletOffset,
-  tabletSize,
-  touchOffset,
-  touchSize,
-  widescreenOffset,
-  widescreenSize,
+  tablet,
+  touch,
+  widescreen,
   ...props
 }) {
   const isSize = size && sizeMap[size];
   const isOffset = offset && offsetMap[offset];
-  const isMobileSize = mobileSize && mobileSizeMap[mobileSize];
-  const isMobileOffset = mobileOffset && mobileOffsetMap[mobileOffset];
-  const isTabletSize = tabletSize && tabletSizeMap[tabletSize];
-  const isTabletOffset = tabletOffset && tabletOffsetMap[tabletOffset];
-  const isTouchSize = touchSize && touchSizeMap[touchSize];
-  const isTouchOffset = touchOffset && touchOffsetMap[touchOffset];
-  const isDesktopSize = desktopSize && desktopSizeMap[desktopSize];
-  const isDesktopOffset = desktopOffset && desktopOffsetMap[desktopOffset];
-  const isWidescreenSize = widescreenSize && widescreenSizeMap[widescreenSize];
-  const isWidescreenOffset = widescreenOffset && widescreenOffsetMap[widescreenOffset];
-  const isFullhdSize = fullhdSize && fullhdSizeMap[fullhdSize];
-  const isFullhdOffset = fullhdOffset && fullhdOffsetMap[fullhdOffset];
 
   const classes = classNames(
     'column',
     className,
     isSize,
     isOffset,
-    isMobileSize,
-    isMobileOffset,
-    isTabletSize,
-    isTabletOffset,
-    isTouchSize,
-    isTouchOffset,
-    isDesktopSize,
-    isDesktopOffset,
-    isWidescreenSize,
-    isWidescreenOffset,
-    isFullhdSize,
-    isFullhdOffset,
     {
+      [`${sizeMap[mobile.size]}-mobile`]:
+        !!mobile.size && sizes.includes(mobile.size),
+      [`${sizeMap[tablet.size]}-tablet`]:
+        !!tablet.size && sizes.includes(tablet.size),
+      [`${sizeMap[touch.size]}-touch`]:
+        !!touch.size && sizes.includes(touch.size),
+      [`${sizeMap[desktop.size]}-desktop`]:
+        !!desktop.size && sizes.includes(desktop.size),
+      [`${sizeMap[widescreen.size]}-widescreen`]:
+        !!widescreen.size && sizes.includes(widescreen.size),
+      [`${sizeMap[fullhd.size]}-fullhd`]:
+        !!fullhd.size && sizes.includes(fullhd.size),
+
+      [`${offsetMap[mobile.offset]}-mobile`]:
+        !!mobile.offset && sizes.includes(mobile.offset),
+      [`${offsetMap[tablet.offset]}-tablet`]:
+        !!tablet.offset && sizes.includes(tablet.offset),
+      [`${offsetMap[touch.offset]}-touch`]:
+        !!touch.offset && sizes.includes(touch.offset),
+      [`${offsetMap[desktop.offset]}-desktop`]:
+        !!desktop.offset && sizes.includes(desktop.offset),
+      [`${offsetMap[widescreen.offset]}-widescreen`]:
+        !!widescreen.offset && sizes.includes(widescreen.offset),
+      [`${offsetMap[fullhd.offset]}-fullhd`]:
+        !!fullhd.offset && sizes.includes(fullhd.offset),
+
       'is-narrow': narrow,
-      'is-narrow-mobile': narrowMobile,
-      'is-narrow-tablet': narrowTablet,
-      'is-narrow-touch': narrowTouch,
-      'is-narrow-desktop': narrowDesktop,
-      'is-narrow-widescreen': narrowWidescreen,
-      'is-narrow-fullhd': narrowFullhd,
+      'is-narrow-mobile': mobile.narrow,
+      'is-narrow-tablet': tablet.narrow,
+      'is-narrow-touch': touch.narrow,
+      'is-narrow-desktop': desktop.narrow,
+      'is-narrow-widescreen': widescreen.narrow,
+      'is-narrow-fullhd': fullhd.narrow,
     },
   );
 
@@ -124,25 +90,38 @@ Column.propTypes = {
   component: PropTypes.elementType,
   size: PropTypes.oneOf(sizes),
   offset: PropTypes.oneOf(sizes),
-  mobileSize: PropTypes.oneOf(sizes),
-  mobileOffset: PropTypes.oneOf(sizes),
-  tabletSize: PropTypes.oneOf(sizes),
-  tabletOffset: PropTypes.oneOf(sizes),
-  touchSize: PropTypes.oneOf(sizes),
-  touchOffset: PropTypes.oneOf(sizes),
-  desktopSize: PropTypes.oneOf(sizes),
-  desktopOffset: PropTypes.oneOf(sizes),
-  widescreenSize: PropTypes.oneOf(sizes),
-  widescreenOffset: PropTypes.oneOf(sizes),
-  fullhdSize: PropTypes.oneOf(sizes),
-  fullhdOffset: PropTypes.oneOf(sizes),
   narrow: PropTypes.bool,
-  narrowMobile: PropTypes.bool,
-  narrowTablet: PropTypes.bool,
-  narrowTouch: PropTypes.bool,
-  narrowDesktop: PropTypes.bool,
-  narrowWidescreen: PropTypes.bool,
-  narrowFullhd: PropTypes.bool,
+
+  mobile: PropTypes.shape({
+    size: PropTypes.oneOf(sizes),
+    offset: PropTypes.oneOf(sizes),
+    narrow: PropTypes.bool,
+  }),
+  tablet: PropTypes.shape({
+    size: PropTypes.oneOf(sizes),
+    offset: PropTypes.oneOf(sizes),
+    narrow: PropTypes.bool,
+  }),
+  touch: PropTypes.shape({
+    size: PropTypes.oneOf(sizes),
+    offset: PropTypes.oneOf(sizes),
+    narrow: PropTypes.bool,
+  }),
+  desktop: PropTypes.shape({
+    size: PropTypes.oneOf(sizes),
+    offset: PropTypes.oneOf(sizes),
+    narrow: PropTypes.bool,
+  }),
+  widescreen: PropTypes.shape({
+    size: PropTypes.oneOf(sizes),
+    offset: PropTypes.oneOf(sizes),
+    narrow: PropTypes.bool,
+  }),
+  fullhd: PropTypes.shape({
+    size: PropTypes.oneOf(sizes),
+    offset: PropTypes.oneOf(sizes),
+    narrow: PropTypes.bool,
+  }),
 };
 
 Column.defaultProps = {
@@ -151,23 +130,11 @@ Column.defaultProps = {
   component: 'div',
   size: undefined,
   offset: undefined,
-  mobileSize: undefined,
-  mobileOffset: undefined,
-  tabletSize: undefined,
-  tabletOffset: undefined,
-  touchSize: undefined,
-  touchOffset: undefined,
-  desktopSize: undefined,
-  desktopOffset: undefined,
-  widescreenSize: undefined,
-  widescreenOffset: undefined,
-  fullhdSize: undefined,
-  fullhdOffset: undefined,
   narrow: false,
-  narrowMobile: false,
-  narrowTablet: false,
-  narrowTouch: false,
-  narrowDesktop: false,
-  narrowWidescreen: false,
-  narrowFullhd: false,
+  mobile: {},
+  tablet: {},
+  touch: {},
+  desktop: {},
+  widescreen: {},
+  fullhd: {},
 };
