@@ -56,7 +56,7 @@ export default function Columns({
         !!fullhd.gap && gaps.includes(fullhd.gap),
 
       'is-mobile': activate === 'mobile',
-      'is-desktop': activate === 'tablet',
+      'is-desktop': activate === 'desktop',
       'is-centered': centered,
       'is-vcentered': vcentered,
       'is-gapless': gapless,

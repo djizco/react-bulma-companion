@@ -1,5 +1,11 @@
 # React Bulma Companion Changelog
 
+## 0.5.1
+
+### Fixes
+
+- Fixes an issue with colums defaulting to desktop instead of tablet.
+
 ## 0.5.0
 
 ### Breaking Changes
