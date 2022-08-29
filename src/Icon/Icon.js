@@ -43,7 +43,7 @@ export default function Icon({
   const classes = classNames('icon', className, isSize, isAlign);
 
   return (
-    <Element className={classes} textColor={color} {...props}>
+    <Element className={classes} {...props} textColor={color}>
       {children}
     </Element>
   );

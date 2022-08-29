@@ -9,20 +9,10 @@ const colors = [
   'primary', 'link', 'info', 'success', 'warning', 'danger',
   'white', 'black', 'light', 'dark', 'text', 'ghost',
 ];
-const colorMap = {
-  primary: 'is-primary',
-  link: 'is-link',
-  info: 'is-info',
-  success: 'is-success',
-  warning: 'is-warning',
-  danger: 'is-danger',
-  white: 'is-white',
-  black: 'is-black',
-  light: 'is-light',
-  dark: 'is-dark',
-  text: 'is-text',
-  ghost: 'is-ghost',
-};
+const colorMap = {};
+colors.forEach(color => {
+  colorMap[color] = `is-${color}`;
+});
 
 const sizes = ['small', 'normal', 'medium', 'large'];
 const sizeMap = {
