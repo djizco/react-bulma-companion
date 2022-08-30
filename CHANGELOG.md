@@ -2,9 +2,9 @@
 
 ## 0.5.1
 
-### Fixes
+### Bug Fixes
 
-- Fixes an issue with colums defaulting to desktop instead of tablet.
+- Fixes an issue with columns defaulting to desktop instead of tablet.
 
 ## 0.5.0
 
