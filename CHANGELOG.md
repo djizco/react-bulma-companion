@@ -1,5 +1,11 @@
 # React Bulma Companion Changelog
 
+## 0.5.2
+
+### Bug Fixes
+
+- Select Option now defaults selected to undefined. Fixes react warning. Update docs.
+
 ## 0.5.1
 
 ### Bug Fixes

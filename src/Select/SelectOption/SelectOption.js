@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Element from '../../Element';
 
-export default function SelectContent({
+export default function SelectOption({
   children,
   className,
   ...props
@@ -15,16 +15,19 @@ export default function SelectContent({
   );
 }
 
-SelectContent.propTypes = {
+SelectOption.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   component: PropTypes.elementType,
+  /**
+  * Deprecated. Use 'defaultValue' or 'value' prop on SelectContent.
+  */
   selected: PropTypes.bool,
 };
 
-SelectContent.defaultProps = {
+SelectOption.defaultProps = {
   className: undefined,
   children: null,
   component: 'option',
-  selected: false,
+  selected: undefined,
 };
