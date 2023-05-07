@@ -2,7 +2,9 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 
 import Block from './Block';
 
-<Meta title="Elements/Block" component={Block} />
+import * as BlockStories from './Block.stories';
+
+<Meta of={BlockStories} />
 
 # Block
 
@@ -14,15 +16,7 @@ import Block from './Block';
 
 The `<Block>` component is a simple **spacer tool**. It allows **sibling** elements to have a consistent margin between them:
 
-<Canvas>
-  <Story name="Default">
-    <React.Fragment>
-      <Block>This text is within a <strong>block</strong>.</Block>
-      <Block>This text is within a <strong>second block</strong>. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.</Block>
-      <Block>This text is within a <strong>third block</strong>. This block has no margin at the bottom.</Block>
-    </React.Fragment>
-  </Story>
-</Canvas>
+<Canvas of={BlockStories.Basic} />
 
 As you can see, the first two blocks have a `margin-bottom` applied, but **not the third one**. That is because Bulma applies a space on all blocks, **except the last one**. This means you can use as many blocks as you want, the spacing will only appear **between them**.
 

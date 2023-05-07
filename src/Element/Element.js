@@ -219,7 +219,7 @@ export default function Element({
   widescreen,
   ...props
 }) {
-  const Element = component;
+  const ElementComponent = component;
 
   const isTextSize = textSize && textSizeMap[textSize];
   const isTextAlign = textAlign && textAlignMap[textAlign];
@@ -349,9 +349,9 @@ export default function Element({
   );
 
   return (
-    <Element ref={domRef} className={classes} {...props}>
+    <ElementComponent ref={domRef} className={classes} {...props}>
       {children}
-    </Element>
+    </ElementComponent>
   );
 }
 

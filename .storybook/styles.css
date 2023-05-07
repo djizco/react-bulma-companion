@@ -34,7 +34,7 @@
 
 .sbdocs .token.punctuation,
 .sbdocs .token.string {
-  display:  none;
+  /*display:  none;*/
 }
 
 /* Add styles for docs */

@@ -1,39 +1,44 @@
 /* eslint-disable */
 module.exports = {
   root: true,
-  extends: 'airbnb',
-  parser: '@babel/eslint-parser',
+  extends: ['airbnb', 'airbnb-typescript', 'plugin:storybook/recommended'],
   parserOptions: {
-    ecmaVersion: 12,
-    ecmaFeatures: {
-      jsx: true,
-    },
-    sourceType: 'module',
-    allowImportExportEverywhere: false,
+    project: './tsconfig.json',
   },
   env: {
     browser: true,
-    jest: true,
+    jest: true
   },
-  plugins: ['react', 'react-hooks'],
   rules: {
     // enable rules
     'react/jsx-key': 2,
 
     // override default options for rules from base configurations
     'eqeqeq': [2, 'smart'],
-    'max-len': [2, { 'code': 120, 'tabWidth': 2, 'ignoreUrls': true }],
-    'newline-per-chained-call': [2, { 'ignoreChainWithDepth': 4 }],
+    'max-len': [2, {
+      'code': 120,
+      'tabWidth': 2,
+      'ignoreUrls': true
+    }],
+    'newline-per-chained-call': [2, {
+      'ignoreChainWithDepth': 4
+    }],
     'no-cond-assign': [2, 'except-parens'],
-    'no-multi-spaces': [2, {'exceptions': {
-      'ImportDeclaration': true,
-      'Property': true,
-      'VariableDeclarator': true
-    }}],
-    'react/jsx-filename-extension': [2, { 'extensions': ['.js', '.jsx'] }],
+    'no-multi-spaces': [2, {
+      'exceptions': {
+        'ImportDeclaration': true,
+        'Property': true,
+        'VariableDeclarator': true
+      }
+    }],
+    'react/jsx-filename-extension': [2, {
+      'extensions': ['.js', '.jsx']
+    }],
     'react/jsx-fragments': [2, 'element'],
 
     // disable rules
+    '@typescript-eslint/no-unused-vars': 0,
+    '@typescript-eslint/no-shadow': 0,
     'arrow-parens': 0,
     'function-paren-newline': 0,
     'implicit-arrow-linebreak': 0,
@@ -51,12 +56,16 @@ module.exports = {
     'no-restricted-exports': 0,
     'no-shadow': 0,
     'no-underscore-dangle': 0,
+    'no-unused-vars': 0,
     'object-curly-newline': 0,
     'react/destructuring-assignment': 0,
     'react/forbid-prop-types': 0,
     'react/jsx-boolean-value': 0,
+    'react/jsx-one-expression-per-line': 0,
     'react/jsx-props-no-spreading': 0,
     'react/state-in-constructor': 0,
     'react/static-property-placement': 0,
-  },
+
+
+  }
 };
