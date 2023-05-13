@@ -6,8 +6,8 @@ import Element from '../Element';
 
 const breakpoints = ['widescreen', 'fullhd', 'max-desktop', 'max-widescreen'];
 const breakpointMap = {
-  widescreen: 'is-widescreen',
-  fullhd: 'is-fullhd',
+  'widescreen': 'is-widescreen',
+  'fullhd': 'is-fullhd',
   'max-desktop': 'is-max-desktop',
   'max-widescreen': 'is-max-widescreen',
 };

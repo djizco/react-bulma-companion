@@ -50,7 +50,7 @@ export default function Tile({
   const isSize = size && sizeMap[size];
 
   const classes = classNames('tile', className, isType, isColor, isSize, {
-    notification: color,
+    'notification': color,
     'is-light': light,
     'is-vertical': vertical,
     box,

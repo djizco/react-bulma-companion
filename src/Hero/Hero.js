@@ -29,11 +29,11 @@ const colorMap = {
 
 const sizes = ['small', 'medium', 'large', 'halfheight', 'fullheight', 'fullheight-navbar'];
 const sizeMap = {
-  small: 'is-small',
-  medium: 'is-medium',
-  large: 'is-large',
-  halfheight: 'is-halfheight',
-  fullheight: 'is-fullheight',
+  'small': 'is-small',
+  'medium': 'is-medium',
+  'large': 'is-large',
+  'halfheight': 'is-halfheight',
+  'fullheight': 'is-fullheight',
   'fullheight-navbar': 'is-fullheight-with-navbar',
 };
 

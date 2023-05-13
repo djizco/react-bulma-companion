@@ -57,18 +57,18 @@ const textWeightMap = {
 const fonts = ['sans-serif', 'monospace', 'primary', 'secondary', 'code'];
 const fontMap = {
   'sans-serif': 'is-family-sans-serif',
-  monospace: 'is-family-monospace',
-  primary: 'is-family-primary',
-  secondary: 'is-family-secondary',
-  code: 'is-family-code',
+  'monospace': 'is-family-monospace',
+  'primary': 'is-family-primary',
+  'secondary': 'is-family-secondary',
+  'code': 'is-family-code',
 };
 
 // Visibility
 const displays = ['block', 'flex', 'inline', 'inline-block', 'inline-flex'];
 const displayMap = {
-  block: 'is-block',
-  flex: 'is-flex',
-  inline: 'is-inline',
+  'block': 'is-block',
+  'flex': 'is-flex',
+  'inline': 'is-inline',
   'inline-block': 'is-inline-block',
   'inline-flex': 'is-inline-flex',
 };
@@ -76,16 +76,16 @@ const displayMap = {
 // Flex
 const flexDirections = ['row', 'row-reverse', 'column', 'column-reverse'];
 const flexDirectionMap = {
-  row: 'is-flex-direction-row',
+  'row': 'is-flex-direction-row',
   'row-reverse': 'is-flex-direction-row-reverse',
-  column: 'is-flex-direction-column',
+  'column': 'is-flex-direction-column',
   'column-reverse': 'is-flex-direction-column-reverse',
 };
 
 const flexWraps = ['nowrap', 'wrap', 'wrap-reverse'];
 const flexWrapMap = {
-  nowrap: 'is-flex-wrap-nowrap',
-  wrap: 'is-flex-wrap-wrap',
+  'nowrap': 'is-flex-wrap-nowrap',
+  'wrap': 'is-flex-wrap-wrap',
   'wrap-reverse': 'is-flex-wrap-wrap-reverse',
 };
 
@@ -97,14 +97,14 @@ const justifyContents = [
 const justifyContentMap = {
   'flex-start': 'is-justify-content-flex-start',
   'flex-end': 'is-justify-content-flex-end',
-  center: 'is-justify-content-center',
+  'center': 'is-justify-content-center',
   'space-between': 'is-justify-content-space-between',
   'space-around': 'is-justify-content-space-around',
   'space-evenly': 'is-justify-content-space-evenly',
-  start: 'is-justify-content-start',
-  end: 'is-justify-content-end',
-  left: 'is-justify-content-left',
-  right: 'is-justify-content-right',
+  'start': 'is-justify-content-start',
+  'end': 'is-justify-content-end',
+  'left': 'is-justify-content-left',
+  'right': 'is-justify-content-right',
 };
 
 const alignContents = [
@@ -115,14 +115,14 @@ const alignContents = [
 const alignContentMap = {
   'flex-start': 'is-align-content-flex-start',
   'flex-end': 'is-align-content-flex-end',
-  center: 'is-align-content-center',
+  'center': 'is-align-content-center',
   'space-between': 'is-align-content-space-between',
   'space-around': 'is-align-content-space-around',
   'space-evenly': 'is-align-content-space-evenly',
-  stretch: 'is-align-content-stretch',
-  start: 'is-align-content-start',
-  end: 'is-align-content-end',
-  baseline: 'is-align-content-baseline',
+  'stretch': 'is-align-content-stretch',
+  'start': 'is-align-content-start',
+  'end': 'is-align-content-end',
+  'baseline': 'is-align-content-baseline',
 };
 
 const alignItemses = [
@@ -130,13 +130,13 @@ const alignItemses = [
   'start', 'end', 'self-start', 'self-end',
 ];
 const alignItemsMap = {
-  stretch: 'is-align-items-stretch',
+  'stretch': 'is-align-items-stretch',
   'flex-start': 'is-align-items-flex-start',
   'flex-end': 'is-align-items-flex-end',
-  center: 'is-align-items-center',
-  baseline: 'is-align-items-baseline',
-  start: 'is-align-items-start',
-  end: 'is-align-items-end',
+  'center': 'is-align-items-center',
+  'baseline': 'is-align-items-baseline',
+  'start': 'is-align-items-start',
+  'end': 'is-align-items-end',
   'self-start': 'is-align-items-self-start',
   'self-end': 'is-align-items-self-end',
 };
@@ -145,12 +145,12 @@ const alignSelfs = [
   'auto', 'flex-start', 'flex-end', 'center', 'baseline', 'stretch',
 ];
 const alignSelfMap = {
-  auto: 'is-align-self-auto',
+  'auto': 'is-align-self-auto',
   'flex-start': 'is-align-self-flex-start',
   'flex-end': 'is-align-self-flex-end',
-  center: 'is-align-self-center',
-  baseline: 'is-align-self-baseline',
-  stretch: 'is-align-self-stretch',
+  'center': 'is-align-self-center',
+  'baseline': 'is-align-self-baseline',
+  'stretch': 'is-align-self-stretch',
 };
 
 const flexSizes = ['0', '1', '2', '3', '4', '5'];
@@ -219,7 +219,7 @@ export default function Element({
   widescreen,
   ...props
 }) {
-  const Element = component;
+  const ElementComponent = component;
 
   const isTextSize = textSize && textSizeMap[textSize];
   const isTextAlign = textAlign && textAlignMap[textAlign];
@@ -349,9 +349,9 @@ export default function Element({
   );
 
   return (
-    <Element ref={domRef} className={classes} {...props}>
+    <ElementComponent ref={domRef} className={classes} {...props}>
       {children}
-    </Element>
+    </ElementComponent>
   );
 }
 
