@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "jsx": "react",
+    "baseUrl": ".",
+  },
+  "include": ["src", ".eslintrc.js"]
+}

@@ -1,15 +1,8 @@
-/* eslint-disable */
 module.exports = {
   root: true,
-  extends: 'airbnb',
-  parser: '@babel/eslint-parser',
+  extends: ['airbnb', 'airbnb-typescript', 'plugin:storybook/recommended'],
   parserOptions: {
-    ecmaVersion: 12,
-    ecmaFeatures: {
-      jsx: true,
-    },
-    sourceType: 'module',
-    allowImportExportEverywhere: false,
+    project: './tsconfig.json',
   },
   env: {
     browser: true,
@@ -22,15 +15,16 @@ module.exports = {
 
     // override default options for rules from base configurations
     'eqeqeq': [2, 'smart'],
-    'max-len': [2, { 'code': 120, 'tabWidth': 2, 'ignoreUrls': true }],
-    'newline-per-chained-call': [2, { 'ignoreChainWithDepth': 4 }],
+    'max-len': [2, { code: 120, tabWidth: 2, ignoreUrls: true }],
+    'newline-per-chained-call': [2, { ignoreChainWithDepth: 4 }],
     'no-cond-assign': [2, 'except-parens'],
-    'no-multi-spaces': [2, {'exceptions': {
-      'ImportDeclaration': true,
-      'Property': true,
-      'VariableDeclarator': true
-    }}],
-    'react/jsx-filename-extension': [2, { 'extensions': ['.js', '.jsx'] }],
+    'no-multi-spaces': [2, { exceptions: {
+      ImportDeclaration: true,
+      Property: true,
+      VariableDeclarator: true,
+    } }],
+    'quote-props': [2, 'consistent'],
+    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx'] }],
     'react/jsx-fragments': [2, 'element'],
 
     // disable rules
