@@ -24,7 +24,6 @@ module.exports = {
       VariableDeclarator: true,
     } }],
     'quote-props': [2, 'consistent'],
-    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx'] }],
     'react/jsx-fragments': [2, 'element'],
 
     // disable rules
@@ -50,6 +49,7 @@ module.exports = {
     'react/forbid-prop-types': 0,
     'react/jsx-boolean-value': 0,
     'react/jsx-props-no-spreading': 0,
+    'react/jsx-filename-extension': 0,
     'react/state-in-constructor': 0,
     'react/static-property-placement': 0,
   },
