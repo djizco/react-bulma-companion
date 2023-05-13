@@ -7,4 +7,10 @@ describe('Element', () => {
   test('renders', () => {
     render(<Element />);
   });
+
+  test('has passed in classname', () => {
+    const { container } = render(<Element className="test" />);
+
+    expect(container.getElementsByClassName('test').length).toBe(1);
+  });
 });
