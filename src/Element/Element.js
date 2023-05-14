@@ -3,15 +3,23 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 // Colors
-const colors = [
+const mainColors = [
   'white', 'black', 'light', 'dark',
   'primary', 'link', 'info', 'success', 'warning', 'danger',
+];
+
+const shadeColors = [
   'black-bis', 'black-ter',
   'grey-darker', 'grey-dark', 'grey', 'grey-light', 'grey-lighter',
   'white-ter', 'white-bis',
+];
+
+const lightDarkColors = [
   'primary-light', 'link-light', 'info-light', 'success-light', 'warning-light', 'danger-light',
   'primary-dark', 'link-dark', 'info-dark', 'success-dark', 'warning-dark', 'danger-dark',
 ];
+
+const colors = [...mainColors, ...shadeColors, ...lightDarkColors];
 
 // Spacing
 const spacings = ['0', '1', '2', '3', '4', '5', '6', 'auto'];

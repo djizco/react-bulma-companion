@@ -1,12 +1,20 @@
 import React, { ReactNode, ReactElement } from 'react';
 
-export type Color =
+export type MainColor =
   'white' | 'black' | 'light' | 'dark' |
-  'primary' | 'link' | 'info' | 'success' | 'warning' | 'danger' |
+  'primary' | 'link' | 'info' | 'success' | 'warning' | 'danger';
+
+export type ShadeColor =
   'black-bis' | 'black-ter' | 'white-ter' | 'white-bis' |
-  'grey-darker' | 'grey-dark' | 'grey' | 'grey-light' | 'grey-lighter' |
-  'primary-light' | 'link-light' | 'info-light' | 'success-light' | 'warning-light' | 'danger-light' |
+  'grey-darker' | 'grey-dark' | 'grey' | 'grey-light' | 'grey-lighter';
+
+export type LightColor =
+  'primary-light' | 'link-light' | 'info-light' | 'success-light' | 'warning-light' | 'danger-light';
+
+export type DarkColor =
   'primary-dark' | 'link-dark' | 'info-dark' | 'success-dark' | 'warning-dark' | 'danger-dark';
+
+export type Color = MainColor | ShadeColor | LightColor | DarkColor;
 
 export type Spacing = '0' | '1' | '2' | '3' | '4' | '5' | '6' | 'auto';
 export type TextSize = '1' | '2' | '3' | '4' | '5' | '6' | '7';
@@ -46,7 +54,7 @@ export type ScreenSize = {
 };
 
 export interface ElementProps {
-  classname?: string;
+  className?: string;
   children?: ReactNode;
   component?: React.ElementType;
   backgroundColor?: Color | string;
