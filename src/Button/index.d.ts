@@ -1,4 +1,4 @@
-import React, { ReactNode, ReactElement } from 'react';
+import React, { ReactNode, ReactElement, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
 
 import { ElementProps, MainColor } from '../Element';
 
@@ -26,4 +26,6 @@ export interface ButtonProps extends ElementProps {
   disabled?: boolean;
 }
 
-export default function Button(props: ButtonProps): ReactElement;
+export default function Button(
+  props: ButtonProps & ButtonHTMLAttributes<HTMLButtonElement> & AnchorHTMLAttributes<HTMLAnchorElement>
+): ReactElement;

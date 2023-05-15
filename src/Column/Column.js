@@ -91,7 +91,6 @@ Column.propTypes = {
   size: PropTypes.oneOf(sizes),
   offset: PropTypes.oneOf(sizes),
   narrow: PropTypes.bool,
-
   mobile: PropTypes.shape({
     size: PropTypes.oneOf(sizes),
     offset: PropTypes.oneOf(sizes),

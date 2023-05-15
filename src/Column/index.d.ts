@@ -1,6 +1,6 @@
 import React, { ReactNode, ReactElement } from 'react';
 
-import { ElementProps } from '../Element';
+import { ElementWithoutScreenSizeProps } from '../Element';
 
 export type ColumnSize =
   'full' | 'half' | 'one-third' | 'two-thirds' | 'one-quarter' | 'three-quarters' |
@@ -13,9 +13,7 @@ export type ColumnScreenSize = {
   narrow?: boolean;
 };
 
-type OmittedElementProps = Omit<ElementProps, 'mobile' | 'tablet' | 'touch' | 'desktop' | 'widescreen' | 'fullhd'>;
-
-export interface ColumnProps extends OmittedElementProps {
+export interface ColumnProps extends ElementWithoutScreenSizeProps {
   className?: string;
   children?: ReactNode;
   component?: React.ElementType;

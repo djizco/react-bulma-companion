@@ -1,4 +1,4 @@
-import React, { ReactNode, ReactElement } from 'react';
+import React, { ReactNode, ReactElement, AnchorHTMLAttributes } from 'react';
 
 import { ElementProps } from '../Element';
 
@@ -21,7 +21,7 @@ declare function Card(props: CardProps): ReactElement;
 declare namespace Card {
   export function Content(props: CardContentProps): ReactElement;
   export function Footer(props: CardFooterProps): ReactElement;
-  export function FooterItem(props: CardFooterItemProps): ReactElement;
+  export function FooterItem(props: CardFooterItemProps & AnchorHTMLAttributes<HTMLAnchorElement>): ReactElement;
   export function Header(props: CardHeaderProps): ReactElement;
   export function HeaderIcon(props: CardHeaderIconProps): ReactElement;
   export function HeaderTitle(props: CardHeaderTitleProps): ReactElement;

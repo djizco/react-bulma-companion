@@ -1,4 +1,4 @@
-import React, { ReactNode, ReactElement } from 'react';
+import React, { ReactNode, ReactElement, AnchorHTMLAttributes } from 'react';
 
 import { ElementProps } from '../Element';
 
@@ -8,4 +8,6 @@ export interface BoxProps extends ElementProps {
   component?: React.ElementType;
 }
 
-export default function Box(props: BoxProps): ReactElement;
+export default function Box(
+  props: BoxProps & AnchorHTMLAttributes<HTMLAnchorElement>
+): ReactElement;

@@ -1,4 +1,4 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ReactNode, ReactElement, ElementType, HTMLAttributes } from 'react';
 
 export type MainColor =
   'white' | 'black' | 'light' | 'dark' |
@@ -53,10 +53,12 @@ export type ScreenSize = {
   hidden?: boolean;
 };
 
-export interface ElementProps {
+export type AllAttributes = Omit<HTMLAttributes<HTMLElement>, 'unselectable'>;
+
+export interface ElementProps extends AllAttributes {
   className?: string;
   children?: ReactNode;
-  component?: React.ElementType;
+  component?: ElementType;
   backgroundColor?: Color | string;
   textColor?: Color | string;
   textSize?: TextSize;
@@ -109,4 +111,10 @@ export interface ElementProps {
   fullhd?: ScreenSize;
 }
 
-export default function ElementProps(props: ElementProps): ReactElement;
+export type ElementWithoutChildrenProps =
+  Omit<ElementProps, 'children'>;
+
+export type ElementWithoutScreenSizeProps =
+  Omit<ElementProps, 'mobile' | 'tablet' | 'touch' | 'desktop' | 'widescreen' | 'fullhd'>;
+
+export default function Element(props: ElementProps): ReactElement;

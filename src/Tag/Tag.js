@@ -4,6 +4,23 @@ import classNames from 'classnames';
 
 import Element from '../Element';
 
+// Colors
+const colors = [
+  'primary', 'link', 'info', 'success', 'warning', 'danger',
+  'white', 'black', 'light', 'dark',
+];
+const colorMap = {};
+colors.forEach(color => {
+  colorMap[color] = `is-${color}`;
+});
+
+// Sizes
+const sizeMap = {
+  normal: 'is-normal',
+  medium: 'is-medium',
+  large: 'is-large',
+};
+
 export default function Tag({
   children,
   className,
@@ -13,27 +30,7 @@ export default function Tag({
   size,
   ...props
 }) {
-  // Colors
-  const colorMap = {
-    primary: 'is-primary',
-    link: 'is-link',
-    info: 'is-info',
-    success: 'is-success',
-    warning: 'is-warning',
-    danger: 'is-danger',
-    white: 'is-white',
-    black: 'is-black',
-    light: 'is-light',
-    dark: 'is-dark',
-  };
   const isColor = color && colorMap[color];
-
-  // Sizes
-  const sizeMap = {
-    normal: 'is-normal',
-    medium: 'is-medium',
-    large: 'is-large',
-  };
   const isSize = size && sizeMap[size];
 
   const classes = classNames('tag', className, isColor, isSize, {
@@ -56,18 +53,7 @@ Tag.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   component: PropTypes.elementType,
-  color: PropTypes.oneOf([
-    'primary',
-    'link',
-    'info',
-    'success',
-    'warning',
-    'danger',
-    'white',
-    'black',
-    'light',
-    'dark',
-  ]),
+  color: PropTypes.oneOf(colors),
   light: PropTypes.bool,
   size: PropTypes.oneOf(['normal', 'medium', 'large']),
   rounded: PropTypes.bool,

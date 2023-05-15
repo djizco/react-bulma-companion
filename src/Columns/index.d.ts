@@ -1,10 +1,8 @@
 import React, { ReactNode, ReactElement } from 'react';
 
-import { ElementProps } from '../Element';
+import { ElementWithoutScreenSizeProps } from '../Element';
 
 export type ColumnGap = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8';
-
-type OmittedElementProps = Omit<ElementProps, 'mobile' | 'tablet' | 'touch' | 'desktop' | 'widescreen' | 'fullhd'>;
 
 export type ColumnsScreenSize = {
   gap?: ColumnGap;
@@ -15,7 +13,7 @@ export type ColumnsScreenSizeOnly = {
   only?: boolean;
 };
 
-export interface ColumnsProps extends OmittedElementProps {
+export interface ColumnsProps extends ElementWithoutScreenSizeProps {
   className?: string;
   children?: ReactNode;
   component?: React.ElementType;
@@ -26,6 +24,11 @@ export interface ColumnsProps extends OmittedElementProps {
   desktop?: ColumnsScreenSizeOnly;
   widescreen?: ColumnsScreenSizeOnly;
   fullhd?: ColumnsScreenSize;
+  activate?: 'mobile' | 'tablet' | 'desktop';
+  centered?: boolean;
+  vcentered?: boolean;
+  gapless?: boolean;
+  multiline?: boolean;
 }
 
 export default function Columns(props: ColumnsProps): ReactElement;
