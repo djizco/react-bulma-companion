@@ -1,24 +1,17 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementWithoutResponsiveComponent } from '../Element';
 
-import { ElementWithoutScreenSizeProps } from '../Element';
+import LevelItem from './LevelItem';
+import LevelLeft from './LevelLeft';
+import LevelRight from './LevelRight';
 
-import { LevelItemProps } from './LevelItem';
-import { LevelLeftProps } from './LevelLeft';
-import { LevelRightProps } from './LevelRight';
-
-export interface LevelProps extends ElementWithoutScreenSizeProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface LevelProps {
   mobile?: boolean;
 }
 
-declare function Level(props: LevelProps): ReactElement;
-
-declare namespace Level {
-  export function Item(props: LevelItemProps): ReactElement;
-  export function Left(props: LevelLeftProps): ReactElement;
-  export function Right(props: LevelRightProps): ReactElement;
-}
+declare const Level: ElementWithoutResponsiveComponent<LevelProps, 'nav'> & {
+  Item: typeof LevelItem;
+  Left: typeof LevelLeft;
+  Right: typeof LevelRight;
+};
 
 export default Level;

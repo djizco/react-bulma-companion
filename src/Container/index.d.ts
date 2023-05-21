@@ -1,13 +1,12 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+export type ContainerBreakpoint = 'widescreen' | 'fullhd' | 'max-desktop' | 'max-widescreen';
 
-export interface ContainerProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  breakpoint?: 'widescreen' | 'fullhd' | 'max-desktop' | 'max-widescreen';
+export interface ContainerProps {
+  breakpoint?: ContainerBreakpoint;
   fluid?: boolean;
 }
 
-export default function Container(props: ContainerProps): ReactElement;
+declare const Container: ElementComponent<ContainerProps, 'div'>;
+
+export default Container;

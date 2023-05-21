@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface CardImageProps {}
 
-export interface CardImageProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const CardImage: ElementComponent<CardImageProps, 'div'>;
 
-export default function CardImage(props: CardImageProps): ReactElement;
+export default CardImage;

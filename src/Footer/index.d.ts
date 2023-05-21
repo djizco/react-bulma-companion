@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+export interface FooterProps {}
 
-export interface FooterProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const Footer: ElementComponent<FooterProps, 'footer'>;
 
-export default function Footer(props: FooterProps): ReactElement;
+export default Footer;

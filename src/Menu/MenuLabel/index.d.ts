@@ -1,11 +1,7 @@
-import { ReactNode, ReactElement, ElementType } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface MenuLabelProps {}
 
-export interface MenuLabelProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
-}
+declare const MenuLabel: ElementComponent<MenuLabelProps, 'p'>;
 
-export default function MenuLabel(props: MenuLabelProps): ReactElement;
+export default MenuLabel;

@@ -1,35 +1,33 @@
-import React, { ReactNode, ReactElement, InputHTMLAttributes, LabelHTMLAttributes } from 'react';
+import { ElementComponent } from '../Element';
+import { MainColor, Size } from '../types';
 
-import { ElementProps, MainColor } from '../Element';
+import FileCTA from './FileCTA';
+import FileIcon from './FileIcon';
+import FileInput from './FileInput';
+import FileLabel from './FileLabel';
+import FileName from './FileName';
+import FileText from './FileText';
 
-import { FileCTAProps } from './FileCTA';
-import { FileIconProps } from './FileIcon';
-import { FileInputProps } from './FileInput';
-import { FileLabelProps } from './FileLabel';
-import { FileNameProps } from './FileName';
-import { FileTextProps } from './FileText';
+export type FileColor = MainColor;
+export type FileSize = Size;
+export type FileAlign = 'center' | 'right';
 
-export interface FileProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  color?: MainColor;
-  size?: 'small' | 'normal' | 'medium' | 'large';
-  align?: 'center' | 'right';
+export interface FileProps {
+  color?: FileColor;
+  size?: FileSize;
+  align?: FileAlign;
   hasName?: boolean;
   boxed?: boolean;
   fullwidth?: boolean;
 }
 
-declare function File(props: FileProps): ReactElement;
-
-declare namespace File {
-  export function CTA(props: FileCTAProps): ReactElement;
-  export function Icon(props: FileIconProps): ReactElement;
-  export function Input(props: FileInputProps & InputHTMLAttributes<HTMLInputElement>): ReactElement;
-  export function Label(props: FileLabelProps & LabelHTMLAttributes<HTMLLabelElement>): ReactElement;
-  export function Name(props: FileNameProps): ReactElement;
-  export function Text(props: FileTextProps): ReactElement;
-}
+declare const File: ElementComponent<FileProps, 'div'> & {
+  CTA: typeof FileCTA;
+  Icon: typeof FileIcon;
+  Input: typeof FileInput;
+  Label: typeof FileLabel;
+  Name: typeof FileName;
+  Text: typeof FileText;
+};
 
 export default File;

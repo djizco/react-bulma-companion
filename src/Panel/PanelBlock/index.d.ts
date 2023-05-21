@@ -1,15 +1,10 @@
-import { ReactNode, ReactElement, ElementType, AnchorHTMLAttributes, LabelHTMLAttributes } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
-
-export interface PanelBlockProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
+export interface PanelBlockProps {
   active?: boolean;
   wrapped?: boolean;
 }
 
-export default function PanelBlock(
-  props: PanelBlockProps & AnchorHTMLAttributes<HTMLAnchorElement> & LabelHTMLAttributes<HTMLLabelElement>
-): ReactElement;
+declare const PanelBlock: ElementComponent<PanelBlockProps, 'div'>;
+
+export default PanelBlock;

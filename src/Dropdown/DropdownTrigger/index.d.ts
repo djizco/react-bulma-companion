@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface DropdownTriggerProps {}
 
-export interface DropdownTriggerProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const DropdownTrigger: ElementComponent<DropdownTriggerProps, 'div'>;
 
-export default function DropdownTrigger(props: DropdownTriggerProps): ReactElement;
+export default DropdownTrigger;

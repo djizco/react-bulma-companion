@@ -1,11 +1,7 @@
-import { ReactNode, ReactElement, ElementType } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface NavbarStartProps {}
 
-export interface NavbarStartProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
-}
+declare const NavbarStart: ElementComponent<NavbarStartProps, 'div'>;
 
-export default function NavbarStart(props: NavbarStartProps): ReactElement;
+export default NavbarStart;

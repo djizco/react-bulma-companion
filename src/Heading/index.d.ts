@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+export interface HeadingProps {}
 
-export interface HeadingProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const Heading: ElementComponent<HeadingProps, 'p'>;
 
-export default function Heading(props: HeadingProps): ReactElement;
+export default Heading;

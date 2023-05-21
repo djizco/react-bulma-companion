@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface ModalCardProps {}
 
-export interface ModalCardProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const ModalCard: ElementComponent<ModalCardProps, 'div'>;
 
-export default function ModalCard(props: ModalCardProps): ReactElement;
+export default ModalCard;

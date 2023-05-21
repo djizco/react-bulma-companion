@@ -1,13 +1,7 @@
-import React, { ReactNode, ReactElement, AnchorHTMLAttributes } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface CardFooterItemProps {}
 
-export interface CardFooterItemProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const CardFooterItem: ElementComponent<CardFooterItemProps, 'div'>;
 
-export default function CardFooterItem(
-  props: CardFooterItemProps & AnchorHTMLAttributes<HTMLAnchorElement>
-): ReactElement;
+export default CardFooterItem;

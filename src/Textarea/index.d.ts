@@ -1,12 +1,11 @@
-import React, { ReactElement, TextareaHTMLAttributes } from 'react';
+import { ElementWithoutChildrenComponent } from '../Element';
+import { MainColor } from '../types';
 
-import { ElementWithoutChildrenProps, MainColor } from '../Element';
+export type TextareaSize = 'small' | 'medium' | 'large';
 
-export interface TextareaProps extends ElementWithoutChildrenProps {
-  className?: string;
-  component?: React.ElementType;
+export interface TextareaProps {
   color?: MainColor;
-  size?: 'small' | 'medium' | 'large';
+  size?: TextareaSize;
   fixed?: boolean;
   inline?: boolean;
   fullwidth?: boolean;
@@ -17,4 +16,6 @@ export interface TextareaProps extends ElementWithoutChildrenProps {
   readOnly?: boolean;
 }
 
-export default function Textarea(props: TextareaProps & TextareaHTMLAttributes<HTMLTextAreaElement>): ReactElement;
+declare const Textarea: ElementWithoutChildrenComponent<TextareaProps, 'textarea'>;
+
+export default Textarea;

@@ -1,14 +1,9 @@
-import { ReactNode, ReactElement, ElementType, AnchorHTMLAttributes } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
-
-export interface NavbarLinkProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
+export interface NavbarLinkProps {
   arrowless?: boolean;
 }
 
-export default function NavbarLink(
-  props: NavbarLinkProps & AnchorHTMLAttributes<HTMLAnchorElement>
-): ReactElement;
+declare const NavbarLink: ElementComponent<NavbarLinkProps, 'a'>;
+
+export default NavbarLink;

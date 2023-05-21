@@ -1,19 +1,11 @@
-import React, { ReactNode, ReactElement, ImgHTMLAttributes } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+import ImageContent from './ImageContent';
 
-import { ImageContentProps } from './ImageContent';
+export interface ImageProps {}
 
-export interface ImageProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
-
-declare function Image(props: ImageProps): ReactElement;
-
-declare namespace Image {
-  export function Content(props: ImageContentProps & ImgHTMLAttributes<HTMLImageElement>): ReactElement;
-}
+declare const Image: ElementComponent<ImageProps, 'figure'> & {
+  Content: typeof ImageContent;
+};
 
 export default Image;

@@ -1,34 +1,27 @@
-import React, { ReactNode, ReactElement, ButtonHTMLAttributes } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+import ModalBackground from './ModalBackground';
+import ModalCard from './ModalCard';
+import ModalCardBody from './ModalCardBody';
+import ModalCardFoot from './ModalCardFoot';
+import ModalCardHead from './ModalCardHead';
+import ModalCardTitle from './ModalCardTitle';
+import ModalClose from './ModalClose';
+import ModalContent from './ModalContent';
 
-import { ModalBackgroundProps } from './ModalBackground';
-import { ModalCardProps } from './ModalCard';
-import { ModalCardBodyProps } from './ModalCardBody';
-import { ModalCardFootProps } from './ModalCardFoot';
-import { ModalCardHeadProps } from './ModalCardHead';
-import { ModalCardTitleProps } from './ModalCardTitle';
-import { ModalCloseProps } from './ModalClose';
-import { ModalContentProps } from './ModalContent';
-
-export interface ModalProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface ModalProps {
   active?: boolean;
 }
 
-declare function Modal(props: ModalProps): ReactElement;
-
-declare namespace Modal {
-  export function Background(props: ModalBackgroundProps): ReactElement;
-  export function Card(props: ModalCardProps): ReactElement;
-  export function CardBody(props: ModalCardBodyProps): ReactElement;
-  export function CardFoot(props: ModalCardFootProps): ReactElement;
-  export function CardHead(props: ModalCardHeadProps): ReactElement;
-  export function CardTitle(props: ModalCardTitleProps): ReactElement;
-  export function Close(props: ModalCloseProps & ButtonHTMLAttributes<HTMLButtonElement>): ReactElement;
-  export function Content(props: ModalContentProps): ReactElement;
-}
+declare const Modal: ElementComponent<ModalProps, 'div'> & {
+  Background: typeof ModalBackground;
+  Card: typeof ModalCard;
+  CardBody: typeof ModalCardBody;
+  CardFoot: typeof ModalCardFoot;
+  CardHead: typeof ModalCardHead;
+  CardTitle: typeof ModalCardTitle;
+  Close: typeof ModalClose;
+  Content: typeof ModalContent;
+};
 
 export default Modal;

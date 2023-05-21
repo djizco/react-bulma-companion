@@ -1,10 +1,7 @@
-import React, { ReactElement } from 'react';
+import { ElementWithoutChildrenComponent } from '../../Element';
 
-import { ElementWithoutChildrenProps } from '../../Element';
+export interface DropdownDividerProps {}
 
-export interface DropdownDividerProps extends ElementWithoutChildrenProps {
-  className?: string;
-  component?: React.ElementType;
-}
+declare const DropdownDivider: ElementWithoutChildrenComponent<DropdownDividerProps, 'hr'>;
 
-export default function DropdownDivider(props: DropdownDividerProps): ReactElement;
+export default DropdownDivider;

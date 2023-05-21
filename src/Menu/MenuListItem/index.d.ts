@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface MenuListItemProps {}
 
-export interface MenuListItemProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const MenuListItem: ElementComponent<MenuListItemProps, 'li'>;
 
-export default function MenuListItem(props: MenuListItemProps): ReactElement;
+export default MenuListItem;

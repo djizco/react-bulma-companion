@@ -1,12 +1,9 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
-
-export interface CheckboxProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface CheckboxProps {
   disabled?: boolean;
 }
 
-export default function Checkbox(props: CheckboxProps): ReactElement;
+declare const Checkbox: ElementComponent<CheckboxProps, 'label'>;
+
+export default Checkbox;

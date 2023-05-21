@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface HeroFootProps {}
 
-export interface HeroFootProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const HeroFoot: ElementComponent<HeroFootProps, 'div'>;
 
-export default function HeroFoot(props: HeroFootProps): ReactElement;
+export default HeroFoot;

@@ -1,23 +1,15 @@
-import { ReactNode, ReactElement, ElementType, AnchorHTMLAttributes } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+import TabsLink from './TabsLink';
+import TabsList from './TabsList';
+import TabsListItem from './TabsListItem';
 
-import { TabsLinkProps } from './TabsLink';
-import { TabsListProps } from './TabsList';
-import { TabsListItemProps } from './TabsListItem';
+export interface TabsProps {}
 
-export interface TabsProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
-}
-
-declare function Tabs(props: TabsProps): ReactElement;
-
-declare namespace Tabs {
-  export function Link(props: TabsLinkProps & AnchorHTMLAttributes<HTMLAnchorElement>): ReactElement;
-  export function List(props: TabsListProps): ReactElement;
-  export function ListItem(props: TabsListItemProps): ReactElement;
-}
+declare const Tabs: ElementComponent<TabsProps, 'div'> & {
+  Link: typeof TabsLink;
+  List: typeof TabsList;
+  ListItem: typeof TabsListItem;
+};
 
 export default Tabs;

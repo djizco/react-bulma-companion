@@ -1,11 +1,7 @@
-import { ReactNode, ReactElement, ElementType } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface PanelTabsProps {}
 
-export interface PanelTabsProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
-}
+declare const PanelTabs: ElementComponent<PanelTabsProps, 'p'>;
 
-export default function PanelTabs(props: PanelTabsProps): ReactElement;
+export default PanelTabs;

@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+export interface BlockProps {}
 
-export interface BlockProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const Block: ElementComponent<BlockProps, 'div'>;
 
-export default function Block(props: BlockProps): ReactElement;
+export default Block;

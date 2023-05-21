@@ -1,12 +1,12 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
+import { Size } from '../types';
 
-import { ElementProps } from '../Element';
+export type ContentSize = Size;
 
-export interface ContentProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  size?: 'small' | 'normal' | 'medium' | 'large';
+export interface ContentProps {
+  size?: ContentSize;
 }
 
-export default function Content(props: ContentProps): ReactElement;
+declare const Content: ElementComponent<ContentProps, 'div'>;
+
+export default Content;

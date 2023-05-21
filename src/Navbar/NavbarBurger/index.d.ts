@@ -1,13 +1,9 @@
-import React, { ReactElement, AnchorHTMLAttributes } from 'react';
+import { ElementWithoutChildrenComponent } from '../../Element';
 
-import { ElementWithoutChildrenProps } from '../../Element';
-
-export interface NavbarBurgerProps extends ElementWithoutChildrenProps {
-  className?: string;
-  component?: React.ElementType;
+export interface NavbarBurgerProps {
   active?: boolean;
 }
 
-export default function NavbarBurger(
-  props: NavbarBurgerProps & AnchorHTMLAttributes<HTMLAnchorElement>
-): ReactElement;
+declare const NavbarBurger: ElementWithoutChildrenComponent<NavbarBurgerProps, 'a'>;
+
+export default NavbarBurger;

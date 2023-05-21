@@ -1,19 +1,11 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+import IconText from './IconText';
 
-import { IconTextProps } from './IconText';
+export interface IconProps {}
 
-export interface IconProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
-
-declare function Icon(props: IconProps): ReactElement;
-
-declare namespace Icon {
-  export function Text(props: IconTextProps): ReactElement;
-}
+declare const Icon: ElementComponent<IconProps, 'span'> & {
+  Text: typeof IconText;
+};
 
 export default Icon;

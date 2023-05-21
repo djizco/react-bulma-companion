@@ -1,13 +1,13 @@
-import React, { InputHTMLAttributes, ReactElement } from 'react';
+import { ElementWithoutChildrenComponent } from '../Element';
+import { MainColor } from '../types';
 
-import { ElementWithoutChildrenProps, MainColor } from '../Element';
+export type InputType = 'text' | 'password' | 'email' | 'tel';
+export type InputSize = 'small' | 'medium' | 'large';
 
-export interface InputProps extends ElementWithoutChildrenProps {
-  className?: string;
-  component?: React.ElementType;
-  type?: 'text' | 'password' | 'email' | 'tel';
+export interface InputProps {
+  type?: InputType;
   color?: MainColor;
-  size?: 'small' | 'medium' | 'large';
+  size?: InputSize;
   inline?: boolean;
   fullwidth?: boolean;
   active?: boolean;
@@ -19,4 +19,6 @@ export interface InputProps extends ElementWithoutChildrenProps {
   static?: boolean;
 }
 
-export default function Input(props: InputProps & InputHTMLAttributes<HTMLInputElement>): ReactElement;
+declare const Input: ElementWithoutChildrenComponent<InputProps, 'input'>;
+
+export default Input;

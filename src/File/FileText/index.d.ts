@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface FileTextProps {}
 
-export interface FileTextProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const FileText: ElementComponent<FileTextProps, 'span'>;
 
-export default function FileText(props: FileTextProps): ReactElement;
+export default FileText;

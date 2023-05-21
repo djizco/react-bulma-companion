@@ -1,14 +1,9 @@
-import React, { ReactNode, ReactElement, OptionHTMLAttributes } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
-
-export interface SelectOptionProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface SelectOptionProps {
   selected?: boolean;
 }
 
-export default function SelectOption(
-  props: SelectOptionProps & OptionHTMLAttributes<HTMLOptionElement>
-): ReactElement;
+declare const SelectOption: ElementComponent<SelectOptionProps, 'option'>;
+
+export default SelectOption;

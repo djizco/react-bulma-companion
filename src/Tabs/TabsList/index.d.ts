@@ -1,11 +1,7 @@
-import { ReactNode, ReactElement, ElementType } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface TabsListProps {}
 
-export interface TabsListProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
-}
+declare const TabsList: ElementComponent<TabsListProps, 'ul'>;
 
-export default function TabsList(props: TabsListProps): ReactElement;
+export default TabsList;

@@ -1,12 +1,14 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
+
+export type ButtonsSize = 'small' | 'medium' | 'large';
+export type ButtonsAlign = 'center' | 'right';
 
 export interface ButtonsProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  size?: 'small' | 'medium' | 'large';
+  size?: ButtonsSize;
   addons?: boolean;
-  align?: 'center' | 'right';
+  align?: ButtonsAlign;
 }
 
-export default function Buttons(props: ButtonsProps): ReactElement;
+declare const Buttons: ElementComponent<ButtonsProps, 'div'>;
+
+export default Buttons;

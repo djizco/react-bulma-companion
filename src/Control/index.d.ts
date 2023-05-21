@@ -1,16 +1,15 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+export type ControlSize = 'small' | 'medium' | 'large';
 
-export interface ControlProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface ControlProps {
   iconsLeft?: boolean;
   iconsRight?: boolean;
   expanded?: boolean;
   loading?: boolean;
-  size?: 'small' | 'medium' | 'large';
+  size?: ControlSize;
 }
 
-export default function Control(props: ControlProps): ReactElement;
+declare const Control: ElementComponent<ControlProps, 'div'>;
+
+export default Control;

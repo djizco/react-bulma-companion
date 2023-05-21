@@ -1,12 +1,9 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
-
-export interface CardHeaderTitleProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface CardHeaderTitleProps {
   centered?: boolean;
 }
 
-export default function CardHeaderTitle(props: CardHeaderTitleProps): ReactElement;
+declare const CardHeaderTitle: ElementComponent<CardHeaderTitleProps, 'p'>;
+
+export default CardHeaderTitle;

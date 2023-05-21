@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface LevelLeftProps {}
 
-export interface LevelLeftProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const LevelLeft: ElementComponent<LevelLeftProps, 'div'>;
 
-export default function LevelLeft(props: LevelLeftProps): ReactElement;
+export default LevelLeft;

@@ -1,13 +1,7 @@
-import React, { ReactNode, ReactElement, AnchorHTMLAttributes } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+export interface BoxProps {}
 
-export interface BoxProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const Box: ElementComponent<BoxProps, 'div'>;
 
-export default function Box(
-  props: BoxProps & AnchorHTMLAttributes<HTMLAnchorElement>
-): ReactElement;
+export default Box;

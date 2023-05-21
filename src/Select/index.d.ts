@@ -1,27 +1,24 @@
-import React, { ReactNode, ReactElement, SelectHTMLAttributes, OptionHTMLAttributes } from 'react';
+import { ElementComponent } from '../Element';
+import { MainColor } from '../types';
 
-import { ElementProps, MainColor } from '../Element';
+import SelectContent from './SelectContent';
+import SelectOption from './SelectOption';
 
-import { SelectContentProps } from './SelectContent';
-import { SelectOptionProps } from './SelectOption';
+export type SelectColor = MainColor;
+export type SelectSize = 'small' | 'medium' | 'large';
 
-export interface SelectProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  color?: MainColor;
-  size?: 'small' | 'medium' | 'large',
+export interface SelectProps {
+  color?: SelectColor;
+  size?: SelectSize,
   fullwidth?: boolean;
   multiple?: boolean;
   rounded?: boolean;
   loading?: boolean;
 }
 
-declare function Select(props: SelectProps): ReactElement;
-
-declare namespace Select {
-  export function Content(props: SelectContentProps & SelectHTMLAttributes<HTMLSelectElement>): ReactElement;
-  export function Option(props: SelectOptionProps & OptionHTMLAttributes<HTMLOptionElement>): ReactElement;
-}
+declare const Select: ElementComponent<SelectProps, 'div'> & {
+  Content: typeof SelectContent;
+  Option: typeof SelectOption;
+};
 
 export default Select;

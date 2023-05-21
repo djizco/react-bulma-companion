@@ -1,6 +1,4 @@
-import React, { ReactNode, ReactElement } from 'react';
-
-import { ElementWithoutScreenSizeProps } from '../Element';
+import { ElementWithoutResponsiveComponent } from '../Element';
 
 export type ColumnGap = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8';
 
@@ -9,14 +7,12 @@ export type ColumnsScreenSize = {
 };
 
 export type ColumnsScreenSizeOnly = {
-  gap?: ColumnGap;
   only?: boolean;
-};
+} & ColumnsScreenSize;
 
-export interface ColumnsProps extends ElementWithoutScreenSizeProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export type ColumnsActivate = 'mobile' | 'tablet' | 'desktop';
+
+export interface ColumnsProps {
   gap?: ColumnGap;
   mobile?: ColumnsScreenSize;
   tablet?: ColumnsScreenSizeOnly;
@@ -24,11 +20,13 @@ export interface ColumnsProps extends ElementWithoutScreenSizeProps {
   desktop?: ColumnsScreenSizeOnly;
   widescreen?: ColumnsScreenSizeOnly;
   fullhd?: ColumnsScreenSize;
-  activate?: 'mobile' | 'tablet' | 'desktop';
+  activate?: ColumnsActivate;
   centered?: boolean;
   vcentered?: boolean;
   gapless?: boolean;
   multiline?: boolean;
 }
 
-export default function Columns(props: ColumnsProps): ReactElement;
+declare const Columns: ElementWithoutResponsiveComponent<ColumnsProps, 'div'>;
+
+export default Columns;

@@ -1,14 +1,13 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+export type TitleSize = '1' | '2' | '3' | '4' | '5' | '6';
 
-export interface TitleProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface TitleProps {
   subtitle?: boolean;
-  size?: '1' | '2' | '3' | '4' | '5' | '6';
+  size?: TitleSize;
   spaced?: boolean;
 }
 
-export default function Title(props: TitleProps): ReactElement;
+declare const Title: ElementComponent<TitleProps, 'p'>;
+
+export default Title;

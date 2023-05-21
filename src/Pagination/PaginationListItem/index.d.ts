@@ -1,11 +1,7 @@
-import { ReactNode, ReactElement, ElementType } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface PaginationListItemProps {}
 
-export interface PaginationListItemProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
-}
+declare const PaginationListItem: ElementComponent<PaginationListItemProps, 'li'>;
 
-export default function PaginationListItem(props: PaginationListItemProps): ReactElement;
+export default PaginationListItem;

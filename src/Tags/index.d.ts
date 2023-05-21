@@ -1,14 +1,14 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+export type TagsSize = 'medium' | 'large';
+export type TagsAlign = 'center' | 'right';
 
-export interface TagsProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  size?: 'medium' | 'large';
+export interface TagsProps {
+  size?: TagsSize;
   addons?: boolean;
-  align?: 'center' | 'right';
+  align?: TagsAlign;
 }
 
-export default function Tags(props: TagsProps): ReactElement;
+declare const Tags: ElementComponent<TagsProps, 'div'>;
+
+export default Tags;

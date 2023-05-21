@@ -1,12 +1,12 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
+import { MainColor } from '../types';
 
-import { ElementProps, MainColor } from '../Element';
+export type HelpColor = MainColor | 'text';
 
-export interface HelpProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  color?: MainColor | 'text';
+export interface HelpProps {
+  color?: HelpColor;
 }
 
-export default function Help(props: HelpProps): ReactElement;
+declare const Help: ElementComponent<HelpProps, 'p'>;
+
+export default Help;

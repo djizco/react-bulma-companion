@@ -1,12 +1,11 @@
-import React, { ReactNode, ReactElement, ButtonHTMLAttributes } from 'react';
+import { ElementWithoutChildrenComponent } from '../../Element';
 
-import { ElementWithoutChildrenProps } from '../../Element';
+export type ModalCloseSize = 'small' | 'medium' | 'large';
 
-export interface ModalCloseProps extends ElementWithoutChildrenProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  size?: 'small' | 'medium' | 'large';
+export interface ModalCloseProps {
+  size?: ModalCloseSize;
 }
 
-export default function ModalClose(props: ModalCloseProps & ButtonHTMLAttributes<HTMLButtonElement>): ReactElement;
+declare const ModalClose: ElementWithoutChildrenComponent<ModalCloseProps, 'button'>;
+
+export default ModalClose;

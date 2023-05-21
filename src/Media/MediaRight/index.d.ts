@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface MediaRightProps {}
 
-export interface MediaRightProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const MediaRight: ElementComponent<MediaRightProps, 'div'>;
 
-export default function MediaRight(props: MediaRightProps): ReactElement;
+export default MediaRight;

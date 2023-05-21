@@ -1,12 +1,12 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
+import { Size } from '../../types';
 
-import { ElementProps } from '../../Element';
+export type FieldLabelSize = Size;
 
-export interface FieldLabelProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  size?: 'small' | 'normal' | 'medium' | 'large';
+export interface FieldLabelProps {
+  size?: FieldLabelSize;
 }
 
-export default function FieldLabel(props: FieldLabelProps): ReactElement;
+declare const FieldLabel: ElementComponent<FieldLabelProps, 'div'>;
+
+export default FieldLabel;

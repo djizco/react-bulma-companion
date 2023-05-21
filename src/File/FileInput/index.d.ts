@@ -1,10 +1,7 @@
-import React, { ReactElement, InputHTMLAttributes } from 'react';
+import { ElementWithoutChildrenComponent } from '../../Element';
 
-import { ElementWithoutChildrenProps } from '../../Element';
+export interface FileInputProps {}
 
-export interface FileInputProps extends ElementWithoutChildrenProps {
-  className?: string;
-  component?: React.ElementType;
-}
+declare const FileInput: ElementWithoutChildrenComponent<FileInputProps, 'input'>;
 
-export default function FileInput(props: FileInputProps & InputHTMLAttributes<HTMLInputElement>): ReactElement;
+export default FileInput;

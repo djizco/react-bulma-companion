@@ -1,11 +1,7 @@
-import { ReactNode, ReactElement, ElementType } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface TableBodyProps {}
 
-export interface TableBodyProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
-}
+declare const TableBody: ElementComponent<TableBodyProps, 'tbody'>;
 
-export default function TableBody(props: TableBodyProps): ReactElement;
+export default TableBody;

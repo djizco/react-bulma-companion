@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface LevelRightProps {}
 
-export interface LevelRightProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const LevelRight: ElementComponent<LevelRightProps, 'div'>;
 
-export default function LevelRight(props: LevelRightProps): ReactElement;
+export default LevelRight;

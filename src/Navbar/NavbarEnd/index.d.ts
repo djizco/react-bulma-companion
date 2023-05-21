@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface NavbarEndProps {}
 
-export interface NavbarEndProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const NavbarEnd: ElementComponent<NavbarEndProps, 'div'>;
 
-export default function NavbarEnd(props: NavbarEndProps): ReactElement;
+export default NavbarEnd;

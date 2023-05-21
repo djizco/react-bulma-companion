@@ -1,12 +1,9 @@
-import React, { ReactNode, ReactElement, LabelHTMLAttributes } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
-
-export interface RadioProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface RadioProps {
   disabled?: boolean;
 }
 
-export default function Radio(props: RadioProps & LabelHTMLAttributes<HTMLLabelElement>): ReactElement;
+declare const Radio: ElementComponent<RadioProps, 'label'>;
+
+export default Radio;

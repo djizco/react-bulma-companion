@@ -1,12 +1,9 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
-
-export interface HeroVideoProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface HeroVideoProps {
   transparent?: boolean;
 }
 
-export default function HeroVideo(props: HeroVideoProps): ReactElement;
+declare const HeroVideo: ElementComponent<HeroVideoProps, 'div'>;
+
+export default HeroVideo;

@@ -1,40 +1,38 @@
-import { ReactNode, ReactElement, ElementType, AnchorHTMLAttributes } from 'react';
+import { ElementComponent } from '../Element';
+import { MainColor } from '../types';
 
-import { ElementProps, MainColor } from '../Element';
+import NavbarBrand from './NavbarBrand';
+import NavbarBurger from './NavbarBurger';
+import NavbarDivider from './NavbarDivider';
+import NavbarDropdown from './NavbarDropdown';
+import NavbarEnd from './NavbarEnd';
+import NavbarItem from './NavbarItem';
+import NavbarLink from './NavbarLink';
+import NavbarMenu from './NavbarMenu';
+import NavbarStart from './NavbarStart';
 
-import { NavbarBrandProps } from './NavbarBrand';
-import { NavbarBurgerProps } from './NavbarBurger';
-import { NavbarDividerProps } from './NavbarDivider';
-import { NavbarDropdownProps } from './NavbarDropdown';
-import { NavbarEndProps } from './NavbarEnd';
-import { NavbarItemProps } from './NavbarItem';
-import { NavbarLinkProps } from './NavbarLink';
-import { NavbarMenuProps } from './NavbarMenu';
-import { NavbarStartProps } from './NavbarStart';
+export type NavbarFixed = 'top' | 'bottom' | 'top-desktop' | 'bottom-desktop' | 'top-touch' | 'bottom-touch';
 
-export interface NavbarProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
-  color: MainColor
-  fixed: 'top' | 'bottom' | 'top-desktop' | 'bottom-desktop' | 'top-touch' | 'bottom-touch';
+export type NavbarColor = MainColor;
+
+export interface NavbarProps {
+  color?: NavbarColor;
+  fixed?: NavbarFixed;
   shadow?: boolean;
   transparent?: boolean;
   spaced?: boolean;
 }
 
-declare function Navbar(props: NavbarProps): ReactElement;
-
-declare namespace Navbar {
-  export function Brand(props: NavbarBrandProps): ReactElement;
-  export function Burger(props: NavbarBurgerProps & AnchorHTMLAttributes<HTMLAnchorElement>): ReactElement;
-  export function Divider(props: NavbarDividerProps): ReactElement;
-  export function Dropdown(props: NavbarDropdownProps): ReactElement;
-  export function End(props: NavbarEndProps): ReactElement;
-  export function Item(props: NavbarItemProps): ReactElement;
-  export function Link(props: NavbarLinkProps & AnchorHTMLAttributes<HTMLAnchorElement>): ReactElement;
-  export function Menu(props: NavbarMenuProps): ReactElement;
-  export function Start(props: NavbarStartProps): ReactElement;
-}
+declare const Navbar: ElementComponent<NavbarProps, 'nav'> & {
+  Brand: typeof NavbarBrand;
+  Burger: typeof NavbarBurger;
+  Divider: typeof NavbarDivider;
+  Dropdown: typeof NavbarDropdown;
+  End: typeof NavbarEnd;
+  Item: typeof NavbarItem;
+  Link: typeof NavbarLink;
+  Menu: typeof NavbarMenu;
+  Start: typeof NavbarStart;
+};
 
 export default Navbar;

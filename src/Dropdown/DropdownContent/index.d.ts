@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface DropdownContentProps {}
 
-export interface DropdownContentProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const DropdownContent: ElementComponent<DropdownContentProps, 'div'>;
 
-export default function DropdownContent(props: DropdownContentProps): ReactElement;
+export default DropdownContent;

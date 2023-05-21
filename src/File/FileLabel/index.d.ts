@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement, LabelHTMLAttributes } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface FileLabelProps {}
 
-export interface FileLabelProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const FileLabel: ElementComponent<FileLabelProps, 'label'>;
 
-export default function FileLabel(props: FileLabelProps & LabelHTMLAttributes<HTMLLabelElement>): ReactElement;
+export default FileLabel;

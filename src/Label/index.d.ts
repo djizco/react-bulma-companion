@@ -1,12 +1,11 @@
-import React, { ReactNode, ReactElement, LabelHTMLAttributes } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+export type LabelSize = 'small' | 'medium' | 'large';
 
-export interface LabelProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  size?: 'small' | 'medium' | 'large';
+export interface LabelProps {
+  size?: LabelSize;
 }
 
-export default function Label(props: LabelProps & LabelHTMLAttributes<HTMLLabelElement>): ReactElement;
+declare const Label: ElementComponent<LabelProps, 'label'>;
+
+export default Label;

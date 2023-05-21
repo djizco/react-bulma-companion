@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface FileIconProps {}
 
-export interface FileIconProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const FileIcon: ElementComponent<FileIconProps, 'span'>;
 
-export default function FileIcon(props: FileIconProps): ReactElement;
+export default FileIcon;

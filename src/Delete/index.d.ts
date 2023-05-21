@@ -1,11 +1,11 @@
-import React, { ReactElement, ButtonHTMLAttributes } from 'react';
+import { ElementWithoutChildrenComponent } from '../Element';
 
-import { ElementWithoutChildrenProps } from '../Element';
+export type DeleteSize = 'small' | 'medium' | 'large';
 
-export interface DeleteProps extends ElementWithoutChildrenProps {
-  className?: string;
-  component?: React.ElementType;
-  size?: 'small' | 'medium' | 'large';
+export interface DeleteProps {
+  size?: DeleteSize
 }
 
-export default function Delete(props: DeleteProps & ButtonHTMLAttributes<HTMLButtonElement>): ReactElement;
+declare const Delete: ElementWithoutChildrenComponent<DeleteProps, 'button'>;
+
+export default Delete;

@@ -1,12 +1,9 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
-
-export interface BreadcrumbListItemProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface BreadcrumbListItemProps {
   active?: boolean;
 }
 
-export default function BreadcrumbListItem(props: BreadcrumbListItemProps): ReactElement;
+declare const BreadcrumbListItem: ElementComponent<BreadcrumbListItemProps, 'li'>;
+
+export default BreadcrumbListItem;

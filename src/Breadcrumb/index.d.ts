@@ -1,25 +1,22 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+import BreadcrumbList from './BreadcrumbList';
+import BreadcrumbListItem from './BreadcrumbListItem';
 
-import { BreadcrumbListProps } from './BreadcrumbList';
-import { BreadcrumbListItemProps } from './BreadcrumbListItem';
+export type BreadcrumbAlign = 'center' | 'right';
+export type BreadcrumbSeparator = 'arrow' | 'bullet' | 'dot' | 'succeeds';
+export type BreadcrumbSize = 'small' | 'medium' | 'large';
 
-export interface BreadcrumbProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface BreadcrumbProps {
   active?: boolean;
-  align?: 'center' | 'right';
-  separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds';
-  size?: 'small' | 'medium' | 'large';
+  align?: BreadcrumbAlign;
+  separator?: BreadcrumbSeparator;
+  size?: BreadcrumbSize;
 }
 
-declare function Breadcrumb(props: BreadcrumbProps): ReactElement;
-
-declare namespace Breadcrumb {
-  export function List(props: BreadcrumbListProps): ReactElement;
-  export function ListItem(props: BreadcrumbListItemProps): ReactElement;
-}
+declare const Breadcrumb: ElementComponent<BreadcrumbProps, 'nav'> & {
+  List: typeof BreadcrumbList;
+  ListItem: typeof BreadcrumbListItem;
+};
 
 export default Breadcrumb;

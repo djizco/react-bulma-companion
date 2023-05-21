@@ -1,16 +1,11 @@
-import React, { ReactNode, ReactElement, SelectHTMLAttributes } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
-
-export interface SelectContentProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface SelectContentProps {
   hovered?: boolean;
   focused?: boolean;
   active?: boolean;
 }
 
-export default function SelectContent(
-  props: SelectContentProps & SelectHTMLAttributes<HTMLSelectElement>
-): ReactElement;
+declare const SelectContent: ElementComponent<SelectContentProps, 'select'>;
+
+export default SelectContent;

@@ -1,14 +1,9 @@
-import { ReactNode, ReactElement, ElementType, AnchorHTMLAttributes } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
-
-export interface PaginationPreviousProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
+export interface PaginationPreviousProps {
   disabled?: boolean;
 }
 
-export default function PaginationPrevious(
-  props: PaginationPreviousProps & AnchorHTMLAttributes<HTMLAnchorElement>
-): ReactElement;
+declare const PaginationPrevious: ElementComponent<PaginationPreviousProps, 'a'>;
+
+export default PaginationPrevious;

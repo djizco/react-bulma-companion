@@ -1,11 +1,7 @@
-import { ReactNode, ReactElement, ElementType } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface TableHeadProps {}
 
-export interface TableHeadProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
-}
+declare const TableHead: ElementComponent<TableHeadProps, 'thead'>;
 
-export default function TableHead(props: TableHeadProps): ReactElement;
+export default TableHead;

@@ -1,10 +1,7 @@
-import React, { ReactElement } from 'react';
+import { ElementWithoutChildrenComponent } from '../Element';
 
-import { ElementWithoutChildrenProps } from '../Element';
+export interface LoaderProps {}
 
-export interface LoaderProps extends ElementWithoutChildrenProps {
-  className?: string;
-  component?: React.ElementType;
-}
+declare const Loader: ElementWithoutChildrenComponent<LoaderProps, 'span'>;
 
-export default function Loader(props: LoaderProps): ReactElement;
+export default Loader;

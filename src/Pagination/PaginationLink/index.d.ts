@@ -1,15 +1,10 @@
-import { ReactNode, ReactElement, ElementType, AnchorHTMLAttributes } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
-
-export interface PaginationLinkProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
+export interface PaginationLinkProps {
   current?: boolean;
   disabled?: boolean;
 }
 
-export default function PaginationLink(
-  props: PaginationLinkProps & AnchorHTMLAttributes<HTMLAnchorElement>
-): ReactElement;
+declare const PaginationLink: ElementComponent<PaginationLinkProps, 'a'>;
+
+export default PaginationLink;

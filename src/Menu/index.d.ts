@@ -1,26 +1,21 @@
-import React, { ReactNode, ReactElement, AnchorHTMLAttributes } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+import MenuLabel from './MenuLabel';
+import MenuLink from './MenuLink';
+import MenuList from './MenuList';
+import MenuListItem from './MenuListItem';
 
-import { MenuLabelProps } from './MenuLabel';
-import { MenuLinkProps } from './MenuLink';
-import { MenuListProps } from './MenuList';
-import { MenuListItemProps } from './MenuListItem';
+export type MenuSize = 'small' | 'medium' | 'large';
 
-export interface MenuProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  size?: 'small' | 'medium' | 'large';
+export interface MenuProps {
+  size?: MenuSize;
 }
 
-declare function Menu(props: MenuProps): ReactElement;
-
-declare namespace Menu {
-  export function Label(props: MenuLabelProps): ReactElement;
-  export function Link(props: MenuLinkProps & AnchorHTMLAttributes<HTMLAnchorElement>): ReactElement;
-  export function List(props: MenuListProps): ReactElement;
-  export function ListItem(props: MenuListItemProps): ReactElement;
-}
+declare const Menu: ElementComponent<MenuProps, 'aside'> & {
+  Label: typeof MenuLabel;
+  Link: typeof MenuLink;
+  List: typeof MenuList;
+  ListItem: typeof MenuListItem;
+};
 
 export default Menu;

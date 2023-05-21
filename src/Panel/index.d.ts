@@ -1,30 +1,24 @@
-import React, { ReactNode, ReactElement, AnchorHTMLAttributes, LabelHTMLAttributes } from 'react';
+import { ElementComponent } from '../Element';
+import { MainColor } from '../types';
 
-import { ElementProps, MainColor } from '../Element';
+import PanelBlock from './PanelBlock';
+import PanelHeading from './PanelHeading';
+import PanelIcon from './PanelIcon';
+import PanelTab from './PanelTab';
+import PanelTabs from './PanelTabs';
 
-import { PanelBlockProps } from './PanelBlock';
-import { PanelHeadingProps } from './PanelHeading';
-import { PanelIconProps } from './PanelIcon';
-import { PanelTabProps } from './PanelTab';
-import { PanelTabsProps } from './PanelTabs';
+export type PanelColor = MainColor;
 
-export interface PanelProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  color?: MainColor;
+export interface PanelProps {
+  color?: PanelColor;
 }
 
-declare function Panel(props: PanelProps): ReactElement;
-
-declare namespace Panel {
-  export function Block(
-    props: PanelBlockProps & AnchorHTMLAttributes<HTMLAnchorElement> & LabelHTMLAttributes<HTMLLabelElement>
-  ): ReactElement;
-  export function Heading(props: PanelHeadingProps): ReactElement;
-  export function Icon(props: PanelIconProps): ReactElement;
-  export function Tab(props: PanelTabProps & AnchorHTMLAttributes<HTMLAnchorElement>): ReactElement;
-  export function Tabs(props: PanelTabsProps): ReactElement;
-}
+declare const Panel: ElementComponent<PanelProps, 'nav'> & {
+  Block: typeof PanelBlock;
+  Heading: typeof PanelHeading;
+  Icon: typeof PanelIcon;
+  Tab: typeof PanelTab;
+  Tabs: typeof PanelTabs;
+};
 
 export default Panel;

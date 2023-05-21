@@ -1,13 +1,13 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
+import { MainColor } from '../types';
 
-import { ElementProps, MainColor } from '../Element';
+export type NotificationColor = MainColor;
 
-export interface NotificationProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  color?: MainColor;
+export interface NotificationProps {
+  color?: NotificationColor;
   light?: boolean;
 }
 
-export default function Notification(props: NotificationProps): ReactElement;
+declare const Notification: ElementComponent<NotificationProps, 'div'>;
+
+export default Notification;

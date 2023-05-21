@@ -1,12 +1,11 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+export type SectionSize = 'medium' | 'large';
 
-export interface SectionProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  size?: 'medium' | 'large';
+export interface SectionProps {
+  size?: SectionSize;
 }
 
-export default function Section(props: SectionProps): ReactElement;
+declare const Section: ElementComponent<SectionProps, 'section'>;
+
+export default Section;

@@ -1,12 +1,12 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
+import { Color } from '../../types';
 
-import { ElementProps, Color } from '../../Element';
+export type IconTextColor = Color | string;
 
-export interface IconTextProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  color: Color | string;
+export interface IconTextProps {
+  color: IconTextColor;
 }
 
-export default function IconText(props: IconTextProps): ReactElement;
+declare const IconText: ElementComponent<IconTextProps, 'span'>;
+
+export default IconText;

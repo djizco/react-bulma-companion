@@ -1,11 +1,9 @@
-import React, { ReactElement, ImgHTMLAttributes } from 'react';
+import { ElementWithoutChildrenComponent } from '../../Element';
 
-import { ElementWithoutChildrenProps } from '../../Element';
-
-export interface ImageContentProps extends ElementWithoutChildrenProps {
-  className?: string;
-  component?: React.ElementType;
+export interface ImageContentProps {
   rounded?: boolean;
 }
 
-export default function ImageContent(props: ImageContentProps & ImgHTMLAttributes<HTMLImageElement>): ReactElement;
+declare const ImageContent: ElementWithoutChildrenComponent<ImageContentProps, 'img'>;
+
+export default ImageContent;

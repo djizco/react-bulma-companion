@@ -1,17 +1,15 @@
-import { ReactNode, ReactElement, ElementType, ThHTMLAttributes } from 'react';
+import { ElementComponent } from '../../Element';
+import { MainColor } from '../../types';
 
-import { ElementProps, MainColor } from '../../Element';
+export type TableHeadCellColor = MainColor;
 
-export interface TableHeadCellProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
-  color?: MainColor;
+export interface TableHeadCellProps {
+  color?: TableHeadCellColor;
   selected?: boolean;
   narrow?: boolean;
   vcentered?: boolean;
 }
 
-export default function TableHeadCell(
-  props: TableHeadCellProps & ThHTMLAttributes<HTMLTableHeaderCellElement>
-): ReactElement;
+declare const TableHeadCell: ElementComponent<TableHeadCellProps, 'th'>;
+
+export default TableHeadCell;

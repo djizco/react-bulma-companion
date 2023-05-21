@@ -1,12 +1,9 @@
-import { ReactNode, ReactElement, ElementType } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
-
-export interface TableRowProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
+export interface TableRowProps {
   selected?: boolean;
 }
 
-export default function TableRow(props: TableRowProps): ReactElement;
+declare const TableRow: ElementComponent<TableRowProps, 'tr'>;
+
+export default TableRow;

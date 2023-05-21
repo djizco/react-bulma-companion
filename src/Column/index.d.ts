@@ -1,6 +1,4 @@
-import React, { ReactNode, ReactElement } from 'react';
-
-import { ElementWithoutScreenSizeProps } from '../Element';
+import { ElementWithoutResponsiveComponent } from '../Element';
 
 export type ColumnSize =
   'full' | 'half' | 'one-third' | 'two-thirds' | 'one-quarter' | 'three-quarters' |
@@ -13,10 +11,7 @@ export type ColumnScreenSize = {
   narrow?: boolean;
 };
 
-export interface ColumnProps extends ElementWithoutScreenSizeProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface ColumnProps {
   size?: ColumnSize;
   offSet?: ColumnSize;
   narrow?: boolean;
@@ -28,4 +23,6 @@ export interface ColumnProps extends ElementWithoutScreenSizeProps {
   fullhd?: ColumnScreenSize;
 }
 
-export default function Column(props: ColumnProps): ReactElement;
+declare const Column: ElementWithoutResponsiveComponent<ColumnProps, 'div'>;
+
+export default Column;

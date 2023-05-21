@@ -1,23 +1,15 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+import MediaContent from './MediaContent';
+import MediaLeft from './MediaLeft';
+import MediaRight from './MediaRight';
 
-import { MediaContentProps } from './MediaContent';
-import { MediaLeftProps } from './MediaLeft';
-import { MediaRightProps } from './MediaRight';
+export interface MediaProps {}
 
-export interface MediaProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
-
-declare function Media(props: MediaProps): ReactElement;
-
-declare namespace Media {
-  export function Content(props: MediaContentProps): ReactElement;
-  export function Left(props: MediaLeftProps): ReactElement;
-  export function Right(props: MediaRightProps): ReactElement;
-}
+declare const Media: ElementComponent<MediaProps, 'article'> & {
+  Content: typeof MediaContent;
+  Left: typeof MediaLeft;
+  Right: typeof MediaRight;
+};
 
 export default Media;

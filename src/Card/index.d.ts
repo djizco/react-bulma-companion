@@ -1,31 +1,23 @@
-import React, { ReactNode, ReactElement, AnchorHTMLAttributes } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+import CardContent from './CardContent';
+import CardFooter from './CardFooter';
+import CardFooterItem from './CardFooterItem';
+import CardHeader from './CardHeader';
+import CardHeaderIcon from './CardHeaderIcon';
+import CardHeaderTitle from './CardHeaderTitle';
+import CardImage from './CardImage';
 
-import { CardContentProps } from './CardContent';
-import { CardFooterProps } from './CardFooter';
-import { CardFooterItemProps } from './CardFooterItem';
-import { CardHeaderProps } from './CardHeader';
-import { CardHeaderIconProps } from './CardHeaderIcon';
-import { CardHeaderTitleProps } from './CardHeaderTitle';
-import { CardImageProps } from './CardImage';
+export interface CardProps {}
 
-export interface CardProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
-
-declare function Card(props: CardProps): ReactElement;
-
-declare namespace Card {
-  export function Content(props: CardContentProps): ReactElement;
-  export function Footer(props: CardFooterProps): ReactElement;
-  export function FooterItem(props: CardFooterItemProps & AnchorHTMLAttributes<HTMLAnchorElement>): ReactElement;
-  export function Header(props: CardHeaderProps): ReactElement;
-  export function HeaderIcon(props: CardHeaderIconProps): ReactElement;
-  export function HeaderTitle(props: CardHeaderTitleProps): ReactElement;
-  export function Image(props: CardImageProps): ReactElement;
-}
+declare const Card: ElementComponent<CardProps, 'div'> & {
+  Content: typeof CardContent;
+  Footer: typeof CardFooter;
+  FooterItem: typeof CardFooterItem;
+  Header: typeof CardHeader;
+  HeaderIcon: typeof CardHeaderIcon;
+  HeaderTitle: typeof CardHeaderTitle;
+  Image: typeof CardImage;
+};
 
 export default Card;

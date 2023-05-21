@@ -1,17 +1,14 @@
-import React, { ReactNode, ReactElement, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
-
-import { ElementProps, MainColor } from '../Element';
+import { ElementComponent } from '../Element';
+import {  MainColor, Size } from '../types';
 
 export type ButtonColor = MainColor | 'text' | 'ghost';
+export type ButtonType = 'button' | 'submit' | 'reset';
 
-export interface ButtonProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  type?: 'button' | 'submit' | 'reset';
+export interface ButtonProps {
+  type?: ButtonType;
   color?: ButtonColor;
   light?: boolean;
-  size?: 'small' | 'normal' | 'medium' | 'large';
+  size?: Size;
   responsive?: boolean;
   fullwidth?: boolean;
   outlined?: boolean;
@@ -26,6 +23,6 @@ export interface ButtonProps extends ElementProps {
   disabled?: boolean;
 }
 
-export default function Button(
-  props: ButtonProps & ButtonHTMLAttributes<HTMLButtonElement> & AnchorHTMLAttributes<HTMLAnchorElement>
-): ReactElement;
+declare const Button: ElementComponent<ButtonProps, 'button'>;
+
+export default Button;

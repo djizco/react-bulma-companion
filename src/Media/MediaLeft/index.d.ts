@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface MediaLeftProps {}
 
-export interface MediaLeftProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const MediaLeft: ElementComponent<MediaLeftProps, 'figure'>;
 
-export default function MediaLeft(props: MediaLeftProps): ReactElement;
+export default MediaLeft;

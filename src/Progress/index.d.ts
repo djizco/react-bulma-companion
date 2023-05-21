@@ -1,13 +1,14 @@
-import React, { ReactNode, ReactElement, ProgressHTMLAttributes } from 'react';
+import { ElementComponent } from '../Element';
+import { MainColor } from '../types';
 
-import { ElementProps, MainColor } from '../Element';
+export type ProgressColor = MainColor;
+export type ProgressSize = 'small' | 'medium' | 'large';
 
-export interface ProgressProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  color?: MainColor;
-  size?: 'small' | 'medium' | 'large';
+export interface ProgressProps {
+  color?: ProgressColor;
+  size?: ProgressSize;
 }
 
-export default function Progress(props: ProgressProps & ProgressHTMLAttributes<HTMLProgressElement>): ReactElement;
+declare const Progress: ElementComponent<ProgressProps, 'progress'>;
+
+export default Progress;

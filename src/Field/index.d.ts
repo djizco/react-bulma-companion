@@ -1,17 +1,14 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+import FieldBody from './FieldBody';
+import FieldLabel from './FieldLabel';
 
-import { FieldBodyProps } from './FieldBody';
-import { FieldLabelProps } from './FieldLabel';
+export type FieldAlign = 'center' | 'right';
 
-export interface FieldProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface FieldProps {
   grouped?: boolean;
   addons?: boolean;
-  align?: 'center' | 'right';
+  align?: FieldAlign;
   multiline?: boolean;
   fullwidth?: boolean;
   horizontal?: boolean;
@@ -19,11 +16,9 @@ export interface FieldProps extends ElementProps {
   narrow?: boolean;
 }
 
-declare function Field(props: FieldProps): ReactElement;
-
-declare namespace Field {
-  export function Body(props: FieldBodyProps): ReactElement;
-  export function Label(props: FieldLabelProps): ReactElement;
-}
+declare const Field: ElementComponent<FieldProps, 'div'> & {
+  Body: typeof FieldBody;
+  Label: typeof FieldLabel;
+};
 
 export default Field;

@@ -1,11 +1,7 @@
-import { ReactNode, ReactElement, ElementType } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface PanelIconProps {}
 
-export interface PanelIconProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
-}
+declare const PanelIcon: ElementComponent<PanelIconProps, 'span'>;
 
-export default function PanelIcon(props: PanelIconProps): ReactElement;
+export default PanelIcon;

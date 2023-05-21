@@ -1,16 +1,16 @@
-import React, { ReactNode, ReactElement, AnchorHTMLAttributes } from 'react';
+import { ElementComponent } from '../Element';
+import { MainColor } from '../types';
 
-import { ElementProps, MainColor } from '../Element';
+export type TagSize = 'normal' | 'medium' | 'large';
 
-export interface TagProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface TagProps {
   color?: MainColor;
   light?: boolean;
-  size?: 'normal' | 'medium' | 'large';
+  size?: TagSize;
   rounded?: boolean;
   delete?: boolean;
 }
 
-export default function Tag(props: TagProps & AnchorHTMLAttributes<HTMLAnchorElement>): ReactElement;
+declare const Tag: ElementComponent<TagProps, 'span'>;
+
+export default Tag;

@@ -1,31 +1,24 @@
-import React, { ReactNode, ReactElement, AnchorHTMLAttributes } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+import DropdownContent from './DropdownContent';
+import DropdownDivider from './DropdownDivider';
+import DropdownItem from './DropdownItem';
+import DropdownMenu from './DropdownMenu';
+import DropdownTrigger from './DropdownTrigger';
 
-import { DropdownContentProps } from './DropdownContent';
-import { DropdownDividerProps } from './DropdownDivider';
-import { DropdownItemProps } from './DropdownItem';
-import { DropdownMenuProps } from './DropdownMenu';
-import { DropdownTriggerProps } from './DropdownTrigger';
-
-export interface DropdownProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface DropdownProps {
   active?: boolean;
   hoverable?: boolean;
   right?: boolean;
   up?: boolean;
 }
 
-declare function Dropdown(props: DropdownProps): ReactElement;
-
-declare namespace Dropdown {
-  export function Content(props: DropdownContentProps): ReactElement;
-  export function Divider(props: DropdownDividerProps): ReactElement;
-  export function Item(props: DropdownItemProps & AnchorHTMLAttributes<HTMLAnchorElement>): ReactElement;
-  export function Menu(props: DropdownMenuProps): ReactElement;
-  export function Trigger(props: DropdownTriggerProps): ReactElement;
-}
+declare const Dropdown: ElementComponent<DropdownProps, 'div'> & {
+  Content: typeof DropdownContent;
+  Divider: typeof DropdownDivider;
+  Item: typeof DropdownItem;
+  Menu: typeof DropdownMenu;
+  Trigger: typeof DropdownTrigger;
+};
 
 export default Dropdown;

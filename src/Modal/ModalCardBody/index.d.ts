@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface ModalCardBodyProps {}
 
-export interface ModalCardBodyProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const ModalCardBody: ElementComponent<ModalCardBodyProps, 'section'>;
 
-export default function ModalCardBody(props: ModalCardBodyProps): ReactElement;
+export default ModalCardBody;

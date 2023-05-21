@@ -1,30 +1,26 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
+import { MainColor } from '../types';
 
-import { ElementProps, MainColor } from '../Element';
+import HeroBody from './HeroBody';
+import HeroButtons from './HeroButtons';
+import HeroFoot from './HeroFoot';
+import HeroHead from './HeroHead';
+import HeroVideo from './HeroVideo';
 
-import { HeroBodyProps } from './HeroBody';
-import { HeroButtonsProps } from './HeroButtons';
-import { HeroFootProps } from './HeroFoot';
-import { HeroHeadProps } from './HeroHead';
-import { HeroVideoProps } from './HeroVideo';
+export type HeroSize = 'small' | 'medium' | 'large' | 'halfheight' | 'fullheight' | 'fullheight-navbar';
 
-export interface HeroProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface HeroProps {
   color?: MainColor;
-  size?: 'small' | 'medium' | 'large' | 'halfheight' | 'fullheight' | 'fullheight-navbar';
+  size?: HeroSize;
   bold?: boolean;
 }
 
-declare function Hero(props: HeroProps): ReactElement;
-
-declare namespace Hero {
-  export function Body(props: HeroBodyProps): ReactElement;
-  export function Buttons(props: HeroButtonsProps): ReactElement;
-  export function Foot(props: HeroFootProps): ReactElement;
-  export function Head(props: HeroHeadProps): ReactElement;
-  export function Video(props: HeroVideoProps): ReactElement;
-}
+declare const Hero: ElementComponent<HeroProps, 'section'> & {
+  Body: typeof HeroBody;
+  Buttons: typeof HeroButtons;
+  Foot: typeof HeroFoot;
+  Head: typeof HeroHead;
+  Video: typeof HeroVideo;
+};
 
 export default Hero;

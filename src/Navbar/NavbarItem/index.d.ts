@@ -1,11 +1,6 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
-
-export interface NavbarItemProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface NavbarItemProps {
   active?: boolean;
   hasDropdown?: boolean;
   hasDropup?: boolean;
@@ -14,4 +9,6 @@ export interface NavbarItemProps extends ElementProps {
   tab?: boolean;
 }
 
-export default function NavbarItem(props: NavbarItemProps): ReactElement;
+declare const NavbarItem: ElementComponent<NavbarItemProps, 'div'>;
+
+export default NavbarItem;

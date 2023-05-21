@@ -1,32 +1,27 @@
-import React, { ReactNode, ReactElement, TdHTMLAttributes, ThHTMLAttributes } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+import TableBody from './TableBody';
+import TableContainer from './TableContainer';
+import TableDataCell from './TableDataCell';
+import TableFoot from './TableFoot';
+import TableHead from './TableHead';
+import TableHeadCell from './TableHeadCell';
+import TableRow from './TableRow';
 
-import { TableBodyProps } from './TableBody';
-import { TableContainerProps } from './TableContainer';
-import { TableDataCellProps } from './TableDataCell';
-import { TableFootProps } from './TableFoot';
-import { TableHeadProps } from './TableHead';
-import { TableHeadCellProps } from './TableHeadCell';
-import { TableRowProps } from './TableRow';
+export type TableSize = 'small' | 'medium' | 'large';
 
-export interface TableProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  size?: 'small' | 'medium' | 'large';
+export interface TableProps {
+  size?: TableSize;
 }
 
-declare function Table(props: TableProps): ReactElement;
-
-declare namespace Table {
-  export function Body(props: TableBodyProps): ReactElement;
-  export function Container(props: TableContainerProps): ReactElement;
-  export function DataCell(props: TableDataCellProps & TdHTMLAttributes<HTMLTableDataCellElement>): ReactElement;
-  export function Foot(props: TableFootProps): ReactElement;
-  export function Head(props: TableHeadProps): ReactElement;
-  export function HeadCell(props: TableHeadCellProps & ThHTMLAttributes<HTMLTableHeaderCellElement>): ReactElement;
-  export function Row(props: TableRowProps): ReactElement;
-}
+declare const Table: ElementComponent<TableProps, 'table'> & {
+  Body: typeof TableBody;
+  Container: typeof TableContainer;
+  DataCell: typeof TableDataCell;
+  Foot: typeof TableFoot;
+  Head: typeof TableHead;
+  HeadCell: typeof TableHeadCell;
+  Row: typeof TableRow;
+};
 
 export default Table;

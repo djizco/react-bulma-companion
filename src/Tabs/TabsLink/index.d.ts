@@ -1,13 +1,7 @@
-import { ReactNode, ReactElement, ElementType, AnchorHTMLAttributes } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface TabsLinkProps {}
 
-export interface TabsLinkProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
-}
+declare const TabsLink: ElementComponent<TabsLinkProps, 'a'>;
 
-export default function TabsLink(
-  props: TabsLinkProps & AnchorHTMLAttributes<HTMLAnchorElement>
-): ReactElement;
+export default TabsLink;

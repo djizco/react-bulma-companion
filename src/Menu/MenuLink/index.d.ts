@@ -1,12 +1,9 @@
-import React, { ReactNode, ReactElement, AnchorHTMLAttributes } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
-
-export interface MenuLinkProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
+export interface MenuLinkProps {
   active?: boolean;
 }
 
-export default function MenuLink(props: MenuLinkProps & AnchorHTMLAttributes<HTMLAnchorElement>): ReactElement;
+declare const MenuLink: ElementComponent<MenuLinkProps, 'a'>;
+
+export default MenuLink;

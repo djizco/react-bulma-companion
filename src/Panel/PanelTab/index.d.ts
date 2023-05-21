@@ -1,14 +1,9 @@
-import { ReactNode, ReactElement, ElementType, AnchorHTMLAttributes } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
-
-export interface PanelTabProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
+export interface PanelTabProps {
   active?: boolean;
 }
 
-export default function PanelTab(
-  props: PanelTabProps & AnchorHTMLAttributes<HTMLAnchorElement>
-): ReactElement;
+declare const PanelTab: ElementComponent<PanelTabProps, 'a'>;
+
+export default PanelTab;

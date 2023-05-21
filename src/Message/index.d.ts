@@ -1,23 +1,20 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../Element';
+import { MainColor } from '../types';
 
-import { ElementProps, MainColor } from '../Element';
+import MessageBody from './MessageBody';
+import MessageHeader from './MessageHeader';
 
-import { MessageBodyProps } from './MessageBody';
-import { MessageHeaderProps } from './MessageHeader';
+export type MessageColor = MainColor;
+export type MessageSize = 'small' | 'medium' | 'large';
 
-export interface MessageProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  color?: MainColor,
-  size: 'small' | 'medium' | 'large';
+export interface MessageProps {
+  color?: MessageColor;
+  size?: MessageSize;
 }
 
-declare function Message(props: MessageProps): ReactElement;
-
-declare namespace Message {
-  export function Body(props: MessageBodyProps): ReactElement;
-  export function Header(props: MessageHeaderProps): ReactElement;
-}
+declare const Message: ElementComponent<MessageProps, 'article'> & {
+  Body: typeof MessageBody;
+  Header: typeof MessageHeader;
+};
 
 export default Message;

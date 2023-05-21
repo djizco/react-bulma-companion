@@ -1,11 +1,7 @@
-import React, { ReactNode, ReactElement } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface HeroHeadProps {}
 
-export interface HeroHeadProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-}
+declare const HeroHead: ElementComponent<HeroHeadProps, 'div'>;
 
-export default function HeroHead(props: HeroHeadProps): ReactElement;
+export default HeroHead;

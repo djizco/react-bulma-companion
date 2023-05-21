@@ -1,11 +1,7 @@
-import { ReactNode, ReactElement, ElementType } from 'react';
+import { ElementComponent } from '../../Element';
 
-import { ElementProps } from '../../Element';
+export interface PaginationEllipsisProps {}
 
-export interface PaginationEllipsisProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
-}
+declare const PaginationEllipsis: ElementComponent<PaginationEllipsisProps, 'span'>;
 
-export default function PaginationEllipsis(props: PaginationEllipsisProps): ReactElement;
+export default PaginationEllipsis;

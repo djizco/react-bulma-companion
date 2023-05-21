@@ -1,10 +1,7 @@
-import React, { ReactElement } from 'react';
+import { ElementWithoutChildrenComponent } from '../../Element';
 
-import { ElementWithoutChildrenProps } from '../../Element';
+export interface NavbarDividerProps {}
 
-export interface NavbarDividerProps extends ElementWithoutChildrenProps {
-  className?: string;
-  component?: React.ElementType;
-}
+declare const NavbarDivider: ElementWithoutChildrenComponent<NavbarDividerProps, 'hr'>;
 
-export default function NavbarDivider(props: NavbarDividerProps): ReactElement;
+export default NavbarDivider;

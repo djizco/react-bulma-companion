@@ -1,32 +1,28 @@
-import React, { ReactNode, ReactElement, AnchorHTMLAttributes } from 'react';
+import { ElementComponent } from '../Element';
 
-import { ElementProps } from '../Element';
+import PaginationEllipsis from './PaginationEllipsis';
+import PaginationLink from './PaginationLink';
+import PaginationList from './PaginationList';
+import PaginationListItem from './PaginationListItem';
+import PaginationNext from './PaginationNext';
+import PaginationPrevious from './PaginationPrevious';
 
-import { PaginationEllipsisProps } from './PaginationEllipsis';
-import { PaginationLinkProps } from './PaginationLink';
-import { PaginationListProps } from './PaginationList';
-import { PaginationListItemProps } from './PaginationListItem';
-import { PaginationNextProps } from './PaginationNext';
-import { PaginationPreviousProps } from './PaginationPrevious';
+export type PaginationSize = 'small' | 'medium' | 'large';
+export type PaginationAlign = 'center' | 'right';
 
-export interface PaginationProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: React.ElementType;
-  size?: 'small' | 'medium' | 'large';
-  align?: 'center' | 'right';
+export interface PaginationProps {
+  size?: PaginationSize;
+  align?: PaginationAlign;
   rounded?: boolean;
 }
 
-declare function Pagination(props: PaginationProps): ReactElement;
-
-declare namespace Pagination {
-  export function Ellipsis(props: PaginationEllipsisProps): ReactElement;
-  export function List(props: PaginationListProps): ReactElement;
-  export function ListItem(props: PaginationListItemProps): ReactElement;
-  export function Link(props: PaginationLinkProps & AnchorHTMLAttributes<HTMLAnchorElement>): ReactElement;
-  export function Next(props: PaginationNextProps & AnchorHTMLAttributes<HTMLAnchorElement>): ReactElement;
-  export function Previous(props: PaginationPreviousProps & AnchorHTMLAttributes<HTMLAnchorElement>): ReactElement;
-}
+declare const Pagination: ElementComponent<PaginationProps, 'nav'> & {
+  Ellipsis: typeof PaginationEllipsis;
+  Link: typeof PaginationLink;
+  List: typeof PaginationList;
+  ListItem: typeof PaginationListItem;
+  Next: typeof PaginationNext;
+  Previous: typeof PaginationPrevious;
+};
 
 export default Pagination;

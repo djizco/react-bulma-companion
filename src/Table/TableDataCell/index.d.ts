@@ -1,17 +1,15 @@
-import { ReactNode, ReactElement, ElementType, TdHTMLAttributes } from 'react';
+import { ElementComponent } from '../../Element';
+import { MainColor } from '../../types';
 
-import { ElementProps, MainColor } from '../../Element';
+export type TableDataCellColor = MainColor;
 
-export interface TableDataCellProps extends ElementProps {
-  className?: string;
-  children?: ReactNode;
-  component?: ElementType;
-  color: MainColor;
+export interface TableDataCellProps {
+  color?: TableDataCellColor;
   selected?: boolean;
   narrow?: boolean;
   vcentered?: boolean;
 }
 
-export default function TableDataCell(
-  props: TableDataCellProps & TdHTMLAttributes<HTMLTableDataCellElement>
-): ReactElement;
+declare const TableDataCell: ElementComponent<TableDataCellProps, 'td'>;
+
+export default TableDataCell;
