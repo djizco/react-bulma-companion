@@ -1,5 +1,11 @@
 # React Bulma Companion Changelog
 
+## 0.5.3
+
+### New Features
+
+- Adds Typescript support. Declaration files created for all components.
+
 ## 0.5.2
 
 ### Bug Fixes
