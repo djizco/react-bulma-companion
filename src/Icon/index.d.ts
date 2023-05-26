@@ -8,9 +8,9 @@ export type IconColor = Color;
 export type IconAlign = 'left' | 'right';
 
 export interface IconProps {
-  color: IconColor;
-  size: IconSize;
-  align: IconAlign;
+  color?: IconColor;
+  size?: IconSize;
+  align?: IconAlign;
 }
 
 declare const Icon: ElementComponent<IconProps, 'span'> & {
