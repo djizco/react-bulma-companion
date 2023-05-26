@@ -10,7 +10,7 @@ const colors = [
   'white', 'black', 'light', 'dark',
   'primary', 'link', 'info', 'success', 'warning', 'danger',
   'black-bis', 'black-ter',
-  'grey-dark', 'grey', 'grey-light', 'grey-lighter',
+  'grey-darker', 'grey-dark', 'grey', 'grey-light', 'grey-lighter',
   'white-ter', 'white-bis',
   'primary-light', 'link-light', 'info-light', 'success-light', 'warning-light', 'danger-light',
   'primary-dark', 'link-dark', 'info-dark', 'success-dark', 'warning-dark', 'danger-dark',

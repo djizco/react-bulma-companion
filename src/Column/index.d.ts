@@ -7,13 +7,13 @@ export type ColumnSize =
 
 export type ColumnScreenSize = {
   size?: ColumnSize;
-  offSet?: ColumnSize;
+  offset?: ColumnSize;
   narrow?: boolean;
 };
 
 export interface ColumnProps {
   size?: ColumnSize;
-  offSet?: ColumnSize;
+  offset?: ColumnSize;
   narrow?: boolean;
   mobile?: ColumnScreenSize;
   tablet?: ColumnScreenSize;
