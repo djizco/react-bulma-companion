@@ -1,5 +1,12 @@
 # React Bulma Companion Changelog
 
+## 0.5.4
+
+### Bug Fixes
+
+- Add Missing types for Icon
+- Fix type for Column prop `offset`
+
 ## 0.5.3
 
 ### New Features

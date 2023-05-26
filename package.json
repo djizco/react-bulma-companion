@@ -1,6 +1,6 @@
 {
   "name": "react-bulma-companion",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "React Components for Bulma",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
