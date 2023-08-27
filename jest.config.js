@@ -1,7 +1,11 @@
 const path = require('path');
 
 module.exports = {
-  collectCoverageFrom: ['**/*.{js,jsx}'],
+  collectCoverageFrom: ['src/**/*.{js,jsx}'],
+  coveragePathIgnorePatterns: [
+    "node_modules",
+    "index.js"
+  ],
   moduleFileExtensions: ['js', 'jsx'],
   moduleDirectories: ['node_modules'],
   setupFilesAfterEnv: [

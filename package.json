@@ -17,6 +17,8 @@
     "storybook": "start-storybook -p 8008",
     "storybook:docs": "start-storybook -p 8008 --docs",
     "test": "jest",
+    "test:verbose": "jest --verbose",
+    "test:coverage": "jest --coverage",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix"
   },

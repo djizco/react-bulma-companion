@@ -13,4 +13,20 @@ describe('Box', () => {
 
     expect(container.firstChild).toHaveClass('box');
   });
+
+  it('should render children', () => {
+    const { getByText }  = render(
+      <Box>
+        <p>Test</p>
+      </Box>,
+    );
+
+    expect(getByText('Test')).toBeInTheDocument();
+  });
+
+  it('should render as a custom component', () => {
+    const { container }  = render(<Box component="span" />);
+
+    expect(container.firstChild.tagName).toBe('SPAN');
+  });
 });
