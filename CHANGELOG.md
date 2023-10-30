@@ -1,5 +1,11 @@
 # React Bulma Companion Changelog
 
+## 0.5.6
+
+### Bug Fixes
+
+- Add missing types for Image
+
 ## 0.5.5
 
 ### Bug Fixes
